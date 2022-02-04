@@ -89,7 +89,7 @@ module.exports = (sequelize, DataTypes) => {
       email,
       hashedPassword,
     });
-    return await User.scope("currentUser").findbyPk(user.id);
+    return await User.scope("currentUser").finByPk(user.id);
   };
 
   return User;
