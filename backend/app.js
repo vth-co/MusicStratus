@@ -10,11 +10,16 @@ const { environment } = require("./config");
 const isProduction = environment === "production";
 const { ValidationError } = require("sequelize");
 
+const songsRouter = require('./routes/api/songs')
+
 const app = express();
 
 app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(express.json());
+
+app.use('/songs', songsRouter);
+
 
 // Security Middleware
 if (!isProduction) {
@@ -72,5 +77,6 @@ app.use((err, _req, res, _next) => {
     stack: isProduction ? null : err.stack,
   });
 });
+
 
 module.exports = app;
