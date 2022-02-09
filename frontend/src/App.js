@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormModal from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import SongsPage from "./components/SongsPage";
+import SongsPage from "./components/SongsPage/index";
 
 function App() {
   const dispatch = useDispatch();

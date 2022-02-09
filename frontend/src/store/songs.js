@@ -6,25 +6,27 @@ const LOAD_SONGS = 'songs/LOAD_SONGS';
 // const DELETE_SONG = 'songs/deleteSong'
 
 /* ----- ACTIONS ------ */
-const loadSongs = (allSongs) => ({
+const loadSongs = (songs) => ({
     type: LOAD_SONGS,
-    payload: allSongs,
+    songs
 });
 
 // const deleteSong = () => ({
 //     type: DELETE_SONG,
+//     payload: deleteSong
 // })
 
 /* ------ SELECTORS ------ */
 
-export const getSongs = () => async (dispatch) => {
-    const response = await csrfFetch ('/api/songs');
+export const getSongs = () => async dispatch => {
+    const response = await csrfFetch('/api/songs');
 
     if (response.ok) {
         const songs = await response.json();
-        dispatch(loadSongs(songs.songs));
+        return dispatch(loadSongs(songs.songs));
+    } else {
+        console.log('internal server error')
     }
-    return response;
 };
 
 const initialState = {
@@ -32,14 +34,13 @@ const initialState = {
 };
 
 
+let newState;
 /* ------ REDUCER ------ */
 const songsReducer = (state = initialState, action) => {
-    let newState;
-
     switch (action.type) {
         case LOAD_SONGS:
             newState = { ...state };
-            action.payload.forEach((song) => newState.songs[song.id] = song)
+            action.songs.forEach((song) => newState.songs[song.id] = song)
             return newState;
 
         default:
