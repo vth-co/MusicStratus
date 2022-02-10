@@ -18,4 +18,13 @@ router.get(
     res.json({ songs });
 }))
 
+router.post(
+    '/',
+    asyncHandler(async function (req, res) {
+        const song = await db.Song.create(req.body);
+        return res.json(song);
+    })
+);
+
+
 module.exports = router;
