@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/vth-co/MusicStratus/issues"
   },
-  "homepage": "https://github.com/vth-co/MusicStratus#readme"
+  "homepage": "https://github.com/vth-co/MusicStratus#readme",
+  "dependencies": {}
 }

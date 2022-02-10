@@ -18,4 +18,23 @@ router.get(
     res.json({ songs });
 }))
 
+router.post(
+    '/',
+    asyncHandler(async function (req, res) {
+        const song = await Song.create(req.body);
+        return res.json(song);
+    })
+);
+
+router.delete(
+    "/:id",
+    asyncHandler(async function(req, res) {
+        const songId = await Song.findByPk(req.params.id);
+
+        songId.destroy()
+        return res.json({ message: `${songId.title} has been deleted!`});
+    })
+);
+
+
 module.exports = router;
