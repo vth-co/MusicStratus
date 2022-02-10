@@ -5,7 +5,8 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormModal from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import SongsPage from "./components/SongsPage/index";
+import SongsPage from "./components/SongsPage";
+import SingleSong from "./components/SingleSong";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,8 +23,11 @@ function App() {
           <Route path="/signup">
             <SignupFormModal />
           </Route>
-          <Route path ='/songs'>
+          <Route path='/'>
             <SongsPage />
+          </Route>
+          <Route path='/songs/:id'>
+            <SingleSong />
           </Route>
         </Switch>
       )}

@@ -1,51 +1,78 @@
 import { csrfFetch } from "./csrf";
 
-const LOAD_SONGS = 'songs/LOAD_SONGS';
-// const ADD_SONG = 'songs/addSong'
+const LOAD_SONGS = "songs/LOAD_SONGS";
+const ADD_SONG = "songs/ADD_SONG";
 // const EDIT_SONG = 'songs/editSong'
-// const DELETE_SONG = 'songs/deleteSong'
+const REMOVE_SONG = 'songs/REMOVE_SONG'
 
 /* ----- ACTIONS ------ */
-const loadSongs = (songs) => ({
-    type: LOAD_SONGS,
-    songs
+const load = (songs) => ({
+  type: LOAD_SONGS,
+  songs,
 });
 
-// const deleteSong = () => ({
+const add = (song) => ({
+  type: ADD_SONG,
+  song,
+});
+
+// const remove = () => ({
 //     type: DELETE_SONG,
-//     payload: deleteSong
+//     song
 // })
 
 /* ------ SELECTORS ------ */
 
-export const getSongs = () => async dispatch => {
-    const response = await csrfFetch('/api/songs');
+export const getSongs = () => async (dispatch) => {
+  const response = await csrfFetch("/api/songs");
 
-    if (response.ok) {
-        const songs = await response.json();
-        return dispatch(loadSongs(songs.songs));
-    } else {
-        console.log('internal server error')
-    }
+  if (response.ok) {
+    const songs = await response.json();
+    return dispatch(load(songs.songs));
+  } else {
+    console.log("internal server error");
+  }
 };
+
+export const addSong = (payload) => async (dispatch) => {
+  const response = await csrfFetch("/api/songs", {
+    method: "POST",
+    header: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  console.log(response);
+  if (response.ok) {
+    const newSong = await response.json();
+    console.log(newSong);
+    dispatch(add(newSong));
+  }
+  return response;
+};
+
 
 const initialState = {
-    songs: {}
+  songs: {},
 };
 
-
-let newState;
 /* ------ REDUCER ------ */
 const songsReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case LOAD_SONGS:
-            newState = { ...state };
-            action.songs.forEach((song) => newState.songs[song.id] = song)
-            return newState;
-
-        default:
-            return {...state};
-    }
+  let newState;
+  switch (action.type) {
+    case LOAD_SONGS:
+      newState = { ...state };
+      newState.songs = {};
+      action.songs.forEach((song) => (newState.songs[song.id] = song));
+      return newState;
+    case ADD_SONG:
+      newState = { ...state };
+      newState.songs = {
+        ...newState.songs,
+        [action.song.id]: action.song,
+      };
+      return newState;
+    default:
+      return state;
+  }
 };
 
 export default songsReducer;

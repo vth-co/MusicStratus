@@ -21,7 +21,7 @@ router.get(
 router.post(
     '/',
     asyncHandler(async function (req, res) {
-        const song = await db.Song.create(req.body);
+        const song = await Song.create(req.body);
         return res.json(song);
     })
 );
