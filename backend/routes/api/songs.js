@@ -26,5 +26,15 @@ router.post(
     })
 );
 
+router.delete(
+    "/:id",
+    asyncHandler(async function(req, res) {
+        const songId = await Song.findByPk(req.params.id);
+
+        songId.destroy()
+        return res.json({ message: `${songId.title} has been deleted!`});
+    })
+);
+
 
 module.exports = router;

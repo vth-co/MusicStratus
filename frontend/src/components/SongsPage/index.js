@@ -7,14 +7,14 @@ import "react-h5-audio-player/lib/styles.css";
 import "./songs.css";
 import AddSongModal from "../AddSongModal";
 import { NavLink } from "react-router-dom";
+import { deleteSong } from "../../store/songs";
 
 const AllSongs = () => {
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state.session.user);
   const songsObj = useSelector((state) => state.songs.songs);
-  const songs = Object.values(songsObj)
-
+  const songs = Object.values(songsObj);
 
   useEffect(() => {
     dispatch(getSongs());
@@ -31,14 +31,21 @@ const AllSongs = () => {
       <h3>All Songs</h3>
       {songs?.map((song) => (
         <div className="eachSong" key={song.id}>
-          <NavLink key={song.id} to={`/songs/${song.id}`}>{song.title}</NavLink>
-            
-          <AudioPlayer
-            className="songPlayer"
-            src={song?.url}
-            
-          />
-          <img className="songImg" src={song.imageUrl} />
+          <div className="songLink">
+            <NavLink key={song.id} to={`/songs/${song.id}`}>
+              {song.title}
+            </NavLink>
+          </div>
+
+          <AudioPlayer className="songPlayer" src={song?.url} />
+
+          <div>
+            <img className="songImg" src={song.imageUrl} />
+          </div>
+
+          <button className="songDelete"
+          onClick={() => dispatch(deleteSong(song.id))}
+          >Delete Song</button>
         </div>
       ))}
     </div>

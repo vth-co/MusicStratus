@@ -16,10 +16,10 @@ const add = (song) => ({
   song,
 });
 
-// const remove = () => ({
-//     type: DELETE_SONG,
-//     song
-// })
+const remove = (song) => ({
+    type: REMOVE_SONG,
+    song
+})
 
 /* ------ SELECTORS ------ */
 
@@ -49,6 +49,14 @@ export const addSong = (payload) => async (dispatch) => {
   return response;
 };
 
+export const deleteSong = songId => async dispatch => {
+    const response = await csrfFetch(`/api/songs/${songId}`, {
+        method: "DELETE",
+        body: JSON.stringify({songId})
+    });
+    dispatch(remove(response))
+    return response;
+}
 
 const initialState = {
   songs: {},
@@ -70,6 +78,15 @@ const songsReducer = (state = initialState, action) => {
         [action.song.id]: action.song,
       };
       return newState;
+    case REMOVE_SONG:
+        // newState = {...state };
+        // delete newState.songs[action.song.id]
+        // return newState;
+        newState = {...state, songs: {...state.songs}};
+        delete newState.songs[action.song.id];
+        return newState;
+
+
     default:
       return state;
   }
