@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { editSong } from "../../store/songs";
+import 
 
 function EditSong() {
+  const { id } = useParams();
   const dispatch = useDispatch();
+
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
 
-  const song = useSelector((state) => state.songs.songs)
-  const { id } = useParams();
+  const song = useSelector((state) => state.songs.songs[id]);
 
   const [title, setTitle] = useState(song?.id.title);
   const [url, setUrl] = useState(song?.id.url);
@@ -21,7 +23,7 @@ function EditSong() {
 
     let payload = {
       userId,
-      songId:id,
+      id,
       title,
       url,
       imageUrl

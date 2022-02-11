@@ -39,8 +39,8 @@ export const getSongs = () => async (dispatch) => {
   }
 };
 
-export const getSingle = (songId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/songs/${songId}`);
+export const getSingle = (id) => async (dispatch) => {
+  const response = await csrfFetch(`/api/songs/${id}`);
 
   if (response.ok) {
     const songs = await response.json();
