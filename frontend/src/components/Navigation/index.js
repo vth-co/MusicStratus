@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupModal from '../SignupFormModal';
 import './Navigation.css';
+import DemoUser from '../DemoUser';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -19,17 +20,39 @@ function Navigation({ isLoaded }){
       <>
         <LoginFormModal />
         <SignupModal />
+        <DemoUser />
       </>
     );
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/user">Home</NavLink>
+    // <ul>
+    //   <li>
+    //     <NavLink exact to="/user">Home</NavLink>
+    //     {isLoaded && sessionLinks}
+    //   </li>
+    // </ul>
+
+  <nav className='navBar'>
+      <NavLink className="home" to="/user">
+        <img
+          className="homeIcon"
+          src='../../../images/icon.png'
+        />
+      </NavLink>
+      <div className='appTitle'>
+        <NavLink className='title' to='/'>
+         <h1>MusicStratus</h1>
+        </NavLink>
+      </div>
+      <div>
+        <div>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+      </div>
+      </div>
+      
+
+  </nav>
   );
 }
 

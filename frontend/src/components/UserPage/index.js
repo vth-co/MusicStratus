@@ -22,9 +22,7 @@ const UserPage = () => {
 
   return (
     <div className="userPage">
-      <h2>Users Profile</h2>
-      <h3>Add a New Song?</h3>
-      <AddSongModal />
+      <h3>Users Profile</h3>
       <div className="songs-container">
         {songs?.map((song) => (
           <div className="eachSong" key={song.id}>
@@ -37,6 +35,8 @@ const UserPage = () => {
           </div>
         ))}
       </div>
+      <h4>Add a New Song?</h4>
+      <AddSongModal />
     </div>
   );
 };

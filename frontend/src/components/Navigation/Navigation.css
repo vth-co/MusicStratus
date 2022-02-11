@@ -3,6 +3,33 @@ li {
     
 }
 
-/* .navBar {
-    
-} */
+.navBar {
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    background-color: white;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.body {
+    background-color: aqua;
+}
+
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15vw;
+    margin-right: 20px;
+}
+
+
+.homeIcon {
+    object-fit: contain;
+    height: 50px;
+    margin-left: 20px;
+
+}
