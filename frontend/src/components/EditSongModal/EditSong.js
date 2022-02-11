@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { addSong } from "../../store/songs";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+import { editSong } from "../../store/songs";
 
-function AddSong() {
+function EditSong() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
 
-  const [title, setTitle] = useState("");
-  const [url, setUrl] = useState("");
-  const [imageUrl, setImageUrl] = useState('');
+  const song = useSelector((state) => state.songs.songs)
+  const { id } = useParams();
+
+  const [title, setTitle] = useState(song?.id.title);
+  const [url, setUrl] = useState(song?.id.url);
+  const [imageUrl, setImageUrl] = useState(song?.id.imageUrl);
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = async (e) => {
@@ -19,17 +21,19 @@ function AddSong() {
 
     let payload = {
       userId,
+      songId:id,
       title,
       url,
       imageUrl
     };
-     dispatch(addSong(payload));
+     dispatch(editSong(payload));
   };
 
 
   return (
-    <div className="add-song-form-div">
-      <form className="add-song-form" onSubmit={handleSubmit}>
+    <div className="edit-song-form-div">
+      <form className="edit-song-form" onSubmit={handleSubmit}>
+          <h3>Edit Song</h3>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
@@ -59,12 +63,13 @@ function AddSong() {
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
+            required
           />
         </label>
-        <button type="submit">Add Song</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
 }
 
-export default AddSong;
+export default EditSong;
