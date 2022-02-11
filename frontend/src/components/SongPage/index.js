@@ -3,7 +3,6 @@ import { useHistory, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import { NavLink } from "react-router-dom";
 import { deleteSong } from "../../store/songs";
 import EditSongModal from "../EditSongModal";
 import { getSongs } from "../../store/songs";
@@ -13,13 +12,12 @@ import "./SongPage.css";
 const Song = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const history = useHistory;
+  const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
 
   const song = useSelector((state) => state.songs.songs[id]);
-  console.log("THIS IS SONGS OBJ", song);
   // const songs = useSelector((state) => state.songs.songs)
   // console.log("THIS IS SONGS")
   // const songVal = Object.values(songs)
@@ -27,32 +25,45 @@ const Song = () => {
 
   const [errors, setErrors] = useState([]);
 
-  const [title, setTitle] = useState(song?.title);
-  const [url, setUrl] = useState(song?.url);
-  const [imageUrl, setImageUrl] = useState(song?.imageUrl);
+  //   const [title, setTitle] = useState(song?.title);
+  //   const [url, setUrl] = useState(song?.url);
+  //   const [imageUrl, setImageUrl] = useState(song?.imageUrl);
 
   useEffect(() => {
     dispatch(getSongs());
   }, [dispatch]);
 
+
+
+  const handleDelete = async (e) => {
+      e.preventDefault()
+      const deletedSong = await dispatch(deleteSong(song.id))
+      if (deletedSong) return history.push('/user')
+  }
+
+  let songEditButtons;
+  if (userId === song.userId) {
+    songEditButtons = (
+      <div className="editAndDelete">
+        <EditSongModal />
+        <button onClick={handleDelete}>
+          Delete Song
+        </button>
+      </div>
+    );
+  }
+
   return (
     <>
-      <h2>Song Selected:{song?.title}</h2>
+      <h2>{song?.title}</h2>
       <div className="song-container">
-        <div className="songImage"></div>
+        <div className="songImage">
+            <img className="songImg" src={song.imageUrl} />
+            </div>
         <div className="songPlayer">
           <AudioPlayer className="songPlayer" src={song?.url} />
         </div>
-        <div className="editAndDeleteButtons">
-          <EditSongModal song={song} />
-
-          <button
-            className="songDelete"
-            onClick={() => dispatch(deleteSong(song.id))}
-          >
-            Delete Song
-          </button>
-        </div>
+        {songEditButtons}
       </div>
     </>
   );
@@ -66,7 +77,7 @@ const Song = () => {
   //       </div>
 
   //       <div>
-  //         <img className="songImg" src={song.imageUrl} />
+  //         
   //       </div>
 
   //

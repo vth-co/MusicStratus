@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { editSong } from "../../store/songs";
-import 
+import { getSingle } from "../../store/songs";
 
 function EditSong() {
   const { id } = useParams();
@@ -22,8 +22,8 @@ function EditSong() {
     e.preventDefault();
 
     let payload = {
-      userId,
-      id,
+      songId: id,
+      userId: userId,
       title,
       url,
       imageUrl
@@ -65,10 +65,10 @@ function EditSong() {
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
-            required
+            
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">Update</button>
       </form>
     </div>
   );

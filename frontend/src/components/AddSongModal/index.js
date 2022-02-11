@@ -9,7 +9,7 @@ function AddSongModal() {
   return (
     <>
       <button className="modal-button" onClick={() => setShowModal(true)}>
-        Upload your song
+        Upload Song
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
