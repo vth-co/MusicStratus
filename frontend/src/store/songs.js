@@ -2,7 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const LOAD_SONGS = "songs/LOAD_SONGS";
 const ADD_SONG = "songs/ADD_SONG";
-// const EDIT_SONG = 'songs/editSong'
+const EDIT_SONG = 'songs/EDIT_SONG'
 const REMOVE_SONG = 'songs/REMOVE_SONG'
 
 /* ----- ACTIONS ------ */
@@ -19,6 +19,11 @@ const add = (song) => ({
 const remove = (song) => ({
     type: REMOVE_SONG,
     song
+});
+
+const edit = (song) => ({
+    type: EDIT_SONG,
+    song
 })
 
 /* ------ SELECTORS ------ */
@@ -34,16 +39,24 @@ export const getSongs = () => async (dispatch) => {
   }
 };
 
+export const getSingle = (id) => async (dispatch) => {
+  const response = await csrfFetch(`/api/songs/${id}`);
+
+  if (response.ok) {
+    const songs = await response.json();
+    dispatch(load(songs));
+    return songs;
+  }
+}
+
 export const addSong = (payload) => async (dispatch) => {
   const response = await csrfFetch("/api/songs", {
     method: "POST",
     header: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
-  console.log(response);
   if (response.ok) {
     const newSong = await response.json();
-    console.log(newSong);
     dispatch(add(newSong));
   }
   return response;
@@ -56,10 +69,24 @@ export const deleteSong = songId => async dispatch => {
     });
     dispatch(remove(response))
     return response;
-}
+};
+
+export const editSong = payload => async dispatch => {
+
+    const response = await csrfFetch(`/api/songs/${payload.songId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+    });
+    if (response.ok) {
+        const editedSong = await response.json();
+        dispatch(edit(editedSong));
+        return editedSong;
+    }
+};
 
 const initialState = {
-  songs: {},
+  songs: [],
 };
 
 /* ------ REDUCER ------ */
@@ -72,21 +99,21 @@ const songsReducer = (state = initialState, action) => {
       action.songs.forEach((song) => (newState.songs[song.id] = song));
       return newState;
     case ADD_SONG:
-      newState = { ...state };
-      newState.songs = {
-        ...newState.songs,
+      newState = { ...state, songs: {...state.songs}};
+      newState.songs = {...newState.songs,
         [action.song.id]: action.song,
       };
       return newState;
     case REMOVE_SONG:
-        // newState = {...state };
-        // delete newState.songs[action.song.id]
-        // return newState;
         newState = {...state, songs: {...state.songs}};
         delete newState.songs[action.song.id];
         return newState;
-
-
+    case EDIT_SONG:
+        newState = {...state, songs: {...state.songs}};
+        newState.songs = {...newState.songs,
+            [action.song.id]: action.song,
+        }
+        return newState;
     default:
       return state;
   }

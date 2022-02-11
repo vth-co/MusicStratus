@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-import AddSong from "./AddSong";
+import EditSong from "./EditSong";
+// import "./SongModal.css";
 
-function AddSongModal() {
+function EditSongModal() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       <button className="modal-button" onClick={() => setShowModal(true)}>
-        Upload Song
+        Edit Song
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <AddSong />
+          <EditSong />
         </Modal>
       )}
     </>
   );
 }
 
-export default AddSongModal;
+export default EditSongModal;

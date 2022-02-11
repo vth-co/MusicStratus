@@ -1,0 +1,20 @@
+.songImg {
+    max-width: 50%;
+    max-width: 50%; 
+ }
+ 
+ .songPlayer {
+     max-width: 50%;
+     max-width: 50%;
+ }
+ 
+ .eachSong {
+     /* display: flex; */
+     /* justify-content: center; */
+ }
+
+ .songLink {
+    text-decoration: none;
+    color: #4A7C59;
+    font-weight: bold;
+}
