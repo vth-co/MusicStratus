@@ -20,10 +20,10 @@
   
   #modal-content {
     position: absolute;
-    background-color: rgba(75, 124, 90, 0.7);
+    background-color: rgba(75, 124, 90, 0.6);
     border-radius: 10px;
-    max-width: 25%;
-    max-height: 25%;
+    max-width: 75%;
+    max-height: 50%;
     display: flex;
     
   }

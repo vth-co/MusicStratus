@@ -24,14 +24,13 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 15vw;
-    margin-right: 20px;
 }
 
 
-.homeIcon {
+.icon {
     object-fit: contain;
-    height: 25px;
-    margin: 20px 20px;
+    height: 30px;
+    
 }
 
 .title {

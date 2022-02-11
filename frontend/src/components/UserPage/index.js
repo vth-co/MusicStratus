@@ -22,12 +22,12 @@ const UserPage = () => {
 
   return (
     <div className="userPage">
-      <h3>Users Profile</h3>
+      <h3>Users Library</h3>
       <div className="songs-container">
         {songs?.map((song) => (
           <div className="eachSong" key={song.id}>
             <div>
-              <NavLink song={song} to={`/songs/${song.id}`}>
+              <NavLink className='songLink' song={song} to={`/songs/${song.id}`}>
                 {song.title}
                 <img className="songImage" src={song.imageUrl} alt={''}/>
               </NavLink>

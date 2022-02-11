@@ -33,11 +33,17 @@ function Navigation({ isLoaded }) {
 
     <nav className="navBar">
       <NavLink className="home" to="/user">
-        <img className="homeIcon" src="../../../images/icon.png" alt={''} />
+        <img
+          className="icon"
+          src="../../../images/libraryIcon.png"
+          alt=""
+        ></img>
       </NavLink>
       <div className="appTitle">
-        <NavLink className="title" to="/">
-          <h1>MusicStratus</h1>
+        <NavLink className="titleAndIcon" to="/">
+          <div className="title">
+            <h2>MusicStratus</h2>
+          </div>
         </NavLink>
       </div>
       <div className="buttons">
