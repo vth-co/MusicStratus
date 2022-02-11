@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import AddSong from "./AddSong";
-// import "./SongModal.css";
 
 function AddSongModal() {
   const [showModal, setShowModal] = useState(false);

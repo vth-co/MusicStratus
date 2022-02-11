@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { addSong } from "../../store/songs";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import "./AddSong.css"
+
 
 function AddSong() {
   const dispatch = useDispatch();
@@ -23,6 +25,7 @@ function AddSong() {
       url,
       imageUrl
     };
+    
      dispatch(addSong(payload));
   };
 

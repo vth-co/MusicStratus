@@ -72,7 +72,6 @@ export const deleteSong = songId => async dispatch => {
 };
 
 export const editSong = payload => async dispatch => {
-  console.log("THUNK", payload)
 
     const response = await csrfFetch(`/api/songs/${payload.songId}`, {
         method: "PUT",
@@ -106,9 +105,6 @@ const songsReducer = (state = initialState, action) => {
       };
       return newState;
     case REMOVE_SONG:
-        // newState = {...state };
-        // delete newState.songs[action.song.id]
-        // return newState;
         newState = {...state, songs: {...state.songs}};
         delete newState.songs[action.song.id];
         return newState;

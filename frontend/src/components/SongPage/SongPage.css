@@ -12,3 +12,8 @@
      /* display: flex; */
      /* justify-content: center; */
  }
+
+ .songLink {
+    text-decoration: none;
+    color: #8FC0A9;
+}

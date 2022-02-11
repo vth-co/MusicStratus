@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSongs } from "../../store/songs";
 import { Redirect, NavLink } from "react-router-dom";
@@ -29,7 +29,7 @@ const UserPage = () => {
             <div>
               <NavLink song={song} to={`/songs/${song.id}`}>
                 {song.title}
-                <img className="songImage" src={song.imageUrl} />
+                <img className="songImage" src={song.imageUrl} alt={''}/>
               </NavLink>
             </div>
           </div>

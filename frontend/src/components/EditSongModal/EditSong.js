@@ -13,9 +13,9 @@ function EditSong() {
 
   const song = useSelector((state) => state.songs.songs[id]);
 
-  const [title, setTitle] = useState(song?.id.title);
-  const [url, setUrl] = useState(song?.id.url);
-  const [imageUrl, setImageUrl] = useState(song?.id.imageUrl);
+  const [title, setTitle] = useState(song?.title);
+  const [url, setUrl] = useState(song?.url);
+  const [imageUrl, setImageUrl] = useState(song?.imageUrl);
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = async (e) => {
@@ -64,7 +64,7 @@ function EditSong() {
           <input
             type="text"
             value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
+            onChange={(e) => setImageUrl(e?.target.value)}
             
           />
         </label>
