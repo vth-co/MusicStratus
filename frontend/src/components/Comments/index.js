@@ -48,6 +48,7 @@ function Comments({songId}) {
   return (
     <>
       {songComments?.map((comment) => (
+        <div>
         <div className="songComments">
           <div className="comment-user">{username}</div>
           <li key={comment?.id} className="comment">
@@ -55,6 +56,9 @@ function Comments({songId}) {
             <EditCommentModal  ele={comment.id} />
             <button className="delete-comment-button" onClick={handleDelete}>Delete Comment</button>
           </li>
+        
+        </div>
+
         </div>
       ))}
     </>

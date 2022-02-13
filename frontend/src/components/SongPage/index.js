@@ -9,6 +9,7 @@ import { getSongs } from "../../store/songs";
 import Comments from "../Comments";
 
 import "./SongPage.css";
+import AddCommentModal from "../AddCommentModal";
 
 const Song = () => {
   const { id } = useParams();
@@ -59,7 +60,9 @@ const Song = () => {
           {songEditButtons}
           <div>
             <Comments songId={song.id} />
+            <AddCommentModal />
           </div>
+
         </div>
       </>
     );
