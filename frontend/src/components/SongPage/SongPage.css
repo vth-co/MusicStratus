@@ -1,11 +1,14 @@
-.songImg {
+/* .songImg {
     max-width: 50%;
-    max-width: 50%; 
  }
  
  .songPlayer {
      max-width: 50%;
-     max-width: 50%;
+ } */
+
+ .songContainer {
+    max-width: 75%;
+
  }
  
  .eachSong {
@@ -18,3 +21,10 @@
     color: #4A7C59;
     font-weight: bold;
 }
+
+.comments-container {
+    margin: 25px 25px;
+}
+
+
+

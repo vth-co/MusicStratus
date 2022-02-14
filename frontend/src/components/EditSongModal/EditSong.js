@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { editSong } from "../../store/songs";
 import { getSingle } from "../../store/songs";
+import "./EditSong.css";
 
 function EditSong() {
   const { id } = useParams();
@@ -23,7 +24,7 @@ function EditSong() {
 
     let payload = {
       songId: id,
-      userId: userId,
+      // userId: userId,
       title,
       url,
       imageUrl
@@ -35,7 +36,7 @@ function EditSong() {
   return (
     <div className="edit-song-form-div">
       <form className="edit-song-form" onSubmit={handleSubmit}>
-          <h3>Edit Song</h3>
+          <h3 className="form-title">Edit Song</h3>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>

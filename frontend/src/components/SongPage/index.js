@@ -6,11 +6,13 @@ import "react-h5-audio-player/lib/styles.css";
 import { deleteSong } from "../../store/songs";
 import EditSongModal from "../EditSongModal";
 import { getSongs } from "../../store/songs";
-
+import Comments from "../Comments";
+import AddCommentModal from "../AddCommentModal";
 import "./SongPage.css";
 
 const Song = () => {
   const { id } = useParams();
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -21,45 +23,49 @@ const Song = () => {
 
   const [errors, setErrors] = useState([]);
 
-
   useEffect(() => {
     dispatch(getSongs());
   }, [dispatch]);
 
-
   const handleDelete = async (e) => {
-      e.preventDefault()
-      const deletedSong = await dispatch(deleteSong(song.id))
-      if (deletedSong) return history.push('/user')
-  }
+    e.preventDefault();
+    const deletedSong = await dispatch(deleteSong(song.id));
+    if (deletedSong) return history.push("/user");
+  };
 
   let songEditButtons;
   if (userId === song.userId) {
     songEditButtons = (
       <div className="editAndDelete">
         <EditSongModal />
-        <button onClick={handleDelete}>
-          Delete Song
-        </button>
+        <button className="button" onClick={handleDelete}>Delete Song</button>
       </div>
     );
   }
 
+  if (!song) {
+    return null;
+  } else {
+    return (
+      <>
+        <h2 className="songLink">{song?.title}</h2>
+        <div className="song-container">
+          <div className="songImage">
+            <img className="songImg" src={song.imageUrl} alt="" />
+          </div>
+          <div className="songPlayer">
+            <AudioPlayer className="songPlayer" src={song?.url} />
+          </div>
+          {songEditButtons}
+          <div className="comments-container">
+            <Comments songId={song.id} />
+            <AddCommentModal />
+          </div>
 
-  return (
-    <>
-      <h2 className="songLink">{song?.title}</h2>
-      <div className="song-container">
-        <div className="songImage">
-            <img className="songImg" src={song.imageUrl} alt=''/>
-            </div>
-        <div className="songPlayer">
-          <AudioPlayer className="songPlayer" src={song?.url} />
         </div>
-        {songEditButtons}
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 };
 
 export default Song;

@@ -23,17 +23,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 15vw;
+    width: 13vw;
 }
 
 
 .icon {
-    object-fit: contain;
-    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3vw;
     
 }
 
 .title {
-    color: inherit;
     text-decoration: none;
+    color: #587B7F;
 }

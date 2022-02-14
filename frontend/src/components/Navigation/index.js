@@ -32,6 +32,7 @@ function Navigation({ isLoaded }) {
     // </ul>
 
     <nav className="navBar">
+      <div>
       <NavLink className="home" to="/user">
         <img
           className="icon"
@@ -39,9 +40,10 @@ function Navigation({ isLoaded }) {
           alt=""
         ></img>
       </NavLink>
+      </div>
       <div className="appTitle">
-        <NavLink className="titleAndIcon" to="/">
-          <div className="title">
+        <NavLink className="title" to="/">
+          <div>
             <h2>MusicStratus</h2>
           </div>
         </NavLink>

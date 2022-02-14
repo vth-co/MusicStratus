@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import UserPage from "./components/UserPage";
 import Song from "./components/SongPage";
+import SplashPage from "./components/SplashPage"
 
 function App() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function App() {
             <SignupFormModal />
           </Route>
           <Route exact path='/'>
-            {/* <SplashPage /> */}
+            <SplashPage />
           </Route>
           <Route path='/user'>
             <UserPage />
@@ -34,6 +35,7 @@ function App() {
           </Route>
         </Switch>
       )}
+
     </>
   );
 }
