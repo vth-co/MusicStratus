@@ -65,7 +65,7 @@ function EditSong() {
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e?.target.value)}
-            
+            required
           />
         </label>
         <button className="form-button" type="submit">Update</button>
