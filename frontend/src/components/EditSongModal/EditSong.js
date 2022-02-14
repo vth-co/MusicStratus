@@ -23,7 +23,7 @@ function EditSong() {
 
     let payload = {
       songId: id,
-      userId: userId,
+      // userId: userId,
       title,
       url,
       imageUrl

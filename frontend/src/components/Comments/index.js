@@ -36,14 +36,13 @@ function Comments({songId}) {
   }, [dispatch]);
 
   const handleDelete = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     let payload = {
-      commentId: comments.id
+      commentId: id
     };
 
-    return await dispatch(deleteComment(payload));
+    await dispatch(deleteComment(payload));
   }
-
 
   return (
     <>
@@ -53,8 +52,8 @@ function Comments({songId}) {
           <div className="comment-user">{username}</div>
           <li key={comment?.id} className="comment">
             {comment?.body}
-            <EditCommentModal  ele={comment.id} />
-            <button className="delete-comment-button" onClick={handleDelete}>Delete Comment</button>
+            <EditCommentModal  ele={comment?.id} />
+            <button className="delete-comment-button" onClick={() => handleDelete(comment.id)}>Delete Comment</button>
           </li>
         
         </div>

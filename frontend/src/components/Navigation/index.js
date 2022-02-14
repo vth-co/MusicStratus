@@ -40,8 +40,8 @@ function Navigation({ isLoaded }) {
         ></img>
       </NavLink>
       <div className="appTitle">
-        <NavLink className="titleAndIcon" to="/">
-          <div className="title">
+        <NavLink className="title" to="/">
+          <div>
             <h2>MusicStratus</h2>
           </div>
         </NavLink>

@@ -22,7 +22,7 @@ const UserPage = () => {
 
   return (
     <div className="userPage">
-      <h3>Users Library</h3>
+      <h3>{sessionUser.username}'s Library</h3>
       <div className="songs-container">
         {songs?.map((song) => (
           <div className="eachSong" key={song.id}>
