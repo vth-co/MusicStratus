@@ -45,7 +45,7 @@ function AddComment() {
             required
           />
         </label>
-        <button type="submit">Add Comment</button>
+        <button className="form-button" type="submit">Add Comment</button>
       </form>
     </div>
   );

@@ -38,7 +38,9 @@ const Song = () => {
     songEditButtons = (
       <div className="editAndDelete">
         <EditSongModal />
-        <button className="button" onClick={handleDelete}>Delete Song</button>
+        <button className="button" onClick={handleDelete}>
+          Delete Song
+        </button>
       </div>
     );
   }
@@ -48,20 +50,21 @@ const Song = () => {
   } else {
     return (
       <>
-        <h2 className="songLink">{song?.title}</h2>
         <div className="song-container">
-          <div className="songImage">
-            <img className="songImg" src={song.imageUrl} alt="" />
+          <div className="song-edit-buttons">{songEditButtons}</div>
+          <div>
+            <h2 className="song-title">{song?.title}</h2>
+          </div>
+          <div className="image-container">
+            <img className="song-image" src={song.imageUrl} alt="" />
           </div>
           <div className="songPlayer">
-            <AudioPlayer className="songPlayer" src={song?.url} />
+            <AudioPlayer src={song?.url} />
           </div>
-          {songEditButtons}
           <div className="comments-container">
             <Comments songId={song.id} />
             <AddCommentModal />
           </div>
-
         </div>
       </>
     );

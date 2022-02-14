@@ -1,6 +1,8 @@
 import React from 'react'
 import * as sessionActions from '../../store/session'
 import { useDispatch } from 'react-redux'
+
+
 const DemoUser = () => {
     const dispatch = useDispatch()
 
@@ -13,7 +15,7 @@ const DemoUser = () => {
         dispatch(sessionActions.login({ credential, password }))
     }
     return (
-        <button id='demo_button' onClick={handleClick} type="submit">Demo</button>
+        <button className='button' id='demo_button' onClick={handleClick} type="submit">Demo</button>
     )
 }
 
