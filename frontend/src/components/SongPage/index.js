@@ -7,9 +7,8 @@ import { deleteSong } from "../../store/songs";
 import EditSongModal from "../EditSongModal";
 import { getSongs } from "../../store/songs";
 import Comments from "../Comments";
-
-import "./SongPage.css";
 import AddCommentModal from "../AddCommentModal";
+import "./SongPage.css";
 
 const Song = () => {
   const { id } = useParams();
@@ -39,7 +38,7 @@ const Song = () => {
     songEditButtons = (
       <div className="editAndDelete">
         <EditSongModal />
-        <button onClick={handleDelete}>Delete Song</button>
+        <button className="button" onClick={handleDelete}>Delete Song</button>
       </div>
     );
   }
@@ -58,7 +57,7 @@ const Song = () => {
             <AudioPlayer className="songPlayer" src={song?.url} />
           </div>
           {songEditButtons}
-          <div>
+          <div className="comments-container">
             <Comments songId={song.id} />
             <AddCommentModal />
           </div>

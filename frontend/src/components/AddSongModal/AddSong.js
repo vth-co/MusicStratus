@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import { addSong } from "../../store/songs";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import "./AddSong.css"
-
+import "./AddSong.css";
 
 function AddSong() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
 
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
-  const [imageUrl, setImageUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState("");
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = async (e) => {
@@ -23,12 +20,11 @@ function AddSong() {
       userId,
       title,
       url,
-      imageUrl
+      imageUrl,
     };
-    
-     dispatch(addSong(payload));
-  };
 
+    dispatch(addSong(payload));
+  };
 
   return (
     <div className="add-song-form-div">

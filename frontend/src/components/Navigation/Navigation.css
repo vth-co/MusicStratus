@@ -31,12 +31,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 5px;
     width: 3vw;
     
 }
 
 .title {
     text-decoration: none;
-    color: inherit;
+    color: #587B7F;
 }
