@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { addComment } from "../../store/comments";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import "./AddComment.css";
 
 function AddComment() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
 
