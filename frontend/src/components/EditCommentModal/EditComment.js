@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { editComment } from "../../store/comments";
 import { deleteComment } from "../../store/comments";
-import "./EditComment.css";
 
 function EditComment({ ele }) {
   const { id } = useParams();
@@ -58,11 +57,11 @@ function EditComment({ ele }) {
               required
             />
           </label>
-          <button type="submit">Update</button>
+          <button className="form-button" type="submit">Update</button>
         </form>
       </div>
       <div>
-        <button className="delete-comment-button" onClick={handleDelete}>Delete Comment</button>
+        <button className="form-button" onClick={handleDelete}>Delete Comment</button>
       </div>
     </div>
   );

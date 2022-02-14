@@ -52,7 +52,6 @@ export const addComment = (payload) => async (dispatch) => {
 };
 
 export const deleteComment = payload => async (dispatch) => {
-  console.log("this is the payload", payload)
   const response = await csrfFetch(`/api/comments/${payload.commentId}`, {
     method: "DELETE",
     body: JSON.stringify({ payload }),

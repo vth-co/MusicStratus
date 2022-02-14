@@ -1,4 +1,6 @@
-.songImage {
-    max-width: 50%;
-    max-height: 50%; 
+.song-link {
+    text-decoration: none;
+    color: #4A7C59;
+    font-weight: bold;
+    text-align: center;
 }

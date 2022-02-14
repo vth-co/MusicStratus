@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSongs } from "../../store/songs";
 import { Redirect, NavLink } from "react-router-dom";
-import "./UserPage.css";
 import AddSongModal from "../AddSongModal";
+import "./UserPage.css";
 
 const UserPage = () => {
   const dispatch = useDispatch();
@@ -25,13 +25,15 @@ const UserPage = () => {
       <h3>{sessionUser.username}'s Library</h3>
       <div className="songs-container">
         {songs?.map((song) => (
-          <div className="eachSong" key={song.id}>
-            <div>
-              <NavLink className='songLink' song={song} to={`/songs/${song.id}`}>
-                {song.title}
-                <img className="songImage" src={song.imageUrl} alt={''}/>
-              </NavLink>
-            </div>
+          <div className="individual-song" key={song.id}>
+            <NavLink className="song-link" song={song} to={`/songs/${song.id}`}>
+              <h3>{song.title}</h3>
+             <div className="image-container">
+
+                <img className="song-image" src={song.imageUrl} alt={""} />
+             </div>
+              
+            </NavLink>
           </div>
         ))}
       </div>

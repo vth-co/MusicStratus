@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import EditSong from "./EditSong";
-// import "./SongModal.css";
+import "./EditSong.css";
 
 function EditSongModal() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <button className="modal-button" onClick={() => setShowModal(true)}>
+      <button className="button" onClick={() => setShowModal(true)}>
         Edit Song
       </button>
       {showModal && (

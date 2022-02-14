@@ -8,7 +8,7 @@ function AddCommentModal() {
 
   return (
     <>
-      <button className="modal-button" onClick={() => setShowModal(true)}>
+      <button className="button" onClick={() => setShowModal(true)}>
         Add your Comment
       </button>
       {showModal && (

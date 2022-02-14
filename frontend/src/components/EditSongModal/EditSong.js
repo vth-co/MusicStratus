@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { editSong } from "../../store/songs";
 import { getSingle } from "../../store/songs";
-import "./EditSong.css";
 
 function EditSong() {
   const { id } = useParams();
@@ -66,10 +65,10 @@ function EditSong() {
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e?.target.value)}
-            
+            required
           />
         </label>
-        <button type="submit">Update</button>
+        <button className="form-button" type="submit">Update</button>
       </form>
     </div>
   );

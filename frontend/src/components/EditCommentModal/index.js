@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import EditComment from "./EditComment"
+import './EditComment.css';
 
 function EditCommentModal({ele}) {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <button className="modal-button" onClick={() => setShowModal(true)}>
+      <button className="edit-button" onClick={() => setShowModal(true)}>
         Edit Comment
       </button>
       {showModal && (

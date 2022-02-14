@@ -29,13 +29,14 @@ function AddSong() {
   return (
     <div className="add-song-form-div">
       <form className="add-song-form" onSubmit={handleSubmit}>
+      <h3 className="form-title">Add Song</h3>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
         <label>
-          Title
+          Title: 
           <input
             type="text"
             value={title}
@@ -44,7 +45,7 @@ function AddSong() {
           />
         </label>
         <label>
-          Url
+          Url: 
           <input
             type="text"
             value={url}
@@ -53,14 +54,15 @@ function AddSong() {
           />
         </label>
         <label>
-          Cover
+          Cover: 
           <input
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
+            required
           />
         </label>
-        <button type="submit">Add Song</button>
+        <button className="form-button" type="submit">Add Song</button>
       </form>
     </div>
   );

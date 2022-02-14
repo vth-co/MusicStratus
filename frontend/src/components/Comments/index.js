@@ -24,6 +24,15 @@ function Comments({ songId }) {
     }
   });
 
+  // let editButtons;
+  // if (userId === comments.userId) {
+  //   editButtons = (
+  //     <div>
+  //       <EditCommentModal ele={comment?.id} />
+  //     </div>
+  //   )
+  // }
+
   useEffect(() => {
     dispatch(getComments());
   }, [dispatch]);
