@@ -10,14 +10,6 @@ function SplashPage() {
           alt=""
         ></img>
       </div>
-      <div className="image-container">
-          <h2>Your own personal audio player</h2>
-        <img
-          className="player-img"
-          src="../../../images/player.png"
-          alt=""
-        ></img>
-      </div>
     </div>
   );
 }

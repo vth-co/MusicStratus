@@ -10,7 +10,7 @@ li {
   top: 0;
   z-index: 100;
   width: 100%;
-  background-color: #c8d5b9;
+  background-color: rgb(51, 51, 51);
   border-radius: 5px;
 }
 
@@ -34,7 +34,7 @@ body {
 
 .title {
   text-decoration: none;
-  color: #587b7f;
+  color: rgb(238 ,238, 238);
 }
 
 h1 {

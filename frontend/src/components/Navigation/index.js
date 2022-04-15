@@ -24,29 +24,29 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-   
-
-    <nav className="navBar">
-      <div>
-      <NavLink className="home" to="/user">
-        <img
-          className="icon"
-          src="../../../images/libraryIcon.png"
-          alt=""
-        ></img>
-      </NavLink>
-      </div>
-      <div className="appTitle">
-        <NavLink className="title" to="/">
-          <div>
-            <h1>MusicStratus</h1>
-          </div>
-        </NavLink>
-      </div>
-      <div className="buttons">
-        <div className="userButtons">{isLoaded && sessionLinks}</div>
-      </div>
-    </nav>
+    <div>
+      <nav className="navBar">
+        <div>
+          <NavLink className="home" to="/user">
+            <img
+              className="icon"
+              src="../../../images/libraryIcon.png"
+              alt=""
+            ></img>
+          </NavLink>
+        </div>
+        <div className="appTitle">
+          <NavLink className="title" to="/">
+            <div>
+              <h1>MusicStratus</h1>
+            </div>
+          </NavLink>
+        </div>
+        <div className="buttons">
+          <div className="userButtons">{isLoaded && sessionLinks}</div>
+        </div>
+      </nav>
+    </div>
   );
 }
 
