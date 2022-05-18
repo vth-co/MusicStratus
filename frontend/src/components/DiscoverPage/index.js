@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getSongs } from "../../store/songs";
 import { Redirect, NavLink } from "react-router-dom";
 import AddSongModal from "../AddSongModal";
-import "./UserPage.css";
+import "./DiscoverPage.css";
 
-const UserPage = () => {
+const DiscoverPage = () => {
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state.session.user);
@@ -21,26 +21,22 @@ const UserPage = () => {
   }
 
   return (
-    <div className="userPage">
+    <div className="discover-page">
       <h3>{sessionUser.username}'s Library</h3>
       <div className="songs-container">
         {songs?.map((song) => (
           <div className="individual-song" key={song.id}>
             <NavLink className="song-link" song={song} to={`/songs/${song.id}`}>
               <h3>{song.title}</h3>
-             <div className="image-container">
-
+              <div className="image-container">
                 <img className="song-image" src={song.imageUrl} alt={""} />
-             </div>
-              
+              </div>
             </NavLink>
           </div>
         ))}
       </div>
-      <h4>Add a New Song?</h4>
-      <AddSongModal />
     </div>
   );
 };
 
-export default UserPage;
+export default DiscoverPage;

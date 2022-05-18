@@ -1,6 +1,10 @@
 .song-link {
     text-decoration: none;
-    color: #4A7C59;
+    color: #ffffff;
     font-weight: bold;
     text-align: center;
+}
+
+.discover-page {
+    background: linear-gradient(#8CC3FC, black);
 }

@@ -29,22 +29,20 @@ function AddComment() {
 
   return (
     <div className="add-comment-form-div">
-      <form className="add-comment-form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
-          Comment:
           <input
             type="text"
+            placeholder="Write a comment"
             value={body}
             onChange={(e) => setBody(e.target.value)}
             required
           />
-        </label>
-        <button className="form-button" type="submit">Add Comment</button>
+        <button className="comment-form-button" type="submit">Add</button>
       </form>
     </div>
   );

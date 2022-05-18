@@ -27,7 +27,7 @@ function AddSong() {
   };
 
   return (
-    <div className="add-song-form-div">
+    <div className="form-container">
       <form className="add-song-form" onSubmit={handleSubmit}>
       <h3 className="form-title">Add Song</h3>
         <ul>
