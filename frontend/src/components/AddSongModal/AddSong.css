@@ -6,3 +6,11 @@
     color: white;
     font-family: sans-serif;
 }
+
+.song-form-container {
+    min-width: 450px;
+    min-height: 300px;
+}
+.add-song-form {
+    margin-top: 25px;
+}
