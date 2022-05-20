@@ -7,8 +7,11 @@ function AddSongModal() {
 
   return (
     <>
-      <button className="button" onClick={() => setShowModal(true)}>
-        Upload Song
+      <button className="add-song-button" onClick={() => setShowModal(true)}>
+        <div className="hidden-text">
+          <div className="text">Upload song</div>
+        </div>
+        <i class="fa-solid fa-circle-plus"></i>
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

@@ -1,6 +1,16 @@
+import { useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 import "./SplashPage.css";
 
 function SplashPage() {
+
+  const user = useSelector((state) => state.session.user);
+
+  if (user) {
+    return <Redirect to="/user" />;
+  }
+
+
   return (
     <div className="splash-main">
       <div>
@@ -10,13 +20,11 @@ function SplashPage() {
           alt=""
         ></img>
       </div>
-      <div className="image-container">
-          <h2>Your own personal audio player</h2>
-        <img
-          className="player-img"
-          src="../../../images/player.png"
-          alt=""
-        ></img>
+      <div>
+        <img></img>
+        <img></img>
+        <img></img>
+        <img></img>
       </div>
     </div>
   );

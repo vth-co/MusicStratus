@@ -27,42 +27,45 @@ function AddSong() {
   };
 
   return (
-    <div className="add-song-form-div">
+    <div className="song-form-container">
       <form className="add-song-form" onSubmit={handleSubmit}>
-      <h3 className="form-title">Add Song</h3>
-        <ul>
+        <div className="errors-container">
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
-        </ul>
-        <label>
-          Title: 
+        </div>
+        <div className="form-inputs-container">
+          <div className="label">
+            <label>Title</label>
+          </div>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Url: 
+          <div className="label">
+            <label>Url</label>
+          </div>
           <input
             type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Cover: 
+          <div className="label">
+            <label>Cover</label>
+          </div>
           <input
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             required
           />
-        </label>
-        <button className="form-button" type="submit">Add Song</button>
+          <button className="user-form-button" type="submit">
+            Add Song
+          </button>
+        </div>
       </form>
     </div>
   );

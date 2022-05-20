@@ -1,6 +1,7 @@
 .song-image {
     width: 35%;
     height: auto;
+    border-radius: 15px;
  }
 
  .image-container {
@@ -13,7 +14,6 @@
  }
 
  .song-container {
-     margin: 50px;
  }
 
  .song-edit-buttons {

@@ -20,8 +20,7 @@
   
   #modal-content {
     position: absolute;
-    background-color: rgba(75, 124, 90, 0.8);
-    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
     max-width: 75%;
     max-height: 50%;
     display: flex;

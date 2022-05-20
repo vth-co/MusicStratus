@@ -1,22 +1,38 @@
-label {
-    display: table-cell;
-    text-align: left;
+.add-song-button {
+    border: transparent;
+    background-color: transparent;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    font-family: sans-serif;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
-.button {
-    outline: none;
-    cursor: pointer;
-    line-height: 1;
-    border-radius: 500px;
-    border: 1px solid transparent;
-    min-width: 100px;
-    text-transform: uppercase;
-    white-space: normal;
-    font-weight: 700;
-    text-align: center;
-    padding: 16px 14px 18px;
-    color: #616467;
-    box-shadow: inset 0 0 0 2px #616467;
-    background-color: transparent;
-    height: 48px;
-  }
+.hidden-text {
+    display: none;
+    
+}
+
+.text {
+    font-size: 20px;
+    padding-right: 7px;
+}
+
+.add-song-button:hover .hidden-text{
+    display: inline-block;
+
+}
+
+
+
+.song-form-container {
+    min-width: 450px;
+    min-height: 300px;
+}
+.add-song-form {
+    margin-top: 25px;
+}

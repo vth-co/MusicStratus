@@ -103,16 +103,16 @@ const songsReducer = (state = initialState, action) => {
         [action.song.id]: action.song,
       };
       return newState;
-    case REMOVE_SONG:
-        newState = {...state, songs: {...state.songs}};
-        delete newState.songs[action.song.id];
-        return newState;
     case EDIT_SONG:
-        newState = {...state, songs: {...state.songs}};
-        newState.songs = {...newState.songs,
-            [action.song.id]: action.song,
-        }
-        return newState;
+      newState = {...state, songs: {...state.songs}};
+      newState.songs = {...newState.songs,
+        [action.song.id]: action.song,
+      };
+      return newState;
+    case REMOVE_SONG:
+      newState = {...state, songs: {...state.songs}};
+      delete newState.songs[action.song.id];
+      return newState;
     default:
       return state;
   }

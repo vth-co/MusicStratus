@@ -5,24 +5,31 @@ li {
 .navBar {
   display: flex;
   position: sticky;
-  justify-content: space-between;
-  background-color: white;
+  justify-content: space-around;
   top: 0;
   z-index: 100;
   width: 100%;
-  background-color: #c8d5b9;
+  background-color: transparent;
   border-radius: 5px;
-}
-
-body {
-  background-color: #faf3dd;
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 13vw;
+}
+
+.button {
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid;
+  white-space: normal;
+  text-align: center;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 7px 8px;
+  margin-right: 15px;
 }
 
 .icon {
@@ -32,11 +39,58 @@ body {
   width: 3vw;
 }
 
-.title {
+
+
+.title-link {
+  display: flex;
   text-decoration: none;
-  color: #587b7f;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-size: large;
 }
 
-h1 {
-    font-size: 150%;
+.splash-icon {
+  width: 65px;
 }
+
+h2 {
+  font-weight: lighter;
+  font-size: 100%;
+  padding-top: 10px;
+}
+
+.home-page-buttons-container {
+  display: flex;
+}
+
+.profile-container {
+  display: flex;
+}
+
+
+.profile-username-button-container {
+  font-size: 25px;
+  border: transparent;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.848);
+  cursor: pointer;
+}
+
+.profile-username-button-container:hover {
+  color: white;
+}
+
+.username {
+  font-size: medium;
+}
+
+.fa-user-astronaut {
+  padding: 10px 7px;
+}
+
+.fa-angle-down {
+  padding: 20px 7px;
+  font-size: x-small;
+}
+
+
