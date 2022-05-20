@@ -5,6 +5,22 @@
     text-align: center;
 }
 
+.discover-title {
+    text-align: center;
+}
+
 .discover-page {
     background: linear-gradient(#8CC3FC, black);
+}
+
+.discover-songs-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+
+
+.image {
+    width: 450px;
+    height: 450px;
 }

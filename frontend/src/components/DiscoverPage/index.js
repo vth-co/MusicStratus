@@ -22,18 +22,22 @@ const DiscoverPage = () => {
 
   return (
     <div className="discover-page">
-      <h3>{sessionUser.username}'s Library</h3>
-      <div className="songs-container">
+      {/* <h3>{sessionUser.username}'s Library</h3> */}
+      <h3 className="discover-title">Discover</h3>
+      <div className="discover-songs-container">
         {songs?.map((song) => (
-          <div className="individual-song" key={song.id}>
+          <div key={song.id}>
             <NavLink className="song-link" song={song} to={`/songs/${song.id}`}>
               <h3>{song.title}</h3>
-              <div className="image-container">
-                <img className="song-image" src={song.imageUrl} alt={""} />
+              <div>
+                <img className="image" src={song.imageUrl} alt={""} />
               </div>
             </NavLink>
           </div>
         ))}
+      </div>
+      <div className="add-song-button">
+        <AddSongModal />
       </div>
     </div>
   );

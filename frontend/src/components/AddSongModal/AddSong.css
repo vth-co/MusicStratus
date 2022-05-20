@@ -1,11 +1,33 @@
 .add-song-button {
     border: transparent;
     background-color: transparent;
-    font-size: 18px;
+    font-size: 30px;
     cursor: pointer;
     color: white;
     font-family: sans-serif;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
+
+.hidden-text {
+    display: none;
+    
+}
+
+.text {
+    font-size: 20px;
+    padding-right: 7px;
+}
+
+.add-song-button:hover .hidden-text{
+    display: inline-block;
+
+}
+
+
 
 .song-form-container {
     min-width: 450px;
