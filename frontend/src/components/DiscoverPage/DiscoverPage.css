@@ -15,12 +15,15 @@
 
 .discover-songs-container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
+    grid-gap: 0px;
 }
 
-
+.image-container {
+    margin: 0px 0px;
+}
 
 .image {
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
 }
