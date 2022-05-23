@@ -10,29 +10,29 @@ module.exports = {
       */
    return queryInterface.bulkInsert('Comments', [
      {
-      userId: 54,
-      songId: 97,
+      userId: 1,
+      songId: 1,
       body: 'This is good!',
       createdAt: new Date(),
       updatedAt: new Date(),
      },
      {
-      userId: 55,
-      songId: 97,
+      userId: 1,
+      songId: 2,
       body: 'I like it!',
       createdAt: new Date(),
       updatedAt: new Date(),
      },
      {
-      userId: 54,
-      songId: 98,
+      userId: 2,
+      songId: 2,
       body: 'Awesome',
       createdAt: new Date(),
       updatedAt: new Date(),
      },
      {
-      userId: 55,
-      songId: 98,
+      userId: 2,
+      songId: 1,
       body: 'Cool!!',
       createdAt: new Date(),
       updatedAt: new Date(),
