@@ -9,7 +9,7 @@ function EditSongModal() {
   return (
     <>
       <button className="button" onClick={() => setShowModal(true)}>
-        Edit Song
+        Edit
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

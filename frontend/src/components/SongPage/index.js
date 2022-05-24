@@ -39,7 +39,7 @@ const Song = () => {
       <div className="editAndDelete">
         <EditSongModal />
         <button className="button" onClick={handleDelete}>
-          Delete Song
+          Delete
         </button>
       </div>
     );
@@ -51,20 +51,25 @@ const Song = () => {
     return (
       <>
         <div className="song-container">
+          {/* <div className="audio-player-container"> */}
           <div className="song-edit-buttons">{songEditButtons}</div>
-          <div>
-            <h2 className="song-title">{song?.title}</h2>
-          </div>
           <div className="image-container">
+            <h2 className="individual-song-title">{song?.title}</h2>
             <img className="song-image" src={song.imageUrl} alt="" />
+            <AudioPlayer
+              className="audio-player"
+              src={song?.url}
+              volume={0.3}
+            />
           </div>
-          <div className="songPlayer">
-            <AudioPlayer src={song?.url} />
-          </div>
+          {/* </div> */}
           <div className="comments-container">
             <AddComment />
             <Comments songId={song.id} />
           </div>
+        </div>
+        <div className="background-container">
+          <img className="background-image" src={song.imageUrl} alt="" />
         </div>
       </>
     );

@@ -19,8 +19,18 @@
     grid-gap: 0px;
 }
 
-.image-container {
-    margin: 0px 0px;
+.discover-song-container {
+    margin-bottom: 40px;
+}
+
+.song-title {
+    margin: 0px;
+    font-weight: lighter;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+        
 }
 
 .image {

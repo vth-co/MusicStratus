@@ -26,12 +26,12 @@ const DiscoverPage = () => {
       <h3 className="discover-title">Discover</h3>
       <div className="discover-songs-container">
         {songs?.map((song) => (
-          <div key={song.id}>
+          <div className="discover-song-container" key={song.id}>
             <NavLink className="song-link" song={song} to={`/songs/${song.id}`}>
               <div className="image-container">
                 <img className="image" src={song.imageUrl} alt={""} />
-              </div>
               <p className="song-title">{song.title}</p>
+              </div>
             </NavLink>
           </div>
         ))}
