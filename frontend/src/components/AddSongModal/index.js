@@ -15,7 +15,7 @@ function AddSongModal() {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <AddSong />
+          <AddSong setShowModal={setShowModal} />
         </Modal>
       )}
     </>

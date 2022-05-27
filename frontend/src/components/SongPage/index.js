@@ -39,7 +39,7 @@ const Song = () => {
       <div className="editAndDelete">
         <EditSongModal />
         <button className="button" onClick={handleDelete}>
-          Delete
+        <i class="fa-solid fa-trash-can"></i> Delete
         </button>
       </div>
     );
@@ -52,7 +52,7 @@ const Song = () => {
       <>
         <div className="song-container">
           {/* <div className="audio-player-container"> */}
-          <div className="song-edit-buttons">{songEditButtons}</div>
+          <div>{songEditButtons}</div>
           <div className="image-container">
             <h2 className="individual-song-title">{song?.title}</h2>
             <img className="song-image" src={song.imageUrl} alt="" />

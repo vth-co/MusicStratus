@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { addSong } from "../../store/songs";
 import { useDispatch, useSelector } from "react-redux";
 import "./AddSong.css";
+import {useHistory} from "react-router-dom"
 
-function AddSong() {
+function AddSong({ setShowModal }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
+  const history = useHistory();
 
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -23,8 +25,27 @@ function AddSong() {
       imageUrl,
     };
 
-    dispatch(addSong(payload));
+    const data = await dispatch(addSong(payload));
+    if (data.errors) {
+      setErrors(data.errors);
+    } else {
+      setShowModal(false);
+      history.push(`/user`)
+    }
   };
+
+  useEffect(() => {
+    setErrors([]);
+
+    const errors = [];
+    if (title.length > 30 || !title.length) {
+      errors.push('Song title must be between 1 and 30 characters');
+    }
+    if (!url.endsWith(".mp3")) {
+      errors.push('URL must be a proper MP3 link')
+    }
+    setErrors(errors);
+  }, [title, url])
 
   return (
     <div className="song-form-container">
