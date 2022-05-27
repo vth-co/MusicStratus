@@ -4,3 +4,10 @@
     position: absolute;
     top: 0;
 }
+
+.grid-img {
+    position: absolute;
+    bottom: 0;
+    margin-top: 20px;
+    width: 100%
+}

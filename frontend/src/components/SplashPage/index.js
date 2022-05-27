@@ -5,6 +5,8 @@ import "./SplashPage.css";
 function SplashPage() {
 
   const user = useSelector((state) => state.session.user);
+  const songsObj = useSelector((state) => state.songs.songs);
+  const songs = Object.values(songsObj);
 
   if (user) {
     return <Redirect to="/user" />;
@@ -19,12 +21,8 @@ function SplashPage() {
           src="../../../images/background.jpg"
           alt=""
         ></img>
-      </div>
-      <div>
-        <img></img>
-        <img></img>
-        <img></img>
-        <img></img>
+       <img className="grid-img" 
+       src="../../../images/5grid.jpg"></img>
       </div>
     </div>
   );
