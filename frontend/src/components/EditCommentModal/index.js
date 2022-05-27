@@ -8,8 +8,8 @@ function EditCommentModal({ele}) {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>
-        Edit Comment
+      <button className="edit-comment-button" onClick={() => setShowModal(true)}>
+      <i class="fa-solid fa-ellipsis"></i>
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

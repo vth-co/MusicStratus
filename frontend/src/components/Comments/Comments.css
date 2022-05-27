@@ -1,3 +1,10 @@
 .comment {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 120px;
+    padding-right: 115px;
+    color: rgb(255, 255, 255);
+    padding-bottom: 20px;
+    word-break: break-all;
+    font-weight: bolder;
 }

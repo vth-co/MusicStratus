@@ -26,50 +26,62 @@ function EditSong() {
       // userId: userId,
       title,
       url,
-      imageUrl
+      imageUrl,
     };
-     dispatch(editSong(payload));
+    dispatch(editSong(payload));
   };
 
-
   return (
-    <div className="edit-song-form-div">
-      <form className="edit-song-form" onSubmit={handleSubmit}>
-          <h3 className="form-title">Edit Song</h3>
-        <ul>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul>
-        <label>
-          Title
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Url
-          <input
-            type="text"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Cover
-          <input
-            type="text"
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e?.target.value)}
-            required
-          />
-        </label>
-        <button className="form-button" type="submit">Update</button>
-      </form>
+    <div>
+      <div className="edit-song-container">
+          <form onSubmit={handleSubmit}>
+            <h3 className="form-title">Edit Song</h3>
+            <div className="errors-container">
+              {errors.map((error, idx) => (
+                <li key={idx}>{error}</li>
+              ))}
+            </div>
+            <div className="form-inputs-container">
+              <div className="field">
+                <div className="label">
+                  <label>Title</label>
+                </div>
+                <input
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="field">
+                <div className="label">
+                  <label>Url</label>
+                </div>
+                <input
+                  type="text"
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className="field">
+                <div className="label">
+                  <label>Cover</label>
+                </div>
+                <input
+                  type="text"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e?.target.value)}
+                  required
+                />
+              </div>
+              <button className="user-form-button" type="submit">
+                Update
+              </button>
+            </div>
+          </form>
+      </div>
     </div>
   );
 }

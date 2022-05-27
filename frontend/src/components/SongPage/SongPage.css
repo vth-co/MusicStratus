@@ -1,7 +1,7 @@
 .individual-song-title {
     color: white;
     text-align: center;
-    font-size: larger;
+    font-size: x-large;
     box-shadow: 1px;
 }
 
@@ -35,7 +35,7 @@
 .editAndDelete {
     display: flex;
     flex-direction: column;
-    margin-bottom: 475px;
+    margin-bottom: 455px;
 }
 
 .audio-player-container {
@@ -45,7 +45,7 @@
 .comments-container {
     display: flex;
     flex-direction: column;
-    height: 575px;
+    height: 540px;
     width: 30%;
 }
 

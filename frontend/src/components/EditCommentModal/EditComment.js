@@ -33,35 +33,38 @@ function EditComment({ ele }) {
     e.preventDefault();
 
     let payload = {
-        commentId: ele,
-    }
+      commentId: ele,
+    };
     const deletedComment = await dispatch(deleteComment(payload));
-  }
+  };
 
   return (
-    <div>
-      <div className="edit-song-form-div">
-        <form className="edit-song-form" onSubmit={handleSubmit}>
-          <h3>Edit Comment</h3>
-          <ul>
+    <div className="form-container">
+      <div className="user-login-container">
+        <form onSubmit={handleSubmit}>
+          <h3 className="form-title">Edit Comment</h3>
+          <div className="errors-container">
             {errors.map((error, idx) => (
               <li key={idx}>{error}</li>
             ))}
-          </ul>
-          <label>
-            Comment:
-            <input
-              type="text"
-              value={body}
-              onChange={(e) => setBody(e?.target.value)}
-              required
-            />
-          </label>
-          <button className="form-button" type="submit">Update</button>
+          </div>
+          <div className="form-inputs-container">
+            <div className="field">
+              <input
+                type="text"
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
+                required
+              />
+            </div>
+            <button className="user-form-button" type="submit">
+              Update
+            </button>
+            <button className="user-form-button" onClick={handleDelete}>
+              Delete
+            </button>
+          </div>
         </form>
-      </div>
-      <div>
-        <button className="form-button" onClick={handleDelete}>Delete Comment</button>
       </div>
     </div>
   );
