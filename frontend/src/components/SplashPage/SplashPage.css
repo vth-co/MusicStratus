@@ -6,8 +6,9 @@
 }
 
 .grid-img {
+    cursor: pointer;
     position: absolute;
     bottom: 0;
     margin-top: 20px;
-    width: 100%
+    width: 99.5%;
 }

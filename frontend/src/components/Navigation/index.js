@@ -6,7 +6,6 @@ import LoginFormModal from "../LoginPage";
 import SignupModal from "../SignupFormModal";
 import DemoUser from "../DemoUser";
 import "./Navigation.css";
-import AddSongModal from "../AddSongModal";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);

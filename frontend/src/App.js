@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SignupFormModal from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import UserPage from "./components/DiscoverPage";
 import Song from "./components/SongPage";
 import SplashPage from "./components/SplashPage"
-import LoginForm from "./components/LoginPage/LoginForm";
+import ErrorPage from "./components/ErrorPage";
+import SignupForm from "./components/SignupFormModal/SignupForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,7 +23,10 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route path="/signup">
-            <SignupFormModal />
+            <SignupForm />
+          </Route>
+          <Route path="/404">
+            <ErrorPage />
           </Route>
           <Route exact path='/'>
             <SplashPage />
@@ -36,7 +39,6 @@ function App() {
           </Route>
         </Switch>
       )}
-
     </>
   );
 }
