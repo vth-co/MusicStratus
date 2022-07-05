@@ -10,15 +10,15 @@ A live deployment of [MusicStratus](https://musicstratus.herokuapp.com/) is host
 
 ### Welcome
 
-![](https://i.gyazo.com/e91a927ba75f2a467ab8a465fde27c00.jpg)
+![](https://i.gyazo.com/f6b8b4e1e3ddb994f8004c7e09cced2e.jpg)
 
 ### Discover
 
-![](https://i.gyazo.com/1313ba55e614ee039c7fa8612a6b9807.png)
+![](https://i.gyazo.com/6d3990a438d8ace5a06c919fe8eff9ae.jpg)
 
-### Library
+### Music Player
 
-![](https://i.gyazo.com/bddd9de8c87cc813608c48d022c107e5.png)
+![](https://i.gyazo.com/40273cd7eadc9f17de0b8ab5ca161369.jpg)
 
 ## Features
 
