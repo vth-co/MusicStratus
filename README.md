@@ -14,7 +14,7 @@ A live deployment of [MusicStratus](https://musicstratus.herokuapp.com/) is host
 
 ### Discover
 
-![](https://i.gyazo.com/6d3990a438d8ace5a06c919fe8eff9ae.jpg)
+![](https://i.gyazo.com/a075e15cf5bca4a0c8074c3cb7d640bd.jpg)
 
 ### Music Player
 
