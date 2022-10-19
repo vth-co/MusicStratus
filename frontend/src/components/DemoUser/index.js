@@ -9,7 +9,7 @@ const DemoUser = () => {
     const user = useSelector((state) => state.session.user);
 
     if (user) {
-        return <Redirect to="/user" />;
+        return <Redirect to="/discover" />;
     }
 
     const handleClick = e => {
@@ -26,4 +26,3 @@ const DemoUser = () => {
 }
 
 export default DemoUser
-

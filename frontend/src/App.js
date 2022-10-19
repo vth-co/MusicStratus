@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import UserPage from "./components/DiscoverPage";
+import DiscoverPage from "./components/DiscoverPage";
 import Song from "./components/SongPage";
 import SplashPage from "./components/SplashPage"
 import ErrorPage from "./components/ErrorPage";
@@ -31,8 +31,8 @@ function App() {
           <Route exact path='/'>
             <SplashPage />
           </Route>
-          <Route exact path='/user'>
-            <UserPage />
+          <Route exact path='/discover'>
+            <DiscoverPage />
           </Route>
           <Route path='/songs/:id'>
             <Song />

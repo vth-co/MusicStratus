@@ -37,20 +37,17 @@ function ProfileButton({ user }) {
       <button className="profile-username-button-container" onClick={openMenu}>
         <div className="profile-container">
           <div >
-            <i className="fa-solid fa-user-astronaut"></i>
+            <i class="fa-solid fa-user"></i>
           </div>
-          <div>
-            <p className="username">{user.username}</p>
-          </div>
-            <i class="fa-solid fa-angle-down"></i>
         </div>
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>Profile</li>
+          <li>{user.username}</li>
           <li>{user.email}</li>
           <li>
-            <button className="form-button" onClick={logout}>
+            <button className="logout-button" onClick={logout}>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
               Log Out
             </button>
           </li>

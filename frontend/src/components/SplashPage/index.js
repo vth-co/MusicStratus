@@ -10,7 +10,7 @@ function SplashPage() {
   const songs = Object.values(songsObj);
 
   if (user) {
-    return <Redirect to="/user" />;
+    return <Redirect to="/discover" />;
   }
 
   return (

@@ -23,6 +23,8 @@ function Navigation({ isLoaded }) {
             ></img>
           </NavLink>
         </div> */}
+        <NavLink to={"/discover"}>Home</NavLink>
+        <NavLink to={"/discover"}>Library</NavLink>
         <div>
         <ProfileButton user={sessionUser} />
         </div>

@@ -1,5 +1,6 @@
 li {
   list-style-type: none;
+  text-align: center;
 }
 
 .navBar {
@@ -7,7 +8,7 @@ li {
   position: sticky;
   justify-content: space-around;
   top: 0;
-  z-index: 100;
+  z-index: 1;
   width: 100%;
   background-color: transparent;
   border-radius: 5px;
@@ -83,11 +84,31 @@ h2 {
   font-size: medium;
 }
 
-.fa-user-astronaut {
+.fa-user {
   padding: 10px 7px;
 }
 
 .fa-angle-down {
   padding: 20px 7px;
   font-size: x-small;
+}
+
+.profile-dropdown {
+  padding: 0;
+  border-radius: 5px;
+  background-color: azure;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  position: absolute;
+  width: 150px;
+  height: auto;
+}
+
+.logout-button {
+  background-color: transparent;
+  width:max-content;
+  border: transparent;
+}
+
+.logout-button:hover {
+  background-color: rgba(128, 128, 128, 0.274);
 }
