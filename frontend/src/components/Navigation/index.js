@@ -13,46 +13,41 @@ function Navigation({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <div className="home-page-buttons-container">
-        {/* <div>
-          <NavLink className="library-button" to="/user">
-            <img
-              className="icon"
-              src="../../../images/libraryIcon.png"
-              alt=""
-            ></img>
+      <nav className="navBar-home">
+        <div className="buttons">
+          <NavLink className="title-link" to="/discover">
+            <img className="splash-icon" src="../../../images/icon.png"></img>
+            <h2>MusicStratus</h2>
           </NavLink>
-        </div> */}
-        <NavLink to={"/discover"}>Home</NavLink>
-        <NavLink to={"/discover"}>Library</NavLink>
-        <div>
-        <ProfileButton user={sessionUser} />
         </div>
-      </div>
+        <div className="landing">
+          <NavLink className='button' to={"/discover"}>Home</NavLink>
+          <NavLink className='button' to={"/discover"}>Library</NavLink>
+          <ProfileButton user={sessionUser} />
+        </div>
+      </nav>
     );
   } else {
     sessionLinks = (
-      <div className="landing">
-        <DemoUser />
-        <LoginFormModal />
-        <SignupModal />
-      </div>
-    );
-  }
-
-  return (
-    <div>
       <nav className="navBar">
-        <div className="title-icon-container">
+        <div className="buttons">
           <NavLink className="title-link" to="/">
             <img className="splash-icon" src="../../../images/icon.png"></img>
             <h2>MusicStratus</h2>
           </NavLink>
         </div>
-        <div className="buttons">
-          <div className="userButtons">{isLoaded && sessionLinks}</div>
+        <div className="landing">
+          <DemoUser />
+          <LoginFormModal />
+          <SignupModal />
         </div>
       </nav>
+    );
+  }
+
+  return (
+    <div>
+      <div>{isLoaded && sessionLinks}</div>
     </div>
   );
 }
