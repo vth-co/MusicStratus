@@ -6,6 +6,7 @@ import LoginFormModal from "../LoginPage";
 import SignupModal from "../SignupFormModal";
 import DemoUser from "../DemoUser";
 import "./Navigation.css";
+import AddSongModal from "../AddSongModal";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -13,44 +14,45 @@ function Navigation({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <div className="home-page-buttons-container">
-        {/* <div>
-          <NavLink className="library-button" to="/user">
-            <img
-              className="icon"
-              src="../../../images/libraryIcon.png"
-              alt=""
-            ></img>
+      <nav className="navbar-home">
+        <div className="buttons">
+          <NavLink className="title-link" to="/discover">
+            <img className="splash-icon" src="../../../images/icon.png"></img>
           </NavLink>
-        </div> */}
-        <div>
-        <ProfileButton user={sessionUser} />
+          <NavLink to={"/discover"}>
+            <button className="feed-button">Home</button>
+          </NavLink>
+          {/* <NavLink to={"/discover"}>
+            <button className="feed-button" >Library</button>
+          </NavLink> */}
         </div>
-      </div>
+        <div className="buttons">
+          <AddSongModal />
+          <ProfileButton user={sessionUser} />
+        </div>
+      </nav>
     );
   } else {
     sessionLinks = (
-      <div className="landing">
-        <DemoUser />
-        <LoginFormModal />
-        <SignupModal />
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <nav className="navBar">
-        <div className="title-icon-container">
-          <NavLink className="title-link" to="/">
+      <nav className="navbar">
+        <div className="buttons">
+          <NavLink className="splash-title-link" to="/">
             <img className="splash-icon" src="../../../images/icon.png"></img>
             <h2>MusicStratus</h2>
           </NavLink>
         </div>
         <div className="buttons">
-          <div className="userButtons">{isLoaded && sessionLinks}</div>
+          {/* <DemoUser /> */}
+          <LoginFormModal />
+          <SignupModal />
         </div>
       </nav>
+    );
+  }
+
+  return (
+    <div>
+      <div>{isLoaded && sessionLinks}</div>
     </div>
   );
 }

@@ -29,17 +29,17 @@ const Song = () => {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    const deletedSong = await dispatch(deleteSong(song.id));
+    const deletedSong = await dispatch(deleteSong(song?.id));
     if (deletedSong) return history.push("/user");
   };
 
   let songEditButtons;
-  if (userId === song.userId) {
+  if (userId === song?.userId) {
     songEditButtons = (
       <div className="editAndDelete">
         <EditSongModal />
         <button className="button" onClick={handleDelete}>
-        <i class="fa-solid fa-trash-can"></i> Delete
+          <i class="fa-solid fa-trash-can"></i> Delete
         </button>
       </div>
     );
@@ -52,24 +52,25 @@ const Song = () => {
       <>
         <div className="song-container">
           {/* <div className="audio-player-container"> */}
-          <div>{songEditButtons}</div>
-          <div className="image-container">
-            <h2 className="individual-song-title">{song?.title}</h2>
-            <img className="song-image" src={song.imageUrl} alt="" />
-            <AudioPlayer
-              className="audio-player"
-              src={song?.url}
-              volume={0.3}
-            />
-          </div>
-          {/* </div> */}
-          <div className="comments-container">
-            <AddComment />
-            <Comments songId={song.id} />
+          <h2 className="individual-song-title">{song?.title}</h2>
+          <div className="song-comment-container">
+            <div className="comments-container">
+              <Comments songId={song?.id} />
+              <AddComment />
+            </div>
+            <div className="image-container">
+              <img className="song-image" src={song?.imageUrl} alt="" />
+              <AudioPlayer
+                className="audio-player"
+                src={song?.url}
+                volume={0.3}
+              />
+            </div>
+            <div>{songEditButtons}</div>
           </div>
         </div>
         <div className="background-container">
-          <img className="background-image" src={song.imageUrl} alt="" />
+          <img className="background-image" src={song?.imageUrl} alt="" />
         </div>
       </>
     );

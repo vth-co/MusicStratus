@@ -1,9 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Song = sequelize.define('Song', {
-    userId: DataTypes.INTEGER,
     url: DataTypes.STRING,
+    userId: DataTypes.INTEGER,
     title: DataTypes.STRING,
+    artist: DataTypes.STRING,
     imageUrl: DataTypes.STRING
   }, {});
   Song.associate = function(models) {

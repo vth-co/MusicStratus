@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 function LoginForm() {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +17,20 @@ function LoginForm() {
         if (data && data.errors) setErrors(data.errors);
       }
     );
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    const credential = 'Demo-lition'
+    const password = 'password'
+
+    const data = await dispatch(
+      sessionActions.login({ credential, password })
+    );
+    if (data) {
+      setErrors(data);
+    }
   };
 
   return (
@@ -55,6 +67,16 @@ function LoginForm() {
               <button className="user-form-button" type="submit">
                 Login
               </button>
+            <p>
+              Not ready to commit?
+              <button
+                type="button"
+                className="sign-up-button"
+                onClick={handleClick}
+              >
+                Demo
+              </button>
+            </p>
             </div>
           </div>
         </form>

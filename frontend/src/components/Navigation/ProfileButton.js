@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 function ProfileButton({ user }) {
@@ -34,28 +33,27 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button className="profile-username-button-container" onClick={openMenu}>
-        <div className="profile-container">
-          <div >
-            <i className="fa-solid fa-user-astronaut"></i>
+      <div className="buttons">
+        <button className="feed-user-button" onClick={openMenu}>
+          <div className="profile-container">
+            <div>
+              <img className="user-icon" src="../../../images/default-icon.png"></img>
+            </div>
+            <span className="username">{user.username}</span>
           </div>
-          <div>
-            <p className="username">{user.username}</p>
-          </div>
-            <i class="fa-solid fa-angle-down"></i>
-        </div>
-      </button>
-      {showMenu && (
-        <ul className="profile-dropdown">
-          <li>Profile</li>
-          <li>{user.email}</li>
-          <li>
-            <button className="form-button" onClick={logout}>
-              Log Out
-            </button>
-          </li>
-        </ul>
-      )}
+          {showMenu && (
+            <ul className="profile-dropdown">
+              <li className="email">{user.email}</li>
+              <li>
+                <button className="logout-button" onClick={logout}>
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Log Out
+                </button>
+              </li>
+            </ul>
+          )}
+        </button>
+      </div>
     </>
   );
 }
