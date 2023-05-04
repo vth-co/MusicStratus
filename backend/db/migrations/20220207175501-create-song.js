@@ -24,6 +24,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      artist: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       imageUrl: {
         type: Sequelize.STRING,
         allowNull: false

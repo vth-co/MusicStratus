@@ -3,18 +3,18 @@ li {
   text-align: center;
 }
 
-.navBar {
+.navbar {
   display: flex;
   position: sticky;
   justify-content: space-around;
   top: 0;
   z-index: 1;
-  width: 100%;
   background-color: transparent;
   border-radius: 5px;
+  padding: 10px 10px;
 }
 
-.navBar-home {
+.navbar-home {
   display: flex;
   position: sticky;
   justify-content: space-around;
@@ -31,6 +31,40 @@ li {
   justify-content: space-between;
 }
 
+.feed-button {
+  outline: none;
+  cursor: pointer;
+  border: 1px solid black;
+  border-style: none solid none none;
+  white-space: normal;
+  text-align: center;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 15px 15px;
+}
+
+.feed-user-button {
+  outline: none;
+  cursor: pointer;
+  border: 1px solid black;
+  border-style: none solid none none;
+  white-space: normal;
+  text-align: center;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 15px 15px;
+  position: absolute;
+  right: 0;
+}
+
+/* .feed-user-button:focus {
+  background-color: black;
+} */
+
+.email {
+  color: rgb(255, 255, 255);
+}
+
 .button {
   outline: none;
   border-radius: 3px;
@@ -43,7 +77,6 @@ li {
   padding: 7px 8px;
   margin-right: 15px;
   text-decoration: none;
-
 }
 
 .icon {
@@ -60,11 +93,23 @@ li {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-family: sans-serif;
-  font-size: large;
+  font-size: normal;
+  background-color: black;
+}
+
+
+
+.splash-title-link {
+  display: flex;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-size: normal;
 }
 
 .splash-icon {
-  width: 65px;
+  width: 50px;
+  padding: 0 10px;
 }
 
 h2 {
@@ -82,7 +127,6 @@ h2 {
 
 
 .profile-username-button-container {
-  font-size: 25px;
   border: transparent;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.848);
@@ -94,11 +138,8 @@ h2 {
 }
 
 .username {
-  font-size: medium;
-}
-
-.fa-user {
-  padding: 10px 7px;
+  font-size: normal;
+  margin-top: 3px;
 }
 
 .fa-angle-down {
@@ -108,12 +149,12 @@ h2 {
 
 .profile-dropdown {
   padding: 0;
-  border-radius: 5px;
-  background-color: azure;
+  background-color: rgb(51,51,51);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   position: absolute;
-  width: 150px;
-  height: auto;
+  width: 135px;
+  right: 0;
+  
 }
 
 .logout-button {
@@ -124,4 +165,14 @@ h2 {
 
 .logout-button:hover {
   background-color: rgba(128, 128, 128, 0.274);
+}
+
+.user-icon {
+  width: 25px;
+  margin-right: 10px;
+  transform: rotate(45deg);
+}
+
+.fa-arrow-right-from-bracket {
+  font-size: small;
 }

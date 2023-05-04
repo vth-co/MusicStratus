@@ -1,16 +1,20 @@
 .song-link {
     text-decoration: none;
     color: #ffffff;
-    font-weight: bold;
-    text-align: center;
+    /* text-align: center; */
 }
 
-.discover-title {
+.section-title {
+    color: white;
     text-align: center;
+    font-weight: 100;
+    font-size: 24px;
 }
 
 .discover-page {
-    background: linear-gradient(#8CC3FC, black);
+    height: 99%;
+    background: linear-gradient(  black,#8CC3FC);
+    
 }
 
 .discover-songs-container {
@@ -24,16 +28,40 @@
 }
 
 .song-title {
-    margin: 0px;
-    font-weight: lighter;
-    font-family: sans-serif;
+    margin: 0 10px;
+    font-weight: 100;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
     text-decoration: none;
-    color: #ffffff;
-    text-align: center;
-        
+    color: #ffffffd8;
+    text-align: left;
+}
+
+.song-artist {
+    margin: 0 10px;
+    font-weight: 100;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    text-decoration: none;
+    color: #cbcbcb81;
+    font-size: small;
+    text-align: left;
 }
 
 .image {
-    width: 350px;
-    height: 350px;
+    width: 200px;
+    height: 200px;
+}
+
+.discover-carousel-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 50px;
+}
+
+.container {
+    width: 1050px;
+}
+
+.song-card {
+    /* margin-left: 50px; */
 }

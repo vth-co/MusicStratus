@@ -1,14 +1,29 @@
 .background-img {
-    max-height: 60%;
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+      
+    /* Set up proportionate scaling */
     width: 100%;
-    position: absolute;
+    height: auto;
+      
+    /* Set up positioning */
+    position: fixed;
     top: 0;
+    left: 0;
 }
 
-.grid-img {
-    cursor: pointer;
-    position: absolute;
-    bottom: 0;
-    margin-top: 20px;
-    width: 99.5%;
+.carousel-container {
+    display: flex;
+    /* flex-direction: row;
+    */
+    justify-content: center;
+    width: 1250px;
+    margin-left: 400px;
+}
+
+
+.img-slider {
+    display: flex;
+    justify-content: center;
 }
