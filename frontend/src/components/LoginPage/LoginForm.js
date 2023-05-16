@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 function LoginForm() {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const user = useSelector((state) => state.session.user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,6 +34,10 @@ function LoginForm() {
       setErrors(data);
     }
   };
+
+  if (user) {
+    return <Redirect to="/discover" />;
+  }
 
   return (
     <div className="form-container">
@@ -65,18 +71,20 @@ function LoginForm() {
                 required
               />
               <button className="user-form-button" type="submit">
-                Login
+                Sign in
               </button>
-            <p>
-              Not ready to commit?
-              <button
-                type="button"
-                className="sign-up-button"
-                onClick={handleClick}
-              >
-                Demo
-              </button>
-            </p>
+            </div>
+            <div className="demo-label">
+              <p>
+                Not ready to commit?
+                <button
+                  type="button"
+                  className="demo-button"
+                  onClick={handleClick}
+                >
+                  Demo
+                </button>
+              </p>
             </div>
           </div>
         </form>

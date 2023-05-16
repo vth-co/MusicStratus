@@ -25,9 +25,12 @@
   },
   "homepage": "https://github.com/vth-co/MusicStratus#readme",
   "dependencies": {
+    "react-icons": "^4.8.0",
     "react-jinke-music-player": "^4.24.2",
     "react-multi-carousel": "^2.8.2",
     "react-responsive-carousel": "^3.2.23",
-    "react-simple-image-slider": "^2.4.1"
+    "react-simple-image-slider": "^2.4.1",
+    "styled-components": "^6.0.0-rc.1",
+    "wavesurfer.js": "^6.6.3"
   }
 }

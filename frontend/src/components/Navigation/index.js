@@ -1,38 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginPage";
 import SignupModal from "../SignupFormModal";
-import DemoUser from "../DemoUser";
 import "./Navigation.css";
 import AddSongModal from "../AddSongModal";
 
 function Navigation({ isLoaded }) {
-  const sessionUser = useSelector((state) => state.session.user);
+  const user = useSelector((state) => state.session.user);
+
+  let location = useLocation();
 
   let sessionLinks;
-  if (sessionUser) {
-    sessionLinks = (
-      <nav className="navbar-home">
-        <div className="buttons">
-          <NavLink className="title-link" to="/discover">
-            <img className="splash-icon" src="../../../images/icon.png"></img>
-          </NavLink>
-          <NavLink to={"/discover"}>
-            <button className="feed-button">Home</button>
-          </NavLink>
-          {/* <NavLink to={"/discover"}>
-            <button className="feed-button" >Library</button>
-          </NavLink> */}
-        </div>
-        <div className="buttons">
-          <AddSongModal />
-          <ProfileButton user={sessionUser} />
-        </div>
-      </nav>
-    );
-  } else {
+  if (location.pathname === '/') {
     sessionLinks = (
       <nav className="navbar">
         <div className="buttons">
@@ -42,9 +23,30 @@ function Navigation({ isLoaded }) {
           </NavLink>
         </div>
         <div className="buttons">
-          {/* <DemoUser /> */}
           <LoginFormModal />
           <SignupModal />
+        </div>
+      </nav>
+    );
+  } else if (user) {
+    sessionLinks = (
+      <nav className="navbar-home">
+        <div className="buttons">
+          <NavLink className="title-link" to="/discover">
+            <img className="splash-icon" src="../../../images/icon.png"></img>
+          </NavLink>
+          <NavLink to={"/discover"}>
+            <button className="feed-button">Home</button>
+            <button className="feed-button">Feed</button>
+            <button className="feed-button">Library</button>
+          </NavLink>
+          {/* <NavLink to={"/discover"}>
+            <button className="feed-button" >Library</button>
+          </NavLink> */}
+        </div>
+        <div className="buttons">
+          <AddSongModal />
+          <ProfileButton user={user} />
         </div>
       </nav>
     );

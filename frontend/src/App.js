@@ -9,6 +9,8 @@ import Song from "./components/SongPage";
 import SplashPage from "./components/SplashPage"
 import ErrorPage from "./components/ErrorPage";
 import SignupForm from "./components/SignupFormModal/SignupForm";
+import { getSongs } from "./store/songs";
+import { getComments } from "./store/comments";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +18,11 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getSongs());
+    dispatch(getComments());
+  })
 
   return (
     <>
@@ -28,10 +35,10 @@ function App() {
           <Route path="/404">
             <ErrorPage />
           </Route>
-          <Route exact path='/'>
+          <Route exact path={'/'}>
             <SplashPage />
           </Route>
-          <Route exact path='/discover'>
+          <Route path='/discover'>
             <DiscoverPage />
           </Route>
           <Route path='/songs/:id'>

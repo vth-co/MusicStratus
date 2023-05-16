@@ -25,5 +25,6 @@
     max-width: 75%;
     max-height: 50%;
     display: flex;
+    border-radius: 10px;
     
   }

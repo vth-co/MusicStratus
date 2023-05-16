@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import "./SignupForm.css";
+import LoginFormModal from "../LoginPage";
 
 function SignupForm() {
   const dispatch = useDispatch();
@@ -29,6 +30,20 @@ function SignupForm() {
     return setErrors([
       "Confirm Password field must be the same as the Password field",
     ]);
+  };
+  
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    const credential = 'Demo-lition'
+    const password = 'password'
+
+    const data = await dispatch(
+      sessionActions.login({ credential, password })
+    );
+    if (data) {
+      setErrors(data);
+    }
   };
 
   return (
@@ -89,8 +104,20 @@ function SignupForm() {
                   required
                 />
                 <button className="user-form-button" type="submit">
-                  Sign Up
+                  Create account
                 </button>
+              </div>
+              <div className="demo-label">
+                <p>
+                  Not ready to commit?
+                  <button
+                    type="button"
+                    className="demo-button"
+                    onClick={handleClick}
+                  >
+                    Demo
+                  </button>
+                </p>
               </div>
             </div>
           </form>
