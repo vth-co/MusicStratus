@@ -5,6 +5,8 @@ import { Redirect, NavLink } from "react-router-dom";
 import "./DiscoverPage.css";
 // import { Carousel } from "react-responsive-carousel";
 // import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import ReactJkMusicPlayer from "react-jinke-music-player";
+import "react-jinke-music-player/assets/index.css";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -15,12 +17,24 @@ const DiscoverPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
- 
 
   const discover = songs.filter((song) => song.userId !== sessionUser.id);
-  console.log(discover)
 
-  const library = songs.filter((song) => song.userId === sessionUser.id).reverse();
+  const library = songs
+    .filter((song) => song.userId === sessionUser.id)
+    .reverse();
+
+
+  const options = {
+    audioLists: discover,
+    defaultPosition: {
+      right: 100,
+      bottom: 120,
+    },
+    getAudioInstance(audio) {
+      console.log('audio instance', audio)
+    },
+  };
 
   const responsive = {
     desktop: {
@@ -45,10 +59,7 @@ const DiscoverPage = () => {
     dispatch(getSongs());
   }, [dispatch]);
 
-  if (!sessionUser) {
-    return <Redirect to="/" />;
-  }
-
+  
   return (
     <div className="discover-page">
       {/* <h3>{sessionUser.username}'s Library</h3> */}
@@ -66,7 +77,7 @@ const DiscoverPage = () => {
         <h2 className="section-title">Explore</h2>
         <Carousel
           partialVisible={true}
-          // centerMode={true} 
+          // centerMode={true}
           responsive={responsive}
           // infinite={true}
           containerClass="container"
@@ -89,17 +100,19 @@ const DiscoverPage = () => {
       <div div className="discover-carousel-container">
         <h2 className="section-title">Library</h2>
         <Carousel
-        partialVisible={true}
-        // centerMode={true} 
-        responsive={responsive}
-        // infinite={true}
-        containerClass="container">
+          partialVisible={true}
+          // centerMode={true}
+          responsive={responsive}
+          // infinite={true}
+          containerClass="container"
+        >
           {library?.map((song) => (
             <div>
               <NavLink
-               className="song-link"
-               song={song}
-               to={`/songs/${song.id}`}>
+                className="song-link"
+                song={song}
+                to={`/songs/${song.id}`}
+              >
                 <img className="image" src={song.imageUrl} alt={""}></img>
                 <p className="song-title">{song.title}</p>
                 <p className="song-artist">{song.artist}</p>
@@ -108,6 +121,7 @@ const DiscoverPage = () => {
           ))}
         </Carousel>
       </div>
+      {/* <ReactJkMusicPlayer {...options} /> */}
     </div>
   );
 };

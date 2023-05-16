@@ -10,6 +10,11 @@ import Comments from "../Comments";
 import "./SongPage.css";
 import AddComment from "../AddComment";
 
+import Player from "react-wavy-audio";
+import ReactJkMusicPlayer from "react-jinke-music-player";
+import Waveform from "./waveform.js";
+import test from './test.mp3';
+
 const Song = () => {
   const { id } = useParams();
 
@@ -22,6 +27,25 @@ const Song = () => {
   const song = useSelector((state) => state.songs.songs[id]);
 
   const [errors, setErrors] = useState([]);
+
+  const audioLists1 = [
+    {
+      name: song?.title,
+      musicSrc: song?.url,
+      cover: song?.imageUrl,
+    },
+  ];
+
+  const options = {
+    audioLists: audioLists1,
+    defaultPosition: {
+      right: 100,
+      bottom: 120,
+    },
+    getAudioInstance(audio) {
+      console.log("audio instance", audio);
+    },
+  };
 
   useEffect(() => {
     dispatch(getSongs());
@@ -54,23 +78,30 @@ const Song = () => {
           {/* <div className="audio-player-container"> */}
           <h2 className="individual-song-title">{song?.title}</h2>
           <div className="song-comment-container">
-            <div className="comments-container">
+            {/* <div className="comments-container">
               <Comments songId={song?.id} />
               <AddComment />
-            </div>
+            </div> */}
             <div className="image-container">
-              <img className="song-image" src={song?.imageUrl} alt="" />
               <AudioPlayer
                 className="audio-player"
                 src={song?.url}
                 volume={0.3}
               />
+              {/* <Waveform 
+              /> */}
+
+              <img className="song-image" src={song?.imageUrl} alt="" />
+
+              {/* <ReactJkMusicPlayer 
+                {...options}
+              /> */}
             </div>
-            <div>{songEditButtons}</div>
+            {/* <div>{songEditButtons}</div> */}
           </div>
         </div>
         <div className="background-container">
-          <img className="background-image" src={song?.imageUrl} alt="" />
+          {/* <img className="background-image" src={song?.imageUrl} alt="" /> */}
         </div>
       </>
     );

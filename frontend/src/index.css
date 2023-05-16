@@ -21,7 +21,8 @@ html,body,#root {
 
 
 body {
-    background-color: #8CC3FC;
+    /* background-color: #8CC3FC; */
+    background-color: #222425;
   }
 
 * {

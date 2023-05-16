@@ -17,6 +17,11 @@
   text-align: center;
   color: #ffffff;
   background-color: #627395;
-  padding: 7px 8px;
+  padding: 5px 10px;
   margin-right: 15px;
+}
+
+.form-title {
+  margin-left: 15px;
+  
 }

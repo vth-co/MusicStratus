@@ -140,7 +140,7 @@ module.exports = {
       title: 'Other Worlds',
       url: 'https://myawsbucketforsoundcloudclone.s3.us-west-1.amazonaws.com/Bassnectar+%26+Dorfex+Bos+-+Other+Worlds++%5BReflective+Part+2%5D.mp3',
       artist: 'Bassnectar',
-      imageUrl: 'https://oneedm.com/wp-content/uploads/2017/11/otherworlds.jpg',
+      imageUrl: 'https://i.ytimg.com/vi/q_hBf1ghAGE/maxresdefault.jpg',
       createdAt: new Date(),
       updatedAt: new Date(),
      },
