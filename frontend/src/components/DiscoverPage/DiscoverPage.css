@@ -12,7 +12,7 @@
 }
 
 .discover-page {
-    height: 99%;
+    min-height: 95%;
     background: linear-gradient(  black,#8CC3FC);
     
 }
@@ -64,4 +64,47 @@
 
 .song-card {
     /* margin-left: 50px; */
+}
+
+.music-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.audio-player {
+    background-color: #292B2C;
+    color: white;
+}
+
+.card-play-button {
+    background-color: rgba(255, 255, 255, 0);
+    border: transparent;
+    color: #677692;
+    font-size: 45px;
+    position: absolute;
+    padding: 70px 77px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.card-container {
+    position: relative;
+    width: 50%;
+}
+
+.card-container image {
+    width: 100%;
+    height: auto;
+}
+
+.card-container:hover .card-play-button {
+    display: inline;
+}
+.card-container .card-play-button {
+    display: none;
+}
+.card-container .card-play-button:hover {
+    color: #526993;
 }

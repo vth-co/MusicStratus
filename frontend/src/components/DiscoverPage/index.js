@@ -1,19 +1,20 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getSongs } from "../../store/songs";
-import { Redirect, NavLink } from "react-router-dom";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import "./DiscoverPage.css";
-// import { Carousel } from "react-responsive-carousel";
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import ReactJkMusicPlayer from "react-jinke-music-player";
+
+import AudioPlayer from "react-h5-audio-player";
 import "react-jinke-music-player/assets/index.css";
+import "react-h5-audio-player/lib/styles.less"; //Use LESS
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const DiscoverPage = () => {
-  const dispatch = useDispatch();
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AiFillPlayCircle } from "react-icons/ai";
 
+const DiscoverPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
@@ -24,17 +25,7 @@ const DiscoverPage = () => {
     .filter((song) => song.userId === sessionUser.id)
     .reverse();
 
-
-  const options = {
-    audioLists: discover,
-    defaultPosition: {
-      right: 100,
-      bottom: 120,
-    },
-    getAudioInstance(audio) {
-      console.log('audio instance', audio)
-    },
-  };
+  const [currentTrack, setTrackIndex] = useState("");
 
   const responsive = {
     desktop: {
@@ -55,74 +46,89 @@ const DiscoverPage = () => {
     },
   };
 
-  useEffect(() => {
-    dispatch(getSongs());
-  }, [dispatch]);
-
-  
   return (
-    <div className="discover-page">
-      {/* <h3>{sessionUser.username}'s Library</h3> */}
-      <div className="discover-carousel-container">
-        {/* <div className="discover-song-container" key={song.id}>
-              <NavLink
-                className="song-link"
-                song={song}
-                to={`/songs/${song.id}`}
-              >
-                <img className="image" src={song.imageUrl} alt={""} />
-                <p className="song-title">{song.title}</p>
-              </NavLink>
-            </div> */}
-        <h2 className="section-title">Explore</h2>
-        <Carousel
-          partialVisible={true}
-          // centerMode={true}
-          responsive={responsive}
-          // infinite={true}
-          containerClass="container"
-        >
-          {discover?.map((song) => (
-            <div className="song-card">
-              <NavLink
-                className="song-link"
-                song={song}
-                to={`/songs/${song.id}`}
-              >
-                <img className="image" src={song.imageUrl} alt={""} />
+    <>
+      <div className="discover-page">
+        <div className="discover-carousel-container">
+          <h2 className="section-title">Explore</h2>
+          <Carousel
+            partialVisible={true}
+            // centerMode={true}
+            responsive={responsive}
+            // infinite={true}
+            containerClass="container"
+          >
+            {discover?.map((song) => (
+              <div className="song-card" song={song}>
+                <NavLink className="song-link" to={`/songs/${song.id}`}>
+                  <div className="card-container">
+                    <img className="image" src={song.imageUrl} alt={""} />
+                    <NavLink to={"/discover"}>
+                      <button
+                        className="card-play-button"
+                        value={song?.url}
+                        onClick={(e) => setTrackIndex(e.target.value)}
+                      >
+                        {/* <i class="fa-solid fa-circle-play"></i> */}
+                        <AiFillPlayCircle />
+                      </button>
+                    </NavLink>
+                  </div>
+                  <p className="song-title">{song.title}</p>
+                  <p className="song-artist">{song.artist}</p>
+                </NavLink>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+        <div div className="discover-carousel-container">
+          <h2 className="section-title">Library</h2>
+          <Carousel
+            partialVisible={true}
+            // centerMode={true}
+            responsive={responsive}
+            // infinite={true}
+            containerClass="container"
+          >
+            {library?.map((song) => (
+              <div className="song-card" song={song}>
+              <NavLink className="song-link" to={`/songs/${song.id}`}>
+                <div className="card-container">
+                  <img className="image" src={song.imageUrl} alt={""} />
+                  <NavLink to={"/discover"}>
+                    <button
+                      className="card-play-button"
+                      value={song?.url}
+                      onClick={(e) => setTrackIndex(e.target.value)}
+                    >
+                      {/* <i class="fa-solid fa-circle-play"></i> */}
+                      <AiFillPlayCircle />
+                      play
+                    </button>
+                  </NavLink>
+                </div>
                 <p className="song-title">{song.title}</p>
                 <p className="song-artist">{song.artist}</p>
               </NavLink>
             </div>
-          ))}
-        </Carousel>
+            ))}
+          </Carousel>
+        </div>
+        <div className="music-container">
+          <AudioPlayer
+            className="audio-player"
+            volume={0.3}
+            layout="horizontal"
+            src={currentTrack}
+            // customAdditionalControls={[
+            //   // <button>
+            //   //   {/* <img className="image" src={song?.imageUrl} alt={""}></img> */}
+            //   // </button>,
+            // ]}
+          />
+        </div>
       </div>
-      <div div className="discover-carousel-container">
-        <h2 className="section-title">Library</h2>
-        <Carousel
-          partialVisible={true}
-          // centerMode={true}
-          responsive={responsive}
-          // infinite={true}
-          containerClass="container"
-        >
-          {library?.map((song) => (
-            <div>
-              <NavLink
-                className="song-link"
-                song={song}
-                to={`/songs/${song.id}`}
-              >
-                <img className="image" src={song.imageUrl} alt={""}></img>
-                <p className="song-title">{song.title}</p>
-                <p className="song-artist">{song.artist}</p>
-              </NavLink>
-            </div>
-          ))}
-        </Carousel>
-      </div>
-      {/* <ReactJkMusicPlayer {...options} /> */}
-    </div>
+    </>
   );
 };
 

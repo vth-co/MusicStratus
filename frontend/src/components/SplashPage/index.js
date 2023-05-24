@@ -1,21 +1,11 @@
 import { useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
-import SignupFormModal from "../SignupFormModal";
-import SignupForm from "../SignupFormModal/SignupForm";
 import "./SplashPage.css";
-import SimpleImageSlider from "react-simple-image-slider";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import LoginFormModal from "../LoginPage";
 
 function SplashPage() {
-  const user = useSelector((state) => state.session.user);
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
-
-  // if (user) {
-  //   return <Redirect to="/discover" />;
-  // }
 
   return (
     <div>
@@ -25,16 +15,18 @@ function SplashPage() {
             showArrows={false}
             showThumbs={false}
             showStatus={false}
-            // autoPlay={true}
+            autoPlay={true}
             stopOnHover={true}
             infiniteLoop={true}
           >
             <div className="carousel-div">
-              <h2 className="carousel-text">Discover</h2>
+              <h2 className="carousel-title">Discover new music</h2>
+              <p className="carousel-text">Listen on the go, ad-free, with a lot of tracks and growing.</p>
               <img src="../../../images/carousel2.jpg" />
             </div>
             <div className="carousel-div">
-              <h2 className="carousel-text">Share </h2>
+              <h2 className="carousel-title">Share your creativity</h2>
+              <p className="carousel-text">Upload your first track and begin your journey.</p>
               <div>
                 
               </div>

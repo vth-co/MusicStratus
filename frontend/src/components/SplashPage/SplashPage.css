@@ -1,9 +1,11 @@
-
-
 .carousel-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 
@@ -13,17 +15,28 @@
 }
 
 .centering {
-    width: 1420px;
+    border-top: 5px solid #627395;
+    max-width: 1475px;
 }
 
 .carousel-div {
-    max-height: 500px;
+    max-height: 450px;
+}
+
+.carousel-title {
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    font-size: 2vw;
+    text-shadow: rgb(0, 0, 0) 1px 0 10px;
 }
 
 .carousel-text {
     color: white;
     position: absolute;
-    top: 25%;
-    left: 25%;
-    font-size: 2vw;
+    top: 45%;
+    left: 10%;
+    font-size: 1vw;
+    text-shadow: rgb(0, 0, 0) 1px 0 10px;
 }

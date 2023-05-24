@@ -12,6 +12,11 @@ import SignupForm from "./components/SignupFormModal/SignupForm";
 import { getSongs } from "./store/songs";
 import { getComments } from "./store/comments";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);

@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import WaveSurfer from 'wavesurfer.js'
-import audio from './test.mp3'
 
-const Waveform = (audio) => {
+const Waveform = ({audio}) => {
   const containerRef = useRef()
   const waveSurferRef = useRef({
     isPlaying: () => false,

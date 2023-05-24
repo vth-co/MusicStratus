@@ -13,7 +13,6 @@ import AddComment from "../AddComment";
 import Player from "react-wavy-audio";
 import ReactJkMusicPlayer from "react-jinke-music-player";
 import Waveform from "./waveform.js";
-import test from './test.mp3';
 
 const Song = () => {
   const { id } = useParams();
@@ -76,28 +75,21 @@ const Song = () => {
       <>
         <div className="song-container">
           {/* <div className="audio-player-container"> */}
-          <h2 className="individual-song-title">{song?.title}</h2>
           <div className="song-comment-container">
-            {/* <div className="comments-container">
-              <Comments songId={song?.id} />
-              <AddComment />
-            </div> */}
             <div className="image-container">
               <AudioPlayer
                 className="audio-player"
                 src={song?.url}
                 volume={0.3}
+                layout="stacked-reverse"
               />
-              {/* <Waveform 
-              /> */}
-
               <img className="song-image" src={song?.imageUrl} alt="" />
-
-              {/* <ReactJkMusicPlayer 
-                {...options}
-              /> */}
             </div>
             {/* <div>{songEditButtons}</div> */}
+          </div>
+          <div className="comments-container">
+            <AddComment />
+            <Comments songId={song?.id} />
           </div>
         </div>
         <div className="background-container">

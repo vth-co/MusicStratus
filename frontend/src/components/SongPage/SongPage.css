@@ -6,13 +6,15 @@
 }
 
 .song-image {
-   width: 250px;
-   height: 250px;
+   width: 275px;
+   height: 275px;
+   padding: 25px 25px;
+   background-color: #505658;
  }
 
  .image-container {
     display: flex;
-    width: 850px;
+    width: 1000px;
  }
  
 
@@ -46,9 +48,12 @@
 .comments-container {
     display: flex;
     flex-direction: column;
-    height: 593px;
-    width: 350px;
+    height: fit-content;
+    width: 700px;
     background-color: black;
+    padding-right: 300px;
+    min-height: 670px;
+
 }
 
 .background-container {
@@ -71,12 +76,10 @@
 }
 
 .audio-player{
-   background-color: rgb(255, 255, 255);
+   background-color: #505658;
 } 
 
 .song-comment-container {
     display: flex;
 
 }
-
-

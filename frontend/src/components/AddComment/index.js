@@ -37,6 +37,7 @@ function AddComment() {
         </ul>
           <input
             type="text"
+            className="comment-input"
             placeholder="Write a comment"
             value={body}
             onChange={(e) => setBody(e.target.value)}
