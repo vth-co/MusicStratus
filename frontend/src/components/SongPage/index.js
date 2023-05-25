@@ -10,10 +10,6 @@ import Comments from "../Comments";
 import "./SongPage.css";
 import AddComment from "../AddComment";
 
-import Player from "react-wavy-audio";
-import ReactJkMusicPlayer from "react-jinke-music-player";
-import Waveform from "./waveform.js";
-
 const Song = () => {
   const { id } = useParams();
 
@@ -26,25 +22,6 @@ const Song = () => {
   const song = useSelector((state) => state.songs.songs[id]);
 
   const [errors, setErrors] = useState([]);
-
-  const audioLists1 = [
-    {
-      name: song?.title,
-      musicSrc: song?.url,
-      cover: song?.imageUrl,
-    },
-  ];
-
-  const options = {
-    audioLists: audioLists1,
-    defaultPosition: {
-      right: 100,
-      bottom: 120,
-    },
-    getAudioInstance(audio) {
-      console.log("audio instance", audio);
-    },
-  };
 
   useEffect(() => {
     dispatch(getSongs());
@@ -81,7 +58,8 @@ const Song = () => {
                 className="audio-player"
                 src={song?.url}
                 volume={0.3}
-                layout="stacked-reverse"
+                header={song.title}
+                footer={song.artist}
               />
               <img className="song-image" src={song?.imageUrl} alt="" />
             </div>

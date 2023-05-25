@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./DiscoverPage.css";
-import ReactJkMusicPlayer from "react-jinke-music-player";
 
 import AudioPlayer from "react-h5-audio-player";
 import "react-jinke-music-player/assets/index.css";
@@ -11,8 +10,7 @@ import "react-h5-audio-player/lib/styles.less"; //Use LESS
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AiFillPlayCircle } from "react-icons/ai";
+
 
 const DiscoverPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -69,8 +67,7 @@ const DiscoverPage = () => {
                         value={song?.url}
                         onClick={(e) => setTrackIndex(e.target.value)}
                       >
-                        {/* <i class="fa-solid fa-circle-play"></i> */}
-                        <AiFillPlayCircle />
+                        <i class="fa-solid fa-circle-play"></i>
                       </button>
                     </NavLink>
                   </div>
@@ -101,9 +98,7 @@ const DiscoverPage = () => {
                       value={song?.url}
                       onClick={(e) => setTrackIndex(e.target.value)}
                     >
-                      {/* <i class="fa-solid fa-circle-play"></i> */}
-                      <AiFillPlayCircle />
-                      play
+                      <i class="fa-solid fa-circle-play"></i>
                     </button>
                   </NavLink>
                 </div>
@@ -126,6 +121,9 @@ const DiscoverPage = () => {
             //   // </button>,
             // ]}
           />
+        </div>
+        <div className="footer">
+
         </div>
       </div>
     </>
