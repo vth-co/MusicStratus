@@ -6,13 +6,15 @@
 }
 
 .song-image {
-   width: 250px;
-   height: 250px;
+   width: 350px;
+   height: 350px;
+   padding: 25px 25px;
+   background-color: #505658;
  }
 
  .image-container {
     display: flex;
-    width: 850px;
+    width: 1000px;
  }
  
 
@@ -46,9 +48,11 @@
 .comments-container {
     display: flex;
     flex-direction: column;
-    height: 593px;
-    width: 350px;
-    background-color: black;
+    height: fit-content;
+    width: 700px;
+    padding-right: 300px;
+    min-height: 670px;
+
 }
 
 .background-container {
@@ -70,8 +74,8 @@
     filter: blur(7px); */
 }
 
-.audio-player{
-   background-color: rgb(255, 255, 255);
+.audio-player {
+   background-color: #505658;
 } 
 
 .song-comment-container {
@@ -79,4 +83,25 @@
 
 }
 
+.rhap_header {
+    text-align: center;
+    font-size: x-large;
+    background-color: black;
+    padding: 5px 10px;
+    margin-top: 10px;
+    max-width:fit-content;
+}
 
+.rhap_footer {
+    font-size: large;
+    color: rgba(255, 255, 255, 0.785);
+    background-color: black;
+    max-width:fit-content;
+    position: absolute;
+    padding: 5px 10px;
+    top: 10%;
+}
+
+/* .rhap_progress-section {
+    margin-top: 50px;
+} */

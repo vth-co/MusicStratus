@@ -12,7 +12,7 @@
 }
 
 .discover-page {
-    height: 99%;
+    min-height: 95%;
     background: linear-gradient(  black,#8CC3FC);
     
 }
@@ -28,8 +28,8 @@
 }
 
 .song-title {
-    margin: 0 10px;
-    font-weight: 100;
+    margin: 0 5px;
+    font-weight:50;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
     text-decoration: none;
     color: #ffffffd8;
@@ -37,7 +37,7 @@
 }
 
 .song-artist {
-    margin: 0 10px;
+    margin: 0 5px;
     font-weight: 100;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
     text-decoration: none;
@@ -64,4 +64,52 @@
 
 .song-card {
     /* margin-left: 50px; */
+}
+
+.music-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.audio-player {
+    background-color: #292B2C;
+    color: white;
+}
+
+.card-play-button {
+    background-color: rgba(255, 255, 255, 0);
+    border: transparent;
+    color: #5c6f92;
+    font-size: 65px;
+    position: absolute;
+    padding: 10px 20px;
+    top: 23%;
+    left: 45%;
+    cursor: pointer;
+}
+
+.card-container {
+    position: relative;
+    width: 50%;
+}
+
+.card-container image {
+    width: 100%;
+    height: auto;
+}
+
+.card-container:hover .card-play-button {
+    display: inline;
+}
+
+.card-container .card-play-button {
+    display: none;
+}
+.card-container .card-play-button:hover {
+    color: #435982;
+}
+
+.fa-circle-play {
+    pointer-events: none;
 }

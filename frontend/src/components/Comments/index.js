@@ -33,13 +33,11 @@ function Comments({ songId }) {
   //   )
   // }
 
-  useEffect(() => {
-    dispatch(getComments());
-  }, [dispatch]);
+
 
   return (
     <>
-      {songComments?.map((comment) => (
+      {songComments?.reverse().map((comment) => (
         <div>
           <div className="songComments">
             {/* <div className="comment-user">{username}</div> */}

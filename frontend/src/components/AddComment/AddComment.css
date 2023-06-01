@@ -9,6 +9,13 @@
     background-color: rgb(51, 51, 51);
 }
 
+.comment-input {
+    background-color: transparent;
+    color: white;
+    min-width: 500px; 
+}
+
 .add-comment-form-div {
-    text-align: center;
+    border-right: 1px gray solid;
+    margin-top: 15px;
 }
