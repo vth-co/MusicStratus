@@ -1,7 +1,7 @@
 .carousel-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     position: absolute;
     top: 0;
     right: 0;
@@ -16,11 +16,11 @@
 
 .centering {
     border-top: 5px solid #627395;
-    max-width: 1475px;
+    max-width: 1250px;
 }
 
 .carousel-div {
-    max-height: 450px;
+    max-height: 425px;
 }
 
 .carousel-title {
@@ -39,4 +39,56 @@
     left: 10%;
     font-size: 1vw;
     text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    /* width: min-content; */
+    margin-right: 35px;
+    margin-bottom: 105px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 450px;
+}
+
+.card-title {
+    font-weight: 50;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    text-decoration: none;
+    color: #ffffffd8;
+    font-size: small;
+    text-align: left;
+}
+
+.card-artist {
+    font-weight: 100;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    text-decoration: none;
+    color: #cbcbcb81;
+    font-size: small;
+    text-align: left;
+}
+
+.card-image {
+    width: 175px;
+    height: 175px;
+}
+
+.footer-links-container {
+    display: flex;
+    justify-content: space-evenly;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    font-family: "Segoe UI","Helvetica Neue",sans-serif;
 }

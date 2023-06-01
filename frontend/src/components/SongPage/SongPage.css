@@ -14,7 +14,7 @@
 
  .image-container {
     display: flex;
-    width: 1150px;
+    width: 1000px;
  }
  
 
@@ -74,7 +74,7 @@
     filter: blur(7px); */
 }
 
-.audio-player{
+.audio-player {
    background-color: #505658;
 } 
 
@@ -102,9 +102,6 @@
     top: 10%;
 }
 
-.rhap_progress-section {
-    /* position: absolute;
-    top: 15%;
-    width: min-content; */
+/* .rhap_progress-section {
     margin-top: 50px;
-}
+} */

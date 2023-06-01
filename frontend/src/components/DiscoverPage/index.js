@@ -122,9 +122,6 @@ const DiscoverPage = () => {
             // ]}
           />
         </div>
-        <div className="footer">
-
-        </div>
       </div>
     </>
   );

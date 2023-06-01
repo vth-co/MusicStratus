@@ -6,7 +6,7 @@ li {
 .navbar {
   display: flex;
   position: sticky;
-  justify-content: space-around;
+  justify-content: space-evenly;
   top: 0;
   z-index: 1;
   background-color: transparent;
@@ -17,7 +17,7 @@ li {
 .navbar-home {
   display: flex;
   position: sticky;
-  justify-content: space-around;
+  justify-content: space-evenly;
   top: 0;
   z-index: 1;
   width: 100%;
