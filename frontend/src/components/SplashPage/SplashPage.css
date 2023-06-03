@@ -1,11 +1,11 @@
+.discover {
+    display: flex;
+    flex-direction: column;
+}
+
 .carousel-container {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
 }
 
 
@@ -42,18 +42,30 @@
 }
 
 .grid-container {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     /* width: min-content; */
-    margin-right: 35px;
-    margin-bottom: 105px;
+    /* position: absolute;
+    margin-right: 79px; */
+    /* margin-bottom: 105px; */
+    /* left: 0;
+    right: 0;
+    top: 55%; */
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    justify-items: start;
+    align-items: center
+    /* max-width: 1250px; */
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    margin-top: 450px;
+    
+}
+
+.grid-header {
+    text-align: center;
 }
 
 .card-title {
@@ -79,16 +91,44 @@
     height: 175px;
 }
 
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
 .footer-links-container {
     display: flex;
     justify-content: space-evenly;
     /* position: fixed; */
-    bottom: 0;
-    width: 100%;
+    min-width: 1250px;
+    border-top: 1px solid black;
 }
 
 .link {
     text-decoration: none;
-    color: white;
+    color: gray;
     font-family: "Segoe UI","Helvetica Neue",sans-serif;
+}
+
+.discover-audio-player {
+    position: fixed;
+    bottom: 0;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
 }

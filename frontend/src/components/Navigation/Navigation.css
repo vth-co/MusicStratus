@@ -5,18 +5,19 @@ li {
 
 .navbar {
   display: flex;
-  position: sticky;
+  position: fixed;
   justify-content: space-evenly;
+  align-items: center;
   top: 0;
   z-index: 1;
   background-color: transparent;
   border-radius: 5px;
   padding: 10px 10px;
+  width: 100%;
 }
 
 .navbar-home {
   display: flex;
-  position: sticky;
   justify-content: space-evenly;
   top: 0;
   z-index: 1;
