@@ -7,6 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 import AudioPlayer from "react-h5-audio-player";
 import "react-jinke-music-player/assets/index.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
+import SearchBar from "../Search";
 
 const SplashPage = () => {
   const songsObj = useSelector((state) => state.songs.songs);
@@ -29,7 +30,7 @@ const SplashPage = () => {
   const [currentTrack, setTrackIndex] = useState("");
 
   return (
-    <div>
+    <div className="discover">
       <div className="carousel-container">
         <div className="centering">
           <Carousel
@@ -58,20 +59,24 @@ const SplashPage = () => {
           </Carousel>
         </div>
       </div>
+      <SearchBar />
+      <h2 className="grid-header">
+        Hear what’s trending for free in the MusicStratus community
+      </h2>
       <div className="grid-container">
-        <div className="grid">
+        {/* <div className="grid"> */}
           {shuffledSongs.map((song) => (
-            <ul song={song}>
+            <ul song={song} className="grid-card">
               <img className="card-image" src={song.imageUrl} alt={""} />
               <li className="card-title">{song.title}</li>
               <li className="card-artist">{song.artist}</li>
             </ul>
           ))}
-        </div>
+        {/* </div> */}
       </div>
       {/* <div className="music-container">
           <AudioPlayer
-            className="audio-player"
+            className="discover-audio-player"
             volume={0.3}
             layout="horizontal"
             src={currentTrack}
@@ -82,17 +87,22 @@ const SplashPage = () => {
             ]}
           />
         </div> */}
-      <div className="footer">
-        <h3>Thanks for listening. Now join in.</h3>
+      {/* <div className="footer">
         <div className="footer-links-container">
-          <p className="footer-section">Company</p>
           <a
-            href="https://github.com/vth-co/Taskless"
+            href="https://vth-co.github.io/"
             className="link"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-github-square"></i>
+            <p>Portfolio</p>
+          </a>
+          <a
+            href="https://github.com/vth-co/MusicStratus"
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <p>Github</p>
           </a>
           <a
@@ -101,11 +111,10 @@ const SplashPage = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fa-brands fa-linkedin"></i>
             <p>Linkedin</p>
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
