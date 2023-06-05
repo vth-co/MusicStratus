@@ -42,39 +42,36 @@
 }
 
 .grid-container {
-    /* display: flex;
-    justify-content: center; */
-    /* width: min-content; */
-    /* position: absolute;
-    margin-right: 79px; */
-    /* margin-bottom: 105px; */
-    /* left: 0;
-    right: 0;
-    top: 55%; */
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     grid-template-rows: auto auto;
     justify-content: center;
     justify-items: start;
-    align-items: center
-    /* max-width: 1250px; */
+    align-items: center;
 }
 
-.grid {
-    
+.grid-card {
+    padding: 0 20px;
 }
 
 .grid-header {
     text-align: center;
+    color: white;
+    font-weight: lighter;
+    font-size: 150%;
 }
 
 .card-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-weight: 50;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
     text-decoration: none;
     color: #ffffffd8;
     font-size: small;
     text-align: left;
+    width: 175px;
 }
 
 .card-artist {
@@ -99,7 +96,6 @@
 .footer-links-container {
     display: flex;
     justify-content: space-evenly;
-    /* position: fixed; */
     min-width: 1250px;
     border-top: 1px solid black;
 }
@@ -131,4 +127,15 @@
     align-items: center;
     justify-content: center;
     margin-top: 25px;
+    color: white;
+}
+
+#header-search {
+   width: 525px;
+   height: 25px;
+   color: grey;
+   background-color: black;
+   border: transparent;
+   border-radius: 5px;
+   font-size: large;
 }

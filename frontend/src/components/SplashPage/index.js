@@ -60,13 +60,13 @@ const SplashPage = () => {
         </div>
       </div>
       <SearchBar />
-      <h3 className="grid-header">
+      <h2 className="grid-header">
         Hear what’s trending for free in the MusicStratus community
-      </h3>
+      </h2>
       <div className="grid-container">
         {/* <div className="grid"> */}
           {shuffledSongs.map((song) => (
-            <ul song={song}>
+            <ul song={song} className="grid-card">
               <img className="card-image" src={song.imageUrl} alt={""} />
               <li className="card-title">{song.title}</li>
               <li className="card-artist">{song.artist}</li>
