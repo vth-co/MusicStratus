@@ -6,15 +6,17 @@
 }
 
 .song-image {
-   width: 350px;
-   height: 350px;
-   padding: 25px 25px;
-   background-color: #505658;
+   width: 300px;
+   height: 300px;
+   padding: 15px 15px;
+   /* background-color: #505658; */
+   background-color: #1B1D1D;
  }
 
  .image-container {
     display: flex;
-    width: 1000px;
+    width: 1050px;
+    height: 330px;
  }
  
 
@@ -38,7 +40,6 @@
 .editAndDelete {
     display: flex;
     flex-direction: column;
-    margin-bottom: 455px;
 }
 
 .audio-player-container {
@@ -75,7 +76,8 @@
 }
 
 .audio-player {
-   background-color: #505658;
+   /* background-color: #505658; */
+   background-image: linear-gradient(to right, #585F62, #1B1D1D);
 } 
 
 .song-comment-container {
@@ -97,11 +99,33 @@
     color: rgba(255, 255, 255, 0.785);
     background-color: black;
     max-width:fit-content;
-    position: absolute;
+    position: relative;
+    /* position: absolute; */
     padding: 5px 10px;
-    top: 10%;
+    top: -275px;
+    /* top: 10%; */
 }
 
 /* .rhap_progress-section {
-    margin-top: 50px;
+    margin: 50px;
 } */
+
+.duration {
+    margin-top: 200px;
+}
+
+.rhap_current-time {
+    color: #758dba;
+    font-size: large;
+}
+
+.rhap_total-time {
+    color: white;
+    font-size: large;
+}
+
+.rhap_additional-controls {
+    position: relative;
+    left: 600px;
+    top: -250px;
+}

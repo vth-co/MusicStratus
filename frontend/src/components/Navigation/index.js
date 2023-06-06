@@ -6,8 +6,9 @@ import LoginFormModal from "../LoginPage";
 import SignupModal from "../SignupFormModal";
 import "./Navigation.css";
 import AddSongModal from "../AddSongModal";
+import SearchBar from "../Search";
 
-function Navigation({ isLoaded }) {
+const Navigation = ({ isLoaded }) => {
   const user = useSelector((state) => state.session.user);
 
   let location = useLocation();
@@ -43,8 +44,7 @@ function Navigation({ isLoaded }) {
           {/* <NavLink to={"/discover"}>
             <button className="feed-button" >Library</button>
           </NavLink> */}
-        </div>
-        <div className="buttons">
+          <SearchBar />
           <AddSongModal />
           <ProfileButton user={user} />
         </div>

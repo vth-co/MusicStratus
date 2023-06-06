@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import AudioPlayer from "react-h5-audio-player";
+import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import { deleteSong } from "../../store/songs";
 import EditSongModal from "../EditSongModal";
@@ -60,10 +60,20 @@ const Song = () => {
                 volume={0.3}
                 header={song.title}
                 footer={song.artist}
+                customAdditionalControls={[
+                  <div>{songEditButtons}</div>,
+                ]}
+                customProgressBarSection={[
+                  <div className="duration"></div>,
+                  RHAP_UI.PROGRESS_BAR,
+                  RHAP_UI.CURRENT_TIME,
+                  <div>/</div>,
+                  RHAP_UI.DURATION,
+                ]}
+                
               />
               <img className="song-image" src={song?.imageUrl} alt="" />
             </div>
-            {/* <div>{songEditButtons}</div> */}
           </div>
           <div className="comments-container">
             <AddComment />
