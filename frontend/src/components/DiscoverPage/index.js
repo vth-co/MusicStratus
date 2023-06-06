@@ -3,14 +3,12 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./DiscoverPage.css";
 
-import AudioPlayer from "react-h5-audio-player";
+import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-jinke-music-player/assets/index.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
-
 
 const DiscoverPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -89,23 +87,23 @@ const DiscoverPage = () => {
           >
             {library?.map((song) => (
               <div className="song-card" song={song}>
-              <NavLink className="song-link" to={`/songs/${song.id}`}>
-                <div className="card-container">
-                  <img className="image" src={song.imageUrl} alt={""} />
-                  <NavLink to={"/discover"}>
-                    <button
-                      className="card-play-button"
-                      value={song?.url}
-                      onClick={(e) => setTrackIndex(e.target.value)}
-                    >
-                      <i class="fa-solid fa-circle-play"></i>
-                    </button>
-                  </NavLink>
-                </div>
-                <p className="song-title">{song.title}</p>
-                <p className="song-artist">{song.artist}</p>
-              </NavLink>
-            </div>
+                <NavLink className="song-link" to={`/songs/${song.id}`}>
+                  <div className="card-container">
+                    <img className="image" src={song.imageUrl} alt={""} />
+                    <NavLink to={"/discover"}>
+                      <button
+                        className="card-play-button"
+                        value={song?.url}
+                        onClick={(e) => setTrackIndex(e.target.value)}
+                      >
+                        <i class="fa-solid fa-circle-play"></i>
+                      </button>
+                    </NavLink>
+                  </div>
+                  <p className="song-title">{song.title}</p>
+                  <p className="song-artist">{song.artist}</p>
+                </NavLink>
+              </div>
             ))}
           </Carousel>
         </div>
@@ -113,8 +111,22 @@ const DiscoverPage = () => {
           <AudioPlayer
             className="audio-player"
             volume={0.3}
-            layout="horizontal"
+            layout="horizontal-reverse"
             src={currentTrack}
+            customAdditionalControls={[]}
+            customProgressBarSection={
+              [
+                RHAP_UI.CURRENT_TIME,
+                <div>/</div>,
+                RHAP_UI.DURATION,
+                RHAP_UI.PROGRESS_BAR,
+                RHAP_UI.VOLUME,
+              ]
+            }
+            customVolumeControls={[]}
+            // style={{
+            //   width: "600px",
+            // }}
             // customAdditionalControls={[
             //   // <button>
             //   //   {/* <img className="image" src={song?.imageUrl} alt={""}></img> */}

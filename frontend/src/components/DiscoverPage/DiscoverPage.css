@@ -6,9 +6,9 @@
 
 .section-title {
     color: white;
-    text-align: center;
     font-weight: 100;
     font-size: 24px;
+    text-align: start;
 }
 
 .discover-page {
@@ -67,7 +67,7 @@
 }
 
 .music-container {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -75,6 +75,7 @@
 .audio-player {
     background-color: #292B2C;
     color: white;
+
 }
 
 .card-play-button {

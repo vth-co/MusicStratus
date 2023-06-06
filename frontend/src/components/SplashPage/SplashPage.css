@@ -130,12 +130,21 @@
     color: white;
 }
 
+#discover-search {
+    width: 325px;
+    height: 15px;
+    color: white;
+    background-color: black;
+    border: transparent;
+    border-radius: 5px;
+}
+
 #header-search {
-   width: 525px;
-   height: 25px;
-   color: grey;
-   background-color: black;
-   border: transparent;
-   border-radius: 5px;
-   font-size: large;
+    width: 525px;
+    height: 25px;
+    color: grey;
+    background-color: black;
+    border: transparent;
+    border-radius: 5px;
+    font-size: large;
 }

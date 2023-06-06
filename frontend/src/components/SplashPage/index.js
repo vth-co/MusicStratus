@@ -59,7 +59,9 @@ const SplashPage = () => {
           </Carousel>
         </div>
       </div>
+      <div className="searchbar">
       <SearchBar />
+      </div>
       <h2 className="grid-header">
         Hear what’s trending for free in the MusicStratus community
       </h2>
