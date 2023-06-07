@@ -102,7 +102,7 @@
     position: relative;
     /* position: absolute; */
     padding: 5px 10px;
-    top: -275px;
+    top: -255px;
     /* top: 10%; */
 }
 
@@ -125,6 +125,12 @@
 }
 
 .rhap_additional-controls {
+    /* position: relative;
+    left: 600px;
+    top: -250px; */
+}
+
+.song-edit-container {
     position: relative;
     left: 600px;
     top: -250px;
