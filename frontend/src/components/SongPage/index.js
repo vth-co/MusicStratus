@@ -61,7 +61,7 @@ const Song = () => {
                 header={song.title}
                 footer={song.artist}
                 customAdditionalControls={[
-                  <div>{songEditButtons}</div>,
+                  <div className="song-edit-container">{songEditButtons}</div>,
                 ]}
                 customProgressBarSection={[
                   <div className="duration"></div>,
@@ -70,7 +70,6 @@ const Song = () => {
                   <div>/</div>,
                   RHAP_UI.DURATION,
                 ]}
-                
               />
               <img className="song-image" src={song?.imageUrl} alt="" />
             </div>
