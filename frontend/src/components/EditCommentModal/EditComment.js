@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { editComment } from "../../store/comments";
 import { deleteComment } from "../../store/comments";
 
-function EditComment({ ele }) {
+function EditComment({ comment }) {
   const { id } = useParams();
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
 
-  const commentObj = useSelector((state) => state.comments.comments);
-  const comment = Object.values(commentObj);
 
-  const [body, setBody] = useState(comment?.body);
+  const [body, setBody] = useState(comment.body);
 
   const [errors, setErrors] = useState([]);
 
@@ -22,7 +20,7 @@ function EditComment({ ele }) {
     e.preventDefault();
 
     let payload = {
-      commentId: ele,
+      commentId: comment.id,
       userId: userId,
       body,
     };
@@ -33,7 +31,7 @@ function EditComment({ ele }) {
     e.preventDefault();
 
     let payload = {
-      commentId: ele,
+      commentId: comment.id,
     };
     const deletedComment = await dispatch(deleteComment(payload));
   };
