@@ -43,7 +43,7 @@ function AddComment() {
             onChange={(e) => setBody(e.target.value)}
             required
           />
-        <button className="comment-form-button" type="submit">Add</button>
+        {/* <button className="comment-form-button" type="submit">Add</button> */}
       </form>
     </div>
   );

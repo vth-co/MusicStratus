@@ -50,10 +50,11 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 700px;
-    padding-right: 300px;
+    width: 721px;
+    margin-top: 20px;
+    margin-right: 300px;
     min-height: 670px;
-
+    border-right: 1px gray solid;
 }
 
 .background-container {

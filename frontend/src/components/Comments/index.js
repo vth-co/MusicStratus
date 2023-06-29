@@ -24,14 +24,14 @@ function Comments({ songId }) {
     }
   });
 
-  // let editButtons;
-  // if (userId === comments.userId) {
-  //   editButtons = (
-  //     <div>
-  //       <EditCommentModal ele={comment?.id} />
-  //     </div>
-  //   )
-  // }
+  let editButtons;
+  if (userId === comments.userId) {
+    editButtons = (
+      <div>
+        <EditCommentModal />
+      </div>
+    )
+  };
 
 
 
@@ -42,9 +42,11 @@ function Comments({ songId }) {
           <div className="songComments">
             {/* <div className="comment-user">{username}</div> */}
             <li key={comment?.id} className="comment">
+            <img className="user-icon" src="../../../images/default-icon.png"></img>
               {comment?.body}
-              <EditCommentModal ele={comment?.id} />
             </li>
+              {/* <EditCommentModal comment={comment} /> */}
+              <editButtons comment={comment}/>
           </div>
         </div>
       ))}
