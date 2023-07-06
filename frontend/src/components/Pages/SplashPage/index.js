@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
-import { useState } from "react";
+// import { useState } from "react";
 import "./SplashPage.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
-import AudioPlayer from "react-h5-audio-player";
+// import AudioPlayer from "react-h5-audio-player";
 import "react-jinke-music-player/assets/index.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
-import SearchBar from "../Search";
+import SearchBar from "../../Search";
+import { NavLink } from "react-router-dom";
 
 const SplashPage = () => {
   const songsObj = useSelector((state) => state.songs.songs);
@@ -27,7 +28,7 @@ const SplashPage = () => {
   const shuffledSongs = shuffleArray(songs);
   shuffledSongs.length = 12;
 
-  const [currentTrack, setTrackIndex] = useState("");
+  // const [currentTrack, setTrackIndex] = useState("");
 
   return (
     <div className="discover">
@@ -60,20 +61,22 @@ const SplashPage = () => {
         </div>
       </div>
       <div className="searchbar">
-      <SearchBar />
+        <SearchBar />
       </div>
       <h2 className="grid-header">
         Hear what’s trending for free in the MusicStratus community
       </h2>
       <div className="grid-container">
         {/* <div className="grid"> */}
-          {shuffledSongs.map((song) => (
-            <ul song={song} className="grid-card">
+        {shuffledSongs.map((song) => (
+          <ul song={song} className="grid-card">
+            <NavLink to={"/signup"}>
               <img className="card-image" src={song.imageUrl} alt={""} />
               <li className="card-title">{song.title}</li>
               <li className="card-artist">{song.artist}</li>
-            </ul>
-          ))}
+            </NavLink>
+          </ul>
+        ))}
         {/* </div> */}
       </div>
       {/* <div className="music-container">

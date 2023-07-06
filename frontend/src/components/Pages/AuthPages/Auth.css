@@ -1,0 +1,12 @@
+.auth-background {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    background: linear-gradient(350deg,#222425, #627395);  
+
+}
+

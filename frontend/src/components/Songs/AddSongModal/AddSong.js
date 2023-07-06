@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { addSong } from "../../store/songs";
+import { addSong } from "../../../store/songs";
 import { useDispatch, useSelector } from "react-redux";
 import "./AddSong.css";
 import {useHistory} from "react-router-dom"

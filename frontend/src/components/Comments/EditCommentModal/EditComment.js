@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { editComment } from "../../store/comments";
-import { deleteComment } from "../../store/comments";
+import { editComment } from "../../../store/comments";
+import { deleteComment } from "../../../store/comments";
 
-function EditComment({ comment }) {
+function EditComment({ comment, setShowModal }) {
   const { id } = useParams();
   const dispatch = useDispatch();
 
@@ -24,7 +24,10 @@ function EditComment({ comment }) {
       userId: userId,
       body,
     };
-    dispatch(editComment(payload));
+    const data = await dispatch(editComment(payload));
+    if (data) {
+      setShowModal(true)
+    }
   };
 
   const handleDelete = async (e) => {
@@ -34,6 +37,9 @@ function EditComment({ comment }) {
       commentId: comment.id,
     };
     const deletedComment = await dispatch(deleteComment(payload));
+    if (deletedComment) {
+      setShowModal(false)
+    }
   };
 
   return (
@@ -55,7 +61,7 @@ function EditComment({ comment }) {
                 required
               />
             </div>
-            <button className="user-form-button" type="submit">
+            <button className="user-form-button" type="submit" onClick={() => setShowModal(false)}>
               Update
             </button>
             <button className="user-form-button" onClick={handleDelete}>

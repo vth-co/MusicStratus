@@ -2,11 +2,11 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
-import LoginFormModal from "../LoginPage";
-import SignupModal from "../SignupFormModal";
+import SignupModal from "../Auth/Signup";
 import "./Navigation.css";
-import AddSongModal from "../AddSongModal";
 import SearchBar from "../Search";
+import AddSongModal from "../Songs/AddSongModal"
+import LoginFormModal from "../Auth/Login"
 
 const Navigation = ({ isLoaded }) => {
   const user = useSelector((state) => state.session.user);
@@ -38,12 +38,13 @@ const Navigation = ({ isLoaded }) => {
           </NavLink>
           <NavLink to={"/discover"}>
             <button className="feed-button">Home</button>
+          </NavLink>
+          <NavLink to={"/feed"}>
             <button className="feed-button">Feed</button>
+          </NavLink>
+          <NavLink to={"/library"}>
             <button className="feed-button">Library</button>
           </NavLink>
-          {/* <NavLink to={"/discover"}>
-            <button className="feed-button" >Library</button>
-          </NavLink> */}
           <SearchBar />
           <AddSongModal />
           <ProfileButton user={user} />

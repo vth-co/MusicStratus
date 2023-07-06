@@ -3,17 +3,20 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
-import Navigation from "./components/Navigation";
-import DiscoverPage from "./components/DiscoverPage";
-import Song from "./components/SongPage";
-import SplashPage from "./components/SplashPage"
-import ErrorPage from "./components/ErrorPage";
-import SignupForm from "./components/SignupFormModal/SignupForm";
 import { getSongs } from "./store/songs";
 import { getComments } from "./store/comments";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import ErrorPage from "./components/Pages/ErrorPage";
+import SplashPage from "./components/Pages/SplashPage";
+import DiscoverPage from "./components/Pages/DiscoverPage";
+import Song from "./components/Songs/SongPage";
+import Navigation from './components/Navigation'
+import SignupPage from "./components/Pages/AuthPages/SignupPage";
+import LoginPage from "./components/Pages/AuthPages/LoginPage";
+import FeedPage from "./components/Pages/FeedPage";
+import LibraryPage from "./components/Pages/LibraryPage";
 
 library.add(fas)
 
@@ -35,7 +38,10 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route path="/signup">
-            <SignupForm />
+            <SignupPage />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
           </Route>
           <Route path="/404">
             <ErrorPage />
@@ -45,6 +51,12 @@ function App() {
           </Route>
           <Route path='/discover'>
             <DiscoverPage />
+          </Route>
+          <Route path='/feed'>
+            <FeedPage />
+          </Route>
+          <Route path='/library'>
+            <LibraryPage />
           </Route>
           <Route path='/songs/:id'>
             <Song />

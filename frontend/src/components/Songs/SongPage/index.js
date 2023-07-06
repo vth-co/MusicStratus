@@ -3,12 +3,12 @@ import { useHistory, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import { deleteSong } from "../../store/songs";
-import EditSongModal from "../EditSongModal";
-import { getSongs } from "../../store/songs";
-import Comments from "../Comments";
+import { deleteSong } from "../../../store/songs";
+import { getSongs } from "../../../store/songs";
+import Comments from "../../Comments";
 import "./SongPage.css";
-import AddComment from "../AddComment";
+import AddComment from "../../Comments/AddComment";
+import EditSongModal from "../EditSongModal";
 
 const Song = () => {
   const { id } = useParams();

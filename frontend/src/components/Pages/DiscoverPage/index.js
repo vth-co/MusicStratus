@@ -15,19 +15,6 @@ const DiscoverPage = () => {
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
 
-  // function shuffleArray(array) {
-  //   let i = array.length - 1;
-  //   for (; i > 0; i--) {
-  //     const j = Math.floor(Math.random() * (i + 1));
-  //     const temp = array[i];
-  //     array[i] = array[j];
-  //     array[j] = temp;
-  //   }
-  //   return array;
-  // };
-
-  // const shuffledSongs = shuffleArray(songs)
-
   const discover = songs.filter((song) => song.userId !== sessionUser.id);
 
   const library = songs.filter((song) => song.userId === sessionUser.id);
@@ -64,6 +51,7 @@ const DiscoverPage = () => {
             responsive={responsive}
             // infinite={true}
             containerClass="container"
+            renderButtonGroupOutside={true}
           >
             {discover?.map((song) => (
               <div className="song-card" song={song}>
@@ -124,15 +112,15 @@ const DiscoverPage = () => {
             volume={0.3}
             layout="horizontal-reverse"
             src={currentTrack}
-            customAdditionalControls={[
-              <div>
-                <button>
-                  {/* button 2<p className="song-title">{song?.title}</p> */}
-                </button>
-                <button>button 3 </button>
-                <button>button 4 </button>
-              </div>,
-            ]}
+            // customAdditionalControls={[
+            //   <div>
+            //     <button>
+            //       {/* button 2<p className="song-title">{song?.title}</p> */}
+            //     </button>
+            //     <button>button 3 </button>
+            //     <button>button 4 </button>
+            //   </div>,
+            // ]}
             customProgressBarSection={[
               RHAP_UI.CURRENT_TIME,
               <div>/</div>,

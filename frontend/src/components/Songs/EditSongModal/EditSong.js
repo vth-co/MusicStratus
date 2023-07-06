@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
-import { editSong } from "../../store/songs";
-import { getSingle } from "../../store/songs";
+import { useParams } from "react-router-dom";
+import { editSong } from "../../../store/songs"
+import { getSingle } from "../../../store/songs";
 
 function EditSong() {
   const { id } = useParams();

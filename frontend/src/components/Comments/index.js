@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getComments } from "../../store/comments";
-import EditCommentModal from "../EditCommentModal";
+import EditCommentModal from "./EditCommentModal";
 import "./Comments.css";
 
 function Comments({ songId }) {
@@ -24,16 +24,7 @@ function Comments({ songId }) {
     }
   });
 
-  let editButtons;
-  if (userId === comments.userId) {
-    editButtons = (
-      <div>
-        <EditCommentModal />
-      </div>
-    )
-  };
-
-
+  
 
   return (
     <>
@@ -42,11 +33,15 @@ function Comments({ songId }) {
           <div className="songComments">
             {/* <div className="comment-user">{username}</div> */}
             <li key={comment?.id} className="comment">
-            <img className="user-icon" src="../../../images/default-icon.png"></img>
+              <img
+                className="user-icon"
+                src="../../../images/default-icon.png"
+              ></img>
               {comment?.body}
             </li>
-              {/* <EditCommentModal comment={comment} /> */}
-              <editButtons comment={comment}/>
+            {comment.userId === userId && (
+              <EditCommentModal comment={comment} />
+            )}
           </div>
         </div>
       ))}
