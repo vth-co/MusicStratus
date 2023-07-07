@@ -72,6 +72,9 @@ const SplashPage = () => {
           <ul song={song} className="grid-card">
             <NavLink to={"/signup"}>
               <img className="card-image" src={song.imageUrl} alt={""} />
+              <button className="grid-card-play-button">
+                <i class="fa-solid fa-circle-play"></i>
+              </button>
               <li className="card-title">{song.title}</li>
               <li className="card-artist">{song.artist}</li>
             </NavLink>
