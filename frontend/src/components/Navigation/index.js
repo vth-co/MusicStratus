@@ -5,8 +5,9 @@ import ProfileButton from "./ProfileButton";
 import SignupModal from "../Auth/Signup";
 import "./Navigation.css";
 import SearchBar from "../Search";
-import AddSongModal from "../Songs/AddSongModal"
-import LoginFormModal from "../Auth/Login"
+import AddSongModal from "../Songs/AddSongModal";
+import LoginFormModal from "../Auth/Login";
+
 
 const Navigation = ({ isLoaded }) => {
   const user = useSelector((state) => state.session.user);
@@ -14,7 +15,7 @@ const Navigation = ({ isLoaded }) => {
   let location = useLocation();
 
   let sessionLinks;
-  if (location.pathname === '/') {
+  if (location.pathname === "/") {
     sessionLinks = (
       <nav className="navbar">
         <div className="buttons">
@@ -36,20 +37,36 @@ const Navigation = ({ isLoaded }) => {
           <NavLink className="title-link" to="/discover">
             <img className="splash-icon" src="../../../images/icon.png"></img>
           </NavLink>
-          <NavLink to={"/discover"}>
-            <button className="feed-button">Home</button>
+          <NavLink to={"/discover"} activeClassName="active">
+            <button className="feed-button" >Home</button>
           </NavLink>
-          <NavLink to={"/feed"}>
-            <button className="feed-button">Feed</button>
+          <NavLink to={"/feed"} activeClassName="active">
+            <button className="feed-button" >Feed</button>
           </NavLink>
-          <NavLink to={"/library"}>
-            <button className="feed-button">Library</button>
+          <NavLink to={"/library"} activeClassName="active">
+            <button className="feed-button" >Library</button>
           </NavLink>
           <SearchBar />
           <AddSongModal />
           <ProfileButton user={user} />
         </div>
       </nav>
+    //   <Navbar bg="light" expand="lg">
+    //   <Navbar.Brand href="/discover">Your Brand</Navbar.Brand>
+    //   <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    //   <Navbar.Collapse id="basic-navbar-nav">
+    //     <Nav className="mr-auto">
+    //       <Nav.Link href="/feed">Page 1</Nav.Link>
+    //       <Nav.Link href="#page2">Page 2</Nav.Link>
+    //       <NavDropdown title="More" id="basic-nav-dropdown">
+    //         <NavDropdown.Item href="#page3">Page 3</NavDropdown.Item>
+    //         <NavDropdown.Item href="#page4">Page 4</NavDropdown.Item>
+    //         <NavDropdown.Divider />
+    //         <NavDropdown.Item href="#page5">Page 5</NavDropdown.Item>
+    //       </NavDropdown>
+    //     </Nav>
+    //   </Navbar.Collapse>
+    // </Navbar>
     );
   }
 
@@ -58,6 +75,6 @@ const Navigation = ({ isLoaded }) => {
       <div>{isLoaded && sessionLinks}</div>
     </div>
   );
-}
+};
 
 export default Navigation;

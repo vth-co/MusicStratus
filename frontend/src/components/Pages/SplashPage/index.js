@@ -95,34 +95,45 @@ const SplashPage = () => {
             ]}
           />
         </div> */}
-      {/* <div className="footer">
+      <div className="footer">
         <div className="footer-links-container">
-          <a
-            href="https://vth-co.github.io/"
-            className="link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p>Portfolio</p>
-          </a>
-          <a
-            href="https://github.com/vth-co/MusicStratus"
-            className="link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p>Github</p>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/vu-co/"
-            className="link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p>Linkedin</p>
-          </a>
+          <div className="footer-links">
+            Company
+            <a
+              href="https://vth-co.github.io/"
+              className="link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Portfolio
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vu-co/"
+              className="link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Linkedin
+            </a>
+            <a
+              href="https://github.com/vth-co/MusicStratus"
+              className="link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </a>
+          </div>
+          <div className="footer-resources">
+            Resources
+            <p className="link">JavaScript</p>
+            <p className="link">HTML/CSS</p>
+            <p className="link">React</p>
+            <p className="link">Redux</p>
+            <p className="link">PostgreSQL</p>
+          </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

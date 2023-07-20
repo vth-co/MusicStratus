@@ -96,16 +96,33 @@
 
 .footer-links-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     min-width: 1250px;
-    border-top: 1px solid black;
+    border-top: 1px solid rgb(108, 108, 108);
+    margin-top: 20px;
 }
 
 .link {
     text-decoration: none;
-    color: gray;
+    color: rgb(187, 187, 187);
     font-family: "Segoe UI","Helvetica Neue",sans-serif;
 }
+
+.footer-resources {
+    display: flex;
+    flex-direction: column;
+    border: 1px red solid;
+    justify-content: space-between;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    border: 1px red solid;
+    justify-content: space-between;
+}
+
 
 .discover-audio-player {
     position: fixed;

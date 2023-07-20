@@ -41,7 +41,7 @@ li {
   text-align: center;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0);
-  padding: 15px 35px;
+  padding: 14px 35px;
 }
 
 .feed-user-button {
@@ -109,8 +109,8 @@ li {
 }
 
 .splash-icon {
-  width: 50px;
-  padding: 0 10px;
+  width: 46px;
+  padding: 0 9px;
 }
 
 h2 {
@@ -176,4 +176,8 @@ h2 {
 
 .fa-arrow-right-from-bracket {
   font-size: small;
+}
+
+.navbar-home a.active {
+  background-color: #181919;
 }

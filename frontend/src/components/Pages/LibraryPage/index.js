@@ -11,11 +11,9 @@ import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 
 const LibraryPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
-
-    const songsObj = useSelector((state) => state.songs.songs);
+  const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
   const library = songs.filter((song) => song.userId === sessionUser.id);
-
 
   function shuffleArray(array) {
     let i = array.length - 1;
