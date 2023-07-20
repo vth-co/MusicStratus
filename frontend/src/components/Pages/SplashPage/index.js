@@ -97,8 +97,8 @@ const SplashPage = () => {
         </div> */}
       <div className="footer">
         <div className="footer-links-container">
-          <div className="footer-links">
-            Company
+          <ul className="footer-ul">
+            <p className="footer-section">Company</p>
             <a
               href="https://vth-co.github.io/"
               className="link"
@@ -123,15 +123,14 @@ const SplashPage = () => {
             >
               Github
             </a>
-          </div>
-          <div className="footer-resources">
-            Resources
-            <p className="link">JavaScript</p>
-            <p className="link">HTML/CSS</p>
-            <p className="link">React</p>
-            <p className="link">Redux</p>
-            <p className="link">PostgreSQL</p>
-          </div>
+          </ul>
+          <ul className="footer-ul">
+            <p className="footer-section">Resources</p>
+            <li className="link">JavaScript</li>
+            <li className="link">HTML / CSS</li>
+            <li className="link">React / Redux</li>
+            <li className="link">PostgreSQL</li>
+          </ul>
         </div>
       </div>
     </div>

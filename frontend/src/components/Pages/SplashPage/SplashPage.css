@@ -109,20 +109,21 @@
     font-family: "Segoe UI","Helvetica Neue",sans-serif;
 }
 
-.footer-resources {
+.footer-ul {
     display: flex;
     flex-direction: column;
-    border: 1px red solid;
     justify-content: space-between;
 }
 
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    border: 1px red solid;
-    justify-content: space-between;
+.footer-ul li {
+    margin-bottom: 5px;
+    color: #BBBBBB;
+    font-family: "Segoe UI","Helvetica Neue",sans-serif;
 }
 
+.footer-section {
+    margin-bottom: 10px;
+}
 
 .discover-audio-player {
     position: fixed;
