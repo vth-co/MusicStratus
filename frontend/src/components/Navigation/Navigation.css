@@ -155,7 +155,7 @@ h2 {
   position: absolute;
   width: 135px;
   right: 0;
-  
+  z-index: 50;
 }
 
 .logout-button {

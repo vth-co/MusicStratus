@@ -40,6 +40,68 @@ const DiscoverPage = () => {
     },
   };
 
+  const LibraryButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const {
+      carouselState: { currentSlide },
+    } = rest;
+    return (
+      <div className="carousel-button-group">
+        <button
+          className={
+            currentSlide === 0 ? "disable" : "carousel-button-left-library"
+          }
+          onClick={() => previous()}
+        >
+          <i class="fa-solid fa-square-caret-left"></i>
+        </button>
+        <button
+          className="carousel-button-right-library"
+          onClick={() => goToSlide(currentSlide + 1)}
+        >
+          <i class="fa-solid fa-square-caret-right"></i>
+        </button>
+        <button
+          className="carousel-button-shuffle-library"
+          onClick={() =>
+            goToSlide(Math.floor(Math.random() * library.length + 1))
+          }
+        >
+          <i class="fa-solid fa-shuffle"></i>
+        </button>
+      </div>
+    );
+  };
+
+  const DiscoverButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const {
+      carouselState: { currentSlide },
+    } = rest;
+    return (
+      <div className="carousel-button-group">
+        <button
+          className={currentSlide === 0 ? "disable" : "carousel-button-left"}
+          onClick={() => previous()}
+        >
+          <i class="fa-solid fa-square-caret-left"></i>
+        </button>
+        <button
+          className="carousel-button-right"
+          onClick={() => goToSlide(currentSlide + 1)}
+        >
+          <i class="fa-solid fa-square-caret-right"></i>
+        </button>
+        <button
+          className="carousel-button-shuffle"
+          onClick={() =>
+            goToSlide(Math.floor(Math.random() * discover.length + 1))
+          }
+        >
+          <i class="fa-solid fa-shuffle"></i>
+        </button>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="discover-page">
@@ -52,6 +114,8 @@ const DiscoverPage = () => {
             // infinite={true}
             containerClass="container"
             renderButtonGroupOutside={true}
+            customButtonGroup={<DiscoverButtonGroup />}
+            arrows={false}
           >
             {discover?.map((song) => (
               <div className="song-card" song={song}>
@@ -83,6 +147,9 @@ const DiscoverPage = () => {
             responsive={responsive}
             // infinite={true}
             containerClass="container"
+            renderButtonGroupOutside={true}
+            customButtonGroup={<LibraryButtonGroup />}
+            arrows={false}
           >
             {library?.map((song) => (
               <div className="song-card" song={song}>

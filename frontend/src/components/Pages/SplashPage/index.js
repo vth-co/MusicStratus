@@ -4,6 +4,7 @@ import "./SplashPage.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
+
 // import AudioPlayer from "react-h5-audio-player";
 import "react-jinke-music-player/assets/index.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
@@ -27,6 +28,8 @@ const SplashPage = () => {
 
   const shuffledSongs = shuffleArray(songs);
   shuffledSongs.length = 12;
+
+  
 
   // const [currentTrack, setTrackIndex] = useState("");
 

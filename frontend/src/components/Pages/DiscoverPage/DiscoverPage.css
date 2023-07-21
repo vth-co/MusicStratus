@@ -55,6 +55,7 @@
     align-items: center;
     flex-direction: column;
     padding: 30px 50px;
+    position: relative;
 }
 
 .container {
@@ -114,3 +115,70 @@
 .fa-circle-play {
     pointer-events: none;
 }
+
+.disable {
+    display: none;
+}
+
+.carousel-button-left {
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: calc(45%);
+    left: calc(28% + 1px);
+}
+
+.carousel-button-right {
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: calc(45%);
+    right: calc(28% + 1px);
+}
+
+.carousel-button-shuffle {
+    background-color: transparent;
+    color: #637394;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: calc(12% + 2px);
+    right: calc(47%);
+}
+
+.carousel-button-left-library {
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: calc(45%);
+    left: calc(28% + 1px);
+}
+
+.carousel-button-right-library {
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: calc(45%);
+    right: calc(28% + 1px);
+}
+
+.carousel-button-shuffle-library {
+    background-color: transparent;
+    color: #637394;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: calc(12% + 2px);
+    right: calc(47%);
+}
+
