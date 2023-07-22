@@ -52,7 +52,7 @@
     height: fit-content;
     width: 721px;
     margin-top: 20px;
-    margin-right: 300px;
+    margin-right: 325px;
     min-height: 670px;
     border-right: 1px gray solid;
 }
@@ -65,20 +65,10 @@
     background-color: #222425;
 }
 
-.background-image {
-    /* width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    filter: blur(7px); */
-}
-
 .audio-player {
-   /* background-color: #505658; */
-   background-image: linear-gradient(to right, #585F62, #1B1D1D);
+   background-color: #292B2C;
+   /* background-image: linear-gradient(to right, #585F62, #1B1D1D); */
+   border-top: 1px solid gray;
 } 
 
 .song-comment-container {

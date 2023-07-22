@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import SignupModal from "../Auth/Signup";
 import "./Navigation.css";
-import SearchBar from "../Search";
+import SearchBar from "../Search/SearchBar";
 import AddSongModal from "../Songs/AddSongModal";
 import LoginFormModal from "../Auth/Login";
 
@@ -51,29 +51,13 @@ const Navigation = ({ isLoaded }) => {
           <ProfileButton user={user} />
         </div>
       </nav>
-    //   <Navbar bg="light" expand="lg">
-    //   <Navbar.Brand href="/discover">Your Brand</Navbar.Brand>
-    //   <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    //   <Navbar.Collapse id="basic-navbar-nav">
-    //     <Nav className="mr-auto">
-    //       <Nav.Link href="/feed">Page 1</Nav.Link>
-    //       <Nav.Link href="#page2">Page 2</Nav.Link>
-    //       <NavDropdown title="More" id="basic-nav-dropdown">
-    //         <NavDropdown.Item href="#page3">Page 3</NavDropdown.Item>
-    //         <NavDropdown.Item href="#page4">Page 4</NavDropdown.Item>
-    //         <NavDropdown.Divider />
-    //         <NavDropdown.Item href="#page5">Page 5</NavDropdown.Item>
-    //       </NavDropdown>
-    //     </Nav>
-    //   </Navbar.Collapse>
-    // </Navbar>
     );
   }
 
   return (
-    <div>
+    <>
       <div>{isLoaded && sessionLinks}</div>
-    </div>
+    </>
   );
 };
 

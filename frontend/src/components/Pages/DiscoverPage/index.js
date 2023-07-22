@@ -14,19 +14,15 @@ const DiscoverPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
-
   const discover = songs.filter((song) => song.userId !== sessionUser.id);
-
   const library = songs.filter((song) => song.userId === sessionUser.id);
-
   const [currentTrack, setTrackIndex] = useState("");
-
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-      slidesToSlide: 2, // optional, default to 1.
-      partialVisibilityGutter: 40,
+      items: 5,
+      slidesToSlide: 4, // optional, default to 1.
+      // partialVisibilityGutter: 30,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -40,67 +36,65 @@ const DiscoverPage = () => {
     },
   };
 
-  const LibraryButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-    const {
-      carouselState: { currentSlide },
-    } = rest;
-    return (
-      <div className="carousel-button-group">
-        <button
-          className={
-            currentSlide === 0 ? "disable" : "carousel-button-left-library"
-          }
-          onClick={() => previous()}
-        >
-          <i class="fa-solid fa-square-caret-left"></i>
-        </button>
-        <button
-          className="carousel-button-right-library"
-          onClick={() => goToSlide(currentSlide + 1)}
-        >
-          <i class="fa-solid fa-square-caret-right"></i>
-        </button>
-        <button
-          className="carousel-button-shuffle-library"
-          onClick={() =>
-            goToSlide(Math.floor(Math.random() * library.length + 1))
-          }
-        >
-          <i class="fa-solid fa-shuffle"></i>
-        </button>
-      </div>
-    );
-  };
+  // const LibraryButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+  //   const {
+  //     carouselState: { currentSlide },
+  //   } = rest;
+  //   return (
+  //     <div className="carousel-button-group">
+  //       <button
+  //         className={currentSlide === 0 ? "disable" : "carousel-button-left"}
+  //         onClick={() => previous()}
+  //       >
+  //         <i class="fa-solid fa-square-caret-left"></i>
+  //       </button>
+  //       <button
+  //         className="carousel-button-right"
+  //         onClick={() => goToSlide(currentSlide + 1)}
+  //       >
+  //         <i class="fa-solid fa-square-caret-right"></i>
+  //       </button>
+  //       {/* <button
+  //         className="carousel-button-shuffle"
+  //         onClick={() =>
+  //           goToSlide(Math.floor(Math.random() * library.length + 1))
+  //         }
+  //       >
+  //         <i class="fa-solid fa-shuffle"></i>
+  //       </button> */}
+  //     </div>
+  //   );
+  // };
 
-  const DiscoverButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-    const {
-      carouselState: { currentSlide },
-    } = rest;
-    return (
-      <div className="carousel-button-group">
-        <button
-          className={currentSlide === 0 ? "disable" : "carousel-button-left"}
-          onClick={() => previous()}
-        >
-          <i class="fa-solid fa-square-caret-left"></i>
-        </button>
-        <button
-          className="carousel-button-right"
-          onClick={() => goToSlide(currentSlide + 1)}
-        >
-          <i class="fa-solid fa-square-caret-right"></i>
-        </button>
-        <button
-          className="carousel-button-shuffle"
-          onClick={() =>
-            goToSlide(Math.floor(Math.random() * discover.length + 1))
-          }
-        >
-          <i class="fa-solid fa-shuffle"></i>
-        </button>
-      </div>
-    );
-  };
+  // const DiscoverButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+  //   const {
+  //     carouselState: { currentSlide },
+  //   } = rest;
+  //   return (
+  //     <div className="carousel-button-group">
+  //       <button
+  //         className={currentSlide === 0 ? "disable" : "carousel-button-left"}
+  //         onClick={() => previous()}
+  //       >
+  //         <i class="fa-solid fa-square-caret-left"></i>
+  //       </button>
+  //       <button
+  //         className="carousel-button-right"
+  //         onClick={() => goToSlide(currentSlide + 1)}
+  //       >
+  //         <i class="fa-solid fa-square-caret-right"></i>
+  //       </button>
+  //       {/* <button
+  //         className="carousel-button-shuffle"
+  //         onClick={() =>
+  //           goToSlide(Math.floor(Math.random() * discover.length + 1))
+  //         }
+  //       >
+  //         <i class="fa-solid fa-shuffle"></i>
+  //       </button> */}
+  //     </div>
+  //   );
+  // };
 
   return (
     <>
@@ -108,14 +102,16 @@ const DiscoverPage = () => {
         <div className="discover-carousel-container">
           <h2 className="section-title">Explore</h2>
           <Carousel
-            partialVisible={true}
+            // partialVisible={true}
             // centerMode={true}
             responsive={responsive}
             // infinite={true}
             containerClass="container"
-            renderButtonGroupOutside={true}
-            customButtonGroup={<DiscoverButtonGroup />}
-            arrows={false}
+            // renderButtonGroupOutside={true}
+            // customButtonGroup={<DiscoverButtonGroup />}
+            // arrows={false}
+            centerMode={true}
+            infinite
           >
             {discover?.map((song) => (
               <div className="song-card" song={song}>
@@ -142,14 +138,16 @@ const DiscoverPage = () => {
         <div div className="discover-carousel-container">
           <h2 className="section-title">Library</h2>
           <Carousel
-            partialVisible={true}
+            // partialVisible={true}
             // centerMode={true}
             responsive={responsive}
             // infinite={true}
             containerClass="container"
-            renderButtonGroupOutside={true}
-            customButtonGroup={<LibraryButtonGroup />}
-            arrows={false}
+            // renderButtonGroupOutside={true}
+            // customButtonGroup={<LibraryButtonGroup />}
+            // arrows={false}
+            centerMode={true}
+            infinite
           >
             {library?.map((song) => (
               <div className="song-card" song={song}>
@@ -176,7 +174,7 @@ const DiscoverPage = () => {
         <div className="music-container">
           <AudioPlayer
             className="audio-player"
-            volume={0.3}
+            volume={0.2}
             layout="horizontal-reverse"
             src={currentTrack}
             // customAdditionalControls={[

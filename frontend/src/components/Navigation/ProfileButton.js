@@ -7,7 +7,7 @@ function ProfileButton() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const history = useHistory();
-  const user = useSelector(state => state.session.user);
+  const user = useSelector((state) => state.session.user);
 
   const openMenu = () => {
     if (showMenu) return;
@@ -28,30 +28,28 @@ function ProfileButton() {
 
   const logout = (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout())
-    return history.push('/');
+    dispatch(sessionActions.logout());
+    return history.push("/");
   };
 
   return (
     <>
-      <div className="buttons">
-        <button className="feed-user-button" onClick={openMenu}>
-          <div className="profile-container">
-            <div>
-              <img className="user-icon" src="../../../images/default-icon.png"></img>
-            </div>
-            <span className="username">{user.username}</span>
-          </div>
+      <div className="profile-button">
+        <button className="feed-button" onClick={openMenu}>
+          <img
+            className="user-icon"
+            src="../../../images/default-icon.png"
+          ></img>
+          <i class="fa-solid fa-chevron-down"></i>
           {showMenu && (
-            <ul className="profile-dropdown">
-              <li className="email">{user.email}</li>
-              <li>
+            <div className="profile-dropdown">
+              <p className="email"> {user.username}</p>
+              <p className="email">{user.email}</p>
                 <button className="logout-button" onClick={logout}>
-                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
                   Log Out
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 </button>
-              </li>
-            </ul>
+            </div>
           )}
         </button>
       </div>

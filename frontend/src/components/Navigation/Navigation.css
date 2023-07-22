@@ -18,7 +18,8 @@ li {
 
 .navbar-home {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center; /* Center the buttons vertically */
   top: 0;
   z-index: 1;
   width: 100%;
@@ -39,9 +40,13 @@ li {
   border-style: none solid none none;
   white-space: normal;
   text-align: center;
-  color: #ffffff;
+  color: rgb(190, 190, 190);
   background-color: rgba(255, 255, 255, 0);
   padding: 14px 35px;
+}
+
+.feed-button:hover {
+  color: white;
 }
 
 .feed-user-button {
@@ -53,9 +58,9 @@ li {
   text-align: center;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0);
-  padding: 15px 15px;
-  position: absolute;
-  right: 0;
+  padding: 9px 35px;
+  /* position: absolute;
+  right: 0; */
 }
 
 /* .feed-user-button:focus {
@@ -122,25 +127,10 @@ h2 {
   display: flex;
 }
 
-.profile-container {
-  display: flex;
-}
-
-
-.profile-username-button-container {
-  border: transparent;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.848);
-  cursor: pointer;
-}
-
-.profile-username-button-container:hover {
-  color: white;
-}
 
 .username {
   font-size: normal;
-  margin-top: 3px;
+  color: rgb(190, 190, 190);
 }
 
 .fa-angle-down {
@@ -149,23 +139,26 @@ h2 {
 }
 
 .profile-dropdown {
-  padding: 0;
+  padding: 0 0;
   background-color: rgb(51,51,51);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   position: absolute;
-  width: 135px;
-  right: 0;
+  right: calc(1%) ;
+  top: calc(90%);
+  width: 118px;
   z-index: 50;
 }
 
 .logout-button {
   background-color: transparent;
+  color: white;
   width:max-content;
   border: transparent;
 }
 
 .logout-button:hover {
   background-color: rgba(128, 128, 128, 0.274);
+  cursor: pointer;
 }
 
 .user-icon {
@@ -180,4 +173,12 @@ h2 {
 
 .navbar-home a.active {
   background-color: #181919;
+}
+
+.fa-arrow-right-from-bracket {
+  margin-left: 5px;
+}
+
+.profile-button {
+  position: relative;
 }

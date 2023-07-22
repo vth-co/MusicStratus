@@ -6,19 +6,20 @@ import * as sessionActions from "./store/session";
 import { getSongs } from "./store/songs";
 import { getComments } from "./store/comments";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import ErrorPage from "./components/Pages/ErrorPage";
 import SplashPage from "./components/Pages/SplashPage";
 import DiscoverPage from "./components/Pages/DiscoverPage";
 import Song from "./components/Songs/SongPage";
-import Navigation from './components/Navigation'
+import Navigation from "./components/Navigation";
 import SignupPage from "./components/Pages/AuthPages/SignupPage";
 import LoginPage from "./components/Pages/AuthPages/LoginPage";
 import FeedPage from "./components/Pages/FeedPage";
 import LibraryPage from "./components/Pages/LibraryPage";
+import SearchResults from "./components/Search/SearchResults";
 
-library.add(fas)
+library.add(fas);
 
 function App() {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ function App() {
   useEffect(() => {
     dispatch(getSongs());
     dispatch(getComments());
-  })
+  });
 
   return (
     <>
@@ -46,20 +47,23 @@ function App() {
           <Route path="/404">
             <ErrorPage />
           </Route>
-          <Route exact path={'/'}>
+          <Route exact path={"/"}>
             <SplashPage />
           </Route>
-          <Route path='/discover'>
+          <Route path="/discover">
             <DiscoverPage />
           </Route>
-          <Route path='/feed'>
+          <Route path="/feed">
             <FeedPage />
           </Route>
-          <Route path='/library'>
+          <Route path="/library">
             <LibraryPage />
           </Route>
-          <Route path='/songs/:id'>
+          <Route path="/songs/:id">
             <Song />
+          </Route>
+          <Route path="/search">
+            <SearchResults />
           </Route>
         </Switch>
       )}

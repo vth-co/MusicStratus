@@ -59,7 +59,7 @@
 }
 
 .container {
-    width: 1050px;
+    width: 1265px;
 }
 
 .song-card {
@@ -75,7 +75,6 @@
 .audio-player {
     background-color: #292B2C;
     color: white;
-
 }
 
 .card-play-button {
@@ -120,25 +119,22 @@
     display: none;
 }
 
-.carousel-button-left {
-    background-color: transparent;
-    border: none;
-    font-size: 50px;
-    cursor: pointer;
+.carousel-button-group {
+    display: flex;
+    gap: 1008px;
     position: absolute;
-    top: calc(45%);
-    left: calc(28% + 1px);
+    top: 55%;
+    transform: translateY(-50%);
 }
 
-.carousel-button-right {
+.carousel-button-left, .carousel-button-right {
     background-color: transparent;
+    color: rgb(131, 131, 131);
     border: none;
     font-size: 50px;
     cursor: pointer;
-    position: absolute;
-    top: calc(45%);
-    right: calc(28% + 1px);
 }
+
 
 .carousel-button-shuffle {
     background-color: transparent;
@@ -146,39 +142,36 @@
     border: none;
     font-size: 25px;
     cursor: pointer;
-    position: absolute;
-    top: calc(12% + 2px);
-    right: calc(47%);
+   
 }
 
-.carousel-button-left-library {
-    background-color: transparent;
-    border: none;
-    font-size: 50px;
-    cursor: pointer;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 6 columns with equal width */
+    grid-gap: 15px; /* Adjust this value to set the gap between images */
+    max-width: 50vw;
+    margin-top: 75px;
     position: absolute;
-    top: calc(45%);
-    left: calc(28% + 1px);
 }
 
-.carousel-button-right-library {
-    background-color: transparent;
-    border: none;
-    font-size: 50px;
-    cursor: pointer;
-    position: absolute;
-    top: calc(45%);
-    right: calc(28% + 1px);
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    position: relative;
 }
 
-.carousel-button-shuffle-library {
-    background-color: transparent;
-    color: #637394;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
+.page-title {
     position: absolute;
-    top: calc(12% + 2px);
-    right: calc(47%);
+    color: #C1BCB6;
+    left: calc(24% + 17px);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
 }
 
+.react-multiple-carousel__arrow {
+    top: calc(5%);
+    margin: 75px 0;
+    z-index: 10;
+}
