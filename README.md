@@ -4,21 +4,25 @@ MusicStratus is a clone of [SoundCloud](https://soundcloud.com/) where users can
 
 ## Live Site
 
-A live deployment of [MusicStratus](https://musicstratus.herokuapp.com/) is hosted on heroku.
+A live deployment of [MusicStratus]([https://musicstratus.onrender.com/]) is hosted on Render.
 
 ## Screenshots 
 
 ### Welcome
 
-![](https://i.gyazo.com/f6b8b4e1e3ddb994f8004c7e09cced2e.jpg)
+![](https://gyazo.com/927fb757907d9dfd22aa31e265dad0cd)
 
 ### Discover
 
-![](https://i.gyazo.com/a075e15cf5bca4a0c8074c3cb7d640bd.jpg)
+![](https://gyazo.com/fadb84efe6fa918394d085aff4195d22)
 
 ### Music Player
 
-![](https://i.gyazo.com/40273cd7eadc9f17de0b8ab5ca161369.jpg)
+![](https://gyazo.com/8692ad8abbba64222a00621c782d332d)
+
+### Search
+
+![](https://gyazo.com/ffe5bce688cff60c44701b6324886d8a)
 
 ## Features
 
@@ -35,7 +39,7 @@ A live deployment of [MusicStratus](https://musicstratus.herokuapp.com/) is host
 * Javascript
 * React
 * Redux
-* Heroku
+* Render
 * PostgreSQL
 
 ## Local Installation
