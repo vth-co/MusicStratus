@@ -10,24 +10,26 @@ A live deployment of [MusicStratus]([https://musicstratus.onrender.com/]) is hos
 
 ### Welcome
 
-![](https://gyazo.com/927fb757907d9dfd22aa31e265dad0cd)
+![](https://i.gyazo.com/927fb757907d9dfd22aa31e265dad0cd.png)
 
 ### Discover
 
-![](https://gyazo.com/fadb84efe6fa918394d085aff4195d22)
+![](https://i.gyazo.com/fadb84efe6fa918394d085aff4195d22.png)
 
 ### Music Player
 
-![](https://gyazo.com/8692ad8abbba64222a00621c782d332d)
+![](https://i.gyazo.com/8692ad8abbba64222a00621c782d332d.png)
 
 ### Search
 
-![](https://gyazo.com/ffe5bce688cff60c44701b6324886d8a)
+![](https://i.gyazo.com/ffe5bce688cff60c44701b6324886d8a.png)
 
 ## Features
 
 * Full CRUD Features for Songs
 * Full CRUF Features for Comments
+* Music player throughout entire app
+* Search for songs/artists
 
 ### Future Features
 * Users can like songs
