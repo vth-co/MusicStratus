@@ -39,6 +39,7 @@ const SplashPage = () => {
             autoPlay={true}
             stopOnHover={true}
             infiniteLoop={true}
+            interval={4500}
           >
             <div className="carousel-div">
               <h2 className="carousel-title">Discover new music</h2>
