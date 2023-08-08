@@ -22,7 +22,7 @@ const FeedPage = () => {
         <p className="page-title">Hear the latest posts from the people:</p>
         <div className="grid-container">
           {discover.map((song) => (
-            <div className="song-card" song={song}>
+            <div className="song-card" song={song} key={song.id}>
               <NavLink className="song-link" to={`/songs/${song.id}`}>
                 <div className="card-container">
                   <img className="image" src={song.imageUrl} alt={""} />

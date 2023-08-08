@@ -20,7 +20,7 @@ const LibraryPage = () => {
       <p className="page-title">Hear your own uploads:</p>
         <div className="grid-container">
           {library.map((song) => (
-            <div className="song-card" song={song}>
+            <div className="song-card" song={song} key={song.id}>
               <NavLink className="song-link" to={`/songs/${song.id}`}>
                 <div className="card-container">
                   <img className="image" src={song.imageUrl} alt={""} />
