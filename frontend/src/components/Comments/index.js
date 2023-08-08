@@ -24,15 +24,13 @@ function Comments({ songId }) {
     }
   });
 
-  
-
   return (
     <>
       {songComments?.reverse().map((comment) => (
-        <div>
-          <div className="songComments">
+        <div key={comment?.id}>
+          <div className="songComments" >
             {/* <div className="comment-user">{username}</div> */}
-            <li key={comment?.id} className="comment">
+            <li className="comment">
               <img
                 className="user-icon"
                 src="../../../images/default-icon.png"

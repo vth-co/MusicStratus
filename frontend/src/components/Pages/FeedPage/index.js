@@ -32,7 +32,7 @@ const FeedPage = () => {
                       value={song?.url}
                       onClick={(e) => setTrackIndex(e.target.value)}
                     >
-                      <i class="fa-solid fa-circle-play"></i>
+                      <i className="fa-solid fa-circle-play"></i>
                     </button>
                   </NavLink>
                 </div>

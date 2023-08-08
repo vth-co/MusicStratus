@@ -9,7 +9,7 @@ function EditSongModal() {
   return (
     <>
       <button className="button" onClick={() => setShowModal(true)}>
-      <i class="fa-solid fa-pen"></i> Edit
+      <i className="fa-solid fa-pen"></i> Edit
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

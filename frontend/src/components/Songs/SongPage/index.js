@@ -39,7 +39,7 @@ const Song = () => {
       <div className="editAndDelete">
         <EditSongModal />
         <button className="button" onClick={handleDelete}>
-          <i class="fa-solid fa-trash-can"></i> Delete
+          <i className="fa-solid fa-trash-can"></i> Delete
         </button>
       </div>
     );

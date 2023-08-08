@@ -110,11 +110,11 @@ const DiscoverPage = () => {
             // renderButtonGroupOutside={true}
             // customButtonGroup={<DiscoverButtonGroup />}
             // arrows={false}
-            centerMode={true}
+            centerMode="true"
             infinite
           >
             {discover?.map((song) => (
-              <div className="song-card" song={song}>
+              <div className="song-card" song={song} key={song.id}>
                 <NavLink className="song-link" to={`/songs/${song.id}`}>
                   <div className="card-container">
                     <img className="image" src={song.imageUrl} alt={""} />
@@ -124,7 +124,7 @@ const DiscoverPage = () => {
                         value={song?.url}
                         onClick={(e) => setTrackIndex(e.target.value)}
                       >
-                        <i class="fa-solid fa-circle-play"></i>
+                        <i className="fa-solid fa-circle-play"></i>
                       </button>
                     </NavLink>
                   </div>
@@ -146,11 +146,11 @@ const DiscoverPage = () => {
             // renderButtonGroupOutside={true}
             // customButtonGroup={<LibraryButtonGroup />}
             // arrows={false}
-            centerMode={true}
+            centerMode="true"
             infinite
           >
             {library?.map((song) => (
-              <div className="song-card" song={song}>
+              <div className="song-card" song={song} key={song.id}>
                 <NavLink className="song-link" to={`/songs/${song.id}`}>
                   <div className="card-container">
                     <img className="image" src={song.imageUrl} alt={""} />
@@ -160,7 +160,7 @@ const DiscoverPage = () => {
                         value={song?.url}
                         onClick={(e) => setTrackIndex(e.target.value)}
                       >
-                        <i class="fa-solid fa-circle-play"></i>
+                        <i className="fa-solid fa-circle-play"></i>
                       </button>
                     </NavLink>
                   </div>

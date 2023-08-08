@@ -40,14 +40,14 @@ function ProfileButton() {
             className="user-icon"
             src="../../../images/default-icon.png"
           ></img>
-          <i class="fa-solid fa-chevron-down"></i>
+          <i className="fa-solid fa-chevron-down"></i>
           {showMenu && (
             <div className="profile-dropdown">
               <p className="email"> {user.username}</p>
               <p className="email">{user.email}</p>
                 <button className="logout-button" onClick={logout}>
                   Log Out
-                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  <i className="fa-solid fa-arrow-right-from-bracket"></i>
                 </button>
             </div>
           )}

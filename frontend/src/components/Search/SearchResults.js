@@ -31,7 +31,7 @@ const SearchResults = () => {
       <div className="page-container">
         {filteredSongs.length === 0 ? (
             <h3 className="zero-results">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i className="fa-solid fa-magnifying-glass"></i>
               Sorry we didn't find any results for "{searchQuery}". Check the
               spelling, or try a different search.
             </h3>
@@ -52,7 +52,7 @@ const SearchResults = () => {
                           value={song?.url}
                           onClick={(e) => setTrackIndex(e.target.value)}
                         >
-                          <i class="fa-solid fa-circle-play"></i>
+                          <i className="fa-solid fa-circle-play"></i>
                         </button>
                       </NavLink>
                     </div>
