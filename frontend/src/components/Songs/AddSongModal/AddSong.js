@@ -14,9 +14,11 @@ function AddSong({ setShowModal }) {
   const [url, setUrl] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [errors, setErrors] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitted(true)
 
     let payload = {
       userId,
@@ -38,14 +40,16 @@ function AddSong({ setShowModal }) {
     setErrors([]);
 
     const errors = [];
-    if (title.length > 30 || !title.length) {
-      errors.push('Song title must be between 1 and 30 characters');
-    }
-    if (!url.endsWith(".mp3")) {
-      errors.push('URL must be a proper MP3 link')
+    if (submitted) {
+      if (title.length > 30 || !title.length) {
+        errors.push('Song title must be between 1 and 30 characters');
+      }
+      if (!url.endsWith(".mp3")) {
+        errors.push('URL must be a proper MP3 link')
+      }
     }
     setErrors(errors);
-  }, [title, url])
+  }, [title, url, submitted])
 
   return (
     <div className="song-form-container">
