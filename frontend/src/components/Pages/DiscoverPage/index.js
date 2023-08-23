@@ -9,6 +9,7 @@ import "react-h5-audio-player/lib/styles.less"; //Use LESS
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import CustomAudioPlayer from "../CustomAudioPlayer/CustomAudioPlayer";
 
 const DiscoverPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -171,21 +172,21 @@ const DiscoverPage = () => {
             ))}
           </Carousel>
         </div>
-        <div className="music-container">
-          <AudioPlayer
+          <div className="music-container">
+            {/* <AudioPlayer
             className="audio-player"
             volume={0.2}
             layout="horizontal-reverse"
             src={currentTrack}
-            // customAdditionalControls={[
-            //   <div>
-            //     <button>
-            //       {/* button 2<p className="song-title">{song?.title}</p> */}
-            //     </button>
-            //     <button>button 3 </button>
-            //     <button>button 4 </button>
-            //   </div>,
-            // ]}
+            customAdditionalControls={[
+              <div>
+                <button>
+                  button 2<p className="song-title">{song?.title}</p>
+                </button>
+                <button>button 3 </button>
+                <button>button 4 </button>
+              </div>,
+            ]}
             customProgressBarSection={[
               RHAP_UI.CURRENT_TIME,
               <div>/</div>,
@@ -194,16 +195,19 @@ const DiscoverPage = () => {
               RHAP_UI.VOLUME,
             ]}
             customVolumeControls={[]}
-            // style={{
-            //   width: "600px",
-            // }}
-            // customAdditionalControls={[
-            //   // <button>
-            //   //   {/* <img className="image" src={song?.imageUrl} alt={""}></img> */}
-            //   // </button>,
-            // ]}
-          />
-        </div>
+            style={{
+              width: "600px",
+            }}
+            customAdditionalControls={[
+              <button>
+                <img className="image" src={song?.imageUrl} alt={""}></img>
+              </button>,
+            ]}
+          /> */}
+            <CustomAudioPlayer
+              currentTrack={currentTrack}
+            />
+          </div>
       </div>
     </>
   );
