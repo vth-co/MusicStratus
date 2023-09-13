@@ -20,7 +20,7 @@
 }
 
 .carousel-div {
-    max-height: 425px;
+    height: 425px;
 }
 
 .carousel-title {
@@ -28,7 +28,7 @@
     position: absolute;
     top: 25%;
     left: 10%;
-    font-size: 2vw;
+    font-size: 2em;
     text-shadow: rgb(0, 0, 0) 1px 0 10px;
 }
 
@@ -37,7 +37,7 @@
     position: absolute;
     top: 45%;
     left: 10%;
-    font-size: 1vw;
+    font-size: 1em;
     text-shadow: rgb(0, 0, 0) 1px 0 10px;
 }
 
@@ -49,6 +49,17 @@
     justify-items: start;
     align-items: center;
 }
+
+/* Media query for screens 768px and under */
+@media (max-width: 768px) {
+    .grid-container-splash {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto auto;
+    }
+    .carousel-div {
+        height: 325px;
+    }
+  }
 
 .grid-card {
     padding: 0 20px;
