@@ -44,7 +44,7 @@ function LoginForm() {
       <div className="user-login-container">
         
         <form onSubmit={handleSubmit}>
-          <h3 className="form-title">Welcome back!</h3>
+          <h3 className="form-title">Log in to MusicStratus</h3>
           <div className="errors-container">
             {errors.map((error, idx) => (
               <li key={idx}>{error}</li>
