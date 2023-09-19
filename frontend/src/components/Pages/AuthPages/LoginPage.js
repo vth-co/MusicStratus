@@ -41,6 +41,10 @@ const LoginPage = () => {
     <>
       <div className="auth-background">
         <div className="user-login-container">
+          <a className="form-icon-link" to="/">
+            <img className="form-icon" src="../../../images/icon.png"></img>
+            <h2>MusicStratus</h2>
+          </a>
           <form onSubmit={handleSubmit}>
             <h3 className="form-title">Log in to MusicStratus</h3>
             <div className="errors-container">

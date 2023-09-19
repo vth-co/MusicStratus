@@ -41,7 +41,7 @@ function LoginForm() {
     <>
       <div className="user-form-container">
         <form onSubmit={handleSubmit}>
-          <h3 className="form-title">Log in to MusicStratus</h3>
+          <h3 className="form-title">Login</h3>
           <div className="errors-container">
             {errors.map((error, idx) => (
               <li key={idx}>{error}</li>
@@ -52,7 +52,6 @@ function LoginForm() {
           </label> */}
           <div className="form-inputs-container">
             <div className="field">
-              <label>Email</label>
               <input
                 type="text"
                 placeholder="Email"
@@ -62,7 +61,6 @@ function LoginForm() {
               />
             </div>
             <div className="field">
-              <label>Password</label>
               <input
                 type="password"
                 placeholder="Password"

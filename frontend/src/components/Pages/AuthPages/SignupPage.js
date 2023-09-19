@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link, NavLink, Redirect } from "react-router-dom";
 import * as sessionActions from "../../../store/session";
 import "./Auth.css";
 
@@ -47,6 +47,10 @@ const SignupPage = () => {
     <>
       <div className="auth-background">
         <div className="user-login-container">
+          <a className="form-icon-link" to="/">
+            <img className="form-icon" src="../../../images/icon.png"></img>
+            <h2>MusicStratus</h2>
+          </a>
           <form onSubmit={handleSubmit}>
             <h3 className="form-title">Create Account</h3>
             <div className="errors-container">

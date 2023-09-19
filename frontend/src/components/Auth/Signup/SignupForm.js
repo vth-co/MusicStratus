@@ -55,46 +55,36 @@ const SignupForm = () => {
           </div>
           <div className="form-inputs-container">
             <div className="field">
-              <div className="label">
-                <label>Email</label>
-              </div>
               <input
                 type="text"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
             <div className="field">
-              <div className="label">
-                <label>Username</label>
-              </div>
               <input
                 type="text"
+                placeholder="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>
             <div className="field">
-              <div className="label">
-                <label>Password</label>
-              </div>
               <input
                 type="password"
-                // placeholder="Password"
+                placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
             <div className="field">
-              <div className="label">
-                <label>Confirm Password</label>
-              </div>
               <input
                 type="password"
-                // placeholder="Confirm Password"
+                placeholder="Confirm Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
