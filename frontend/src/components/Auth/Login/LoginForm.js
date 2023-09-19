@@ -24,12 +24,10 @@ function LoginForm() {
   const handleClick = async (e) => {
     e.preventDefault();
 
-    const credential = 'Demo-lition'
-    const password = 'password'
+    const credential = "Demo-lition";
+    const password = "password";
 
-    const data = await dispatch(
-      sessionActions.login({ credential, password })
-    );
+    const data = await dispatch(sessionActions.login({ credential, password }));
     if (data) {
       setErrors(data);
     }
@@ -40,9 +38,8 @@ function LoginForm() {
   }
 
   return (
-    <div className="form-container">
-      <div className="user-login-container">
-        
+    <>
+      <div className="user-form-container">
         <form onSubmit={handleSubmit}>
           <h3 className="form-title">Log in to MusicStratus</h3>
           <div className="errors-container">
@@ -55,6 +52,7 @@ function LoginForm() {
           </label> */}
           <div className="form-inputs-container">
             <div className="field">
+              <label>Email</label>
               <input
                 type="text"
                 placeholder="Email"
@@ -64,6 +62,7 @@ function LoginForm() {
               />
             </div>
             <div className="field">
+              <label>Password</label>
               <input
                 type="password"
                 placeholder="Password"
@@ -71,8 +70,8 @@ function LoginForm() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <button className="user-form-button" type="submit">
-                Sign in
+              <button className="user-form-submit" type="submit">
+                Log In
               </button>
             </div>
             <div className="demo-label">
@@ -90,7 +89,7 @@ function LoginForm() {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -44,10 +44,10 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="form-container">
-      <div className="user-login-container">
+    <>
+      <div className="user-create-form-container">
         <form onSubmit={handleSubmit}>
-          <h3 className="form-title">Create your MusicStratus account</h3>
+          <h3 className="form-title">Create Account</h3>
           <div className="errors-container">
             {errors.map((error, idx) => (
               <li key={idx}>{error}</li>
@@ -99,7 +99,9 @@ const SignupForm = () => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
-              <button className="user-form-submit" type="submit">
+            </div>
+            <div className="submit-container">
+              <button className="user-create-form-submit" type="submit">
                 Create Account
               </button>
             </div>
@@ -118,7 +120,7 @@ const SignupForm = () => {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 
