@@ -30,16 +30,14 @@ const SignupForm = () => {
       "Confirm Password field must be the same as the Password field",
     ]);
   };
-  
+
   const handleClick = async (e) => {
     e.preventDefault();
 
-    const credential = 'Demo-lition'
-    const password = 'password'
+    const credential = "Demo-lition";
+    const password = "password";
 
-    const data = await dispatch(
-      sessionActions.login({ credential, password })
-    );
+    const data = await dispatch(sessionActions.login({ credential, password }));
     if (data) {
       setErrors(data);
     }
@@ -47,83 +45,81 @@ const SignupForm = () => {
 
   return (
     <div className="form-container">
-      <div className="user-signup-container">
-        <div className="user-form">
-          <form onSubmit={handleSubmit}>
-            <h3 className="form-title">Create your MusicStratus account</h3>
-            <div className="errors-container">
-              {errors.map((error, idx) => (
-                <li key={idx}>{error}</li>
-              ))}
+      <div className="user-login-container">
+        <form onSubmit={handleSubmit}>
+          <h3 className="form-title">Create your MusicStratus account</h3>
+          <div className="errors-container">
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </div>
+          <div className="form-inputs-container">
+            <div className="field">
+              <div className="label">
+                <label>Email</label>
+              </div>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
-            <div className="form-inputs-container">
-              <div className="field">
-                <div className="label">
-                  <label>Email</label>
-                </div>
-                <input
-                  type="text"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+            <div className="field">
+              <div className="label">
+                <label>Username</label>
               </div>
-              <div className="field">
-                <div className="label">
-                  <label>Username</label>
-                </div>
-                <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+            <div className="field">
+              <div className="label">
+                <label>Password</label>
               </div>
-              <div className="field">
-                <div className="label">
-                  <label>Password</label>
-                </div>
-                <input
-                  type="password"
-                  // placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
+              <input
+                type="password"
+                // placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="field">
+              <div className="label">
+                <label>Confirm Password</label>
               </div>
-              <div className="field">
-                <div className="label">
-                  <label>Confirm Password</label>
-                </div>
-                <input
-                  type="password"
-                  // placeholder="Confirm Password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                />
-                <button className="user-form-button" type="submit">
-                  Create account
+              <input
+                type="password"
+                // placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+              <button className="user-form-submit" type="submit">
+                Create Account
+              </button>
+            </div>
+            <div className="demo-label">
+              <p>
+                Not ready to commit?
+                <button
+                  type="button"
+                  className="demo-button"
+                  onClick={handleClick}
+                >
+                  Demo
                 </button>
-              </div>
-              <div className="demo-label">
-                <p>
-                  Not ready to commit?
-                  <button
-                    type="button"
-                    className="demo-button"
-                    onClick={handleClick}
-                  >
-                    Demo
-                  </button>
-                </p>
-              </div>
+              </p>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );
-}
+};
 
 export default SignupForm;

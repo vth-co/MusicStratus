@@ -1,3 +1,16 @@
+.user-login-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: black;
+    border-radius: 10px;
+    min-width: 450px;
+    min-height: 450px;
+}
+
 .auth-background {
     height: 100%;
     display: flex;
@@ -5,8 +18,5 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-
-    background: linear-gradient(350deg,#222425, #627395);  
-
+    background: linear-gradient(350deg,#000000, #2e4062);  
 }
-

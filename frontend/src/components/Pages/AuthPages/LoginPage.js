@@ -53,6 +53,7 @@ const LoginPage = () => {
           </label> */}
             <div className="form-inputs-container">
               <div className="field">
+                <label>Email</label>
                 <input
                   type="text"
                   placeholder="Email"
@@ -62,6 +63,7 @@ const LoginPage = () => {
                 />
               </div>
               <div className="field">
+                <label>Password</label>
                 <input
                   type="password"
                   placeholder="Password"
@@ -69,19 +71,16 @@ const LoginPage = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
-                <button className="user-form-button" type="submit">
-                  Sign in
+                <button className="user-form-submit" type="submit">
+                  Log In
                 </button>
               </div>
               <div className="demo-label">
                 <p>
                   Don't have an account?
                   <Link to={"/signup"}>
-                    <button
-                      type="button"
-                      className="demo-button"
-                    >
-                      Signup
+                    <button type="button" className="demo-button">
+                      Sign Up for MusicStratus
                     </button>
                   </Link>
                 </p>

@@ -14,6 +14,7 @@ h3 {
 .form-inputs-container {
     display: flex;
     flex-direction: column;
+    padding: 0 75px;
 }
 
 .user-signup-container {
@@ -30,44 +31,58 @@ h3 {
     background-color: rgb(250, 250, 250);
 }
 
-.user-login-container {
-    display: flex;
-    flex-direction: column;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-    border: 1px solid grey;
-    background-color: rgb(250, 250, 250);
-}
-
 input {
-    padding: 7px 8px;
-    margin: 5px 15px;
+    padding: 12px 12px;
+    margin: 10px 15px;
     border-radius: 3px;
     border: 1px solid grey;
+    color: white;
+    background-color: black;
 }
 
-.user-form-button {
+.user-form-submit {
     outline: none;
     cursor: pointer;
     border-radius: 50px;
-    padding: 10px 67px;
+    padding: 15px 67px;
     min-height: 32px;
     border: none;
-    color: #fff;
+    color: black;
+    font-weight: 700;
     background-color: #627395;
     margin: 10px 15px;
+    font-family: 'Inter', sans-serif;
 }
 
-.label {
-    margin-top: 10px;
-    margin-left: 15px;
+.submit-container {
+    display: flex;
+    justify-content: space-around;
 }
+
+.user-create-form-submit {
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 15px 48px;
+    min-height: 32px;
+    border: none;
+    color: black;
+    font-weight: 900;
+    background-color: #627395;
+    margin: 10px 15px;
+    font-family: 'Inter', sans-serif;
+    min-width: 75px;
+}
+
 
 .field {
     display: flex;
     flex-direction: column;
+}
+
+.field label {
+    color: white;
+    margin-left: 15px;
 }
 
 .demo-label {
@@ -75,6 +90,7 @@ input {
     margin-top: 5px;
     text-align: center;
     border-top: 1px solid gray;
+    color: gray;
 }
 
 .demo-button {
@@ -84,7 +100,7 @@ input {
     border: 1px transparent;
     white-space: normal;
     text-align: center;
-    color: #627395;
+    color: white;
     background-color: transparent;
     padding: 5px 10px;
     font-weight: 500;

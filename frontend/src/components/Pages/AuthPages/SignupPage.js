@@ -46,88 +46,88 @@ const SignupPage = () => {
   return (
     <>
       <div className="auth-background">
-        <div className="user-signup-container">
-          <div className="user-form">
-            <form onSubmit={handleSubmit}>
-              <h3 className="form-title">Create your MusicStratus account</h3>
-              <div className="errors-container">
-                {errors.map((error, idx) => (
-                  <li key={idx}>{error}</li>
-                ))}
+        <div className="user-login-container">
+          <form onSubmit={handleSubmit}>
+            <h3 className="form-title">Create Account</h3>
+            <div className="errors-container">
+              {errors.map((error, idx) => (
+                <li key={idx}>{error}</li>
+              ))}
+            </div>
+            <div className="form-inputs-container">
+              <div className="field">
+                <div className="label">
+                  <label>Email</label>
+                </div>
+                <input
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
-              <div className="form-inputs-container">
-                <div className="field">
-                  <div className="label">
-                    <label>Email</label>
-                  </div>
-                  <input
-                    type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
+              <div className="field">
+                <div className="label">
+                  <label>Username</label>
                 </div>
-                <div className="field">
-                  <div className="label">
-                    <label>Username</label>
-                  </div>
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                  />
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="field">
+                <div className="label">
+                  <label>Password</label>
                 </div>
-                <div className="field">
-                  <div className="label">
-                    <label>Password</label>
-                  </div>
-                  <input
-                    type="password"
-                    // placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
+                <input
+                  type="password"
+                  // placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="field">
+                <div className="label">
+                  <label>Confirm Password</label>
                 </div>
-                <div className="field">
-                  <div className="label">
-                    <label>Confirm Password</label>
-                  </div>
-                  <input
-                    type="password"
-                    // placeholder="Confirm Password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
-                  />
-                  <button className="user-form-button" type="submit">
-                    Create account
-                  </button>
-                </div>
-                <div className="demo-label">
-                  <p>
-                    Already have an account?
-                    <Link to={"/login"}>
-                      <button type="button" className="demo-button">
-                        Login
-                      </button>
-                    </Link>
-                  </p>
-                  <p>
-                    Not ready to commit?
-                    <button
-                      type="button"
-                      className="demo-button"
-                      onClick={handleClick}
-                    >
-                      Demo
+                <input
+                  type="password"
+                  // placeholder="Confirm Password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="submit-container">
+                <button className="user-create-form-submit" type="submit">
+                  Create Account
+                </button>
+              </div>
+              <div className="demo-label">
+                <p>
+                  Already have an account?
+                  <Link to={"/login"}>
+                    <button type="button" className="demo-button">
+                      Login
                     </button>
-                  </p>
-                </div>
+                  </Link>
+                </p>
+                <p>
+                  Not ready to commit?
+                  <button
+                    type="button"
+                    className="demo-button"
+                    onClick={handleClick}
+                  >
+                    Demo
+                  </button>
+                </p>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </>
