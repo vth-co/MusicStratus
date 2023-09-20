@@ -10,18 +10,19 @@
 
 .signup-button {
   outline: none;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
   border: 1px transparent;
   white-space: normal;
   text-align: center;
   color: #ffffff;
-  background-color: #627395;
+  background-color: #4263a6;
   padding: 0 16px;
   padding-top: 4px;
   padding-bottom: 5px;
   margin-right: 15px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .user-create-form-container {
