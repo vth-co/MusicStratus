@@ -25,7 +25,7 @@ h3 {
     padding-top: 20px;
     padding-bottom: 5px;
     min-width: 450px;
-    min-height: 400px;
+    min-height: 350px;
     background-color: black;
 }
 
@@ -50,7 +50,13 @@ input {
     background-color: #4483ff;
     margin: 10px 15px;
     font-family: 'Inter', sans-serif;
+    transition: transform 0.2s ease;
 }
+
+.user-form-submit:hover {
+    transform: scale(1.05);
+}
+
 
 .submit-container {
     display: flex;
@@ -70,6 +76,11 @@ input {
     margin: 10px 15px;
     font-family: 'Inter', sans-serif;
     min-width: 75px;
+    transition: transform 0.2s ease;
+}
+
+.user-create-form-submit:hover {
+    transform: scale(1.05);
 }
 
 
@@ -108,4 +119,23 @@ input {
 .demo-button:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.exit {
+    width: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    padding: 5px 5px;
+}
+
+.svg-container {
+    color: white;
+}
+
+.svg-container:hover {
+    color: #4483ff;
 }

@@ -47,10 +47,10 @@ const SignupPage = () => {
     <>
       <div className="auth-background">
         <div className="user-login-container">
-          <a className="form-icon-link" to="/">
+          <Link className="form-icon-link" to="/">
             <img className="form-icon" src="../../../images/icon.png"></img>
             <h2>MusicStratus</h2>
-          </a>
+          </Link>
           <form onSubmit={handleSubmit}>
             <h3 className="form-title">Create Account</h3>
             <div className="errors-container">
