@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { addSong } from "../../../store/songs";
 import { useDispatch, useSelector } from "react-redux";
 import "./AddSong.css";
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 function AddSong({ setShowModal }) {
   const dispatch = useDispatch();
@@ -11,18 +11,21 @@ function AddSong({ setShowModal }) {
   const history = useHistory();
 
   const [title, setTitle] = useState("");
+  const [artist, setArtist] = useState("");
   const [url, setUrl] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [errors, setErrors] = useState([]);
   const [submitted, setSubmitted] = useState(false);
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true)
+    setSubmitted(true);
 
     let payload = {
       userId,
       title,
+      artist,
       url,
       imageUrl,
     };
@@ -32,7 +35,29 @@ function AddSong({ setShowModal }) {
       setErrors(data.errors);
     } else {
       setShowModal(false);
-      history.push(`/user`)
+      history.push(`/user`);
+    }
+  };
+
+  const uploadSongs = async (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    let payload = {};
+    if (file) {
+      const fileName = file.name;
+      payload = {
+        userId,
+        title: fileName,
+        songFile: file,
+      }
+    }
+
+    const data = await dispatch(addSong(payload));
+    if (data.errors) {
+      setErrors(data.errors);
+    } else {
+      setShowModal(false);
+      history.push(`/user`);
     }
   };
 
@@ -42,55 +67,68 @@ function AddSong({ setShowModal }) {
     const errors = [];
     if (submitted) {
       if (title.length > 30 || !title.length) {
-        errors.push('Song title must be between 1 and 30 characters');
+        errors.push("Song title must be between 1 and 30 characters");
       }
       if (!url.endsWith(".mp3")) {
-        errors.push('URL must be a proper MP3 link')
+        errors.push("URL must be a proper MP3 link");
       }
     }
     setErrors(errors);
-  }, [title, url, submitted])
+  }, [title, url, submitted]);
 
   return (
     <div className="song-form-container">
-      <form className="add-song-form" onSubmit={handleSubmit}>
+      <div className="vl"></div>
+      {/* <form className="song-form" onSubmit={handleSubmit}>
+        <h3 className="form-title">Manually Add a Song</h3>
         <div className="errors-container">
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </div>
         <div className="form-inputs-container">
-          <div className="label">
-            <label>Title</label>
-          </div>
           <input
             type="text"
+            placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
-          <div className="label">
-            <label>Url</label>
-          </div>
           <input
             type="text"
+            placeholder="Artist"
+            value={artist}
+            onChange={(e) => setArtist(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Song Url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             required
           />
-          <div className="label">
-            <label>Cover</label>
-          </div>
           <input
             type="text"
+            placeholder="Image Url"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             required
           />
-          <button className="user-form-button" type="submit">
+          <button className="user-form-submit" type="submit">
             Add Song
           </button>
         </div>
+      </form> */}
+      <form className="song-form" onSubmit={uploadSongs}>
+        <h3 className="form-title">Select File</h3>
+        <input
+          className="user-form-submit"
+          type="file"
+          accept=".mp3" //! Optional: Limit file types to MP3 if desired
+          onChange={uploadSongs}
+        />
+        <button type="submit">Upload File</button>
       </form>
     </div>
   );
