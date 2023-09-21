@@ -54,7 +54,7 @@ function AddSong({ setShowModal }) {
 
   return (
     <div className="song-form-container">
-      <div className="vl"></div>
+      {/* <div className="vl"></div> */}
       <form className="song-form" onSubmit={handleSubmit}>
         <h3 className="form-title">Add a Song</h3>
         <div className="errors-container">

@@ -8,7 +8,6 @@
 
 .hidden-text {
     display: none;
-    
 }
 
 .text {
@@ -18,7 +17,6 @@
 
 .add-song-button:hover .hidden-text{
     display: inline-block;
-
 }
 
 
@@ -27,7 +25,36 @@
     min-height: 300px;
     padding: 0 20px;
     padding-bottom: 20px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
 }
+
+.song-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: black;
+    border-radius: 10px;
+    min-width: 450px;
+    min-height: 350px;
+}
+
+
+
+.vl {
+    border-left: 1px white solid;
+    height: 300px;
+    position: relative;
+    left: 50%;
+    top: 15%;
+}
+
 .add-song-form {
     margin-top: 25px;
 }

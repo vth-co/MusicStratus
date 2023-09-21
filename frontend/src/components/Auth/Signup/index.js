@@ -5,12 +5,16 @@ import SignupForm from './SignupForm';
 function SignupFormModal() {
   const [showModal, setShowModal] = useState(false);
 
+  const closeModal = () => {
+    setShowModal(false);
+  }
+
   return (
     <>
       <button className='signup-button' onClick={() => setShowModal(true)}>Sign Up</button>
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <SignupForm />
+        <Modal onClose={closeModal}>
+          <SignupForm onClose={closeModal}/>
         </Modal>
       )}
     </>
