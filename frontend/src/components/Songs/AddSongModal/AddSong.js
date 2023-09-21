@@ -12,6 +12,7 @@ function AddSong({ setShowModal }) {
 
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
+  const [artist, setArtist] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [errors, setErrors] = useState([]);
   const [submitted, setSubmitted] = useState(false);
@@ -53,41 +54,44 @@ function AddSong({ setShowModal }) {
 
   return (
     <div className="song-form-container">
-      <form className="add-song-form" onSubmit={handleSubmit}>
+      <div className="vl"></div>
+      <form className="song-form" onSubmit={handleSubmit}>
+        <h3 className="form-title">Add a Song</h3>
         <div className="errors-container">
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </div>
         <div className="form-inputs-container">
-          <div className="label">
-            <label>Title</label>
-          </div>
           <input
             type="text"
+            placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
-          <div className="label">
-            <label>Url</label>
-          </div>
           <input
             type="text"
+            placeholder="Artist"
+            value={artist}
+            onChange={(e) => setArtist(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Song Url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             required
           />
-          <div className="label">
-            <label>Cover</label>
-          </div>
           <input
             type="text"
+            placeholder="Image Url"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             required
           />
-          <button className="user-form-button" type="submit">
+          <button className="user-form-submit" type="submit">
             Add Song
           </button>
         </div>
