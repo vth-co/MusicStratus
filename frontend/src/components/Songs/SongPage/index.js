@@ -9,6 +9,7 @@ import Comments from "../../Comments";
 import "./SongPage.css";
 import AddComment from "../../Comments/AddComment";
 import EditSongModal from "../EditSongModal";
+import DeleteSongModal from "../DeleteSongModal";
 
 const Song = () => {
   const { id } = useParams();
@@ -36,11 +37,12 @@ const Song = () => {
   let songEditButtons;
   if (userId === song?.userId) {
     songEditButtons = (
-      <div className="editAndDelete">
-        <EditSongModal />
-        <button className="button" onClick={handleDelete}>
-          <i className="fa-solid fa-trash-can"></i> Delete
-        </button>
+      <div class="dropdown">
+        <button class="dropdown-button">...</button>
+        <div class="dropdown-content">
+          <EditSongModal />
+          <DeleteSongModal />
+        </div>
       </div>
     );
   }

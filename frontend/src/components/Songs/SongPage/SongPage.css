@@ -126,3 +126,51 @@
     left: 600px;
     top: -250px;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    
+}
+
+/* Style for the dropdown content (initially hidden) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Style for the dropdown options */
+  .dropdown-option {
+    padding: 8px 4px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Style for the dropdown options on hover */
+  .dropdown-option:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown content when the button is hovered or clicked */
+  .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content {
+    display: block;
+  }
+
+  .edit-delete-container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 25px;
+  }

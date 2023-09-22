@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { addComment } from "../../../store/comments";
 import { useDispatch, useSelector } from "react-redux";
 import {  useParams } from "react-router-dom";
-import "./AddComment.css";
 
 function AddComment() {
   const dispatch = useDispatch();

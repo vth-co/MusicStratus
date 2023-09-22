@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Modal } from "../../../context/Modal";
-import EditComment from "./EditComment";
+import DeleteSong from "./DeleteSong";
 
-function EditCommentModal({ comment }) {
+
+function DeleteSongModal() {
   const [showModal, setShowModal] = useState(false);
 
   const closeModal = () => {
@@ -11,19 +12,16 @@ function EditCommentModal({ comment }) {
 
   return (
     <>
-      <button
-        className="edit-comment-button"
-        onClick={() => setShowModal(true)}
-      >
-        <i className="fa-solid fa-pen"></i>
+      <button className="button" onClick={() => setShowModal(true)}>
+      <i className="fa-solid fa-trash-can"></i> Delete
       </button>
       {showModal && (
         <Modal onClose={closeModal}>
-          <EditComment comment={comment} onClose={closeModal} />
+          <DeleteSong onClose={closeModal}/>
         </Modal>
       )}
     </>
   );
 }
 
-export default EditCommentModal;
+export default DeleteSongModal;
