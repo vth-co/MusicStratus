@@ -2,11 +2,14 @@
 .edit-song-container {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    padding: 30px 25px;
-    border: 1px solid grey;
-    max-width: 350px;
-    min-width: 350px;
-    min-height: 350px;
-    background-color: rgb(250, 250, 250);
+    border-radius: 10px;
+    padding: 15px 25px;
+    min-width: 450px;
+    min-height: 400px;
+    background-color: black;
+}
+
+.form-inputs-container label {
+    color: white;
+    margin-left: 10px;
 }

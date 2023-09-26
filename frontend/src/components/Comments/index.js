@@ -1,9 +1,11 @@
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getComments } from "../../store/comments";
 import EditCommentModal from "./EditCommentModal";
 import "./Comments.css";
+import DeleteButton from "./DeleteComment";
+import { useState } from "react";
+import DeleteCommentModal from "./DeleteComment";
 
 function Comments({ songId }) {
   const { id } = useParams();
@@ -17,6 +19,7 @@ function Comments({ songId }) {
   const commentsObj = useSelector((state) => state.comments.comments);
   const comments = Object.values(commentsObj);
 
+  
   let songComments = [];
   comments.forEach((comment) => {
     if (comment.songId === songId) {
@@ -28,7 +31,7 @@ function Comments({ songId }) {
     <>
       {songComments?.reverse().map((comment) => (
         <div key={comment?.id}>
-          <div className="songComments" >
+          <div className="songComments">
             {/* <div className="comment-user">{username}</div> */}
             <li className="comment">
               <img
@@ -38,7 +41,10 @@ function Comments({ songId }) {
               {comment?.body}
             </li>
             {comment.userId === userId && (
-              <EditCommentModal comment={comment} />
+              <div className="edit-delete-container">
+                <EditCommentModal comment={comment} />
+                <DeleteCommentModal comment={comment} />
+              </div>
             )}
           </div>
         </div>

@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { editComment } from "../../../store/comments";
-import { deleteComment } from "../../../store/comments";
 
-function EditComment({ comment, setShowModal }) {
+function EditComment({ comment, onClose }) {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
-
 
   const [body, setBody] = useState(comment.body);
 
@@ -26,20 +25,12 @@ function EditComment({ comment, setShowModal }) {
     };
     const data = await dispatch(editComment(payload));
     if (data) {
-      setShowModal(true)
+      onClose();
     }
   };
-
-  const handleDelete = async (e) => {
-    e.preventDefault();
-
-    let payload = {
-      commentId: comment.id,
-    };
-    const deletedComment = await dispatch(deleteComment(payload));
-    if (deletedComment) {
-      setShowModal(false)
-    }
+  const handleCancel = () => {
+    // Call the onClose prop to close the modal
+    onClose();
   };
 
   return (
@@ -61,12 +52,12 @@ function EditComment({ comment, setShowModal }) {
                 required
               />
             </div>
-            <button className="user-form-button" type="submit" onClick={() => setShowModal(false)}>
-              Update
-            </button>
-            <button className="user-form-button" onClick={handleDelete}>
-              Delete
-            </button>
+            <div className="">
+              <button className="button" type="submit">
+                Update
+              </button>
+              <button onClick={handleCancel}>Cancel</button>
+            </div>
           </div>
         </form>
       </div>
