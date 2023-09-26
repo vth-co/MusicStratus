@@ -122,11 +122,11 @@ input {
 }
 
 .exit {
-    width: 30px;
+    width: 35px;
     position: absolute;
     right: 0;
     top: 0;
-    background-color: black;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     padding: 5px 5px;
@@ -134,8 +134,13 @@ input {
 
 .svg-container {
     color: white;
+    transition: color 0.3s ease; /* Add a transition effect for the color property */
+    transition: transform 0.2s ease;
+
 }
 
 .svg-container:hover {
     color: #4483ff;
+    transform: scale(1.05);
+
 }

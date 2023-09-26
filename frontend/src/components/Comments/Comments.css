@@ -96,11 +96,22 @@
 
 .dlt-confirmation {
     background-color: transparent;
+    max-width: 475px;
+    max-height: 250px;
 }
 
 .dlt-confirmation p {
     color: white;
     padding: 10px 10px;
+    margin: 10px 25px;
+    text-align: center;
+}
+
+.dlt-confirmation h1 {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 0;
 }
 
 .dlt-btn-container {
@@ -117,6 +128,7 @@
     padding: 10px 40px;
     border-radius: 8px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .cncl-btn {
@@ -126,7 +138,7 @@
     padding: 10px 40px;
     border-radius: 8px;
     font-weight: 700;
-    
+    cursor: pointer;
 }
 
 .user-icon-container {

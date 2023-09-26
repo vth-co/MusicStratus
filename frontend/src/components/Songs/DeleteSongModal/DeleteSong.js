@@ -44,11 +44,12 @@ const DeleteSong = ({ onClose }) => {
 
   return (
     <>
-      <div>
-        <h1>Are you sure you wanto delete {song.title}</h1>
-        <div>
-          <button onClick={handleCancel}>Cancel</button>
-          <button onClick={handleDelete}>Yes</button>
+     <div className="dlt-confirmation">
+      <h1>Are you sure?</h1>
+        <p>Are you sure you want to delete {song.title}? This action cannot be undone.</p>
+        <div className="dlt-btn-container">
+          <button className="cncl-btn" onClick={handleCancel}>Cancel</button>
+          <button className="dlt-btn" onClick={handleDelete}>Delete</button>
         </div>
       </div>
     </>
