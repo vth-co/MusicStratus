@@ -36,6 +36,11 @@ function EditComment({ comment, onClose }) {
   return (
     <div className="form-container">
       <div className="user-login-container">
+        {/* {isEditing ? (
+
+        ) : (
+
+        )} */}
         <form onSubmit={handleSubmit}>
           <h3 className="form-title">Edit Comment</h3>
           <div className="errors-container">

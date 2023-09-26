@@ -19,13 +19,18 @@ function Comments({ songId }) {
   const commentsObj = useSelector((state) => state.comments.comments);
   const comments = Object.values(commentsObj);
 
-  
+  const [isEditing, setIsEditing] = useState(false);
+
   let songComments = [];
   comments.forEach((comment) => {
     if (comment.songId === songId) {
       songComments.push(comment);
     }
   });
+
+  const handleEditClick = () => {
+    setIsEditing(true);
+  };
 
   return (
     <>

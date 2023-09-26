@@ -53,7 +53,8 @@
     width: 721px;
     margin-top: 20px;
     margin-right: 325px;
-    min-height: 670px;
+    min-height: 100vh; /* Set a minimum height of the viewport height */
+    flex-grow: 1; /* Allow the container to grow and occupy available space */
     border-right: 1px gray solid;
 }
 

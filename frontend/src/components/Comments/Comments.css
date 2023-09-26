@@ -128,3 +128,25 @@
     font-weight: 700;
     
 }
+
+.user-icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.add-comment-form-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.add-comment-form-div input {
+    border: none;
+    border-bottom: 1px gray solid;
+    border-radius: 0;
+    transition: border-bottom 0.3s ease; /* Add a transition effect */
+}
+
+.add-comment-form-div input:focus {
+    outline: none;
+    border-bottom: 2px white solid;
+}
