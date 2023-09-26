@@ -37,12 +37,9 @@ const Song = () => {
   let songEditButtons;
   if (userId === song?.userId) {
     songEditButtons = (
-      <div class="dropdown">
-        <button class="dropdown-button">...</button>
-        <div class="dropdown-content">
-          <EditSongModal />
-          <DeleteSongModal />
-        </div>
+      <div>
+        <EditSongModal />
+        <DeleteSongModal />
       </div>
     );
   }

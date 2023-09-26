@@ -12,7 +12,7 @@ function EditSongModal() {
 
   return (
     <>
-      <button className="button" onClick={() => setShowModal(true)}>
+      <button className="sng-btn" onClick={() => setShowModal(true)}>
       <i className="fa-solid fa-pen"></i> Edit
       </button>
       {showModal && (
