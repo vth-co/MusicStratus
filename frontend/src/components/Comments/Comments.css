@@ -97,3 +97,23 @@
 .dlt-confirmation {
     background-color: transparent;
 }
+
+.dual-btn-container {
+    margin-left: 10px;
+}
+
+.update-btn {
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 15px 67px;
+    min-height: 32px;
+    border: none;
+    color: black;
+    font-weight: 700;
+    background-color: #4483ff;
+    margin: 10px 15px;
+    font-family: 'Inter', sans-serif;
+    transition: transform 0.2s ease;
+    
+}
