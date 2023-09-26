@@ -97,3 +97,34 @@
 .dlt-confirmation {
     background-color: transparent;
 }
+
+.dlt-confirmation p {
+    color: white;
+    padding: 10px 10px;
+}
+
+.dlt-btn-container {
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+}
+
+.dlt-btn {
+    background-color: rgb(255, 53, 53);
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.cncl-btn {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    
+}

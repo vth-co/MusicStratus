@@ -2,15 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteComment } from "../../../store/comments";
 
-function DeleteComment({ comment, isClicked }) {
+function DeleteComment({ comment, onClose }) {
   const dispatch = useDispatch();
 
-  const [showConfirmation, setShowConfirmation] = useState(false);
-
-  const handleDeleteClick = () => {
-    // Show the confirmation pop-up when the delete button is clicked
-    setShowConfirmation(true);
-  };
 
   const handleConfirmDelete = async () => {
     try {
@@ -32,18 +26,20 @@ function DeleteComment({ comment, isClicked }) {
       console.error("An error occurred:", error);
     } finally {
       // Close the confirmation pop-up
-      setShowConfirmation(false);
+      onClose();
     }
   };
 
   return (
     <>
       <div className="dlt-confirmation">
-        <p>Are you sure you want to delete this item?</p>
-        <button className="delete-btn" onClick={handleConfirmDelete}>
-          Yes
-        </button>
-        <button onClick={() => setShowConfirmation(false)}>No</button>
+        <p>Are you sure you want to delete this comment?</p>
+        <div className="dlt-btn-container">
+          <button className="cncl-btn" onClick={onClose}>Cancel</button>
+          <button className="dlt-btn" onClick={handleConfirmDelete}>
+            Delete
+          </button>
+        </div>
       </div>
     </>
   );

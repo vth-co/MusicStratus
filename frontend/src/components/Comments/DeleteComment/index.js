@@ -18,15 +18,7 @@ function DeleteCommentModal({ comment }) {
         <i className="fa-solid fa-trash"></i>
       </button>
       {showModal && (
-        <Modal
-          onClose={closeModal}
-          style={{
-            backgroundColor: "transparent", // Make the modal background transparent
-            position: "absolute", // Position the modal absolutely
-            top: "calc(100% + 5px)", // Adjust the top position as needed
-            left: 0,
-          }}
-        >
+        <Modal onClose={closeModal}>
           <DeleteComment comment={comment} onClose={closeModal} />
         </Modal>
       )}
