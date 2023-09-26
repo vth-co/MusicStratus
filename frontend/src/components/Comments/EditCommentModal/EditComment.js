@@ -52,12 +52,10 @@ function EditComment({ comment, onClose }) {
                 required
               />
             </div>
-            <div className="">
-              <button className="button" type="submit">
+              <button className="update-btn" type="submit">
                 Update
               </button>
-              <button onClick={handleCancel}>Cancel</button>
-            </div>
+              {/* <button className="cancel-btn" onClick={handleCancel}>Cancel</button> */}
           </div>
         </form>
       </div>
