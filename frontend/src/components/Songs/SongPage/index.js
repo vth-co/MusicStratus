@@ -10,6 +10,7 @@ import "./SongPage.css";
 import AddComment from "../../Comments/AddComment";
 import EditSongModal from "../EditSongModal";
 import DeleteSongModal from "../DeleteSongModal";
+import SideTiles from "../../SideTiles";
 
 const Song = () => {
   const { id } = useParams();
@@ -74,8 +75,11 @@ const Song = () => {
             </div>
           </div>
           <div className="comments-container">
-            <AddComment />
-            <Comments songId={song?.id} />
+            <div>
+              <AddComment />
+              <Comments songId={song?.id} />
+            </div>
+            <SideTiles />
           </div>
         </div>
         <div className="background-container">

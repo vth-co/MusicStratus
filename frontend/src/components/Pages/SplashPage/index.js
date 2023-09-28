@@ -4,7 +4,6 @@ import "./SplashPage.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
-
 import "react-jinke-music-player/assets/index.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
 import { NavLink } from "react-router-dom";
@@ -88,16 +87,24 @@ const SplashPage = () => {
             layout="horizontal"
             src={currentTrack}
             customAdditionalControls={[
-               <button>
-                 <img className="image" src={song?.imageUrl} alt={""}></img>
+              <button>
+              <img className="image" src={song?.imageUrl} alt={""}></img>
               </button>,
             ]}
-          />
-        </div> */}
+            />
+          </div> */}
       <div className="footer">
         <div className="footer-links-container">
           <ul className="footer-ul">
-            <p className="footer-section">Company</p>
+            <p className="footer-section">Developer</p>
+            <a
+              href="https://docs.google.com/document/d/e/2PACX-1vRjkM5PTL815-Byuka7JK1QOfsWO61j5cMf9E11vJoCipJFOZeddUc29OopeFpdOxR3YtyYoQrHzwmn/pub"
+              className="link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
             <a
               href="https://vth-co.github.io/"
               className="link"

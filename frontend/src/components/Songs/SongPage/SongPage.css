@@ -48,7 +48,7 @@
 
 .comments-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: fit-content;
     width: 721px;
     margin-top: 20px;
