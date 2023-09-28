@@ -118,6 +118,14 @@
     text-decoration: none;
     color: rgb(187, 187, 187);
     font-family: "Segoe UI","Helvetica Neue",sans-serif;
+    transition: color 0.3s ease; /* Add a transition effect for the color property */
+    transition: transform 0.2s ease;
+}
+
+a.link:hover {
+    color: white;
+    transform: scale(1.05);
+    text-decoration: underline;
 }
 
 .footer-ul {

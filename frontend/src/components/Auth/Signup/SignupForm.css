@@ -8,7 +8,7 @@
 
 }
 
-.signup-button {
+.signup-btn {
   outline: none;
   border-radius: 8px;
   cursor: pointer;
@@ -23,6 +23,13 @@
   margin-right: 10px;
   font-size: 14px;
   font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.signup-btn:hover {
+
+  transform: scale(1.05);
+
 }
 
 .user-create-form-container {

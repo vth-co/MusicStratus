@@ -79,7 +79,7 @@ const Song = () => {
               <AddComment />
               <Comments songId={song?.id} />
             </div>
-            <SideTiles />
+            {/* <SideTiles /> */}
           </div>
         </div>
         <div className="background-container">

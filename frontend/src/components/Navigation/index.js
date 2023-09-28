@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
-import SignupModal from "../Auth/Signup";
 import "./Navigation.css";
 import SearchBar from "../Search/SearchBar";
 import AddSongModal from "../Songs/AddSongModal";
+import SignupFormModal from "../Auth/Signup";
 import LoginFormModal from "../Auth/Login";
 
 
@@ -26,7 +26,7 @@ const Navigation = ({ isLoaded }) => {
         </div>
         <div className="buttons">
           <LoginFormModal />
-          <SignupModal />
+          <SignupFormModal />
         </div>
       </nav>
     );
