@@ -43,11 +43,12 @@ function ProfileButton() {
           <i className="fa-solid fa-chevron-down"></i>
           {showMenu && (
             <div className="profile-dropdown">
-              <p className="email"> {user.username}</p>
-              <p className="email">{user.email}</p>
+              {/* <button className="logout-button"><i class='bx bxs-user' ></i>Profile</button> */}
+              {/* <p className="email"> {user.username}</p>
+              <p className="email">{user.email}</p> */}
                 <button className="logout-button" onClick={logout}>
+                <i class='bx bx-log-out' ></i>
                   Log Out
-                  <i className="fa-solid fa-arrow-right-from-bracket"></i>
                 </button>
             </div>
           )}

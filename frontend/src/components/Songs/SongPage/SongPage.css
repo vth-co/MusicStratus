@@ -179,4 +179,10 @@
     border: none;
     margin-right: 15px;
     padding: 7px;
+    transition:  color 0.2s ease;
+  }
+
+  .sng-btn:hover {
+    color: white;
+    cursor: pointer;
   }

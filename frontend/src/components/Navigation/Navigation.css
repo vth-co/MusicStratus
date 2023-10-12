@@ -68,7 +68,8 @@ li {
 } */
 
 .email {
-  color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 700;
 }
 
 .btn {
@@ -150,20 +151,22 @@ h2 {
 
 .profile-dropdown {
   padding: 0 0;
-  background-color: rgb(51,51,51);
+  background-color: #F2F2F2;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   position: absolute;
   right: calc(1%) ;
   top: calc(90%);
-  width: 118px;
+  width: 108px;
   z-index: 50;
 }
 
 .logout-button {
   background-color: transparent;
-  color: white;
+  color: black;
+  font-weight: 700;
   width:max-content;
   border: transparent;
+  width: 108px;
 }
 
 .logout-button:hover {
@@ -172,7 +175,7 @@ h2 {
 }
 
 .user-icon {
-  width: 25px;
+  width: 15px;
   margin-right: 10px;
   transform: rotate(45deg);
 }

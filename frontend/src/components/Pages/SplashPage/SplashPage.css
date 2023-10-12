@@ -169,12 +169,14 @@ a.link:hover {
 }
 
 #discover-search {
-    width: 325px;
+    width: 407px;
     height: 15px;
     color: white;
     background-color: black;
     border: transparent;
     border-radius: 5px;
+    padding: 10px 10px;
+    font-weight: 700;
 }
 
 #header-search {

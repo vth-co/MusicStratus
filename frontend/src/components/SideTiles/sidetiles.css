@@ -1,0 +1,53 @@
+.sidetiles-container {
+    width: 320px;
+    margin: 35px 25px;
+}
+
+.sidetiles-icon {
+    width: 20px;
+    color: white;
+}
+
+.sidetiles-topic {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidetiles-header {
+    display: flex;
+    align-items: center;
+
+}
+
+.sidetiles-content .footer-ul {
+    padding: 0;
+}
+
+.sidetiles-header h3 {
+    /* Reset or override default styles for the h3 element */
+    font-size: inherit; /* Inherit font size from parent */
+    font-weight: inherit; /* Inherit font weight from parent */
+    margin: 0; /* Remove any default margins */
+    color: white;
+    padding-left: 10px;
+    /* Add any additional styles as needed */
+  }
+
+  .sidetiles-hr {
+    width: 275px;
+  }
+
+  .sidetiles-gif {
+    width: 245px;
+    height: auto;
+  }
+
+.footer-ul .link{
+    padding-bottom: 15px;
+    width: 50%;
+}
+
+
+.bx {
+    padding-right: 10px;
+}

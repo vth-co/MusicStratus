@@ -39,10 +39,12 @@ function Comments({ songId }) {
           <div className="songComments">
             {/* <div className="comment-user">{username}</div> */}
             <li className="comment">
-              <img
-                className="user-icon"
-                src="../../../images/default-icon.png"
-              ></img>
+              <div>
+                <img
+                  className="user-icon"
+                  src="../../../images/default-icon.png"
+                ></img>
+              </div>
               {comment?.body}
             </li>
             {comment.userId === userId && (
