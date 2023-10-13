@@ -18,6 +18,7 @@ function Comments({ songId }) {
 
   const commentsObj = useSelector((state) => state.comments.comments);
   const comments = Object.values(commentsObj);
+  console.log(comments)
 
   const [isEditing, setIsEditing] = useState(false);
 
@@ -39,13 +40,14 @@ function Comments({ songId }) {
           <div className="songComments">
             {/* <div className="comment-user">{username}</div> */}
             <li className="comment">
-              <div>
-                <img
+              <div className="profile-icon"></div>
+
+              {/* <img
                   className="user-icon"
                   src="../../../images/default-icon.png"
-                ></img>
-              </div>
-              {comment?.body}
+                ></img> */}
+                <p>{}</p>
+              <p>{comment?.body}</p>
             </li>
             {comment.userId === userId && (
               <div className="edit-delete-container">

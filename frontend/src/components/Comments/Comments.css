@@ -162,3 +162,22 @@
     outline: none;
     border-bottom: 2px white solid;
 }
+
+.songComments .profile-icon {
+    width: 35px;
+    height: 35px;
+    margin: initial;
+    margin-right: 15px;
+}
+
+.comment p {
+    margin: 0;
+    padding-top: 5px;
+}
+
+.user-icon-container .profile-icon {
+    width: 35px;
+    height: 35px;
+    margin: initial;
+    border-radius: initial;
+}
