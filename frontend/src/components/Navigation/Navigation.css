@@ -49,6 +49,11 @@ li {
   color: white;
 }
 
+.profile-button .feed-button {
+  padding: 14px 35px;
+  padding-bottom: 7px;
+}
+
 .feed-user-button {
   outline: none;
   cursor: pointer;
@@ -156,7 +161,7 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   position: absolute;
   right: calc(1%) ;
-  top: calc(98%);
+  top: calc(95%);
   width: 113px;
   z-index: 50;
 }
@@ -188,7 +193,7 @@ h2 {
   font-size: small;
 }
 
-.navbar-home a.active {
+.navbar-home a.active:not(.profile-btn) {
   background-color: #181919;
 }
 
