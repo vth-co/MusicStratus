@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 function ProfileButton() {
   const dispatch = useDispatch();
@@ -36,20 +36,26 @@ function ProfileButton() {
     <>
       <div className="profile-button">
         <button className="feed-button" onClick={openMenu}>
-          <img
+          {/* <img
             className="user-icon"
             src="../../../images/default-icon.png"
-          ></img>
-          <i className="fa-solid fa-chevron-down"></i>
+          ></img> */}
+          <div className="icon-container">
+            <div className="profile-icon"></div>
+            <i className="fa-solid fa-chevron-down"></i>
+          </div>
           {showMenu && (
             <div className="profile-dropdown">
-              {/* <button className="logout-button"><i class='bx bxs-user' ></i>Profile</button> */}
+              <NavLink className="profile-btn" to={`/${user.username}`}>
+                <i class="bx bxs-user"></i>
+                Profile
+              </NavLink>
               {/* <p className="email"> {user.username}</p>
               <p className="email">{user.email}</p> */}
-                <button className="logout-button" onClick={logout}>
-                <i class='bx bx-log-out' ></i>
-                  Log Out
-                </button>
+              <button className="logout-button" onClick={logout}>
+                <i class="bx bx-log-out"></i>
+                Log Out
+              </button>
             </div>
           )}
         </button>

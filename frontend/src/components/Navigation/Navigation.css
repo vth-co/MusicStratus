@@ -1,6 +1,5 @@
 li {
   list-style-type: none;
-  
 }
 
 .navbar {
@@ -43,6 +42,7 @@ li {
   color: rgb(190, 190, 190);
   background-color: rgba(255, 255, 255, 0);
   padding: 14px 35px;
+  padding-bottom: 13px;
 }
 
 .feed-button:hover {
@@ -125,7 +125,8 @@ li {
 }
 
 .splash-icon {
-  width: 46px;
+  width: 45px;
+  height: 45px;
   padding: 0 9px;
 }
 
@@ -155,8 +156,8 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   position: absolute;
   right: calc(1%) ;
-  top: calc(90%);
-  width: 108px;
+  top: calc(98%);
+  width: 113px;
   z-index: 50;
 }
 
@@ -166,13 +167,16 @@ h2 {
   font-weight: 700;
   width:max-content;
   border: transparent;
-  width: 108px;
+  width: 113px;
+  padding: 5px 4px;
 }
+
 
 .logout-button:hover {
   background-color: rgba(128, 128, 128, 0.274);
   cursor: pointer;
 }
+
 
 .user-icon {
   width: 15px;
@@ -194,4 +198,28 @@ h2 {
 
 .profile-button {
   position: relative;
+}
+
+.profile-btn {
+  color: black;
+  width: 105px;
+  display:block;
+  font-weight: 700;
+  padding: 5px 4px;
+}
+
+.profile-btn:hover {
+  background-color: rgba(128, 128, 128, 0.274);
+}
+
+.feed-button .profile-icon{
+  width: 25px;
+  height: 25px;
+  margin: initial;
+  margin-right: 5px;
+}
+
+.icon-container {
+  display: flex; /* Display children side by side */
+  align-items: center; /* Vertically center the content */  
 }

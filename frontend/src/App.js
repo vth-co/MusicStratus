@@ -18,6 +18,7 @@ import LoginPage from "./components/Pages/AuthPages/LoginPage";
 import FeedPage from "./components/Pages/FeedPage";
 import LibraryPage from "./components/Pages/LibraryPage";
 import SearchResults from "./components/Search/SearchResults";
+import UserProfile from "./components/Pages/User";
 
 library.add(fas);
 
@@ -64,6 +65,9 @@ function App() {
           </Route>
           <Route path="/search">
             <SearchResults />
+          </Route>
+          <Route path="/:username">
+            <UserProfile />
           </Route>
         </Switch>
       )}
