@@ -39,29 +39,95 @@
 }
 
 .user-info-bar {
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid gray; /* Initially, set border to transparent */
-  }
-  
-  .user-info-bar li {
-    margin-left: 20px;
-    color: white;
-    font-weight: 500;
-    font-size: 18px;
-    padding-bottom: 5px;
-    position: relative; /* Position the pseudo-element relative to li */
-  }
-  
-  .user-info-bar li::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    border-bottom: 2px solid transparent; /* Initially, set border to transparent */
-  }
-  
-  .user-info-bar li:hover::before {
-    border-bottom: 2px solid gray; /* Change border color on hover */
-  }
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid gray;
+}
+
+.user-info-bar li {
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.user-info-bar li::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid transparent;
+}
+
+.user-info-bar li:hover::before {
+  border-bottom: 2px solid gray; /* Keep the gray bottom border on hover */
+}
+
+.user-info-bar a {
+  color: white;
+}
+
+.user-info-bar a.active {
+  padding-bottom: 4px;
+  color: #496cb4;
+  border-bottom: 3px solid #3f62a8;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+.image-audio-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-audio-player {
+  background-color: #292B2C;
+  color: white;
+}
+
+.card-audio-player .rhap_footer {
+  font-size: 14px;
+    color: rgba(255, 255, 255, 0.785);
+    background-color: transparent;
+    max-width:fit-content;
+    position: relative;
+    padding: 5px 10px;
+    top: -165px;
+    right: -40px;
+}
+
+.card-audio-player .rhap_header {
+  text-align: center;
+  font-size: large;
+  background-color: transparent;
+  padding: 5px 10px;
+  margin-top: 10px;
+  max-width:fit-content;
+  position: relative;
+  top: 5px;
+  right: -40px;
+
+}
+
+.card-audio-player .card-play-button {
+  position: relative;
+  top: -300px;
+}
+
+.split-container {
+    height: fit-content;
+    width: 721px;
+    margin-top: 20px;
+    margin-right: 325px;
+    min-height: 100vh; /* Set a minimum height of the viewport height */
+    flex-grow: 1; /* Allow the container to grow and occupy available space */
+    border-right: 1px gray solid;
+}
+
+.card-audio-player .rhap_main-controls {
+  position: relative;
+  top: -60px;
+}
