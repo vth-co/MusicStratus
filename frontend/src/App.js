@@ -19,6 +19,7 @@ import FeedPage from "./components/Pages/FeedPage";
 import LibraryPage from "./components/Pages/LibraryPage";
 import SearchResults from "./components/Search/SearchResults";
 import UserProfile from "./components/Pages/User";
+import Tracks from "./components/Pages/User/Tracks";
 
 library.add(fas);
 

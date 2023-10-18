@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./UserProfile.css";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-bootstrap";
-import { Switch } from "react-router-dom";
+import { NavLink, Switch } from "react-router-dom";
 import ProtectedRoute from "../AuthPages/ProtectedRoute";
+import Tracks from "./Tracks";
+import DiscoverPage from "../DiscoverPage";
+import SideTiles from "../../SideTiles";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.session.user);
@@ -21,30 +23,31 @@ const UserProfile = () => {
           {/* <img className="profile-header" src="../../../images/header.jpg" alt=""/> */}
         </div>
         <div className="profile-body">
-          <div className="left">
-            <div>
-              {/* <ul className="user-info-bar">
-                <li>
-                  <NavLink to={"/:username"}>
-                  All
-                  </NavLink>
-                   </li>
-                <Switch>
-               
-                <ProtectedRoute path="/:username/uploads" exact={true}>
-                  <Uploads />
+          <ul className="user-info-bar">
+            <li>
+              <NavLink to={`/${user.username}`} activeClassName={false}>
+                All
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={`/${user.username}/tracks`}>Tracks</NavLink>
+            </li>
+          </ul>
+          <div className="split-container">
+            <div className="left">
+              <Switch>
+                <ProtectedRoute path={`/${user.username}`} exact>
+                  {/* <DiscoverPage /> */}
                 </ProtectedRoute>
-                <ProtectedRoute path="/:username/playlists" exact={true}>
-                  <Playlists />
+                <ProtectedRoute path={`/${user.username}/tracks`}>
+                  <Tracks />
                 </ProtectedRoute>
-                <ProtectedRoute path="/:username/likes" exact={true}>
-                  <Likes />
-                </ProtectedRoute>
-                </Switch>
-              </ul> */}
+              </Switch>
+            </div>
+            <div className="right">
+              {/* <SideTiles /> */}
             </div>
           </div>
-          <div className="right"></div>
         </div>
       </div>
     </>
