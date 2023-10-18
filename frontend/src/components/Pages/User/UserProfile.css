@@ -42,6 +42,8 @@
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid gray;
+  margin: 0 20px;
+  margin-top: 15px;
 }
 
 .user-info-bar li {
@@ -81,6 +83,9 @@
 .image-audio-container {
   display: flex;
   flex-direction: row;
+  padding-right: 10px;
+  padding-left: 20px;
+  padding-bottom: 30px;
 }
 
 .card-audio-player {
@@ -118,16 +123,20 @@
 }
 
 .split-container {
-    height: fit-content;
-    width: 721px;
-    margin-top: 20px;
-    margin-right: 325px;
-    min-height: 100vh; /* Set a minimum height of the viewport height */
-    flex-grow: 1; /* Allow the container to grow and occupy available space */
-    border-right: 1px gray solid;
+  display: flex;
+  flex-direction: row;
+  
 }
 
 .card-audio-player .rhap_main-controls {
   position: relative;
   top: -60px;
+}
+
+.left {
+  height: fit-content;
+  margin-top: 20px;
+  min-height: 100vh; /* Set a minimum height of the viewport height */
+  flex-grow: 1; /* Allow the container to grow and occupy available space */
+  border-right: 1px gray solid;
 }

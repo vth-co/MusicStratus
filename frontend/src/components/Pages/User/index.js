@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./UserProfile.css";
 import { useSelector } from "react-redux";
 import { NavLink, Switch } from "react-router-dom";
-import ProtectedRoute from "../AuthPages/ProtectedRoute";
+import ProtectedRoute from "../../../context/ProtectedRoute";
 import Tracks from "./Tracks";
 import DiscoverPage from "../DiscoverPage";
 import SideTiles from "../../SideTiles";
@@ -32,6 +32,12 @@ const UserProfile = () => {
             <li>
               <NavLink to={`/${user.username}/tracks`}>Tracks</NavLink>
             </li>
+            <li>
+              <NavLink to={`/${user.username}/likes`}>Likes</NavLink>
+            </li>
+            <li>
+              <NavLink to={`/${user.username}/playlists`}>Playlists</NavLink>
+            </li>
           </ul>
           <div className="split-container">
             <div className="left">
@@ -42,10 +48,16 @@ const UserProfile = () => {
                 <ProtectedRoute path={`/${user.username}/tracks`}>
                   <Tracks />
                 </ProtectedRoute>
+                {/* <ProtectedRoute path={`/${user.username}/likes`}>
+                  <Likes />
+                </ProtectedRoute>
+                <ProtectedRoute path={`/${user.username}/playlists`}>
+                  <Playlists />
+                </ProtectedRoute> */}
               </Switch>
             </div>
             <div className="right">
-              {/* <SideTiles /> */}
+              <SideTiles />
             </div>
           </div>
         </div>

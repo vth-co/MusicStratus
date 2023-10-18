@@ -37,6 +37,11 @@
     width: 275px;
   }
 
+  .right .sidetiles-hr {
+    width: 320px;
+
+  }
+
   .sidetiles-gif {
     width: 245px;
     height: auto;
