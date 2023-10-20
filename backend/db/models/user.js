@@ -60,6 +60,8 @@ module.exports = (sequelize, DataTypes) => {
       as: 'comments',
       foreignKey: 'userId'
     })
+    User.hasMany(models.Playlist);
+    User.hasMany(models.Like);
   };
 
   User.prototype.toSafeObject = function () {
