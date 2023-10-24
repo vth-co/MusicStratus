@@ -6,15 +6,15 @@ const db = require('../../db/models');
 router.get(
     '/', 
     asyncHandler(async function(req, res) {
-    const songs = await db.Like.findAll();
-    res.json({ likes });
+    const likes = await db.Like.findAll();
+    res.json(likes);
 }))
 
 
 router.post(
     '/',
     asyncHandler(async function (req, res) {
-        const song = await db.Like.create(req.body);
+        const like = await db.Like.create(req.body);
         return res.json(like);
     })
 );

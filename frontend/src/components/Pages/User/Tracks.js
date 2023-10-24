@@ -4,8 +4,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import "react-jinke-music-player/assets/index.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import CardAudioPlayer from "../../CustomAudioPlayer/CardAudioPlayer";
 
 const Tracks = () => {
@@ -13,7 +11,6 @@ const Tracks = () => {
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
   const library = songs.filter((song) => song.userId === sessionUser.id);
-  const [currentTrack, setTrackIndex] = useState("");
 
   return (
     <>

@@ -6,6 +6,7 @@ import ProtectedRoute from "../../../context/ProtectedRoute";
 import Tracks from "./Tracks";
 import DiscoverPage from "../DiscoverPage";
 import SideTiles from "../../SideTiles";
+import Likes from "./Likes";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.session.user);
@@ -48,10 +49,10 @@ const UserProfile = () => {
                 <ProtectedRoute path={`/${user.username}/tracks`}>
                   <Tracks />
                 </ProtectedRoute>
-                {/* <ProtectedRoute path={`/${user.username}/likes`}>
+                <ProtectedRoute path={`/${user.username}/likes`}>
                   <Likes />
                 </ProtectedRoute>
-                <ProtectedRoute path={`/${user.username}/playlists`}>
+                {/* <ProtectedRoute path={`/${user.username}/playlists`}>
                   <Playlists />
                 </ProtectedRoute> */}
               </Switch>
