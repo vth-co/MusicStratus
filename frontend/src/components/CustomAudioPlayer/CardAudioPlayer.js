@@ -1,8 +1,8 @@
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
-import HeartButton from "../Likes/HeartButton";
 import LikeButton from "../Likes/LikeButton";
+import "./CustomAudio.css"
 
 const CardAudioPlayer = ({ song }) => {
 
@@ -29,7 +29,7 @@ const CardAudioPlayer = ({ song }) => {
           customControlsSection={
             [
               RHAP_UI.MAIN_CONTROLS,
-              <LikeButton song={song} />
+              <LikeButton song={song} />,
             ]
           }
       />

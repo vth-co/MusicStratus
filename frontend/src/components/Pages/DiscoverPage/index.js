@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import HeartButton from "../../Likes/HeartButton";
+import LikeCounter from "../../Likes/LikeCounter";
 
 const DiscoverPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -124,8 +125,8 @@ const DiscoverPage = () => {
                         onClick={(e) => setTrackIndex(e.target.value)}
                       >
                         <i className="fa-solid fa-circle-play"></i>
-                        <HeartButton song={song} />
                       </button>
+                      <HeartButton song={song} />
                     </NavLink>
                   </div>
                   <p className="song-title">{song.title}</p>
@@ -154,9 +155,9 @@ const DiscoverPage = () => {
                 <div className="card-container">
                   <NavLink className="song-link" to={`/songs/${song.id}`}>
                     <img className="image" src={song.imageUrl} alt={""} />
+                    <div class="overlay"></div>
                   </NavLink>
 
-                  <div class="overlay"></div>
                   <NavLink to={"/discover"}>
                     <button
                       className="card-play-button"
@@ -164,9 +165,9 @@ const DiscoverPage = () => {
                       onClick={(e) => setTrackIndex(e.target.value)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
-                      <HeartButton song={song} />
                     </button>
                   </NavLink>
+                      <HeartButton song={song} />
                 </div>
                 <NavLink className="song-link" to={`/songs/${song.id}`}>
                   <p className="song-title">{song.title}</p>

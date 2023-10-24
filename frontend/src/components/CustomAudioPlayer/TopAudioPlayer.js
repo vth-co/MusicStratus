@@ -5,6 +5,8 @@ import "react-h5-audio-player/lib/styles.less"; //Use LESS
 import EditSongModal from "../Songs/EditSongModal";
 import DeleteSongModal from "../Songs/DeleteSongModal";
 import { useSelector } from "react-redux";
+import LikeButton from "../Likes/LikeButton";
+import "./CustomAudio.css";
 
 const TopAudioPlayer = ({ song }) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -39,11 +41,18 @@ const TopAudioPlayer = ({ song }) => {
             <div>/</div>,
             RHAP_UI.DURATION,
           ]}
+          customControlsSection={[
+            <div className="like-btn-container">
+              <LikeButton song={song} />
+            </div>,
+            RHAP_UI.ADDITIONAL_CONTROLS,
+            RHAP_UI.MAIN_CONTROLS,
+            RHAP_UI.VOLUME_CONTROLS,
+          ]}
         />
         <img className="song-image" src={song?.imageUrl} alt="" />
       </div>
     </div>
-    
   );
 };
 

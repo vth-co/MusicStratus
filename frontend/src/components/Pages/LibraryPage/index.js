@@ -33,9 +33,9 @@ const LibraryPage = () => {
                       onClick={(e) => setTrackIndex(e.target.value)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
-                      <HeartButton song={song} />
                     </button>
                   </NavLink>
+                  <HeartButton song={song} />
                 </div>
                 <p className="song-title">{song.title}</p>
                 <p className="song-artist">{song.artist}</p>
