@@ -6,6 +6,7 @@ import "./DiscoverPage.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
+import HeartButton from "../../Likes/HeartButton";
 
 const DiscoverPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -115,6 +116,7 @@ const DiscoverPage = () => {
                 <NavLink className="song-link" to={`/songs/${song.id}`}>
                   <div className="card-container">
                     <img className="image" src={song.imageUrl} alt={""} />
+                    <div class="overlay"></div>
                     <NavLink to={"/discover"}>
                       <button
                         className="card-play-button"
@@ -122,6 +124,7 @@ const DiscoverPage = () => {
                         onClick={(e) => setTrackIndex(e.target.value)}
                       >
                         <i className="fa-solid fa-circle-play"></i>
+                        <HeartButton song={song} />
                       </button>
                     </NavLink>
                   </div>
@@ -148,19 +151,24 @@ const DiscoverPage = () => {
           >
             {library?.map((song) => (
               <div className="song-card" song={song} key={song.id}>
-                <NavLink className="song-link" to={`/songs/${song.id}`}>
-                  <div className="card-container">
+                <div className="card-container">
+                  <NavLink className="song-link" to={`/songs/${song.id}`}>
                     <img className="image" src={song.imageUrl} alt={""} />
-                    <NavLink to={"/discover"}>
-                      <button
-                        className="card-play-button"
-                        value={song?.url}
-                        onClick={(e) => setTrackIndex(e.target.value)}
-                      >
-                        <i className="fa-solid fa-circle-play"></i>
-                      </button>
-                    </NavLink>
-                  </div>
+                  </NavLink>
+
+                  <div class="overlay"></div>
+                  <NavLink to={"/discover"}>
+                    <button
+                      className="card-play-button"
+                      value={song?.url}
+                      onClick={(e) => setTrackIndex(e.target.value)}
+                    >
+                      <i className="fa-solid fa-circle-play"></i>
+                      <HeartButton song={song} />
+                    </button>
+                  </NavLink>
+                </div>
+                <NavLink className="song-link" to={`/songs/${song.id}`}>
                   <p className="song-title">{song.title}</p>
                   <p className="song-artist">{song.artist}</p>
                 </NavLink>

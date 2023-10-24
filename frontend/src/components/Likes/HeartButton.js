@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addLike, deleteLike } from "../../store/likes";
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./Likes.css";
+import "./Likes.css"
 
-const LikeButton = ({ song }) => {
+const HeartButton = ({song}) => {
   const user = useSelector((state) => state.session.user);
   const likesObj = useSelector((state) => state.likes);
   const likes = Object.values(likesObj);
@@ -18,12 +18,13 @@ const LikeButton = ({ song }) => {
     userLike = songLikes?.find((songLike) => songLike.userId === user?.id);
   }
   useEffect(() => {
+
     if (userLike) {
       setHeart(true);
     } else {
       setHeart(false);
     }
-  }, [userLike]);
+  }, [userLike])
 
   const [heart, setHeart] = useState(false);
 
@@ -46,7 +47,7 @@ const LikeButton = ({ song }) => {
         }
       }
     } else {
-      history.push("/");
+      history.push('/');
     }
   };
 
@@ -59,11 +60,11 @@ const LikeButton = ({ song }) => {
 
   return (
     <>
-      <button className="likebtn" onClick={handleLike}>
-        {heartIcon}
+      <button className="heartbtn" onClick={handleLike}>
+      {heartIcon}
       </button>
     </>
   );
 };
 
-export default LikeButton;
+export default HeartButton;

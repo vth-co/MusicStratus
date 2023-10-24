@@ -1,18 +1,13 @@
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
+import HeartButton from "../Likes/HeartButton";
+import LikeButton from "../Likes/LikeButton";
 
 const CardAudioPlayer = ({ song }) => {
 
   return (
     <>
-      {/* <button
-        className="card-play-button"
-        value={song?.url}
-        onClick={(e) => setTrackIndex(e.target.value)}
-      >
-        <i className="fa-solid fa-circle-play"></i>
-      </button> */}
       <AudioPlayer
         className="card-audio-player"
         src={song?.url}
@@ -28,12 +23,13 @@ const CardAudioPlayer = ({ song }) => {
         ]}
         customAdditionalControls={
             [
-            
+
             ]
           }
           customControlsSection={
             [
               RHAP_UI.MAIN_CONTROLS,
+              <LikeButton song={song} />
             ]
           }
       />

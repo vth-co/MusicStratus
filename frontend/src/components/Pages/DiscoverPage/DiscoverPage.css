@@ -84,7 +84,7 @@
     top: 23%;
     left: 45%;
     cursor: pointer;
-   
+    max-height: 50px;
 }
 
 .card-container {
@@ -172,3 +172,23 @@
     margin: 75px 0;
     z-index: 10;
 }
+
+
+.overlay {
+    position: absolute;
+    top: 75px;
+    left: 75px;
+    width: 50%;
+    height: 98%; /* Covers one-third of the image */
+    background: linear-gradient(to right, transparent, rgba(30, 29, 29, 0.534));  /* 99% transparent black */
+    pointer-events: none; /* Allows interaction with the image beneath */
+    z-index: 1; /* Position the overlay above the image */
+    transform: rotate(90deg);
+    opacity: 0; /* Initially fully transparent */
+  transition: opacity 0.3s; /* Smooth transition effect */
+  }
+
+  .card-container:hover .overlay {
+    /* Show the overlay on hover */
+    opacity: 1; /* Fully opaque */
+  }

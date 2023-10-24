@@ -18,7 +18,6 @@ function Comments({ songId }) {
 
   const commentsObj = useSelector((state) => state.comments.comments);
   const comments = Object.values(commentsObj);
-  console.log(comments)
 
   const [isEditing, setIsEditing] = useState(false);
 
