@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import { getSongs } from "./store/songs";
 import { getComments } from "./store/comments";
+import { getLikes } from "./store/likes";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +20,6 @@ import FeedPage from "./components/Pages/FeedPage";
 import LibraryPage from "./components/Pages/LibraryPage";
 import SearchResults from "./components/Search/SearchResults";
 import UserProfile from "./components/Pages/User";
-import Tracks from "./components/Pages/User/Tracks";
 
 library.add(fas);
 
@@ -33,6 +33,7 @@ function App() {
   useEffect(() => {
     dispatch(getSongs());
     dispatch(getComments());
+    dispatch(getLikes())
   });
 
   return (

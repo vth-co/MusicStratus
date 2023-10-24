@@ -13,21 +13,25 @@ module.exports = {
       }], {});
     */
     // Create seeders for playlists based on songs
-    return queryInterface.bulkInsert("Playlists",
-      [
-        {
-          name: "My Favorite Tunes",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Gym Workout Playlist",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      ],
-      {}
-    );
+    return queryInterface.bulkInsert(
+        "Playlists",
+        [
+          {
+            userId: 1,
+            name: "My Favorite Tunes",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            userId: 1,
+            name: "Gym Workout Playlist",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+        ],
+        {}
+      )
+      
   },
 
   down: (queryInterface, Sequelize) => {

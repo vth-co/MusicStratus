@@ -60,8 +60,14 @@ module.exports = (sequelize, DataTypes) => {
       as: 'comments',
       foreignKey: 'userId'
     })
-    User.hasMany(models.Playlist);
-    User.hasMany(models.Like);
+    User.hasMany(models.Like, {
+      as: 'likes',
+      foreignKey: 'userId'
+    });
+    User.hasMany(models.Playlist, {
+      as: 'playlists',
+      foreignKey: 'userId'
+    });
   };
 
   User.prototype.toSafeObject = function () {

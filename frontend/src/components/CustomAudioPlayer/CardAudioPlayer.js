@@ -1,15 +1,8 @@
-import React, { useState } from "react";
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
-import { useSelector } from "react-redux";
 
 const CardAudioPlayer = ({ song }) => {
-  const sessionUser = useSelector((state) => state.session.user);
-  const userId = sessionUser.id;
-
-  const [currentTrack, setTrackIndex] = useState("");
-
 
   return (
     <>
