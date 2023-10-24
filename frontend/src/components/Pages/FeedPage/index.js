@@ -6,6 +6,7 @@ import "react-h5-audio-player/lib/styles.less"; //Use LESS
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
+import HeartButton from "../../Likes/HeartButton";
 
 const FeedPage = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -26,6 +27,7 @@ const FeedPage = () => {
               <NavLink className="song-link" to={`/songs/${song.id}`}>
                 <div className="card-container">
                   <img className="image" src={song.imageUrl} alt={""} />
+                  <div class="overlay"></div>
                   <NavLink to={"/feed"}>
                     <button
                       className="card-play-button"
@@ -33,6 +35,8 @@ const FeedPage = () => {
                       onClick={(e) => setTrackIndex(e.target.value)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
+                      <HeartButton song={song} />
+
                     </button>
                   </NavLink>
                 </div>

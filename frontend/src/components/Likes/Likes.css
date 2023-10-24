@@ -1,0 +1,31 @@
+.heartbtn {
+    background-color: transparent;
+    position: relative;
+    top: -20px;
+    left: 70px;
+    border: none;
+    color: white;
+    transition: 0.2s ease;
+    z-index: 2;
+}
+
+.heartbtn:hover {
+    transform: scale(1.5);
+}
+
+.likebtn {
+    background-color: transparent;
+    position: relative;
+    top: -60px;
+    left: 6px;
+    color: white;
+    border: 1px solid white;
+    transition: 0.2s ease;
+    z-index: 2;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.likebtn:hover {
+    transform: scale(1.2);
+}

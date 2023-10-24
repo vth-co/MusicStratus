@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 import "react-jinke-music-player/assets/index.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
+import LikeButton from "../../Likes/HeartButton";
 
 const Likes = () => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -24,6 +25,8 @@ const Likes = () => {
     return { id, title, artist, url, imageUrl  };
   });
 
+  likedSongsWithDetails.reverse();
+
 
   return (
     <>
@@ -34,7 +37,6 @@ const Likes = () => {
               <NavLink to={`/songs/${song.id}`}>
                 <img className="image" src={song.imageUrl} alt={""} />
               </NavLink>
-
               <CardAudioPlayer song={song} />
             </div>
           </div>

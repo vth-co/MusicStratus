@@ -48,11 +48,10 @@ export const addLike = (payload) => async (dispatch) => {
 export const deleteLike = (id) => async (dispatch) => {
   const response = await csrfFetch(`/api/likes/${id}`, {
     method: "DELETE",
-    body: JSON.stringify({ id }),
   });
   if (response.ok) {
     const message = await response.json();
-    dispatch(remove(response));
+    dispatch(remove(id));
     return message;
   }
   return response;
