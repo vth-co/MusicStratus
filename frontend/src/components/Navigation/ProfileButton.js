@@ -50,6 +50,15 @@ function ProfileButton() {
                 <i class="bx bxs-user"></i>
                 Profile
               </NavLink>
+              <NavLink className="profile-btn" to={`/${user.username}/tracks`}>
+                <i class="bx bxs-music"></i>
+                Tracks
+              </NavLink>
+              <NavLink className="profile-btn" to={`/${user.username}/likes`}>
+                <i class="bx bxs-heart"></i>
+                Likes
+              </NavLink>
+
               {/* <p className="email"> {user.username}</p>
               <p className="email">{user.email}</p> */}
               <button className="logout-button" onClick={logout}>

@@ -11,6 +11,7 @@ import AddComment from "../../Comments/AddComment";
 import EditSongModal from "../EditSongModal";
 import DeleteSongModal from "../DeleteSongModal";
 import SideTiles from "../../SideTiles";
+import TopAudioPlayer from "../../CustomAudioPlayer/TopAudioPlayer";
 
 const Song = () => {
   const { id } = useParams();
@@ -52,7 +53,7 @@ const Song = () => {
       <>
         <div className="song-container">
           {/* <div className="audio-player-container"> */}
-          <div className="song-comment-container">
+          {/* <div className="song-comment-container">
             <div className="image-container">
               <AudioPlayer
                 className="audio-player"
@@ -73,7 +74,8 @@ const Song = () => {
               />
               <img className="song-image" src={song?.imageUrl} alt="" />
             </div>
-          </div>
+          </div> */}
+          <TopAudioPlayer song={song} />
           <div className="comments-container">
             <div>
               <AddComment />

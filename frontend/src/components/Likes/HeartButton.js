@@ -3,6 +3,7 @@ import { addLike, deleteLike } from "../../store/likes";
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Likes.css"
+import LikeCounter from "./LikeCounter";
 
 const HeartButton = ({song}) => {
   const user = useSelector((state) => state.session.user);
