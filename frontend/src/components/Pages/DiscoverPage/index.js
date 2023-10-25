@@ -7,7 +7,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import HeartButton from "../../Likes/HeartButton";
-import LikeCounter from "../../Likes/LikeCounter";
 
 const DiscoverPage = () => {
   const sessionUser = useSelector((state) => state.session.user);

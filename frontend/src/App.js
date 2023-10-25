@@ -6,6 +6,8 @@ import * as sessionActions from "./store/session";
 import { getSongs } from "./store/songs";
 import { getComments } from "./store/comments";
 import { getLikes } from "./store/likes";
+import { getPlaylists } from "./store/playlists";
+
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -20,6 +22,7 @@ import FeedPage from "./components/Pages/FeedPage";
 import LibraryPage from "./components/Pages/LibraryPage";
 import SearchResults from "./components/Search/SearchResults";
 import UserProfile from "./components/Pages/User";
+import PlaylistPage from "./components/Pages/PlaylistPage";
 
 library.add(fas);
 
@@ -33,7 +36,8 @@ function App() {
   useEffect(() => {
     dispatch(getSongs());
     dispatch(getComments());
-    dispatch(getLikes())
+    dispatch(getLikes());
+    dispatch(getPlaylists());
   });
 
   return (
@@ -70,6 +74,9 @@ function App() {
           </Route>
           <Route path="/:username">
             <UserProfile />
+          </Route>
+          <Route path="/playlists/:id">
+            <PlaylistPage />
           </Route>
         </Switch>
       )}

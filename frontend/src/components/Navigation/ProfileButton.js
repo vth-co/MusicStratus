@@ -58,6 +58,13 @@ function ProfileButton() {
                 <i class="bx bxs-heart"></i>
                 Likes
               </NavLink>
+              <NavLink
+                className="profile-btn"
+                to={`/${user.username}/playlists`}
+              >
+                <i class="bx bxs-playlist"></i>
+                Playlists
+              </NavLink>
 
               {/* <p className="email"> {user.username}</p>
               <p className="email">{user.email}</p> */}

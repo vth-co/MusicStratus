@@ -13,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       as: 'user',
       foreignKey: 'userId'
     })
-    Song.belongsToMany(models.Playlist, { through: 'PlaylistSong' });
+    Song.belongsToMany(models.Playlist, { 
+      through: 'PlaylistSong',
+      as: 'playlists',
+      foreignKey: 'songId'
+    });
   };
   return Song;
 };
