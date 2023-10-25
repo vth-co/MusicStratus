@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes) => {
     Like.belongsTo(models.Song, {
       foreignKey: 'songId'
     })
-    // Like.belongsTo(models.Playlist);
+    // Like.belongsTo(models.Playlist, {
+    //   foreignKey: 'playlistId'
+    // });
   };
   return Like;
 };

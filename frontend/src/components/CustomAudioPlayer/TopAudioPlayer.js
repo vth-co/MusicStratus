@@ -20,6 +20,10 @@ const TopAudioPlayer = ({ song }) => {
         <DeleteSongModal />
       </div>
     );
+  } else {
+    songEditButtons = (
+      <div></div>
+    )
   }
 
   return (
@@ -32,6 +36,9 @@ const TopAudioPlayer = ({ song }) => {
           header={song.title}
           footer={song.artist}
           customAdditionalControls={[
+            <div className="like-btn-container">
+            <LikeButton song={song} />
+          </div>,
             <div className="song-edit-container">{songEditButtons}</div>,
           ]}
           customProgressBarSection={[
@@ -42,9 +49,6 @@ const TopAudioPlayer = ({ song }) => {
             RHAP_UI.DURATION,
           ]}
           customControlsSection={[
-            <div className="like-btn-container">
-              <LikeButton song={song} />
-            </div>,
             RHAP_UI.ADDITIONAL_CONTROLS,
             RHAP_UI.MAIN_CONTROLS,
             RHAP_UI.VOLUME_CONTROLS,

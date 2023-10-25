@@ -16,6 +16,13 @@ module.exports = {
           key: 'id'
         }
       },
+      // likeId: {
+      //   type: Sequelize.INTEGER,
+      //   references: { 
+      //     model: 'Likes',
+      //     key: 'id'
+      //   }
+      // },
       name: {
         type: Sequelize.STRING
       },

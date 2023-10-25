@@ -24,9 +24,14 @@ module.exports = {
           key: 'id'
         }
       },
-      playlistId: {
-        type: Sequelize.INTEGER
-      },
+      // playlistId: {
+      //   type: Sequelize.INTEGER,
+      //   // allowNull: false,
+      //   references: { 
+      //     model: 'Playlists',
+      //     key: 'id'
+      //   }
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

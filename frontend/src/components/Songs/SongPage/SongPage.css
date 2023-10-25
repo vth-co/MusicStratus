@@ -174,16 +174,16 @@
   }
 
   .sng-btn {
-    background-color: gray;
-    color: black;
-    border: none;
-    margin-right: 15px;
-    padding: 7px;
+    background-color: transparent;
+    color: white;
+    border: 1px white solid;
+    margin-right: 10px;
+    padding: 8px;
     transition:  color 0.2s ease;
   }
 
   .sng-btn:hover {
-    color: white;
+    color: #28498A;
     cursor: pointer;
   }
 
