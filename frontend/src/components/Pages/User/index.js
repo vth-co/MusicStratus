@@ -53,7 +53,7 @@ const UserProfile = () => {
                 <ProtectedRoute path={`/${user.username}/likes`}>
                   <Likes />
                 </ProtectedRoute>
-                <ProtectedRoute path={`/${user.username}/playlists`}>
+                <ProtectedRoute path={`/${user.username}/playlists`} exact>
                   <Playlists />
                 </ProtectedRoute>
               </Switch>

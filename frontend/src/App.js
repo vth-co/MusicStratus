@@ -75,7 +75,7 @@ function App() {
           <Route path="/:username">
             <UserProfile />
           </Route>
-          <Route path="/playlists/:id">
+          <Route path="/playlists">
             <PlaylistPage />
           </Route>
         </Switch>
