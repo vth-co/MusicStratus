@@ -16,9 +16,11 @@ const Playlists = () => {
     <>
       {/* <div>
         {userPlaylists.map((playlist) => (
-            <NavLink to={`/set/${playlist.id}`}>
-              {playlist.name}
-            </NavLink>
+          <ul>
+            <li>
+              <NavLink to={`/${user.username}/playlists/${playlist.id}`}>{playlist.name}</NavLink>
+            </li>
+          </ul>
         ))}
       </div> */}
     </>
