@@ -6,7 +6,11 @@ const PlaylistPage = () => {
 
     return (
         <>
-        <div></div>
+        <div>
+            <p>
+                Hi
+            </p>
+        </div>
         </>
     )
 }

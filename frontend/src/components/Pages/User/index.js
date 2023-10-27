@@ -7,7 +7,7 @@ import Tracks from "./Tracks";
 import DiscoverPage from "../DiscoverPage";
 import SideTiles from "../../SideTiles";
 import Likes from "./Likes";
-import Playlists from "./Playlist";
+import Playlists from "./Playlists";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.session.user);
