@@ -14,15 +14,15 @@ const Playlists = () => {
 
   return (
     <>
-      {/* <div>
+      <div>
         {userPlaylists.map((playlist) => (
           <ul>
-            <li>
-              <NavLink to={`/${user.username}/playlists/${playlist.id}`}>{playlist.name}</NavLink>
+            <li key={playlist.id}>
+              <NavLink to={`/playlists/${playlist.id}`}>{playlist.name}</NavLink>
             </li>
           </ul>
         ))}
-      </div> */}
+      </div>
     </>
   );
 };
