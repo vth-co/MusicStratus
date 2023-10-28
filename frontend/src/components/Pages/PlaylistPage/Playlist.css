@@ -1,0 +1,11 @@
+.playlist-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.song-container h1 {
+    color: white;
+}
