@@ -5,7 +5,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 import "react-jinke-music-player/assets/index.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
-import LikeButton from "../../Likes/HeartButton";
 
 const Likes = () => {
   const sessionUser = useSelector((state) => state.session.user);

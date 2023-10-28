@@ -8,7 +8,6 @@ import { getComments } from "./store/comments";
 import { getLikes } from "./store/likes";
 import { getPlaylists } from "./store/playlists";
 
-
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import ErrorPage from "./components/Pages/ErrorPage";
@@ -22,7 +21,8 @@ import FeedPage from "./components/Pages/FeedPage";
 import LibraryPage from "./components/Pages/LibraryPage";
 import SearchResults from "./components/Search/SearchResults";
 import UserProfile from "./components/Pages/User";
-import PlaylistPage from "./components/Pages/PlaylistPage";
+import Playlist from "./components/Pages/PlaylistPage";
+import Playlists from "./components/Pages/User/Playlists";
 
 library.add(fas);
 
@@ -51,7 +51,7 @@ function App() {
           <Route path="/login">
             <LoginPage />
           </Route>
-          <Route path="/404">
+          <Route exact path="/404">
             <ErrorPage />
           </Route>
           <Route exact path={"/"}>
@@ -72,11 +72,15 @@ function App() {
           <Route path="/search">
             <SearchResults />
           </Route>
-          <Route path="/:username">
+          <Route path="/user/:username">
             <UserProfile />
           </Route>
-          <Route path="/playlist/:id">
-            <PlaylistPage />
+          <Route path="/:username/playlists/:id">
+            <Playlist />
+          </Route>
+
+          <Route path="*">
+            <ErrorPage />
           </Route>
         </Switch>
       )}

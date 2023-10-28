@@ -46,21 +46,21 @@ function ProfileButton() {
           </div>
           {showMenu && (
             <div className="profile-dropdown">
-              <NavLink className="profile-btn" to={`/${user.username}`}>
+              <NavLink className="profile-btn" to={`/user/${user.username}`}>
                 <i class="bx bxs-user"></i>
                 Profile
               </NavLink>
-              <NavLink className="profile-btn" to={`/${user.username}/tracks`}>
+              <NavLink className="profile-btn" to={`/user/${user.username}/tracks`}>
                 <i class="bx bxs-music"></i>
                 Tracks
               </NavLink>
-              <NavLink className="profile-btn" to={`/${user.username}/likes`}>
+              <NavLink className="profile-btn" to={`/user/${user.username}/likes`}>
                 <i class="bx bxs-heart"></i>
                 Likes
               </NavLink>
               <NavLink
                 className="profile-btn"
-                to={`/${user.username}/playlists`}
+                to={`/user/${user.username}/playlists`}
               >
                 <i class="bx bxs-playlist"></i>
                 Playlists

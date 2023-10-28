@@ -27,33 +27,32 @@ const UserProfile = () => {
         <div className="profile-body">
           <ul className="user-info-bar">
             <li>
-              <NavLink to={`/${user.username}`} activeClassName={false}>
+              <NavLink to={`/user/${user.username}`} activeClassName={false}>
                 All
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/${user.username}/tracks`}>Tracks</NavLink>
+              <NavLink to={`/user/${user.username}/tracks`}>Tracks</NavLink>
             </li>
             <li>
-              <NavLink to={`/${user.username}/likes`}>Likes</NavLink>
+              <NavLink to={`/user/${user.username}/likes`}>Likes</NavLink>
             </li>
             <li>
-              <NavLink to={`/${user.username}/playlists`}>Playlists</NavLink>
+              <NavLink to={`/user/${user.username}/playlists`}>Playlists</NavLink>
             </li>
           </ul>
           <div className="split-container">
             <div className="left">
               <Switch>
-                <ProtectedRoute path={`/${user.username}`} exact>
-                  {/* <DiscoverPage /> */}
-                </ProtectedRoute>
-                <ProtectedRoute path={`/${user.username}/tracks`}>
+                {/* <ProtectedRoute path={`/${user.username}`} exact>
+                </ProtectedRoute> */}
+                <ProtectedRoute path={`/user/${user.username}/tracks`}>
                   <Tracks />
                 </ProtectedRoute>
-                <ProtectedRoute path={`/${user.username}/likes`}>
+                <ProtectedRoute path={`/user/${user.username}/likes`}>
                   <Likes />
                 </ProtectedRoute>
-                <ProtectedRoute path={`/${user.username}/playlists`} exact>
+                <ProtectedRoute path={`/user/${user.username}/playlists`} exact>
                   <Playlists />
                 </ProtectedRoute>
               </Switch>
