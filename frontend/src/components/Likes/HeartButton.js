@@ -54,9 +54,9 @@ const HeartButton = ({song}) => {
 
   let heartIcon;
   if (heart) {
-    heartIcon = <i className="fa-solid fa-heart"></i>;
+    heartIcon = <i className="fa-solid fa-heart liked"></i>;
   } else {
-    heartIcon = <i className="fa-regular fa-heart"></i>;
+    heartIcon = <i class="fa-solid fa-heart unliked"></i>
   }
 
   return (

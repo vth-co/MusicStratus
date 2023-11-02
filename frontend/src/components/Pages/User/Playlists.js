@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import "./UserProfile.css"
 
 const Playlists = () => {
   const user = useSelector((state) => state.session.user);
@@ -17,8 +18,8 @@ const Playlists = () => {
       <div>
         {userPlaylists.map((playlist) => (
           <ul key={playlist.id}>
-            <li>
-              <NavLink to={`/${user.username}/playlists/${playlist.id}`}>{playlist.name}</NavLink>
+            <li >
+              <NavLink className="playlist-link" to={`/${user.username}/playlists/${playlist.id}`}>{playlist.name}</NavLink>
             </li>
           </ul>
         ))}

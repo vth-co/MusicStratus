@@ -50,8 +50,8 @@
 
 }
 
-.fa-solid.fa-heart {
-    color: #28498A;
+.fa-solid.fa-heart.liked{
+    color: #5e85d1;
 }
 
 .like-btn-container .likebtn:hover {

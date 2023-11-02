@@ -125,7 +125,9 @@ const DiscoverPage = () => {
                       >
                         <i className="fa-solid fa-circle-play"></i>
                       </button>
-                      <HeartButton song={song} />
+                      <div className="heart-button-container">
+                        <HeartButton song={song} />
+                      </div>
                     </NavLink>
                   </div>
                   <p className="song-title">{song.title}</p>
@@ -156,7 +158,6 @@ const DiscoverPage = () => {
                     <img className="image" src={song.imageUrl} alt={""} />
                     <div class="overlay"></div>
                   </NavLink>
-
                   <NavLink to={"/discover"}>
                     <button
                       className="card-play-button"
@@ -166,7 +167,9 @@ const DiscoverPage = () => {
                       <i className="fa-solid fa-circle-play"></i>
                     </button>
                   </NavLink>
-                      <HeartButton song={song} />
+                  <div className="heart-button-container">
+                    <HeartButton song={song} />
+                  </div>
                 </div>
                 <NavLink className="song-link" to={`/songs/${song.id}`}>
                   <p className="song-title">{song.title}</p>

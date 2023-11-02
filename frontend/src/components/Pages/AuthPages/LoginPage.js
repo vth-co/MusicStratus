@@ -8,7 +8,7 @@ const LoginPage = () => {
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const user = useSelector((state) => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ const LoginPage = () => {
     }
   };
 
-  if (user) {
+  if (sessionUser) {
     return <Redirect to="/discover" />;
   }
 
