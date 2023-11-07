@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { NavLink, Switch } from "react-router-dom";
 import ProtectedRoute from "../../../context/ProtectedRoute";
 import Tracks from "./Tracks";
-import DiscoverPage from "../DiscoverPage";
 import SideTiles from "../../SideTiles";
 import Likes from "./Likes";
 import Playlists from "./Playlists";

@@ -105,3 +105,8 @@
   flex-grow: 1; /* Allow the container to grow and occupy available space */
   border-right: 1px gray solid;
 }
+
+
+.playlist-link {
+  color: white;
+}
