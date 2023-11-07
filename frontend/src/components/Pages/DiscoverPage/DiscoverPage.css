@@ -180,7 +180,7 @@
     left: 75px;
     width: 50%;
     height: 98%; /* Covers one-third of the image */
-    background: linear-gradient(to right, transparent, rgba(30, 29, 29, 0.534));  /* 99% transparent black */
+    background: linear-gradient(to right, transparent, rgba(30, 29, 29, 0.734));  /* 99% transparent black */
     pointer-events: none; /* Allows interaction with the image beneath */
     z-index: 1; /* Position the overlay above the image */
     transform: rotate(90deg);
@@ -191,4 +191,18 @@
   .card-container:hover .overlay {
     /* Show the overlay on hover */
     opacity: 1; /* Fully opaque */
+  }
+
+
+  .heart-button-container {
+    position: absolute;
+    bottom: -1px;
+    right: -65px;
+    visibility: hidden;
+     /* Initially hide the HeartButton */
+    transition: visibility 0.2s; /* Add a transition effect */
+  }
+  
+  .song-card:hover .heart-button-container {
+    visibility: visible; /* Show the HeartButton on hover */
   }

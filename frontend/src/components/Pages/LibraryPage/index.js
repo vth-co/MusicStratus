@@ -35,7 +35,9 @@ const LibraryPage = () => {
                       <i className="fa-solid fa-circle-play"></i>
                     </button>
                   </NavLink>
-                  <HeartButton song={song} />
+                  <div className="heart-button-container">
+                    <HeartButton song={song} />
+                  </div>
                 </div>
                 <p className="song-title">{song.title}</p>
                 <p className="song-artist">{song.artist}</p>
