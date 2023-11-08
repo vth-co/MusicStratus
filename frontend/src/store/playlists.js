@@ -51,7 +51,7 @@ export const getSingle = (id) => async (dispatch) => {
 export const addPlaylist = (payload) => async (dispatch) => {
   const response = await csrfFetch("/api/playlists", {
     method: "POST",
-    header: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
   if (response.ok) {
@@ -107,7 +107,7 @@ const playlistsReducer = (state = {}, action) => {
       return newState;
     case REMOVE_PLAYLIST:
       newState = { ...state };
-      delete newState[action.playlist];
+      delete newState[action.playlist.id];
       return newState;
     default:
       return state;
