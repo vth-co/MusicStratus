@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import "./Playlist.css"
+import "./Playlist.css";
+import TopAudioPlayer from "../../CustomAudioPlayer/TopAudioPlayer";
 
 const PlaylistPage = () => {
   const { id } = useParams();
@@ -30,21 +31,25 @@ const PlaylistPage = () => {
     fetchSongs();
   }, [id]);
 
-
-  return (
-    <>
-      <div className="song-container">
-        <h1 className="playlist-name">{playlist.name}</h1>
-        {/* <p>{user.username}</p> */}
-        {/* <h2>Songs in this Playlist:</h2> */}
-        <ul>
-          {songs.map((song) => (
-            <li key={song.id}>{song.title}</li>
-          ))}
-        </ul>
-      </div>
-    </>
-  );
+  if (!playlist) {
+    return null;
+  } else {
+    return (
+      <>
+        <div className="song-container">
+          <h1 className="playlist-name">{playlist.name}</h1>
+          <ul>
+            {songs.map((song) => (
+              <div>
+              <TopAudioPlayer song={song} />
+              {/* <li key={song.id}>{song.title}</li> */}
+              </div>
+            ))}
+          </ul>
+        </div>
+      </>
+    );
+  }
 };
 
 export default PlaylistPage;

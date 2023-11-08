@@ -22,8 +22,12 @@ router.post(
 router.get(
   "/:id",
   asyncHandler(async function (req, res) {
-    const playlistId = await db.Playlist.findAll();
-    return res.json(playlistId);
+    const playlistId = req.params.id;
+    const playlist = await db.Playlist.findByPk(playlistId);
+    if (!playlist) {
+      return res.status(404).json({ message: "Playlist not found" });
+    }
+    return res.json(playlist);
   })
 );
 

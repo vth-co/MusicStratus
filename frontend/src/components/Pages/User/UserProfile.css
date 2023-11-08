@@ -108,5 +108,79 @@
 
 
 .playlist-link {
+  display: flex;
   color: white;
+}
+
+
+.playlist-header, .playlist-user {
+    text-align: center;
+    font-size: large;
+    background-color: transparent;
+    max-width:fit-content;
+    padding-left: 7px;
+    margin: initial;
+}
+
+.playlist-play-button {
+  margin-top: 15px;
+  margin-left: 23px;
+  font-size: 32px;
+  color: #5e85d1;
+
+}
+
+.playlist-header {
+  color: rgba(255, 255, 255, 0.866);
+
+}
+
+.playlist-user {
+  margin-top: 15px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.785);
+
+}
+
+.playlist-user:hover, .playlist-header:hover {
+  color: white;
+}
+
+
+.song-li-container {
+  margin-top: 50px;
+}
+
+.song-li {
+  display: flex;
+  border: 1px solid gray;
+  width: 350px;
+  margin-left: 8px;
+  padding: 5px 8px;
+}
+
+.playlist-song-title {
+  color: rgb(171, 171, 171);
+}
+
+.tiny-image {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px
+}
+
+.song-li li:second-child {
+  font-weight: bold;
+  color: #FF0000;
+  /* Add any other styles you want */
+}
+
+.song-info {
+  display: flex;
+  padding: initial;
+  margin: initial;
+}
+
+.song-info li {
+  margin-right: 5px;
 }

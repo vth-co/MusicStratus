@@ -52,7 +52,7 @@ export const getSingle = (id) => async (dispatch) => {
 export const addSong = (payload) => async (dispatch) => {
   const response = await csrfFetch("/api/songs", {
     method: "POST",
-    header: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
   if (response.ok) {
@@ -67,7 +67,7 @@ export const deleteSong = songId => async dispatch => {
         method: "DELETE",
         body: JSON.stringify({songId})
     });
-    dispatch(remove(response))
+    dispatch(remove({ songId }))
     return response;
 };
 
