@@ -3,6 +3,7 @@ import { NavLink, useParams } from "react-router-dom";
 import "./UserProfile.css";
 import { useEffect, useState } from "react";
 import CardAudioPlayer from "../../CustomAudioPlayer/CardAudioPlayer";
+import DeletePlaylistModal from "../../Playlists/DeleteModal";
 
 const Playlists = () => {
   const { id } = useParams();
@@ -94,30 +95,44 @@ const Playlists = () => {
                   />
                 )}
               </div>
-              <div className="playlist-play-button">
-                <i class="fa-solid fa-circle-play"></i>
-              </div>
               <div className="playlist-info">
-                <NavLink to={`/user/${user.username}`}>
-                  <p className="playlist-user">{user.username}</p>
-                </NavLink>
-                <p className="playlist-header">{playlist.name}</p>
+                <div className="playlist-btn-info-container">
+                  <div className="playlist-play-button">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </div>
+                  <div>
+                    <NavLink to={`/user/${user.username}`}>
+                      <p className="playlist-user">{user.username}</p>
+                    </NavLink>
+                    <p className="playlist-header">{playlist.name}</p>
+                  </div>
+                </div>
                 <div className="song-li-container">
                   {playlistSongs[playlist.id] &&
                     playlistSongs[playlist.id].map((song, index) => (
-                      <div key={song.id} className="song-li">
-                        <img src={song.imageUrl} className="tiny-image" />
-                        <ul className="song-info">
-                          <li>{index + 1}</li>
-                          <li className="playlist-song-title">{song.artist}</li>
-                          <li>-</li>
-                          <li>{song.title}</li>
-                        </ul>
-                      </div>
+                      <NavLink to={`/songs/${song.id}`} className="song-link">
+                        <div key={song.id} className="song-li">
+                          <img src={song.imageUrl} className="tiny-image" />
+                          <ul className="song-info">
+                            <li>{index + 1}</li>
+                            <li className="playlist-song-title">
+                              {song.artist}
+                            </li>
+                            <li>-</li>
+                            <li>{song.title}</li>
+                          </ul>
+                        </div>
+                      </NavLink>
                     ))}
                 </div>
               </div>
             </NavLink>
+                {/* <div>
+                  <button></button>
+                  <DeletePlaylistModal />
+                  <button></button>
+                  <button></button>
+                </div> */}
           </div>
         ))}
       </div>

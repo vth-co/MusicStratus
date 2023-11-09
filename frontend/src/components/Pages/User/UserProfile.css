@@ -110,6 +110,11 @@
 .playlist-link {
   display: flex;
   color: white;
+  width: 100%;
+}
+
+.playlist-info {
+  width: 100%;
 }
 
 
@@ -122,12 +127,17 @@
     margin: initial;
 }
 
+.playlist-btn-info-container {
+  display: flex;
+}
+
+
 .playlist-play-button {
   margin-top: 15px;
-  margin-left: 23px;
+  margin-left: 15px;
   font-size: 32px;
   color: #5e85d1;
-
+  /* height: 50px; */
 }
 
 .playlist-header {
@@ -149,14 +159,16 @@
 
 .song-li-container {
   margin-top: 50px;
+  margin-left: 10px;
+  width: 100%;
 }
 
 .song-li {
   display: flex;
   border: 1px solid gray;
-  width: 350px;
   margin-left: 8px;
   padding: 5px 8px;
+  margin-right: 15px;
 }
 
 .playlist-song-title {
