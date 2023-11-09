@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { deleteSong } from "../../../store/songs";
@@ -10,7 +9,6 @@ const DeleteSong = ({ onClose }) => {
   const history = useHistory();
 
   const song = useSelector((state) => state.songs.songs[id]);
-  const [errors, setErrors] = useState([]);
 
   const handleDelete = async (e) => {
     e.preventDefault();

@@ -165,7 +165,7 @@
 
 .song-li {
   display: flex;
-  border: 1px solid gray;
+  border: 1px solid rgba(128, 128, 128, 0.579);
   margin-left: 8px;
   padding: 5px 8px;
   margin-right: 15px;
@@ -195,4 +195,8 @@
 
 .song-info li {
   margin-right: 5px;
+}
+
+.modal-buttons-container {
+  margin-left: 13px;
 }

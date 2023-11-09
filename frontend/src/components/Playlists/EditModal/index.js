@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Modal } from "../../../context/Modal";
-import DeletePlaylist from "./DeletePlaylist";
+import EditPlaylist from "./EditPlaylist";
 
 
-function DeletePlaylistModal({ playlist }) {
+function EditPlaylistModal({ playlist }) {
   const [showModal, setShowModal] = useState(false);
 
   const closeModal = () => {
@@ -13,16 +13,16 @@ function DeletePlaylistModal({ playlist }) {
   return (
     <>
       <button className="playlist-btn" onClick={() => setShowModal(true)}>
-      <i class='bx bxs-trash-alt'></i>
-      <span>Delete</span>
+      <i class="fa-solid fa-pencil"></i>
+      <span>Edit</span>
       </button>
       {showModal && (
         <Modal onClose={closeModal}>
-          <DeletePlaylist onClose={closeModal} playlist={playlist}/>
+          <EditPlaylist onClose={closeModal} playlist={playlist}/>
         </Modal>
       )}
     </>
   );
 }
 
-export default DeletePlaylistModal;
+export default EditPlaylistModal;
