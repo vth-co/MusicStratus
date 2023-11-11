@@ -1,0 +1,12 @@
+.playlist-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(128, 128, 128, 0.579);
+    padding: 3px 8px;
+    margin: 10px 5px;
+    border-radius: 3px;
+}
+
+.playlist-btn i,span {
+    padding: 0 4px;
+}
