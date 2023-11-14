@@ -7,6 +7,7 @@ import Tracks from "./Tracks";
 import SideTiles from "../../SideTiles";
 import Likes from "./Likes";
 import Playlists from "./Playlists";
+import All from "./All";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.session.user);
@@ -43,8 +44,9 @@ const UserProfile = () => {
           <div className="split-container">
             <div className="left">
               <Switch>
-                {/* <ProtectedRoute path={`/${user.username}`} exact>
-                </ProtectedRoute> */}
+                <ProtectedRoute path={`/user/${user.username}`} exact>
+                  <All />
+                </ProtectedRoute>
                 <ProtectedRoute path={`/user/${user.username}/tracks`}>
                   <Tracks />
                 </ProtectedRoute>
