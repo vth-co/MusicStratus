@@ -44,6 +44,7 @@
   border-bottom: 1px solid gray;
   margin: 0 20px;
   margin-top: 15px;
+  padding-left: 0;
 }
 
 .user-info-bar li {
@@ -107,6 +108,8 @@
 }
 
 
+
+
 .playlist-link {
   display: flex;
   color: white;
@@ -140,6 +143,10 @@
   /* height: 50px; */
 }
 
+.playlist-play-button:hover {
+  color: #3168d6;
+}
+
 .playlist-header {
   color: rgba(255, 255, 255, 0.866);
 
@@ -169,6 +176,10 @@
   margin-left: 8px;
   padding: 5px 8px;
   margin-right: 15px;
+}
+
+.song-li:hover {
+  background-color: rgba(74, 74, 74, 0.267);
 }
 
 .playlist-song-title {

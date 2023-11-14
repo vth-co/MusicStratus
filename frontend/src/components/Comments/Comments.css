@@ -1,18 +1,25 @@
-.comment {
+.comment-content {
     display: flex;
     justify-content: space-between;
-    padding: 20px 15px;
+    /* padding: 20px 15px; */
     color: rgb(255, 255, 255);
-    padding-bottom: 20px;
     word-break: break-all;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     /* font-weight: bolder; */
     /* border-right: 1px gray solid; */
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
+
+.comment-user-time-container {
+    display: flex;
+    justify-content: space-between;
+    width: 200px; /* Adjust the width as needed */
+  }
 
 .songComments {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -180,4 +187,13 @@
     height: 35px;
     margin: initial;
     border-radius: initial;
+}
+
+.comment-user {
+    font-weight: 700;
+    color: white;
+}
+
+.comment-time {
+    color: gray;
 }

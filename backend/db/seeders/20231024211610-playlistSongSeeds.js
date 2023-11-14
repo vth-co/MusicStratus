@@ -2,49 +2,37 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
+    const generateRandomSongIds = (count, maxSongId) => {
+      const songIds = [];
+      while (songIds.length < count) {
+        const randomSongId = Math.floor(Math.random() * maxSongId) + 1;
+        if (!songIds.includes(randomSongId)) {
+          songIds.push(randomSongId);
+        }
+      }
+      return songIds;
+    };
 
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
-      return queryInterface.bulkInsert('PlaylistSongs', [
-        {
-          playlistId: 1, // Replace with the actual playlist ID
-          songId: 1, // Replace with the actual song ID
+    const playlistSongRecords = [];
+    
+    for (let playlistId = 1; playlistId <= 10; playlistId++) {
+      const songCount = Math.floor(Math.random() * 8) + 3; // Generate 3-10 songs
+      const songIds = generateRandomSongIds(songCount, 90);
+
+      songIds.forEach((songId) => {
+        playlistSongRecords.push({
+          playlistId,
+          songId,
           createdAt: new Date(),
           updatedAt: new Date(),
-        },
-        {
-          playlistId: 1, // Replace with the actual playlist ID
-          songId: 2, // Replace with the actual song ID
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          playlistId: 2, // Replace with the actual playlist ID
-          songId: 3, // Replace with the actual song ID
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        // Add more PlaylistSong records as needed to associate songs with playlists
-      ]);
+        });
+      });
+    }
+
+    return queryInterface.bulkInsert('PlaylistSongs', playlistSongRecords, {});
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-      
-    */
-      return queryInterface.bulkDelete("PlaylistSongs", null, {});
-
+    return queryInterface.bulkDelete('PlaylistSongs', null, {});
   }
 };

@@ -1,5 +1,8 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
+const { Op } = require("sequelize");
+const db = require("../../db/models");
+
 
 const { setTokenCookie, requireAuth } = require("../../utils/auth");
 const { User } = require("../../db/models");
@@ -39,6 +42,36 @@ router.post(
     return res.json({
       user,
     });
+  })
+);
+
+router.get(
+  "/",
+  asyncHandler(async function (req, res) {
+    const users = await db.User.findAll();
+    res.json({ users });
+  })
+);
+
+// Search users
+router.get(
+  "/search",
+  asyncHandler(async (req, res) => {
+    const { query } = req.query;
+
+    if (!query) {
+      return res.status(400).json({ message: "Search query is required." });
+    }
+
+    const users = await User.findAll({
+      where: {
+        username: {
+          [Op.iLike]: `%${query}%`, // Case-insensitive search
+        },
+      },
+    });
+
+    return res.json({ users });
   })
 );
 

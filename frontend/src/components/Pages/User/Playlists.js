@@ -90,9 +90,13 @@ const Playlists = () => {
             </div>
             <div className="playlist-info">
               <div className="playlist-btn-info-container">
-                <div className="playlist-play-button">
-                  <i class="fa-solid fa-circle-play"></i>
-                </div>
+                <NavLink
+                  to={`/${user.username}/playlists/${playlist.id}`}
+                >
+                  <div className="playlist-play-button">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </div>
+                </NavLink>
                 <div>
                   <NavLink to={`/user/${user.username}`}>
                     <p className="playlist-user">{user.username}</p>
@@ -121,10 +125,10 @@ const Playlists = () => {
                     </NavLink>
                   ))}
               </div>
-            <div className="modal-buttons-container">
-              <EditPlaylistModal playlist={playlist} />
-              <DeletePlaylistModal playlist={playlist} />
-            </div>
+              <div className="modal-buttons-container">
+                <EditPlaylistModal playlist={playlist} />
+                <DeletePlaylistModal playlist={playlist} />
+              </div>
             </div>
           </div>
         ))}

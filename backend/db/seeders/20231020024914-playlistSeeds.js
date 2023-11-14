@@ -18,13 +18,61 @@ module.exports = {
         [
           {
             userId: 1,
-            name: "My Favorite Tunes",
+            name: "My Favorite Songs",
             createdAt: new Date(),
             updatedAt: new Date(),
           },
           {
             userId: 1,
             name: "Gym Workout Playlist",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            userId: 1,
+            name: "Car Radio Tunes",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            userId: 1,
+            name: "Shower Sing-a-long",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            userId: 2,
+            name: "Playlist #1",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            userId: 2,
+            name: "Playlist #2",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            userId: 2,
+            name: "Playlist #3",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            userId: 3,
+            name: "Playlist #1",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            userId: 3,
+            name: "Playlist #2",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            userId: 3,
+            name: "Playlist #3",
             createdAt: new Date(),
             updatedAt: new Date(),
           },
