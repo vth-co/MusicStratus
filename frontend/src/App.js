@@ -22,7 +22,7 @@ import LibraryPage from "./components/Pages/LibraryPage";
 import SearchResults from "./components/Search/SearchResults";
 import UserProfile from "./components/Pages/User";
 import Playlist from "./components/Pages/PlaylistPage";
-import Playlists from "./components/Pages/User/Playlists";
+import { getUsers } from "./store/users";
 
 library.add(fas);
 
@@ -38,6 +38,7 @@ function App() {
     dispatch(getComments());
     dispatch(getLikes());
     dispatch(getPlaylists());
+    dispatch(getUsers());
   });
 
   return (

@@ -231,3 +231,7 @@ h2 {
   display: flex; /* Display children side by side */
   align-items: center; /* Vertically center the content */  
 }
+
+.feed-button .bx {
+  margin-right: 8px;
+}

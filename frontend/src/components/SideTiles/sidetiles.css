@@ -1,5 +1,5 @@
 .sidetiles-container {
-    width: 320px;
+    width: 300px;
     margin: 35px 25px;
 }
 
@@ -38,8 +38,7 @@
   }
 
   .right .sidetiles-hr {
-    width: 320px;
-
+    width: 302px;
   }
 
   .sidetiles-gif {
