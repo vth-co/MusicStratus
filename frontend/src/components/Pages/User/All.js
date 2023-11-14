@@ -11,7 +11,8 @@ const All = () => {
 
   const likedSongs = useSelector((state) => state.likes);
   const songs = useSelector((state) => state.songs.songs);
-  const playlists = useSelector((state) => state.playlists);
+  const playlistsObj = useSelector((state) => state.playlists);
+  const playlists = Object.values(playlistsObj);
 
   // Combine items from different categories into a single array
   const allItems = [];
@@ -27,10 +28,7 @@ const All = () => {
   allItems.push(...likedSongsWithDetails);
 
   // Extract the most recent playlist information
-  const recentPlaylists = playlists
-    .filter((playlist) => playlist.userId === sessionUser.id)
-    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-    .slice(0, 5); // Adjust the number of playlists to display
+  const recentPlaylists = playlists.filter((playlist) => playlist.userId === sessionUser.id).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 5); // Adjust the number of playlists to display
 
   // Add playlist information to the allItems array
   recentPlaylists.forEach((playlist) => {
