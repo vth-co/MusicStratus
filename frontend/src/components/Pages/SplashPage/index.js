@@ -133,8 +133,8 @@ const SplashPage = () => {
           <ul className="footer-ul">
             <p className="footer-section">Resources</p>
             <li className="link">JavaScript</li>
-            <li className="link">HTML / CSS</li>
-            <li className="link">React / Redux</li>
+            <li className="link">HTML/CSS</li>
+            <li className="link">React/Redux</li>
             <li className="link">PostgreSQL</li>
           </ul>
         </div>
