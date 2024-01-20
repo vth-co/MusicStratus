@@ -14,6 +14,7 @@ const UserProfile = () => {
 
   const [headerImage, setHeaderImage] = useState();
   const [profileImage, setProfileImage] = useState();
+  console.log(user)
 
   return (
     <>
@@ -23,6 +24,11 @@ const UserProfile = () => {
           <div className="profile-icon"></div>
           <h2 className="profile-username">{user.username}</h2>
           {/* <img className="profile-header" src="../../../images/header.jpg" alt=""/> */}
+          <img
+              style={{ width: "150px" }}
+              src={user.profileImageUrl}
+              alt="profile"
+            />
         </div>
         <div className="profile-body">
           <ul className="user-info-bar">
