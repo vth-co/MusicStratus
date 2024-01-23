@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import * as sessionActions from "../../../store/session";
-import { createUser } from "../../../store/session";
+import { createUser, login } from "../../../store/session";
 import "./SignupForm.css";
 
 const SignupForm = ({ onClose }) => {
@@ -63,7 +62,7 @@ const SignupForm = ({ onClose }) => {
     const credential = "Demo-lition";
     const password = "password";
 
-    const data = await dispatch(sessionActions.login({ credential, password }));
+    const data = await dispatch(login({ credential, password }));
     if (data) {
       setErrors(data);
     }

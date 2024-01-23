@@ -48,11 +48,23 @@ router.post(
   })
 );
 
+router.put(
+  "/:id",
+  singleMulterUpload("image"),
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const profileImageUrl = await singlePublicFileUpload(req.file);
+    await User.update({ profileImageUrl }, { where: { id } });
+
+    res.json({ profileImageUrl });
+  })
+);
+
 router.get(
   "/",
   asyncHandler(async function (req, res) {
     const users = await db.User.findAll();
-    res.json({ users });
+    res.json(users);
   })
 );
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./UserProfile.css";
 import { useSelector } from "react-redux";
-import { NavLink, Switch } from "react-router-dom";
+import { NavLink, Switch, useParams } from "react-router-dom";
 import ProtectedRoute from "../../../context/ProtectedRoute";
 import Tracks from "./Tracks";
 import SideTiles from "../../SideTiles";
@@ -10,11 +10,16 @@ import Playlists from "./Playlists";
 import All from "./All";
 
 const UserProfile = () => {
+  const { username } = useParams(); 
   const user = useSelector((state) => state.session.user);
 
-  const [headerImage, setHeaderImage] = useState();
-  const [profileImage, setProfileImage] = useState();
-  console.log(user)
+  const usersObj = useSelector((state) => state.users)
+  const users = Object.values(usersObj)
+  const profile = users.filter((user) => user.username === username);
+
+  // const [headerImage, setHeaderImage] = useState();
+  // const [profileImage, setProfileImage] = useState();
+  console.log(username)
 
   return (
     <>
@@ -25,8 +30,8 @@ const UserProfile = () => {
           <h2 className="profile-username">{user.username}</h2>
           {/* <img className="profile-header" src="../../../images/header.jpg" alt=""/> */}
           <img
-              style={{ width: "150px" }}
-              src={user.profileImageUrl}
+              style={{ width: "250px" }}
+              src={user.image}
               alt="profile"
             />
         </div>

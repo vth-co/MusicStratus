@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import * as sessionActions from "../../../store/session";
 import "./Auth.css";
 
@@ -10,25 +10,45 @@ const SignupPage = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [image, setImage] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/discover" />;
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (password === confirmPassword) {
+  //     setErrors([]);
+  //     return dispatch(
+  //       sessionActions.signup({ email, username, password })
+  //     ).catch(async (res) => {
+  //       const data = await res.json();
+  //       if (data && data.errors) setErrors(data.errors);
+  //     });
+  //   }
+  //   return setErrors([
+  //     "Confirm Password field must be the same as the Password field",
+  //   ]);
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      setErrors([]);
-      return dispatch(
-        sessionActions.signup({ email, username, password })
-      ).catch(async (res) => {
+    let newErrors = [];
+    dispatch(sessionActions.createUser({ username, email, password, image }))
+      .then(() => {
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setImage(null);
+      })
+      .catch(async (res) => {
         const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
+        if (data && data.errors) {
+          newErrors = data.errors;
+          setErrors(newErrors);
+        }
       });
-    }
-    return setErrors([
-      "Confirm Password field must be the same as the Password field",
-    ]);
   };
 
   const handleClick = async (e) => {
