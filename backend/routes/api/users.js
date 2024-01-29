@@ -37,8 +37,8 @@ router.post(
   validateSignup,
   asyncHandler(async (req, res) => {
     const { email, password, username } = req.body;
-    const profileImageUrl = await singlePublicFileUpload(req.file);
-    const user = await User.signup({ email, username, password, profileImageUrl, });
+    const image = await singlePublicFileUpload(req.file);
+    const user = await User.signup({ email, username, password, image, });
 
     await setTokenCookie(res, user);
 
@@ -53,10 +53,10 @@ router.put(
   singleMulterUpload("image"),
   asyncHandler(async (req, res) => {
     const id = req.params.id;
-    const profileImageUrl = await singlePublicFileUpload(req.file);
-    await User.update({ profileImageUrl }, { where: { id } });
+    const image = await singlePublicFileUpload(req.file);
+    await User.update({ image }, { where: { id } });
 
-    res.json({ profileImageUrl });
+    res.json({ image });
   })
 );
 

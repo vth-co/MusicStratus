@@ -42,7 +42,6 @@ li {
   color: rgb(190, 190, 190);
   background-color: rgba(255, 255, 255, 0);
   padding: 14px 35px;
-  padding-bottom: 13px;
 }
 
 .feed-button:hover {
@@ -50,8 +49,7 @@ li {
 }
 
 .profile-button .feed-button {
-  padding: 14px 35px;
-  padding-bottom: 7px;
+  padding: 7px 20px;
 }
 
 .feed-user-button {
@@ -160,9 +158,9 @@ h2 {
   background-color: #F2F2F2;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   position: absolute;
-  right: calc(1%) ;
+  right: calc(-7%) ;
   top: calc(98%);
-  width: 113px;
+  width: 100px;
   z-index: 50;
 }
 
@@ -172,7 +170,7 @@ h2 {
   font-weight: 700;
   width:max-content;
   border: transparent;
-  width: 113px;
+  width: 100px;
   padding: 5px 4px;
   text-align: left;
 
@@ -209,7 +207,7 @@ h2 {
 
 .profile-btn {
   color: black;
-  width: 105px;
+  width: 93px;
   display:block;
   font-weight: 700;
   padding: 5px 4px;
@@ -229,9 +227,23 @@ h2 {
 
 .icon-container {
   display: flex; /* Display children side by side */
-  align-items: center; /* Vertically center the content */  
+  align-items: center; /* Vertically center the content */ 
+  justify-content: space-around;
 }
 
 .feed-button .bx {
   margin-right: 8px;
+}
+
+
+.profile-icon-nav {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fa-chevron-down {
+  margin-left: 10px;
+
 }

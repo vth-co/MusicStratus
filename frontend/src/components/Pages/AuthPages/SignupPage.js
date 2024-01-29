@@ -51,6 +51,11 @@ const SignupPage = () => {
       });
   };
 
+  const updateFile = (e) => {
+    const file = e.target.files[0];
+    if (file) setImage(file);
+  };
+
   const handleClick = async (e) => {
     e.preventDefault();
 
@@ -124,6 +129,10 @@ const SignupPage = () => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                 />
+              </div>
+              <div className="field">
+                <label>Profile Image</label>
+                <input type="file" onChange={updateFile} />
               </div>
               <div className="submit-container">
                 <button className="user-create-form-submit" type="submit">

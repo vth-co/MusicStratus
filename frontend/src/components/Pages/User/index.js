@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./UserProfile.css";
 import { useSelector } from "react-redux";
-import { NavLink, Switch, useParams } from "react-router-dom";
+import { NavLink, Switch } from "react-router-dom";
 import ProtectedRoute from "../../../context/ProtectedRoute";
 import Tracks from "./Tracks";
 import SideTiles from "../../SideTiles";
@@ -10,30 +10,19 @@ import Playlists from "./Playlists";
 import All from "./All";
 
 const UserProfile = () => {
-  const { username } = useParams(); 
   const user = useSelector((state) => state.session.user);
-
-  const usersObj = useSelector((state) => state.users)
-  const users = Object.values(usersObj)
-  const profile = users.filter((user) => user.username === username);
-
   // const [headerImage, setHeaderImage] = useState();
   // const [profileImage, setProfileImage] = useState();
-  console.log(username)
+
+  console.log(user)
 
   return (
     <>
       <div className="profile-container">
         <div className="profile-head">
-          {/* <img src="" alt="" /> */}
-          <div className="profile-icon"></div>
+          <img className="profile-icon" src={user.image} alt="profile" />
           <h2 className="profile-username">{user.username}</h2>
           {/* <img className="profile-header" src="../../../images/header.jpg" alt=""/> */}
-          <img
-              style={{ width: "250px" }}
-              src={user.image}
-              alt="profile"
-            />
         </div>
         <div className="profile-body">
           <ul className="user-info-bar">
@@ -49,7 +38,9 @@ const UserProfile = () => {
               <NavLink to={`/user/${user.username}/likes`}>Likes</NavLink>
             </li>
             <li>
-              <NavLink to={`/user/${user.username}/playlists`}>Playlists</NavLink>
+              <NavLink to={`/user/${user.username}/playlists`}>
+                Playlists
+              </NavLink>
             </li>
           </ul>
           <div className="split-container">
