@@ -11,16 +11,16 @@ import All from "./All";
 
 const UserProfile = () => {
   const user = useSelector((state) => state.session.user);
+  // const [headerImage, setHeaderImage] = useState();
+  // const [profileImage, setProfileImage] = useState();
 
-  const [headerImage, setHeaderImage] = useState();
-  const [profileImage, setProfileImage] = useState();
+  console.log(user)
 
   return (
     <>
       <div className="profile-container">
         <div className="profile-head">
-          {/* <img src="" alt="" /> */}
-          <div className="profile-icon"></div>
+          <img className="profile-icon" src={user.image} alt="profile" />
           <h2 className="profile-username">{user.username}</h2>
           {/* <img className="profile-header" src="../../../images/header.jpg" alt=""/> */}
         </div>
@@ -38,7 +38,9 @@ const UserProfile = () => {
               <NavLink to={`/user/${user.username}/likes`}>Likes</NavLink>
             </li>
             <li>
-              <NavLink to={`/user/${user.username}/playlists`}>Playlists</NavLink>
+              <NavLink to={`/user/${user.username}/playlists`}>
+                Playlists
+              </NavLink>
             </li>
           </ul>
           <div className="split-container">

@@ -9,6 +9,7 @@ const { User } = require("../../db/models");
 
 const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
+const { singleMulterUpload, singlePublicFileUpload } = require("../../awsS3");
 
 const router = express.Router();
 
@@ -32,10 +33,12 @@ const validateSignup = [
 // Sign up
 router.post(
   "/",
+  singleMulterUpload("image"),
   validateSignup,
   asyncHandler(async (req, res) => {
     const { email, password, username } = req.body;
-    const user = await User.signup({ email, username, password });
+    const image = await singlePublicFileUpload(req.file);
+    const user = await User.signup({ email, username, password, image, });
 
     await setTokenCookie(res, user);
 
@@ -45,11 +48,23 @@ router.post(
   })
 );
 
+router.put(
+  "/:id",
+  singleMulterUpload("image"),
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const image = await singlePublicFileUpload(req.file);
+    await User.update({ image }, { where: { id } });
+
+    res.json({ image });
+  })
+);
+
 router.get(
   "/",
   asyncHandler(async function (req, res) {
     const users = await db.User.findAll();
-    res.json({ users });
+    res.json(users);
   })
 );
 

@@ -20,11 +20,10 @@
 }
 
 .profile-icon {
-    width: 200px;
-    height: 200px;
-    border-radius: 500px;
-    background: linear-gradient(315deg, #25478a87, #888888);
-    margin: 30px 30px;
+  width: 200px;
+  height: 200px;
+   border-radius: 100%;
+   margin: 15px;
 }
 
 .profile-username {

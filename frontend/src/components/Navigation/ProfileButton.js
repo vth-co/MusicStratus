@@ -41,7 +41,7 @@ function ProfileButton() {
             src="../../../images/default-icon.png"
           ></img> */}
           <div className="icon-container">
-            <div className="profile-icon"></div>
+            <img className="profile-icon-nav" src={user.image} alt="profile" />
             <i className="fa-solid fa-chevron-down"></i>
           </div>
           {showMenu && (
@@ -50,11 +50,17 @@ function ProfileButton() {
                 <i class="bx bxs-user"></i>
                 Profile
               </NavLink>
-              <NavLink className="profile-btn" to={`/user/${user.username}/tracks`}>
+              <NavLink
+                className="profile-btn"
+                to={`/user/${user.username}/tracks`}
+              >
                 <i class="bx bxs-music"></i>
                 Tracks
               </NavLink>
-              <NavLink className="profile-btn" to={`/user/${user.username}/likes`}>
+              <NavLink
+                className="profile-btn"
+                to={`/user/${user.username}/likes`}
+              >
                 <i class="bx bxs-heart"></i>
                 Likes
               </NavLink>
