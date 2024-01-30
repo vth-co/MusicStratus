@@ -11,13 +11,14 @@ function Comments({ songId }) {
   const dispatch = useDispatch();
   const { id } = useParams();
 
+  const defaultImage = "https://musicstratus.s3.us-west-1.amazonaws.com/360_F_603307418_jya3zntHWjXWn3WHn7FOpjFevXwnVP52.jpg";
+
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
 
   const commentsObj = useSelector((state) => state.comments.comments);
   const usersObj = useSelector((state) => state.users.users);
 
-  console.log(commentsObj);
 
   const comments = Object.values(commentsObj);
   const users = Object.values(usersObj);
@@ -45,15 +46,16 @@ function Comments({ songId }) {
       {songComments?.reverse().map((comment) => (
         <div key={comment?.id} className="songComments">
           {/* Display the username of the comment author */}
-          <div className="comment-user-time-container">
+          <img
+            className="profile-icon-comment"
+            src={users.find((user) => user.id === comment.userId)?.image ?? defaultImage}
+            alt="profile"
+          />
+          <div className="comment-user-container">
             <p className="comment-user">
               {users.find((user) => user.id === comment.userId)?.username}
             </p>
-            <p className="comment-time">{timeAgo(comment.createdAt)}</p>
-          </div>
-          <div>
             <p className="comment-content"> {comment?.body}</p>
-          </div>
           <div className="edit-delete-container">
             {comment.userId === userId && (
               <>
@@ -61,6 +63,10 @@ function Comments({ songId }) {
                 <DeleteCommentModal comment={comment} />
               </>
             )}
+          </div>
+          </div>
+          <div>
+            <p className="comment-time">{timeAgo(comment.createdAt)}</p>
           </div>
         </div>
       ))}

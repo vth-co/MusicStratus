@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { editSong } from "../../../store/songs";
-import { getSingle } from "../../../store/songs";
 
 function EditSong({ onClose }) {
   const { id } = useParams();
@@ -13,6 +12,7 @@ function EditSong({ onClose }) {
   const [title, setTitle] = useState(song?.title);
   const [url, setUrl] = useState(song?.url);
   const [imageUrl, setImageUrl] = useState(song?.imageUrl);
+  const [imageFile, setImageFile] = useState(null);
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = async (e) => {
@@ -24,14 +24,22 @@ function EditSong({ onClose }) {
       title,
       url,
       imageUrl,
+      imageFile,
     };
     dispatch(editSong(payload));
     onClose();
   };
 
   const handleCancel = () => {
-    // Call the onClose prop to close the modal
     onClose();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImageFile(file);
+      setImageUrl(""); // Clear image URL if a file is selected
+    }
   };
 
   return (
@@ -66,6 +74,7 @@ function EditSong({ onClose }) {
             onChange={(e) => setImageUrl(e?.target.value)}
             required
           />
+          <input type="file" onChange={handleFileChange} />
           <button className="user-form-submit" type="submit">
             Update
           </button>

@@ -14,13 +14,15 @@ const UserProfile = () => {
   // const [headerImage, setHeaderImage] = useState();
   // const [profileImage, setProfileImage] = useState();
 
+  const defaultImage = "https://musicstratus.s3.us-west-1.amazonaws.com/360_F_603307418_jya3zntHWjXWn3WHn7FOpjFevXwnVP52.jpg";
+
   console.log(user)
 
   return (
     <>
       <div className="profile-container">
         <div className="profile-head">
-          <img className="profile-icon" src={user.image} alt="profile" />
+          <img className="profile-icon" src={user.image ? user.image : defaultImage} alt="profile" />
           <h2 className="profile-username">{user.username}</h2>
           {/* <img className="profile-header" src="../../../images/header.jpg" alt=""/> */}
         </div>
