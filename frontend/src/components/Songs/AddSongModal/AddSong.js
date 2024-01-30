@@ -14,8 +14,17 @@ function AddSong({ setShowModal }) {
   const [url, setUrl] = useState("");
   const [artist, setArtist] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [imageFile, setImageFile] = useState(null);
   const [errors, setErrors] = useState([]);
   const [submitted, setSubmitted] = useState(false);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImageFile(file);
+      setImageUrl(""); // Clear image URL if a file is selected
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +35,7 @@ function AddSong({ setShowModal }) {
       title,
       url,
       imageUrl,
+      imageFile,
     };
 
     const data = await dispatch(addSong(payload));
@@ -54,7 +64,6 @@ function AddSong({ setShowModal }) {
 
   return (
     <div className="song-form-container">
-      {/* <div className="vl"></div> */}
       <form className="song-form" onSubmit={handleSubmit}>
         <h3 className="form-title">Add a Song</h3>
         <div className="errors-container">
@@ -91,6 +100,7 @@ function AddSong({ setShowModal }) {
             onChange={(e) => setImageUrl(e.target.value)}
             required
           />
+          <input type="file" onChange={handleFileChange} />
           <button className="user-form-submit" type="submit">
             Add Song
           </button>

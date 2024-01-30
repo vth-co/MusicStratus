@@ -167,12 +167,6 @@
     display: block;
   }
 
-  .edit-delete-container {
-    display: flex;
-    flex-direction: row;
-    margin-right: 25px;
-  }
-
   .sng-btn {
     background-color: transparent;
     color: white;

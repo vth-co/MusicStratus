@@ -30,7 +30,11 @@ function AddComment() {
     <div className="add-comment-form-div">
       <div className="user-icon-container">
         {/* <img className="user-icon" src="../../../images/default-icon.png"></img> */}
-        <div className="profile-icon"></div>
+        <img
+          className="profile-icon-comment"
+          src={sessionUser.image}
+          alt="profile"
+        />
       </div>
       <form onSubmit={handleSubmit}>
         <ul>
