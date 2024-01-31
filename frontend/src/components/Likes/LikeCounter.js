@@ -9,14 +9,8 @@ const LikeCounter = ({ song }) => {
 
   return (
     <>
-      <div>{likeCount > 0 && (
-
-      <p className="like-counter rendered">{likeCount}</p>
-      )}
-      {likeCount === 0 && (
-        <p className="like-counter not-rendered">Like</p>
-      )}
-      </div>
+        {likeCount > 0 && <p className="like-counter rendered">{likeCount}</p>}
+        {likeCount === 0 && <p className="like-counter not-rendered">Like</p>}
     </>
   );
 };

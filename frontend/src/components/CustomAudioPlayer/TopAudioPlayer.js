@@ -38,8 +38,8 @@ const TopAudioPlayer = ({ song }) => {
           footer={song.artist}
           customAdditionalControls={[
             <div className="like-btn-container">
-            <LikeButton song={song} />
-            <AddPlaylistModal song={song} />
+            {/* <LikeButton song={song} /> */}
+            {/* <AddPlaylistModal song={song} /> */}
           </div>,
             <div className="song-edit-container">{songEditButtons}</div>,
           ]}

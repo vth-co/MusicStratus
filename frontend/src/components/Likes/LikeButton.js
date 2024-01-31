@@ -60,12 +60,14 @@ const LikeButton = ({ song }) => {
 
   return (
     <>
-      <button className="likebtn" onClick={handleLike}>
-        <div className="like-content">
-          {heartIcon}
-          <LikeCounter song={song} />
-        </div>
-      </button>
+      <div>
+        <button className="likebtn" onClick={handleLike}>
+          <div className="like-content">
+            {heartIcon}
+            <LikeCounter song={song} />
+          </div>
+        </button>
+      </div>
     </>
   );
 };
