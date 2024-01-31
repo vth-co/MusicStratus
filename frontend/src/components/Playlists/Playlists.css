@@ -16,4 +16,12 @@
     border: 1px solid rgba(128, 128, 128, 0.765);
 }
 
+.playlist-menu {
+    background-color: white;
+    width: 400px;
+}
 
+.playlist-tabs {
+    display: flex;
+    justify-content: space-around;
+}

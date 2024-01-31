@@ -7,6 +7,7 @@ import DeleteSongModal from "../Songs/DeleteSongModal";
 import { useSelector } from "react-redux";
 import LikeButton from "../Likes/LikeButton";
 import "./CustomAudio.css";
+import AddPlaylistModal from "../Playlists/AddPlaylistModal";
 
 const TopAudioPlayer = ({ song }) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -38,6 +39,7 @@ const TopAudioPlayer = ({ song }) => {
           customAdditionalControls={[
             <div className="like-btn-container">
             <LikeButton song={song} />
+            <AddPlaylistModal song={song} />
           </div>,
             <div className="song-edit-container">{songEditButtons}</div>,
           ]}
