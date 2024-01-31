@@ -6,15 +6,16 @@ import "./SignupForm.css";
 
 const SignupForm = ({ onClose }) => {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
+  const user = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [image, setImage] = useState(null);
+  // const [imagePreview, setImagePreview] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/discover" />;
+  if (user) return <Redirect to="/discover" />;
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -53,7 +54,17 @@ const SignupForm = ({ onClose }) => {
 
   const updateFile = (e) => {
     const file = e.target.files[0];
-    if (file) setImage(file);
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setImage(file);
+        setImagePreview(reader.result);
+      };
+
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleClick = async (e) => {
@@ -116,9 +127,17 @@ const SignupForm = ({ onClose }) => {
               />
             </div>
             <div className="field">
-              <label>Profile Image</label>
               <input type="file" onChange={updateFile} />
             </div>
+            {/* {imagePreview && (
+              <div className="image-preview-container">
+                <img
+                  src={imagePreview}
+                  alt="Image Preview"
+                  className="image-preview"
+                />
+              </div>
+            )} */}
             <div className="submit-container">
               <button className="user-create-form-submit" type="submit">
                 Create Account
