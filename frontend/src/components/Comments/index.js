@@ -21,7 +21,8 @@ function Comments({ songId }) {
 
 
   const comments = Object.values(commentsObj);
-  const users = Object.values(usersObj);
+  const users = usersObj ? Object.values(usersObj) : [];
+
 
   const timeAgo = (dateString) => {
     const createdAt = new Date(dateString);

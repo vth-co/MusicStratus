@@ -10,7 +10,7 @@ const SignupForm = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
   // const [imagePreview, setImagePreview] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -36,12 +36,12 @@ const SignupForm = ({ onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let newErrors = [];
-    dispatch(createUser({ username, email, password, image }))
+    dispatch(createUser({ username, email, password }))
       .then(() => {
         setUsername("");
         setEmail("");
         setPassword("");
-        setImage(null);
+        // setImage(null);
       })
       .catch(async (res) => {
         const data = await res.json();
@@ -52,20 +52,20 @@ const SignupForm = ({ onClose }) => {
       });
   };
 
-  const updateFile = (e) => {
-    const file = e.target.files[0];
+  // const updateFile = (e) => {
+  //   const file = e.target.files[0];
 
-    if (file) {
-      const reader = new FileReader();
+  //   if (file) {
+  //     const reader = new FileReader();
 
-      reader.onloadend = () => {
-        setImage(file);
-        setImagePreview(reader.result);
-      };
+  //     reader.onloadend = () => {
+  //       setImage(file);
+  //       setImagePreview(reader.result);
+  //     };
 
-      reader.readAsDataURL(file);
-    }
-  };
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -126,9 +126,9 @@ const SignupForm = ({ onClose }) => {
                 required
               />
             </div>
-            <div className="field">
+            {/* <div className="field">
               <input type="file" onChange={updateFile} />
-            </div>
+            </div> */}
             {/* {imagePreview && (
               <div className="image-preview-container">
                 <img

@@ -8,6 +8,8 @@ function ProfileButton() {
   const [showMenu, setShowMenu] = useState(false);
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
+  const defaultImage = "https://musicstratus.s3.us-west-1.amazonaws.com/360_F_603307418_jya3zntHWjXWn3WHn7FOpjFevXwnVP52.jpg";
+
 
   const openMenu = () => {
     if (showMenu) return;
@@ -41,7 +43,7 @@ function ProfileButton() {
             src="../../../images/default-icon.png"
           ></img> */}
           <div className="icon-container">
-            <img className="profile-icon-nav" src={user.image} alt="profile" />
+            <img className="profile-icon-nav" src={user.image ? user.image : defaultImage} alt="profile" />
             <i className="fa-solid fa-chevron-down"></i>
           </div>
           {showMenu && (
