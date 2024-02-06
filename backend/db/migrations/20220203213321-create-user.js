@@ -18,7 +18,7 @@ module.exports = {
         allowNull: false,
         unique: true
       },
-      profileImage: {
+      image: {
         type: Sequelize.STRING,
       },
       headerImage: {
