@@ -27,9 +27,7 @@
 }
 
 .signup-btn:hover {
-
   transform: scale(1.05);
-
 }
 
 .user-create-form-container {
@@ -40,6 +38,5 @@
   padding-top: 20px;
   padding-bottom: 5px;
   min-width: 450px;
-  min-height: 550px;
   background-color: black;
 }

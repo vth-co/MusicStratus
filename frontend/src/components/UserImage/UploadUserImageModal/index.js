@@ -12,7 +12,7 @@ const UploadUserImageModal = () => {
 
     return (
         <>
-          <button className="" onClick={() => setShowModal(true)}>
+          <button className="upload-btn" onClick={() => setShowModal(true)}>
         {/* <div className="hidden-text">
           <div className="text">Upload song</div>
         </div>

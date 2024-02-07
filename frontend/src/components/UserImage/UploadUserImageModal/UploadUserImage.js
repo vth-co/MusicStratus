@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUserProfileImage } from "../../../store/session";
-import "../UserImage.css"
+import "../UserImage.css";
 
 const UploadUserImage = ({ onClose }) => {
   const dispatch = useDispatch();
@@ -10,7 +10,6 @@ const UploadUserImage = ({ onClose }) => {
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [uploadMode, setUploadMode] = useState(false);
-
 
   const updateFile = (e) => {
     const file = e.target.files[0];
@@ -40,8 +39,8 @@ const UploadUserImage = ({ onClose }) => {
 
   return (
     <>
-      <div>
-        <h1 className="form-title">Image Preview</h1>
+      <div className="upload-form">
+        <h3 className="upload-title">{user.username}</h3>
         <input type="file" onChange={updateFile} />
         {imagePreview && (
           <div className="image-preview-container">
@@ -52,7 +51,14 @@ const UploadUserImage = ({ onClose }) => {
             />
           </div>
         )}
-        <button onClick={handleSave}>Save</button>
+        <div className="btn-container">
+          <button className="cancel-btn" onClick={onClose}>
+            Cancel
+          </button>
+          <button className="save-btn" onClick={handleSave}>
+            Save
+          </button>
+        </div>
         <button className="exit" onClick={onClose}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +75,6 @@ const UploadUserImage = ({ onClose }) => {
             />
           </svg>
         </button>
-        <button onClick={onClose}>Cancel</button>
       </div>
     </>
   );
