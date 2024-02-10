@@ -98,11 +98,12 @@ const SplashPage = () => {
           <ul className="footer-ul">
             <p className="footer-section">Developer</p>
             <a
-              href="https://docs.google.com/document/d/e/2PACX-1vRjkM5PTL815-Byuka7JK1QOfsWO61j5cMf9E11vJoCipJFOZeddUc29OopeFpdOxR3YtyYoQrHzwmn/pub"
+              href="/pdfs/Software Engineer Vu Co.pdf"
               className="link"
               target="_blank"
               rel="noopener noreferrer"
             >
+              <i class="bx bxs-file-pdf"></i>
               Resume
             </a>
             <a

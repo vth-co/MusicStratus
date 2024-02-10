@@ -29,6 +29,7 @@ const UploadUserImage = ({ onClose }) => {
     if (image) {
       await dispatch(updateUserProfileImage(user.id, image));
       setUploadMode(false);
+      onClose(); 
     }
   };
 
