@@ -21,30 +21,11 @@ const UserProfile = () => {
 
   const defaultImage = "https://musicstratus.s3.us-west-1.amazonaws.com/360_F_603307418_jya3zntHWjXWn3WHn7FOpjFevXwnVP52.jpg";
 
-   const updateFile = (e) => {
-    const file = e.target.files[0];
-    if (file) setImage(file);
-  };
-  
-  const handleSave = async () => {
-    if (image) {
-      await dispatch(updateUserProfileImage(user.id, image));
-      setUploadMode(false);
-    }
-  };
-
-  const handleCancel = () => {
-    setUploadMode(false);
-    setImage(null);
-  };
-
-  console.log(user)
-
   return (
     <>
       <div className="profile-container">
         <div className="profile-head">
-          <div>
+          <div className="profile-upload-container">
           <img className="profile-icon" src={user.image ? user.image : defaultImage} alt="profile" />
           {/* {uploadMode ? (
               <>

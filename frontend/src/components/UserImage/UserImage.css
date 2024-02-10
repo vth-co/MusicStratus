@@ -40,3 +40,29 @@
     border: none;
     text-align: center;
 }
+
+.bxs-camera {
+    color: gray;
+    padding-right: 5px;
+   
+}
+
+.upload-btn {
+    display: none;
+    position: absolute;
+    bottom: 10%;
+    left: 50%; /* Adjust this based on your design */
+    transform: translateX(-50%); /* Center the button horizontally */
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 4px 7px;
+    opacity: 50%;
+    border-radius: 4px;
+}
+
+.upload-btn:hover {
+    opacity: 100%;
+    
+}

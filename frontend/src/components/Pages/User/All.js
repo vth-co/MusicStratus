@@ -56,7 +56,8 @@ const All = () => {
 
   return (
     <>
-      <div>
+      <div className="all-container">
+        <h3>Recent</h3>
         <div>
           {allItems.map((item) => (
             <div key={item.id} className="tracks-container">
@@ -107,7 +108,7 @@ const All = () => {
                 </div>
               )}
               {item.type === "track" && (
-                <div className="track-item">
+                <div className="image-audio-container">
                   <NavLink to={`/songs/${item.id}`}>
                     <img
                       src={item.imageUrl}

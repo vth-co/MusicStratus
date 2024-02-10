@@ -86,7 +86,6 @@
   display: flex;
   flex-direction: row;
   padding-right: 10px;
-  padding-left: 20px;
   padding-bottom: 30px;
 }
 
@@ -95,7 +94,7 @@
 .split-container {
   display: flex;
   flex-direction: row;
-  
+  padding: 0 20px;
 }
 
 
@@ -213,4 +212,18 @@
 
 .modal-buttons-container {
   margin-left: 13px;
+}
+
+.profile-upload-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-upload-container:hover .upload-btn {
+  display: block;
+}
+
+
+.all-container {
+  margin-right: 20px;
 }
