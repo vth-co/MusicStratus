@@ -50,7 +50,7 @@
 .upload-btn {
     display: none;
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     left: 50%; /* Adjust this based on your design */
     transform: translateX(-50%); /* Center the button horizontally */
     background-color: black;

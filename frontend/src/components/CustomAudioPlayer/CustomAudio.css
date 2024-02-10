@@ -1,6 +1,8 @@
 .card-audio-player {
-    background-color: #292B2C;
+    /* background-color: #292B2C; */
+    background-color: transparent;
     color: white;
+    box-shadow: none;
   }
   
   .card-audio-player .rhap_footer {
