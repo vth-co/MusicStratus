@@ -1,0 +1,68 @@
+.upload-form {
+    max-width: 550px;
+    max-height: 750px;
+    margin: 20px;
+}
+
+.upload-title {
+    color: #C1BCB6;
+    padding-bottom: 8px;
+    border-bottom: 1px solid gray;
+}
+
+.image-preview {
+    margin: 0 5px;
+    max-width: 500px;
+    height: 350px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+    margin-top: 25px;
+}
+
+.cancel-btn {
+    background-color: black;
+    color: white;
+    outline: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.save-btn {
+    background-color: #25478a;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 15px 6px 15px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.bxs-camera {
+    color: gray;
+    padding-right: 5px;
+   
+}
+
+.upload-btn {
+    display: none;
+    position: absolute;
+    bottom: 15%;
+    left: 50%; /* Adjust this based on your design */
+    transform: translateX(-50%); /* Center the button horizontally */
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 4px 7px;
+    opacity: 50%;
+    border-radius: 4px;
+}
+
+.upload-btn:hover {
+    opacity: 100%;
+    
+}

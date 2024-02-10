@@ -10,7 +10,7 @@ const SignupPage = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
@@ -35,12 +35,12 @@ const SignupPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let newErrors = [];
-    dispatch(sessionActions.createUser({ username, email, password, image }))
+    dispatch(sessionActions.createUser({ username, email, password }))
       .then(() => {
         setUsername("");
         setEmail("");
         setPassword("");
-        setImage(null);
+        // setImage(null);
       })
       .catch(async (res) => {
         const data = await res.json();
@@ -51,10 +51,10 @@ const SignupPage = () => {
       });
   };
 
-  const updateFile = (e) => {
-    const file = e.target.files[0];
-    if (file) setImage(file);
-  };
+  // const updateFile = (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) setImage(file);
+  // };
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -130,10 +130,10 @@ const SignupPage = () => {
                   required
                 />
               </div>
-              <div className="field">
+              {/* <div className="field">
                 <label>Profile Image</label>
                 <input type="file" onChange={updateFile} />
-              </div>
+              </div> */}
               <div className="submit-container">
                 <button className="user-create-form-submit" type="submit">
                   Create Account

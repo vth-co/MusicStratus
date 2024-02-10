@@ -76,12 +76,22 @@ const SideTiles = () => {
           <hr className="sidetiles-hr"></hr>
           <div className="sidetiles-content">
             <ul className="footer-ul">
-              <a
+              {/* <a
                 href="https://docs.google.com/document/d/e/2PACX-1vRjkM5PTL815-Byuka7JK1QOfsWO61j5cMf9E11vJoCipJFOZeddUc29OopeFpdOxR3YtyYoQrHzwmn/pub"
                 className="link"
                 target="_blank"
                 rel="noopener noreferrer"
-              ><i class='bx bxs-file-pdf' ></i>
+              >
+                <i class="bx bxs-file-pdf"></i>
+                Resume
+              </a> */}
+              <a
+                href="/pdfs/Software Engineer Vu Co.pdf"
+                className="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bx bxs-file-pdf"></i>
                 Resume
               </a>
               <a
@@ -89,7 +99,8 @@ const SideTiles = () => {
                 className="link"
                 target="_blank"
                 rel="noopener noreferrer"
-              ><i class='bx bxs-folder-open' ></i>
+              >
+                <i class="bx bxs-folder-open"></i>
                 Portfolio
               </a>
               <a
@@ -98,7 +109,7 @@ const SideTiles = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-               <i class='bx bxl-linkedin-square' ></i>
+                <i class="bx bxl-linkedin-square"></i>
                 Linkedin
               </a>
               <a
@@ -107,7 +118,7 @@ const SideTiles = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i class='bx bxl-github' ></i>
+                <i class="bx bxl-github"></i>
                 Github
               </a>
             </ul>

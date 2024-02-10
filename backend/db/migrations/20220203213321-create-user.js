@@ -21,6 +21,9 @@ module.exports = {
       image: {
         type: Sequelize.STRING,
       },
+      headerImage: {
+        type: Sequelize.STRING,
+      },
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
         allowNull: false

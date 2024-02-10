@@ -5,8 +5,10 @@ import { useParams } from "react-router-dom";
 
 function AddComment() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
-  const userId = sessionUser.id;
+  const user = useSelector((state) => state.session.user);
+  const userId = user.id;
+  const defaultImage = "https://musicstratus.s3.us-west-1.amazonaws.com/360_F_603307418_jya3zntHWjXWn3WHn7FOpjFevXwnVP52.jpg";
+
 
   const { id } = useParams();
 
@@ -32,7 +34,7 @@ function AddComment() {
         {/* <img className="user-icon" src="../../../images/default-icon.png"></img> */}
         <img
           className="profile-icon-comment"
-          src={sessionUser.image}
+          src={user.image ? user.image : defaultImage}
           alt="profile"
         />
       </div>
