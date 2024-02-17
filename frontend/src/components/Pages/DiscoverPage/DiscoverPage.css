@@ -12,7 +12,7 @@
 }
 
 .discover-page {
-    min-height: 95%;
+    /* min-height: 95%; */
     
 }
 
@@ -64,7 +64,7 @@
 
 
 .music-container {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
 }

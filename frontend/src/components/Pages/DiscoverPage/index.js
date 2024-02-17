@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./DiscoverPage.css";
@@ -14,6 +14,12 @@ const DiscoverPage = () => {
   const songs = Object.values(songsObj);
   const discover = songs.filter((song) => song.userId !== sessionUser.id);
   const library = songs.filter((song) => song.userId === sessionUser.id);
+  const playlistsObj = useSelector((state) => state.playlists);
+  const playlists = Object.values(playlistsObj);
+  const [firstSongImages, setFirstSongImages] = useState({});
+  const userPlaylists = playlists.filter(
+    (playlist) => playlist.userId === sessionUser.id
+  );
   const [currentTrack, setTrackIndex] = useState("");
   const responsive = {
     desktop: {
@@ -33,6 +39,33 @@ const DiscoverPage = () => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
+
+  useEffect(() => {
+    const fetchFirstSongImages = async () => {
+      const imagePromises = playlists.map(async (playlist) => {
+        const response = await fetch(`/api/playlists/${playlist.id}/songs`);
+        if (response.ok) {
+          const songsData = await response.json();
+          if (songsData.length > 0) {
+            const firstSong = songsData[0];
+            return { playlistId: playlist.id, imageUrl: firstSong.imageUrl };
+          }
+        }
+        return { playlistId: playlist.id, imageUrl: null };
+      });
+
+      const images = await Promise.all(imagePromises);
+      const imageMap = {};
+      images.forEach((image) => {
+        imageMap[image.playlistId] = image.imageUrl;
+      });
+      setFirstSongImages(imageMap);
+    };
+
+    if (playlists.length > 0) {
+      fetchFirstSongImages();
+    }
+  }, []);
 
   // const LibraryButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
   //   const {
@@ -175,6 +208,46 @@ const DiscoverPage = () => {
                   <p className="song-title">{song.title}</p>
                   <p className="song-artist">{song.artist}</p>
                 </NavLink>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+        <div div className="discover-carousel-container">
+          <h2 className="section-title">Playlists</h2>
+          <Carousel
+            // partialVisible={true}
+            // centerMode={true}
+            responsive={responsive}
+            // infinite={true}
+            containerClass="container"
+            // renderButtonGroupOutside={true}
+            // customButtonGroup={<LibraryButtonGroup />}
+            // arrows={false}
+            centerMode="true"
+            infinite
+          >
+            {userPlaylists.map((playlist) => (
+              <div className="song-card" playlist={playlist} key={playlist.id}>
+                <div>
+                  <NavLink
+                    className="playlist-link"
+                    to={`/${sessionUser.username}/playlists/${playlist.id}`}
+                  >
+                    {firstSongImages[playlist.id] && (
+                      <img
+                        src={firstSongImages[playlist.id]}
+                        alt="First Song"
+                        className="image"
+                      />
+                    )}
+                  </NavLink>
+                  <NavLink
+                    className="playlist-link"
+                    to={`/${sessionUser.username}/playlists/${playlist.id}`}
+                  >
+                    <p className="playlist-header">{playlist.name}</p>
+                  </NavLink>
+                </div>
               </div>
             ))}
           </Carousel>

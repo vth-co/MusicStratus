@@ -21,7 +21,6 @@ const Tracks = () => {
               <NavLink to={`/songs/${song.id}`}>
                 <img className="image" src={song.imageUrl} alt={""} />
               </NavLink>
-
               <CardAudioPlayer song={song} />
             </div>
           </div>
