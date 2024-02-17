@@ -3,7 +3,7 @@ import { Modal } from "../../../context/Modal";
 import EditSong from "./EditSong";
 import "./EditSong.css";
 
-function EditSongModal() {
+function EditSongModal({ song }) {
   const [showModal, setShowModal] = useState(false);
 
   const closeModal = () => {
@@ -17,7 +17,7 @@ function EditSongModal() {
       </button>
       {showModal && (
         <Modal onClose={closeModal}>
-          <EditSong onClose={closeModal}/>
+          <EditSong onClose={closeModal} song={song}/>
         </Modal>
       )}
     </>

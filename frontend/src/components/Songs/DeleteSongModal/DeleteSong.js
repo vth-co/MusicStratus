@@ -2,13 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { deleteSong } from "../../../store/songs";
 
-const DeleteSong = ({ onClose }) => {
+const DeleteSong = ({ onClose, song }) => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const song = useSelector((state) => state.songs.songs[id]);
+  // const song = useSelector((state) => state.songs.songs[id]);
 
   const handleDelete = async (e) => {
     e.preventDefault();

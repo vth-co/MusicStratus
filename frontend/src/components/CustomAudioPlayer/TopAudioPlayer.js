@@ -16,8 +16,8 @@ const TopAudioPlayer = ({ song }) => {
   if (userId === song?.userId) {
     songEditButtons = (
       <div>
-        <EditSongModal />
-        <DeleteSongModal />
+        <EditSongModal song={song}/>
+        <DeleteSongModal song={song}/>
       </div>
     );
   } else {

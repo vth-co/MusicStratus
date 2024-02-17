@@ -3,7 +3,7 @@ import { Modal } from "../../../context/Modal";
 import DeleteSong from "./DeleteSong";
 
 
-function DeleteSongModal() {
+function DeleteSongModal({ song }) {
   const [showModal, setShowModal] = useState(false);
 
   const closeModal = () => {
@@ -17,7 +17,7 @@ function DeleteSongModal() {
       </button>
       {showModal && (
         <Modal onClose={closeModal}>
-          <DeleteSong onClose={closeModal}/>
+          <DeleteSong onClose={closeModal} song={song}/>
         </Modal>
       )}
     </>

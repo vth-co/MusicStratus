@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { editSong } from "../../../store/songs";
 
-function EditSong({ onClose }) {
+function EditSong({ onClose, song }) {
   const { id } = useParams();
   const dispatch = useDispatch();
 
-  const song = useSelector((state) => state.songs.songs[id]);
+  // const song = useSelector((state) => state.songs.songs[id]);
 
   const [title, setTitle] = useState(song?.title);
   const [url, setUrl] = useState(song?.url);
