@@ -15,7 +15,7 @@ module.exports = {
 
     const playlistSongRecords = [];
     
-    for (let playlistId = 1; playlistId <= 10; playlistId++) {
+    for (let playlistId = 1; playlistId <= 15; playlistId++) {
       const songCount = Math.floor(Math.random() * 8) + 3; // Generate 3-10 songs
       const songIds = generateRandomSongIds(songCount, 90);
 

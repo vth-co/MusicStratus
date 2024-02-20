@@ -103,7 +103,6 @@ const SplashPage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="bx bxs-file-pdf"></i>
               Resume
             </a>
             <a
