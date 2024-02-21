@@ -228,9 +228,9 @@ const DiscoverPage = () => {
           >
             {userPlaylists.map((playlist) => (
               <div className="song-card" playlist={playlist} key={playlist.id}>
-                <div>
+                <div className="card-container">
                   <NavLink
-                    className="playlist-link"
+                    className="song-link"
                     to={`/${sessionUser.username}/playlists/${playlist.id}`}
                   >
                     {firstSongImages[playlist.id] && (
@@ -240,19 +240,22 @@ const DiscoverPage = () => {
                         className="image"
                       />
                     )}
-                  </NavLink>
-                  <NavLink
-                    className="playlist-link"
-                    to={`/${sessionUser.username}/playlists/${playlist.id}`}
-                  >
-                    <p className="playlist-header">{playlist.name}</p>
+                    <div class="overlay"></div>
                   </NavLink>
                 </div>
+                  <NavLink
+                    className="song-link"
+                    to={`/${sessionUser.username}/playlists/${playlist.id}`}
+                  >
+                    <p className="song-title">{playlist.name}</p>
+                  </NavLink>
               </div>
             ))}
           </Carousel>
         </div>
-        <BottomAudioPlayer currentTrack={currentTrack} />
+        <div className="">
+          <BottomAudioPlayer currentTrack={currentTrack} />
+        </div>
       </div>
     </>
   );

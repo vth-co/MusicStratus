@@ -68,10 +68,11 @@
 }
 
 .audio-player {
-   background-color: #292B2C;
-   /* background-image: linear-gradient(to right, #585F62, #1B1D1D); */
-   /* border-top: 1px solid gray; */
-} 
+    background-color: #292B2C;
+    color: white;
+    /* background-image: linear-gradient(to right, #585F62, #1B1D1D); */
+    /* border-top: 1px solid gray; */
+}
 
 .song-comment-container {
     display: flex;
