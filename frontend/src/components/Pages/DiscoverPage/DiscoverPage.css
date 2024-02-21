@@ -12,7 +12,7 @@
 }
 
 .discover-page {
-    /* min-height: 95%; */
+    min-height: 100vh;
     
 }
 
@@ -54,24 +54,19 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 30px 50px;
+    margin: 10px 50px;
     position: relative;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.517);
 }
 
 .container {
     width: 1265px;
 }
 
-
 .music-container {
-    position: sticky;
+    position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-.audio-player {
-    background-color: #292B2C;
-    color: white;
 }
 
 .card-play-button {

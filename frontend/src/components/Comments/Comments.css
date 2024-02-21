@@ -94,7 +94,8 @@
 .comment-input {
     background-color: transparent;
     color: white;
-    min-width: 650px; 
+    min-width: 700px;
+    margin-right: 50px;
 }
 
 .confirmation-popup {

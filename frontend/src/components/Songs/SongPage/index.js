@@ -20,7 +20,7 @@ const Song = () => {
         <div className="song-container">
           <TopAudioPlayer song={song} />
           <div className="comments-container">
-            <div>
+            <div className="">
               <AddComment />
               <Comments songId={song?.id} />
             </div>
