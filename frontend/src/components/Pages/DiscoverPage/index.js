@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { setPlaylistImages } from "../../../store/playlistimages";
 import "./DiscoverPage.css";
 
 import Carousel from "react-multi-carousel";
@@ -9,7 +10,9 @@ import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import HeartButton from "../../Likes/HeartButton";
 
 const DiscoverPage = () => {
+  const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
+  const allUsers = useSelector((state) => state.users.users)
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
   const discover = songs.filter((song) => song.userId !== sessionUser.id);
@@ -40,6 +43,7 @@ const DiscoverPage = () => {
     },
   };
 
+
   useEffect(() => {
     const fetchFirstSongImages = async () => {
       const imagePromises = playlists.map(async (playlist) => {
@@ -59,13 +63,17 @@ const DiscoverPage = () => {
       images.forEach((image) => {
         imageMap[image.playlistId] = image.imageUrl;
       });
-      setFirstSongImages(imageMap);
+
+      // Dispatch the action to set the playlist images in Redux store
+      dispatch(setPlaylistImages(imageMap));
     };
 
     if (playlists.length > 0) {
       fetchFirstSongImages();
     }
-  }, []);
+  }, [dispatch, playlists]);
+
+
 
   // const LibraryButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
   //   const {
@@ -235,27 +243,26 @@ const DiscoverPage = () => {
                   >
                     {firstSongImages[playlist.id] && (
                       <img
+                        className="image"
                         src={firstSongImages[playlist.id]}
                         alt="First Song"
-                        className="image"
                       />
                     )}
                     <div class="overlay"></div>
                   </NavLink>
                 </div>
-                  <NavLink
-                    className="song-link"
-                    to={`/${sessionUser.username}/playlists/${playlist.id}`}
-                  >
-                    <p className="song-title">{playlist.name}</p>
-                  </NavLink>
+                <NavLink
+                  className="song-link"
+                  to={`/${sessionUser.username}/playlists/${playlist.id}`}
+                >
+                  <p className="song-title playlist">{playlist.name}</p>
+                  {/* <p className="song-artist">{getUsernameById(playlist.userId)}</p> */}
+                </NavLink>
               </div>
             ))}
           </Carousel>
         </div>
-        <div className="">
-          <BottomAudioPlayer currentTrack={currentTrack} />
-        </div>
+        <BottomAudioPlayer currentTrack={currentTrack} />
       </div>
     </>
   );

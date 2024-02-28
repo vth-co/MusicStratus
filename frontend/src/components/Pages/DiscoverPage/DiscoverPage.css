@@ -13,6 +13,7 @@
 
 .discover-page {
     min-height: 100vh;
+    padding-bottom: 100px;
     
 }
 
@@ -61,12 +62,6 @@
 
 .container {
     width: 1265px;
-}
-
-.music-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
 .card-play-button {
@@ -201,3 +196,8 @@
   .song-card:hover .heart-button-container {
     visibility: visible; /* Show the HeartButton on hover */
   }
+
+
+.song-title.playlist {
+    margin-bottom: 40px;
+}
