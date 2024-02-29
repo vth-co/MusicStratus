@@ -20,7 +20,8 @@ const DiscoverPage = () => {
   const userPlaylists = playlists.filter(
     (playlist) => playlist.userId === sessionUser.id
   );
-  const [currentTrack, setTrackIndex] = useState("");
+  const [currentSong, setTrackIndex] = useState("");
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -67,80 +68,14 @@ const DiscoverPage = () => {
     }
   }, []);
 
-  // const LibraryButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  //   const {
-  //     carouselState: { currentSlide },
-  //   } = rest;
-  //   return (
-  //     <div className="carousel-button-group">
-  //       <button
-  //         className={currentSlide === 0 ? "disable" : "carousel-button-left"}
-  //         onClick={() => previous()}
-  //       >
-  //         <i class="fa-solid fa-square-caret-left"></i>
-  //       </button>
-  //       <button
-  //         className="carousel-button-right"
-  //         onClick={() => goToSlide(currentSlide + 1)}
-  //       >
-  //         <i class="fa-solid fa-square-caret-right"></i>
-  //       </button>
-  //       {/* <button
-  //         className="carousel-button-shuffle"
-  //         onClick={() =>
-  //           goToSlide(Math.floor(Math.random() * library.length + 1))
-  //         }
-  //       >
-  //         <i class="fa-solid fa-shuffle"></i>
-  //       </button> */}
-  //     </div>
-  //   );
-  // };
-
-  // const DiscoverButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  //   const {
-  //     carouselState: { currentSlide },
-  //   } = rest;
-  //   return (
-  //     <div className="carousel-button-group">
-  //       <button
-  //         className={currentSlide === 0 ? "disable" : "carousel-button-left"}
-  //         onClick={() => previous()}
-  //       >
-  //         <i class="fa-solid fa-square-caret-left"></i>
-  //       </button>
-  //       <button
-  //         className="carousel-button-right"
-  //         onClick={() => goToSlide(currentSlide + 1)}
-  //       >
-  //         <i class="fa-solid fa-square-caret-right"></i>
-  //       </button>
-  //       {/* <button
-  //         className="carousel-button-shuffle"
-  //         onClick={() =>
-  //           goToSlide(Math.floor(Math.random() * discover.length + 1))
-  //         }
-  //       >
-  //         <i class="fa-solid fa-shuffle"></i>
-  //       </button> */}
-  //     </div>
-  //   );
-  // };
-
   return (
     <>
       <div className="discover-page">
         <div className="discover-carousel-container">
           <h2 className="section-title">Explore</h2>
           <Carousel
-            // partialVisible={true}
-            // centerMode={true}
             responsive={responsive}
-            // infinite={true}
             containerClass="container"
-            // renderButtonGroupOutside={true}
-            // customButtonGroup={<DiscoverButtonGroup />}
-            // arrows={false}
             centerMode="true"
             infinite
           >
@@ -173,14 +108,8 @@ const DiscoverPage = () => {
         <div div className="discover-carousel-container">
           <h2 className="section-title">Library</h2>
           <Carousel
-            // partialVisible={true}
-            // centerMode={true}
             responsive={responsive}
-            // infinite={true}
             containerClass="container"
-            // renderButtonGroupOutside={true}
-            // customButtonGroup={<LibraryButtonGroup />}
-            // arrows={false}
             centerMode="true"
             infinite
           >
@@ -215,14 +144,8 @@ const DiscoverPage = () => {
         <div div className="discover-carousel-container">
           <h2 className="section-title">Playlists</h2>
           <Carousel
-            // partialVisible={true}
-            // centerMode={true}
             responsive={responsive}
-            // infinite={true}
             containerClass="container"
-            // renderButtonGroupOutside={true}
-            // customButtonGroup={<LibraryButtonGroup />}
-            // arrows={false}
             centerMode="true"
             infinite
           >
@@ -253,9 +176,7 @@ const DiscoverPage = () => {
             ))}
           </Carousel>
         </div>
-        <div className="">
-          <BottomAudioPlayer currentTrack={currentTrack} />
-        </div>
+          <BottomAudioPlayer currentSong={currentSong} />
       </div>
     </>
   );

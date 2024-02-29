@@ -6,6 +6,7 @@ import commentsReducer from './comments';
 import likesReducer from "./likes";
 import playlistsReducer from "./playlists";
 import usersReducer from "./users"
+import musicReducer from "./music";
 
 const rootReducer = combineReducers({
   // add reducer functions here
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   comments: commentsReducer,
   likes: likesReducer,
   playlists: playlistsReducer,
-  users: usersReducer
+  users: usersReducer,
+  music: musicReducer,
 });
 
 let enhancer;
