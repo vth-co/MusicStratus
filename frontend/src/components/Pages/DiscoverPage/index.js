@@ -8,7 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import HeartButton from "../../Likes/HeartButton";
 
-const DiscoverPage = () => {
+const DiscoverPage = ({ setCurrentTrack }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
@@ -20,7 +20,6 @@ const DiscoverPage = () => {
   const userPlaylists = playlists.filter(
     (playlist) => playlist.userId === sessionUser.id
   );
-  const [currentSong, setTrackIndex] = useState("");
 
   const responsive = {
     desktop: {
@@ -89,7 +88,7 @@ const DiscoverPage = () => {
                       <button
                         className="card-play-button"
                         value={song?.url}
-                        onClick={(e) => setTrackIndex(e.target.value)}
+                        onClick={(e) => setCurrentTrack(e.target.value)}
                       >
                         <i className="fa-solid fa-circle-play"></i>
                       </button>
@@ -118,13 +117,13 @@ const DiscoverPage = () => {
                 <div className="card-container">
                   <NavLink className="song-link" to={`/songs/${song.id}`}>
                     <img className="image" src={song.imageUrl} alt={""} />
-                    <div class="overlay"></div>
+                    <div className="overlay"></div>
                   </NavLink>
                   <NavLink to={"/discover"}>
                     <button
                       className="card-play-button"
                       value={song?.url}
-                      onClick={(e) => setTrackIndex(e.target.value)}
+                      onClick={(e) => setCurrentTrack(e.target.value)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
                     </button>
@@ -163,7 +162,7 @@ const DiscoverPage = () => {
                         className="image"
                       />
                     )}
-                    <div class="overlay"></div>
+                    <div className="overlay"></div>
                   </NavLink>
                 </div>
                   <NavLink
@@ -176,7 +175,7 @@ const DiscoverPage = () => {
             ))}
           </Carousel>
         </div>
-          <BottomAudioPlayer currentSong={currentSong} />
+          {/* <BottomAudioPlayer currentTrack={currentTrack}/> */}
       </div>
     </>
   );

@@ -8,12 +8,11 @@ import { useState } from "react";
 import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import HeartButton from "../../Likes/HeartButton";
 
-const LibraryPage = () => {
+const LibraryPage = ({ setCurrentTrack }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
   const library = songs.filter((song) => song.userId === sessionUser.id);
-  const [currentTrack, setTrackIndex] = useState("");
 
   return (
     <>
@@ -30,7 +29,7 @@ const LibraryPage = () => {
                     <button
                       className="card-play-button"
                       value={song?.url}
-                      onClick={(e) => setTrackIndex(e.target.value)}
+                      onClick={(e) => setCurrentTrack(e.target.value)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
                     </button>
@@ -45,7 +44,6 @@ const LibraryPage = () => {
             </div>
           ))}
         </div>
-        <BottomAudioPlayer currentTrack={currentTrack} />
       </div>
     </>
   );

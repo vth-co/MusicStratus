@@ -3,17 +3,17 @@ import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentSong } from "../../store/music";
+import { setCurrentTrack } from "../../store/audioplayer";
 
 
-const BottomAudioPlayer = () => {
+const BottomAudioPlayer = ({ currentTrack }) => {
 
   const dispatch = useDispatch();
-  const currentSong = useSelector(((state) => state.music.currentSong));
+  // const currentTrack = useSelector(((state) => state.audioPlayer.currentTrack));
 
 
-  const handleSongChange = (newSong) => {
-    dispatch(setCurrentSong(newSong));
+  const handleTrackChange = (newTrack) => {
+    dispatch(setCurrentTrack(newTrack));
   };
 
 
@@ -23,8 +23,8 @@ const BottomAudioPlayer = () => {
             className="audio-player"
             volume={0.2}
             layout="horizontal-reverse"
-            src={currentSong ? currentSong : ""}
-            onPlay={(e) => handleSongChange(e.target.src)}
+            src={currentTrack}
+            onPlay={(e) => handleTrackChange(e.target.src)}
             // customAdditionalControls={[
             //   <div>
             //     <button>

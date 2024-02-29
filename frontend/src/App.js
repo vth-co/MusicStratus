@@ -30,6 +30,7 @@ library.add(fas);
 function App() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
+  const [currentTrack, setCurrentTrack] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -62,13 +63,13 @@ function App() {
             <SplashPage />
           </Route>
           <Route path="/discover">
-            <DiscoverPage />
+            <DiscoverPage setCurrentTrack={setCurrentTrack} />
           </Route>
           <Route path="/feed">
-            <FeedPage />
+            <FeedPage setCurrentTrack={setCurrentTrack}/>
           </Route>
           <Route path="/library">
-            <LibraryPage />
+            <LibraryPage setCurrentTrack={setCurrentTrack}/>
           </Route>
           <Route path="/songs/:id">
             <Song />
@@ -86,7 +87,7 @@ function App() {
             <ErrorPage />
           </Route>
         </Switch>
-        {sessionUser && <BottomAudioPlayer />}
+        {sessionUser && <BottomAudioPlayer currentTrack={currentTrack} />}
         </>
       )}
     </>
