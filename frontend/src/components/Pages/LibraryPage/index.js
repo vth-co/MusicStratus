@@ -28,8 +28,7 @@ const LibraryPage = ({ setCurrentTrack }) => {
                   <NavLink to={"/library"}>
                     <button
                       className="card-play-button"
-                      value={song?.url}
-                      onClick={(e) => setCurrentTrack(e.target.value)}
+                      onClick={() => setCurrentTrack(song)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
                     </button>

@@ -31,8 +31,7 @@ const FeedPage = ({ setCurrentTrack }) => {
                   <NavLink to={"/feed"}>
                     <button
                       className="card-play-button"
-                      value={song?.url}
-                      onClick={(e) => setCurrentTrack(e.target.value)}
+                      onClick={() => setCurrentTrack(song)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
                     </button>

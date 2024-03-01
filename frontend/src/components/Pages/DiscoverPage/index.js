@@ -87,8 +87,7 @@ const DiscoverPage = ({ setCurrentTrack }) => {
                     <NavLink to={"/discover"}>
                       <button
                         className="card-play-button"
-                        value={song?.url}
-                        onClick={(e) => setCurrentTrack(e.target.value)}
+                        onClick={() => setCurrentTrack(song)}
                       >
                         <i className="fa-solid fa-circle-play"></i>
                       </button>
@@ -122,8 +121,7 @@ const DiscoverPage = ({ setCurrentTrack }) => {
                   <NavLink to={"/discover"}>
                     <button
                       className="card-play-button"
-                      value={song?.url}
-                      onClick={(e) => setCurrentTrack(e.target.value)}
+                      onClick={() => setCurrentTrack(song)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
                     </button>
@@ -165,17 +163,16 @@ const DiscoverPage = ({ setCurrentTrack }) => {
                     <div className="overlay"></div>
                   </NavLink>
                 </div>
-                  <NavLink
-                    className="song-link"
-                    to={`/${sessionUser.username}/playlists/${playlist.id}`}
-                  >
-                    <p className="song-title">{playlist.name}</p>
-                  </NavLink>
+                <NavLink
+                  className="song-link"
+                  to={`/${sessionUser.username}/playlists/${playlist.id}`}
+                >
+                  <p className="song-title playlist">{playlist.name}</p>
+                </NavLink>
               </div>
             ))}
           </Carousel>
         </div>
-          {/* <BottomAudioPlayer currentTrack={currentTrack}/> */}
       </div>
     </>
   );
