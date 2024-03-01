@@ -46,7 +46,6 @@ const FeedPage = ({ setCurrentTrack }) => {
             </div>
           ))}
         </div>
-        <BottomAudioPlayer currentTrack={currentTrack} />
       </div>
     </>
   );

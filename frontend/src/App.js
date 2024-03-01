@@ -24,6 +24,7 @@ import UserProfile from "./components/Pages/User";
 import Playlist from "./components/Pages/PlaylistPage";
 import { getUsers } from "./store/users";
 import BottomAudioPlayer from "./components/CustomAudioPlayer/BottomAudioPlayer";
+import TopAudioPlayer from "./components/CustomAudioPlayer/TopAudioPlayer";
 
 library.add(fas);
 
@@ -49,45 +50,47 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <>
-        <Switch>
-          <Route path="/signup">
-            <SignupPage />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
-          <Route exact path="/404">
-            <ErrorPage />
-          </Route>
-          <Route exact path={"/"}>
-            <SplashPage />
-          </Route>
-          <Route path="/discover">
-            <DiscoverPage setCurrentTrack={setCurrentTrack} />
-          </Route>
-          <Route path="/feed">
-            <FeedPage setCurrentTrack={setCurrentTrack}/>
-          </Route>
-          <Route path="/library">
-            <LibraryPage setCurrentTrack={setCurrentTrack}/>
-          </Route>
-          <Route path="/songs/:id">
-            <Song />
-          </Route>
-          <Route path="/search">
-            <SearchResults />
-          </Route>
-          <Route path="/user/:username">
-            <UserProfile />
-          </Route>
-          <Route path="/:username/playlists/:id">
-            <Playlist />
-          </Route>
-          <Route path="*">
-            <ErrorPage />
-          </Route>
-        </Switch>
-        {sessionUser && <BottomAudioPlayer currentTrack={currentTrack} />}
+          <Switch>
+            <Route path="/signup">
+              <SignupPage />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+            <Route exact path="/404">
+              <ErrorPage />
+            </Route>
+            <Route exact path={"/"}>
+              <SplashPage />
+            </Route>
+            <Route path="/discover">
+              <DiscoverPage setCurrentTrack={setCurrentTrack} />
+            </Route>
+            <Route path="/feed">
+              <FeedPage setCurrentTrack={setCurrentTrack} />
+            </Route>
+            <Route path="/library">
+              <LibraryPage setCurrentTrack={setCurrentTrack} />
+            </Route>
+            <Route path="/songs/:id">
+              <Song />
+            </Route>
+            <Route path="/search">
+              <SearchResults />
+            </Route>
+            <Route path="/user/:username">
+              <UserProfile />
+            </Route>
+            <Route path="/:username/playlists/:id">
+              <Playlist />
+            </Route>
+            <Route path="*">
+              <ErrorPage />
+            </Route>
+          </Switch>
+          {sessionUser && currentTrack && (
+            <BottomAudioPlayer currentTrack={currentTrack} />
+          )}
         </>
       )}
     </>

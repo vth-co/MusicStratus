@@ -18,6 +18,7 @@ const BottomAudioPlayer = ({ currentTrack }) => {
   return (
     <div className="music-container">
       <AudioPlayer
+        autoPlay
         className="audio-player bottom"
         // header={trackInfo}
         volume={0.2}
