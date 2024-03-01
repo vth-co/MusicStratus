@@ -8,7 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import HeartButton from "../../Likes/HeartButton";
 
-const DiscoverPage = () => {
+const DiscoverPage = ({ setCurrentTrack }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const songsObj = useSelector((state) => state.songs.songs);
   const songs = Object.values(songsObj);
@@ -20,7 +20,7 @@ const DiscoverPage = () => {
   const userPlaylists = playlists.filter(
     (playlist) => playlist.userId === sessionUser.id
   );
-  const [currentTrack, setTrackIndex] = useState("");
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -67,80 +67,14 @@ const DiscoverPage = () => {
     }
   }, []);
 
-  // const LibraryButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  //   const {
-  //     carouselState: { currentSlide },
-  //   } = rest;
-  //   return (
-  //     <div className="carousel-button-group">
-  //       <button
-  //         className={currentSlide === 0 ? "disable" : "carousel-button-left"}
-  //         onClick={() => previous()}
-  //       >
-  //         <i class="fa-solid fa-square-caret-left"></i>
-  //       </button>
-  //       <button
-  //         className="carousel-button-right"
-  //         onClick={() => goToSlide(currentSlide + 1)}
-  //       >
-  //         <i class="fa-solid fa-square-caret-right"></i>
-  //       </button>
-  //       {/* <button
-  //         className="carousel-button-shuffle"
-  //         onClick={() =>
-  //           goToSlide(Math.floor(Math.random() * library.length + 1))
-  //         }
-  //       >
-  //         <i class="fa-solid fa-shuffle"></i>
-  //       </button> */}
-  //     </div>
-  //   );
-  // };
-
-  // const DiscoverButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  //   const {
-  //     carouselState: { currentSlide },
-  //   } = rest;
-  //   return (
-  //     <div className="carousel-button-group">
-  //       <button
-  //         className={currentSlide === 0 ? "disable" : "carousel-button-left"}
-  //         onClick={() => previous()}
-  //       >
-  //         <i class="fa-solid fa-square-caret-left"></i>
-  //       </button>
-  //       <button
-  //         className="carousel-button-right"
-  //         onClick={() => goToSlide(currentSlide + 1)}
-  //       >
-  //         <i class="fa-solid fa-square-caret-right"></i>
-  //       </button>
-  //       {/* <button
-  //         className="carousel-button-shuffle"
-  //         onClick={() =>
-  //           goToSlide(Math.floor(Math.random() * discover.length + 1))
-  //         }
-  //       >
-  //         <i class="fa-solid fa-shuffle"></i>
-  //       </button> */}
-  //     </div>
-  //   );
-  // };
-
   return (
     <>
       <div className="discover-page">
         <div className="discover-carousel-container">
           <h2 className="section-title">Explore</h2>
           <Carousel
-            // partialVisible={true}
-            // centerMode={true}
             responsive={responsive}
-            // infinite={true}
             containerClass="container"
-            // renderButtonGroupOutside={true}
-            // customButtonGroup={<DiscoverButtonGroup />}
-            // arrows={false}
             centerMode="true"
             infinite
           >
@@ -153,8 +87,7 @@ const DiscoverPage = () => {
                     <NavLink to={"/discover"}>
                       <button
                         className="card-play-button"
-                        value={song?.url}
-                        onClick={(e) => setTrackIndex(e.target.value)}
+                        onClick={() => setCurrentTrack(song)}
                       >
                         <i className="fa-solid fa-circle-play"></i>
                       </button>
@@ -173,14 +106,8 @@ const DiscoverPage = () => {
         <div div className="discover-carousel-container">
           <h2 className="section-title">Library</h2>
           <Carousel
-            // partialVisible={true}
-            // centerMode={true}
             responsive={responsive}
-            // infinite={true}
             containerClass="container"
-            // renderButtonGroupOutside={true}
-            // customButtonGroup={<LibraryButtonGroup />}
-            // arrows={false}
             centerMode="true"
             infinite
           >
@@ -189,13 +116,12 @@ const DiscoverPage = () => {
                 <div className="card-container">
                   <NavLink className="song-link" to={`/songs/${song.id}`}>
                     <img className="image" src={song.imageUrl} alt={""} />
-                    <div class="overlay"></div>
+                    <div className="overlay"></div>
                   </NavLink>
                   <NavLink to={"/discover"}>
                     <button
                       className="card-play-button"
-                      value={song?.url}
-                      onClick={(e) => setTrackIndex(e.target.value)}
+                      onClick={() => setCurrentTrack(song)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
                     </button>
@@ -215,14 +141,8 @@ const DiscoverPage = () => {
         <div div className="discover-carousel-container">
           <h2 className="section-title">Playlists</h2>
           <Carousel
-            // partialVisible={true}
-            // centerMode={true}
             responsive={responsive}
-            // infinite={true}
             containerClass="container"
-            // renderButtonGroupOutside={true}
-            // customButtonGroup={<LibraryButtonGroup />}
-            // arrows={false}
             centerMode="true"
             infinite
           >
@@ -240,21 +160,18 @@ const DiscoverPage = () => {
                         className="image"
                       />
                     )}
-                    <div class="overlay"></div>
+                    <div className="overlay"></div>
                   </NavLink>
                 </div>
-                  <NavLink
-                    className="song-link"
-                    to={`/${sessionUser.username}/playlists/${playlist.id}`}
-                  >
-                    <p className="song-title">{playlist.name}</p>
-                  </NavLink>
+                <NavLink
+                  className="song-link"
+                  to={`/${sessionUser.username}/playlists/${playlist.id}`}
+                >
+                  <p className="song-title playlist">{playlist.name}</p>
+                </NavLink>
               </div>
             ))}
           </Carousel>
-        </div>
-        <div className="">
-          <BottomAudioPlayer currentTrack={currentTrack} />
         </div>
       </div>
     </>

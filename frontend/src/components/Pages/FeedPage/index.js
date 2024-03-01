@@ -8,7 +8,7 @@ import { useState } from "react";
 import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import HeartButton from "../../Likes/HeartButton";
 
-const FeedPage = () => {
+const FeedPage = ({ setCurrentTrack }) => {
   const sessionUser = useSelector((state) => state.session.user);
 
   const songsObj = useSelector((state) => state.songs.songs);
@@ -31,8 +31,7 @@ const FeedPage = () => {
                   <NavLink to={"/feed"}>
                     <button
                       className="card-play-button"
-                      value={song?.url}
-                      onClick={(e) => setTrackIndex(e.target.value)}
+                      onClick={() => setCurrentTrack(song)}
                     >
                       <i className="fa-solid fa-circle-play"></i>
                     </button>

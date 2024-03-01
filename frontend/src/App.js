@@ -1,6 +1,6 @@
 // frontend/src/App.js
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import { getSongs } from "./store/songs";
@@ -23,11 +23,14 @@ import SearchResults from "./components/Search/SearchResults";
 import UserProfile from "./components/Pages/User";
 import Playlist from "./components/Pages/PlaylistPage";
 import { getUsers } from "./store/users";
+import BottomAudioPlayer from "./components/CustomAudioPlayer/BottomAudioPlayer";
 
 library.add(fas);
 
 function App() {
   const dispatch = useDispatch();
+  const sessionUser = useSelector((state) => state.session.user);
+  const [currentTrack, setCurrentTrack] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -45,6 +48,7 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
+        <>
         <Switch>
           <Route path="/signup">
             <SignupPage />
@@ -59,13 +63,13 @@ function App() {
             <SplashPage />
           </Route>
           <Route path="/discover">
-            <DiscoverPage />
+            <DiscoverPage setCurrentTrack={setCurrentTrack} />
           </Route>
           <Route path="/feed">
-            <FeedPage />
+            <FeedPage setCurrentTrack={setCurrentTrack}/>
           </Route>
           <Route path="/library">
-            <LibraryPage />
+            <LibraryPage setCurrentTrack={setCurrentTrack}/>
           </Route>
           <Route path="/songs/:id">
             <Song />
@@ -79,11 +83,12 @@ function App() {
           <Route path="/:username/playlists/:id">
             <Playlist />
           </Route>
-
           <Route path="*">
             <ErrorPage />
           </Route>
         </Switch>
+        {sessionUser && <BottomAudioPlayer currentTrack={currentTrack} />}
+        </>
       )}
     </>
   );

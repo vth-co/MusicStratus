@@ -11,7 +11,9 @@
     "sequelize": "npm run --prefix backend sequelize",
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
     "start": "npm start --prefix backend",
-    "build": "npm run build --prefix backend"
+    "build": "npm run build --prefix backend",
+    "client": "npm start --prefix frontend",
+    "together": "concurrently \"npm run start\" \"npm run client\""
   },
   "repository": {
     "type": "git",
