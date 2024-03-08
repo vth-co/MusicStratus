@@ -24,7 +24,7 @@ const SideTiles = () => {
           </div>
           <hr className="sidetiles-hr"></hr>
           <div className="sidetiles-content">
-            <ul className="footer-ul">
+            <ul className="sidetiles-ul">
               <a
                 href="https://taskless.onrender.com/"
                 className="link"

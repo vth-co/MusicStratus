@@ -96,7 +96,7 @@ const SplashPage = () => {
       <div className="footer">
         <div className="footer-links-container">
           <ul className="footer-ul">
-            <p className="footer-section">Developer</p>
+            <p className="footer-section">About Me:</p>
             <a
               href="/pdfs/Software Engineer Vu Co.pdf"
               className="link"
@@ -129,13 +129,11 @@ const SplashPage = () => {
             >
               Github
             </a>
-          </ul>
-          <ul className="footer-ul">
             <p className="footer-section">Resources</p>
-            <li className="link">JavaScript</li>
-            <li className="link">HTML/CSS</li>
-            <li className="link">React/Redux</li>
-            <li className="link">PostgreSQL</li>
+            <a className="link">JavaScript</a>
+            <a className="link">HTML/CSS</a>
+            <a className="link">React/Redux</a>
+            <a className="link">PostgreSQL</a>
           </ul>
         </div>
       </div>
