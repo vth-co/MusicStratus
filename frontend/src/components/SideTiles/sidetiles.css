@@ -50,9 +50,12 @@
 }
 
 .sidetiles-ul {
+  display: flex;
+  flex-direction: column;
   padding-left: 0;
+  margin-top: 5px;
 }
 
 .sidetiles-ul .link {
-  padding: 10;
+  padding-bottom: 20px;
 }
