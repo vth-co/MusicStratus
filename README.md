@@ -4,38 +4,43 @@ MusicStratus is a clone of [SoundCloud](https://soundcloud.com/) where users can
 
 ## Live Site
 
-A live deployment of [MusicStratus]([https://musicstratus.onrender.com/]) is hosted on Render.
+A live deployment of [MusicStratus](https://musicstratus.onrender.com/) is hosted on Render.
 
 ## Screenshots 
 
 ### Welcome
 
-![](https://i.gyazo.com/927fb757907d9dfd22aa31e265dad0cd.png)
+![](https://i.gyazo.com/edec8076ae0513efe16c919f8298adfc.jpg)
 
 ### Discover
 
-![](https://i.gyazo.com/fadb84efe6fa918394d085aff4195d22.png)
+![](https://i.gyazo.com/42fb6a841e7e18a68e9b1cab158f30ce.jpg)
 
 ### Music Player
 
-![](https://i.gyazo.com/8692ad8abbba64222a00621c782d332d.png)
+![](https://i.gyazo.com/2bd5ddffec5ca26022e2e317125ce070.png)
 
 ### Search
 
-![](https://i.gyazo.com/ffe5bce688cff60c44701b6324886d8a.png)
+![](https://i.gyazo.com/48ff0cd9b234145f2178a4b11baf0fa5.png)
 
 ## Features
 
 * Full CRUD Features for Songs
-* Full CRUF Features for Comments
+* Full CRUD Features for Comments
+* Like/unlike any songs
 * Music player throughout entire app
 * Search for songs/artists
+* Feed page updates with most recent posted songs
+* Profile page with customizable profile picture
+* Tracks liked songs, playlists, and uploaded songs
+
 
 ### Future Features
-* Users can like songs
 * Users can create playlists
 * Users can create albums for better organization of songs
 * Users can follow other artists for updates
+* Users can reply to other comments
 
 ## Technologies Used
 * Javascript

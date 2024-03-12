@@ -16,8 +16,6 @@
 
 .sidetiles-header {
     display: flex;
-    align-items: center;
-
 }
 
 .sidetiles-content .footer-ul {
@@ -35,7 +33,7 @@
   }
 
   .sidetiles-hr {
-    width: 275px;
+    width: 300px;
   }
 
   .right .sidetiles-hr {
@@ -47,12 +45,17 @@
     height: auto;
   }
 
-.footer-ul .link{
-    padding-bottom: 15px;
-    width: 50%;
-}
-
-
 .footer-ul .bx {
     padding-right: 10px;
+}
+
+.sidetiles-ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-top: 5px;
+}
+
+.sidetiles-ul .link {
+  padding-bottom: 20px;
 }
