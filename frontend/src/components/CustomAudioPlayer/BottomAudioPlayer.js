@@ -4,11 +4,11 @@ import "react-h5-audio-player/lib/styles.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentTrack } from "../../store/audioplayer";
+import { NavLink } from "react-router-dom";
 
 const BottomAudioPlayer = ({ currentTrack }) => {
   const dispatch = useDispatch();
   // const currentTrack = useSelector(((state) => state.audioPlayer.currentTrack));
-
   const handleTrackChange = (newTrack) => {
     dispatch(setCurrentTrack(newTrack));
   };
@@ -28,17 +28,23 @@ const BottomAudioPlayer = ({ currentTrack }) => {
         customAdditionalControls={[
           <div className="bottom-audio-player-button-container">
             <button className="bottom-button">
-              <img
-                className="image bottom-player"
-                src={currentTrack.imageUrl}
-              />
+              <NavLink to={`/songs/${currentTrack.id}`}>
+                <img
+                  className="image bottom-player"
+                  src={currentTrack.imageUrl}
+                />
+              </NavLink>
             </button>
             <div className="song-title-container">
               <button className="bottom-button">
-                <p className="song-title">{currentTrack.artist}</p>
+                <NavLink to={`/songs/${currentTrack.id}`}>
+                  <p className="song-title">{currentTrack.artist}</p>
+                </NavLink>
               </button>
               <button className="bottom-button">
-                <p className="song-title">{currentTrack?.title}</p>
+                <NavLink to={`/songs/${currentTrack.id}`}>
+                  <p className="song-title">{currentTrack?.title}</p>
+                </NavLink>
               </button>
             </div>
           </div>,
