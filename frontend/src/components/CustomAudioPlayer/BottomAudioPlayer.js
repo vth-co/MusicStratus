@@ -1,17 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentTrack } from "../../store/audioplayer";
 import { NavLink } from "react-router-dom";
+import { updateTime } from "../../utils/utils";
 
-const BottomAudioPlayer = ({ currentTrack }) => {
+const BottomAudioPlayer = ({ currentTrack, setCurrentTime }) => {
   const dispatch = useDispatch();
   // const currentTrack = useSelector(((state) => state.audioPlayer.currentTrack));
   const handleTrackChange = (newTrack) => {
     dispatch(setCurrentTrack(newTrack));
   };
+
+    // State to keep track of current time and duration
+    const [currentTime, setCurrent] = useState(0);
+    const [duration, setDuration] = useState(0);
+  
+    // Update current time and duration when track changes
+    useEffect(() => {
+      setCurrent(0);
+      setDuration(0);
+    }, [currentTrack]);
+  
+    // Update current time when the audio player progresses
+    const handleListen = (e) => {
+      setCurrent(e.target.currentTime);
+      updateTime(e.target.currentTime, duration, setCurrentTime);
+    };
 
   const trackInfo = `${currentTrack.title} - ${currentTrack.artist}`;
 
@@ -49,6 +66,7 @@ const BottomAudioPlayer = ({ currentTrack }) => {
             </div>
           </div>,
         ]}
+        onListen={handleListen}
         // customProgressBarSection={[
         //   RHAP_UI.CURRENT_TIME,
         //   <div>/</div>,

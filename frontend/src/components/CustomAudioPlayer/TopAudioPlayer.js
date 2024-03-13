@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
@@ -7,10 +7,25 @@ import DeleteSongModal from "../Songs/DeleteSongModal";
 import { useSelector } from "react-redux";
 import LikeButton from "../Likes/LikeButton";
 import "./CustomAudio.css";
+import { updateTime } from "../../utils/utils";
 
-const TopAudioPlayer = ({ song }) => {
+const TopAudioPlayer = ({ song, setCurrentTime }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
+
+  const [currentTime, setCurrent] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+   // Update current time and duration when song changes
+   useEffect(() => {
+    setCurrent(0);
+    setDuration(0);
+  }, [song]);
+
+  const handleListen = (e) => {
+    setCurrent(e.target.currentTime);
+    updateTime(e.target.currentTime, duration, setCurrentTime);
+  };
 
   let songEditButtons;
   if (userId === song?.userId) {
@@ -53,6 +68,7 @@ const TopAudioPlayer = ({ song }) => {
             RHAP_UI.MAIN_CONTROLS,
             RHAP_UI.VOLUME_CONTROLS,
           ]}
+          onListen={handleListen}
         />
         <img className="song-image" src={song?.imageUrl} alt="" />
       </div>

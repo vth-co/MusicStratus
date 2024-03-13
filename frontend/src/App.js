@@ -32,6 +32,8 @@ function App() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [currentTrack, setCurrentTrack] = useState("");
+  const [currentTimeTop, setCurrentTimeTop] = useState(0);
+  const [currentTimeBottom, setCurrentTimeBottom] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -44,6 +46,13 @@ function App() {
     dispatch(getPlaylists());
     dispatch(getUsers());
   });
+
+  const setCurrentTime = (currentTime) => {
+    // Update current time of both top and bottom audio players
+    // Implement this function according to your requirements
+    setCurrentTimeTop(currentTime);
+    setCurrentTimeBottom(currentTime);
+  };
 
   return (
     <>
@@ -89,7 +98,7 @@ function App() {
             </Route>
           </Switch>
           {sessionUser && currentTrack && (
-            <BottomAudioPlayer currentTrack={currentTrack} />
+            <BottomAudioPlayer currentTrack={currentTrack} setCurrentTime={setCurrentTime} />
           )}
         </>
       )}
