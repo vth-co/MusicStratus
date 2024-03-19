@@ -75,37 +75,12 @@ li {
   font-weight: 700;
 }
 
-.btn {
-  outline: none;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 1px solid white;
-  white-space: normal;
-  text-align: center;
-  color: white;
-  background-color: transparent;
-  padding: 0 25px;
-  padding-top: 6px;
-  padding-bottom: 7px;
-  margin-right: 35px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: transform 0.2s ease;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
 .icon {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 3vw;
 }
-
-
 
 .title-link {
   display: flex;

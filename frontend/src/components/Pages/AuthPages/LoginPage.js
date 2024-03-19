@@ -57,7 +57,6 @@ const LoginPage = () => {
           </label> */}
             <div className="form-inputs-container">
               <div className="field">
-                <label>Email</label>
                 <input
                   type="text"
                   placeholder="Email"
@@ -67,7 +66,6 @@ const LoginPage = () => {
                 />
               </div>
               <div className="field">
-                <label>Password</label>
                 <input
                   type="password"
                   placeholder="Password"

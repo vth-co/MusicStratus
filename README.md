@@ -68,9 +68,9 @@ npm install
 ```
 "proxy": "http://localhost:portNumber
 ```
-7. Create a POSTGRESQL user with CREATEDB and PASSWORD in PSQL.
+7. Create a POSTGRESQL user with CREATEDB and PASSWORD in PSQL. Replace user and password with your own.
 ``` 
-CREATE USER WITH CREATEDB PASSWORD <'password'>
+CREATE USER <user> WITH CREATEDB PASSWORD <'password'>
 ```
 8. Create Database, Migrate, and Seed models.
 ```

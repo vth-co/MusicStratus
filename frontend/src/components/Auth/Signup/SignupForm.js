@@ -138,11 +138,9 @@ const SignupForm = ({ onClose }) => {
                 />
               </div>
             )} */}
-            <div className="submit-container">
-              <button className="user-create-form-submit" type="submit">
+              <button className="user-form-submit" type="submit">
                 Create Account
               </button>
-            </div>
             <div className="demo-label">
               <p>
                 Not ready to commit?

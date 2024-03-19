@@ -24,7 +24,7 @@ h3 {
     padding: 0px 25px;
     padding-top: 20px;
     padding-bottom: 5px;
-    min-width: 450px;
+    min-width: 550px;
     min-height: 350px;
     background-color: black;
 }
@@ -32,7 +32,7 @@ h3 {
 input {
     padding: 12px 12px;
     margin: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid grey;
     color: white;
     background-color: black;
@@ -41,14 +41,14 @@ input {
 .user-form-submit {
     outline: none;
     cursor: pointer;
-    border-radius: 50px;
     padding: 15px 67px;
+    border-radius: 5px;
     min-height: 32px;
     border: none;
     color: black;
     font-weight: 700;
     background-color: #4483ff;
-    margin: 10px 15px;
+    margin: 10px 12px;
     font-family: 'Inter', sans-serif;
     transition: transform 0.2s ease;
 }
@@ -58,15 +58,9 @@ input {
 }
 
 
-.submit-container {
-    display: flex;
-    justify-content: space-around;
-}
-
 .user-create-form-submit {
     outline: none;
     cursor: pointer;
-    border-radius: 50px;
     padding: 15px 48px;
     min-height: 32px;
     border: none;
@@ -75,7 +69,6 @@ input {
     background-color: #4483ff;
     margin: 10px 15px;
     font-family: 'Inter', sans-serif;
-    min-width: 75px;
     transition: transform 0.2s ease;
 }
 
@@ -143,3 +136,26 @@ input {
     color: #4483ff;
     transform: scale(1.05);
 }
+
+.btn {
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid white;
+    white-space: normal;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    padding: 0 25px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }

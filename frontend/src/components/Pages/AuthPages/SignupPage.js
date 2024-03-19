@@ -86,10 +86,10 @@ const SignupPage = () => {
             <div className="form-inputs-container">
               <div className="field">
                 <div className="label">
-                  <label>Email</label>
                 </div>
                 <input
                   type="text"
+                placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -97,10 +97,11 @@ const SignupPage = () => {
               </div>
               <div className="field">
                 <div className="label">
-                  <label>Username</label>
                 </div>
                 <input
                   type="text"
+                placeholder="Username"
+
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
@@ -108,11 +109,10 @@ const SignupPage = () => {
               </div>
               <div className="field">
                 <div className="label">
-                  <label>Password</label>
                 </div>
                 <input
                   type="password"
-                  // placeholder="Password"
+                  placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -120,11 +120,10 @@ const SignupPage = () => {
               </div>
               <div className="field">
                 <div className="label">
-                  <label>Confirm Password</label>
                 </div>
                 <input
                   type="password"
-                  // placeholder="Confirm Password"
+                  placeholder="Confirm Password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
@@ -134,11 +133,9 @@ const SignupPage = () => {
                 <label>Profile Image</label>
                 <input type="file" onChange={updateFile} />
               </div> */}
-              <div className="submit-container">
-                <button className="user-create-form-submit" type="submit">
+                <button className="user-form-submit" type="submit">
                   Create Account
                 </button>
-              </div>
               <div className="demo-label">
                 <p>
                   Already have an account?

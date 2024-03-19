@@ -10,7 +10,7 @@
 
 .signup-btn {
   outline: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   border: 1px transparent;
   white-space: normal;
@@ -37,6 +37,6 @@
   padding: 0px 25px;
   padding-top: 20px;
   padding-bottom: 5px;
-  min-width: 450px;
+  min-width: 550px;
   background-color: black;
 }
