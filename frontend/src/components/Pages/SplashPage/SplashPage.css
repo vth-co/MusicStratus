@@ -20,7 +20,7 @@
 }
 
 .carousel-div {
-    height: 425px;
+    height: 450px;
 }
 
 .carousel-title {
@@ -168,14 +168,14 @@ a.link:hover {
 }
 
 #discover-search {
-    width: 407px;
+    width: 300px;
     height: 15px;
     color: white;
     background-color: black;
     border: transparent;
     border-radius: 5px;
     padding: 10px 10px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 #header-search {
@@ -212,4 +212,15 @@ a.link:hover {
 
 .grid-card .grid-card-play-button {
     display: none;
+}
+
+.btn-upload {
+    margin-left: 10px;
+    padding: 14px 15px;
+    border-radius: 3px;
+    font-size: 16px;
+    background-color: #4263a6;
+    border: none;
+    cursor: pointer;
+    color: white;
 }

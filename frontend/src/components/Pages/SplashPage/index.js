@@ -52,7 +52,6 @@ const SplashPage = () => {
               <p className="carousel-text">
                 Upload your first track and begin your journey.
               </p>
-              <div></div>
               <img src="../../../images/carousel3.jpg" />
             </div>
           </Carousel>
@@ -60,6 +59,12 @@ const SplashPage = () => {
       </div>
       <div className="searchbar">
         <SearchBar />
+        <p>or</p>
+        <NavLink to={"/signup"}>
+          <button className="btn-upload">
+            Upload your own
+          </button>
+        </NavLink>
       </div>
       <h2 className="grid-header">
         Hear what’s trending for free in the MusicStratus community

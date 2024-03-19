@@ -58,3 +58,15 @@
 .add-song-form {
     margin-top: 25px;
 }
+
+.upload-button {
+    border: none;
+    cursor: pointer;
+    padding: 14px 15px;
+    background-color: transparent;
+    color: #3485dd;
+}
+
+.upload-button:hover {
+    color: #3c9aff;
+}

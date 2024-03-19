@@ -1,7 +1,6 @@
 .song-link {
     text-decoration: none;
     color: #ffffff;
-    /* text-align: center; */
 }
 
 .section-title {
@@ -13,7 +12,9 @@
 
 .discover-page {
     min-height: 100vh;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .discover-songs-container {
@@ -33,6 +34,15 @@
     text-decoration: none;
     color: #ffffffd8;
     text-align: left;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+}
+
+.song-title:hover {
+    text-overflow: initial;
+    overflow: auto;
 }
 
 .song-artist {
@@ -52,11 +62,11 @@
 
 .discover-carousel-container {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    margin: 10px 50px;
+    padding: 20px 0;
     position: relative;
     border-bottom: 1px solid rgba(128, 128, 128, 0.517);
+    width: fit-content;
 }
 
 .container {
@@ -199,5 +209,4 @@
   }
 
   .song-title.playlist {
-    margin-bottom: 100px;
   }

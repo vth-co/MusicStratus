@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import "./DiscoverPage.css";
-
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import HeartButton from "../../Likes/HeartButton";
+import "../Pages.css";
 
 const DiscoverPage = ({ setCurrentTrack }) => {
   const sessionUser = useSelector((state) => state.session.user);
@@ -80,22 +78,24 @@ const DiscoverPage = ({ setCurrentTrack }) => {
           >
             {discover?.map((song) => (
               <div className="song-card" song={song} key={song.id}>
-                <NavLink className="song-link" to={`/songs/${song.id}`}>
-                  <div className="card-container">
+                <div className="card-container">
+                  <NavLink className="song-link" to={`/songs/${song.id}`}>
                     <img className="image" src={song.imageUrl} alt={""} />
                     <div class="overlay"></div>
-                    <NavLink to={"/discover"}>
-                      <button
-                        className="card-play-button"
-                        onClick={() => setCurrentTrack(song)}
-                      >
-                        <i className="fa-solid fa-circle-play"></i>
-                      </button>
-                      <div className="heart-button-container">
-                        <HeartButton song={song} />
-                      </div>
-                    </NavLink>
+                  </NavLink>
+                  <NavLink to={"/discover"}>
+                    <button
+                      className="card-play-button"
+                      onClick={() => setCurrentTrack(song)}
+                    >
+                      <i className="fa-solid fa-circle-play"></i>
+                    </button>
+                  </NavLink>
+                  <div className="heart-button-container">
+                    <HeartButton song={song} />
                   </div>
+                </div>
+                <NavLink className="song-link" to={`/songs/${song.id}`}>
                   <p className="song-title">{song.title}</p>
                   <p className="song-artist">{song.artist}</p>
                 </NavLink>

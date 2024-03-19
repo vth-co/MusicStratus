@@ -1,12 +1,11 @@
 import { useSelector } from "react-redux";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
 import "react-jinke-music-player/assets/index.css";
 import "react-h5-audio-player/lib/styles.less"; //Use LESS
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import BottomAudioPlayer from "../../CustomAudioPlayer/BottomAudioPlayer";
 import HeartButton from "../../Likes/HeartButton";
+import "../Pages.css"
+
 
 const LibraryPage = ({ setCurrentTrack }) => {
   const sessionUser = useSelector((state) => state.session.user);

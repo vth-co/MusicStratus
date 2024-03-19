@@ -7,7 +7,7 @@ function AddSongModal() {
 
   return (
     <>
-      <button className="feed-button" onClick={() => setShowModal(true)}>
+      <button className="upload-button" onClick={() => setShowModal(true)}>
         {/* <div className="hidden-text">
           <div className="text">Upload song</div>
         </div>
