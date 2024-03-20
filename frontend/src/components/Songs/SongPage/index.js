@@ -11,27 +11,21 @@ const Song = () => {
   const { id } = useParams();
   const song = useSelector((state) => state.songs.songs[id]);
 
-
-  if (!song) {
-    return null;
-  } else {
-    return (
-      <>
-        <div className="song-container">
-          <TopAudioPlayer song={song} />
-          <div className="comments-container">
-            <div className="">
-              <AddComment />
-              <Comments songId={song?.id} />
-            </div>
-            <SideTiles />
+  return (
+    <>
+      <div className="song-container">
+        {song && <TopAudioPlayer song={song} />}
+        <div className="comments-container">
+          <div className="">
+            <AddComment />
+            <Comments songId={song?.id} />
           </div>
+          <SideTiles />
         </div>
-        <div className="background-container">
-        </div>
-      </>
-    );
-  }
+      </div>
+      <div className="background-container"></div>
+    </>
+  );
 };
 
 export default Song;
