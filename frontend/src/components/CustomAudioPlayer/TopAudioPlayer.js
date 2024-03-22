@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import LikeButton from "../Likes/LikeButton";
 import "./CustomAudio.css";
 
-const TopAudioPlayer = ({ song }) => {
+const TopAudioPlayer = ({ song, setCurrentTrack  }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
 
@@ -50,7 +50,15 @@ const TopAudioPlayer = ({ song }) => {
           ]}
           customControlsSection={[
             RHAP_UI.ADDITIONAL_CONTROLS,
-            RHAP_UI.MAIN_CONTROLS,
+            <div>
+               <button
+                      className="card-play-button"
+                      onClick={() => setCurrentTrack(song)}
+                    >
+                      <i className="fa-solid fa-circle-play"></i>
+                    </button>
+              </div>,
+            // RHAP_UI.MAIN_CONTROLS,
             RHAP_UI.VOLUME_CONTROLS,
           ]}
         />
