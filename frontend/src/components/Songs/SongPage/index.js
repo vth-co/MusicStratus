@@ -7,7 +7,7 @@ import AddComment from "../../Comments/AddComment";
 import SideTiles from "../../SideTiles";
 import TopAudioPlayer from "../../CustomAudioPlayer/TopAudioPlayer";
 
-const Song = () => {
+const Song = ({ setCurrentTrack }) => {
   const { id } = useParams();
   const song = useSelector((state) => state.songs.songs[id]);
 
@@ -23,6 +23,12 @@ const Song = () => {
             <i className="fa-solid fa-circle-play"></i>
           </button>
         </div> */}
+        {/* <button
+          className="card-play-button"
+          onClick={() => setCurrentTrack(song)}
+        >
+          <i className="fa-solid fa-circle-play"></i>
+        </button> */}
         <div className="comments-container">
           <div className="">
             <AddComment />

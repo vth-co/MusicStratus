@@ -50,15 +50,7 @@ const TopAudioPlayer = ({ song, setCurrentTrack  }) => {
           ]}
           customControlsSection={[
             RHAP_UI.ADDITIONAL_CONTROLS,
-            <div>
-               <button
-                      className="card-play-button"
-                      onClick={() => setCurrentTrack(song)}
-                    >
-                      <i className="fa-solid fa-circle-play"></i>
-                    </button>
-              </div>,
-            // RHAP_UI.MAIN_CONTROLS,
+            RHAP_UI.MAIN_CONTROLS,
             RHAP_UI.VOLUME_CONTROLS,
           ]}
         />

@@ -93,13 +93,13 @@ function AddSong({ setShowModal }) {
             onChange={(e) => setUrl(e.target.value)}
             required
           />
-          <input
+          {/* <input
             type="text"
             placeholder="Image Url"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             required
-          />
+          /> */}
           <input type="file" onChange={handleFileChange} />
           <button className="user-form-submit" type="submit">
             Add Song

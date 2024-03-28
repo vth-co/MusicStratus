@@ -73,7 +73,7 @@ function App() {
               <LibraryPage setCurrentTrack={setCurrentTrack} />
             </Route>
             <Route path="/songs/:id">
-              <Song />
+              <Song setCurrentTrack={setCurrentTrack} />
             </Route>
             <Route path="/search">
               <SearchResults />
