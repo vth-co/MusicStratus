@@ -13,7 +13,7 @@ function DeleteSongModal({ song }) {
   return (
     <>
       <button className="sng-btn" onClick={() => setShowModal(true)}>
-      <i className="fa-solid fa-trash-can"></i> Delete
+      <i className="fa-solid fa-trash-can"></i>
       </button>
       {showModal && (
         <Modal onClose={closeModal}>

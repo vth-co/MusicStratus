@@ -74,7 +74,7 @@ function EditSong({ onClose, song }) {
             onChange={(e) => setImageUrl(e?.target.value)}
             required
           />
-          <input type="file" onChange={handleFileChange} />
+          {/* <input type="file" onChange={handleFileChange} /> */}
           <button className="user-form-submit" type="submit">
             Update
           </button>

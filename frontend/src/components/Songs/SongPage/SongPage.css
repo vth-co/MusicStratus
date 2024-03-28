@@ -1,103 +1,102 @@
 .individual-song-title {
-    color: white;
-    text-align: center;
-    font-size: x-large;
-    box-shadow: 1px;
+  color: white;
+  text-align: center;
+  font-size: x-large;
+  box-shadow: 1px;
 }
 
 .song-image {
-   width: 340px;
-   height: 340px;
-   padding: 20px;
-   /* background-color: #505658; */
-   /* background-color: #1B1D1D; */
-   background-color: #292B2C;
- }
+  position: absolute;
+  z-index: -5;
+  width: 450px;
+  height: 450px;
+  padding: 20px;
+  /* background-color: #505658; */
+  /* background-color: #1B1D1D; */
+  background-color: #292b2c;
+}
 
- .image-container {
-    display: flex;
-    width: 1250px;
-    height: 380px;
- }
- 
+.image-container {
+  display: flex;
+  width: 1250px;
+  height: 380px;
+}
 
- .song-container {
-    display: flex;
-    flex-direction: column;
-    /* position: absolute; */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* justify-content: center; */
-    align-items: center;
-    /* width: 100%; */
-    /* height: 100%; */
-    z-index: 1;
-    /* margin-top: 50px; */
- }
-
+.song-container {
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* justify-content: center; */
+  align-items: center;
+  /* width: 100%; */
+  /* height: 100%; */
+  z-index: 1;
+  /* margin-top: 50px; */
+}
 
 .editAndDelete {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .audio-player-container {
-    width: 70%;
+  width: 70%;
 }
 
 .comments-container {
-    display: flex;
-    flex-direction: row;
-    height: fit-content;
-    width: 835px;
-    margin-top: 20px;
-    margin-right: 300px;
-    min-height: 100vh; /* Set a minimum height of the viewport height */
-    flex-grow: 1; /* Allow the container to grow and occupy available space */
-    border-right: 1px gray solid;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: 835px;
+  margin-top: 20px;
+  margin-right: 300px;
+  min-height: 100vh; /* Set a minimum height of the viewport height */
+  flex-grow: 1; /* Allow the container to grow and occupy available space */
+  border-right: 1px gray solid;
 }
 
 .background-container {
-    /* display: flex;
+  /* display: flex;
     justify-content: center;
     align-items: center;
     position: relative; */
-    background-color: #222425;
+  background-color: #222425;
 }
 
 .audio-player {
-    background-color: #292B2C;
-    color: white;
-    /* background-image: linear-gradient(to right, #585F62, #1B1D1D); */
-    /* border-top: 1px solid gray; */
+  background-color: #292b2c;
+  color: white;
+  /* background-image: linear-gradient(to right, #585F62, #1B1D1D); */
+  /* border-top: 1px solid gray; */
 }
 
 .song-comment-container {
-    display: flex;
-
+  display: flex;
 }
 
 .rhap_header {
-    text-align: center;
-    font-size: x-large;
-    background-color: black;
-    padding: 5px 10px;
-    margin-top: 10px;
-    max-width:fit-content;
+  text-align: center;
+  font-size: x-large;
+  background-color: black;
+  padding: 5px 10px;
+  margin-top: 10px;
+  max-width: fit-content;
 }
 
 .rhap_footer {
-    font-size: large;
-    color: rgba(255, 255, 255, 0.785);
-    background-color: black;
-    max-width:fit-content;
-    position: relative;
-    /* position: absolute; */
-    padding: 5px 10px;
-    top: -255px;
-    /* top: 10%; */
+  font-size: large;
+  color: rgba(255, 255, 255, 0.785);
+  background-color: black;
+  max-width: fit-content;
+  position: relative;
+  /* position: absolute; */
+  padding: 5px 10px;
+  top: -255px;
+  /* top: 10%; */
 }
 
 /* .rhap_progress-section {
@@ -105,80 +104,128 @@
 } */
 
 .duration {
-    margin-top: 200px;
+  margin-top: 200px;
 }
 
 .rhap_current-time {
-    color: #758dba;
-    font-size: large;
+  color: #758dba;
+  font-size: large;
 }
 
 .rhap_total-time {
-    color: white;
-    font-size: large;
+  color: white;
+  font-size: large;
 }
 
 .rhap_additional-controls {
-    position: relative;
-   width: 5%;
+  position: relative;
+  width: 5%;
 }
 
 .song-edit-container {
-    position: relative;
+  position: relative;
 }
 
 .dropdown {
-    position: relative;
-    /* display: inline-block; */
+  position: relative;
+  /* display: inline-block; */
 }
 
 .dropdown-button {
-    background-color: black;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
 }
 
 /* Style for the dropdown content (initially hidden) */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 50px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Style for the dropdown options */
-  .dropdown-option {
-    padding: 8px 4px;
-    text-decoration: none;
-    display: block;
-    color: #333;
-    cursor: pointer;
-  }
-  
-  /* Style for the dropdown options on hover */
-  .dropdown-option:hover {
-    background-color: #ddd;
-  }
-  
-  /* Show the dropdown content when the button is hovered or clicked */
-  .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content {
-    display: block;
-  }
+  display: none;
+  position: absolute;
+  min-width: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
 
-  .sng-btn {
-    background-color: transparent;
-    color: white;
-    border: 1px white solid;
-    margin-right: 10px;
-    padding: 8px;
-    transition:  color 0.2s ease;
-  }
+/* Style for the dropdown options */
+.dropdown-option {
+  padding: 8px 4px;
+  text-decoration: none;
+  display: block;
+  color: #333;
+  cursor: pointer;
+}
 
-  .sng-btn:hover {
-    color: #28498A;
-    cursor: pointer;
-  }
+/* Style for the dropdown options on hover */
+.dropdown-option:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown content when the button is hovered or clicked */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+.sng-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  margin-right: 10px;
+  transition: color 0.2s ease;
+  padding: 5px 15px;
+  font-size: 15px;
+}
+
+.sng-btn:hover {
+  color: #28498a;
+  cursor: pointer;
+}
+
+.player-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+}
+
+.song-header {
+  font-weight: 50;
+  font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
+    Garuda, Verdana, Tahoma, sans-serif;
+  text-decoration: none;
+  color: #ffffffd8;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.807);
+  padding: 5px 10px;
+}
+
+.song-footer {
+  font-size: large;
+  color: rgba(255, 255, 255, 0.785);
+  background-color: rgba(0, 0, 0, 0.807);
+  max-width: fit-content;
+  position: relative;
+  /* position: absolute; */
+  padding: 5px 10px;
+  /* top: 10%; */
+}
+
+.player-buttons {
+    display: flex;
+    margin-top: 250px;
+}
+
+.player-container .card-play-button {
+    font-size: 175px;
+    color: rgba(255, 255, 255, 0.724);
+    transition: color 0.2s ease;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.player-container .card-play-button:hover {
+    color: #435982;
+}

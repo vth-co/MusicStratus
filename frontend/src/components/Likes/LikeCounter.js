@@ -14,7 +14,7 @@ const LikeCounter = ({ song }) => {
       <p className="like-counter rendered">{likeCount}</p>
       )}
       {likeCount === 0 && (
-        <p className="like-counter not-rendered">Like</p>
+        <p className="like-counter not-rendered"></p>
       )}
       </div>
     </>

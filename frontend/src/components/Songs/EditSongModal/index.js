@@ -13,7 +13,7 @@ function EditSongModal({ song }) {
   return (
     <>
       <button className="sng-btn" onClick={() => setShowModal(true)}>
-      <i className="fa-solid fa-pen"></i> Edit
+      <i className="fa-solid fa-pen"></i>
       </button>
       {showModal && (
         <Modal onClose={closeModal}>
