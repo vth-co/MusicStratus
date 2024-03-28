@@ -1,49 +1,46 @@
 .card-audio-player {
-    /* background-color: #292B2C; */
-    background-color: transparent;
-    color: white;
-    box-shadow: none;
-  }
-  
-  .card-audio-player .rhap_footer {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.785);
-    background-color: transparent;
-    max-width:fit-content;
-    position: relative;
-    padding: 5px 10px;
-    top: -156px;
-    right: -40px;
-  }
-  
-  .card-audio-player .rhap_header {
-    text-align: center;
-    font-size: large;
-    background-color: transparent;
-    padding: 5px 10px;
-    margin-top: 10px;
-    max-width:fit-content;
-    position: relative;
-    top: 12px;
-    right: -40px;
-  
-  }
+  /* background-color: #292B2C; */
+  background-color: transparent;
+  color: white;
+  box-shadow: none;
+}
 
-  .card-audio-player .rhap_main-controls {
-    position: relative;
-    top: -50px;
-  }
-  
-  /* .card-audio-player .card-play-button {
+.card-audio-player .rhap_footer {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.785);
+  background-color: transparent;
+  max-width: fit-content;
+  position: relative;
+  padding: 5px 10px;
+  top: -156px;
+  right: -40px;
+}
+
+.card-audio-player .rhap_header {
+  text-align: center;
+  font-size: large;
+  background-color: transparent;
+  padding: 5px 10px;
+  margin-top: 10px;
+  max-width: fit-content;
+  position: relative;
+  top: 12px;
+  right: -40px;
+}
+
+.card-audio-player .rhap_main-controls {
+  position: relative;
+  top: -50px;
+}
+
+/* .card-audio-player .card-play-button {
     position: relative;
     top: -300px;
   } */
 
-
-  .like-btn-container {
-    color: white;
-  
-  }
+.like-btn-container {
+  color: white;
+}
 
 .bottom-audio-player-button-container {
   display: flex;
@@ -84,4 +81,13 @@
 
 .music-container .rhap_volume-controls {
   justify-content: center;
+}
+
+.image-container .rhap_button-clear {
+  height: auto;
+  width: auto;
+}
+
+.image-container .rhap_main-controls-button {
+  font-size: 50px;
 }

@@ -35,6 +35,9 @@ const TopAudioPlayer = ({ song, setCurrentTrack  }) => {
           volume={0.2}
           header={song.title}
           footer={song.artist}
+          customIcons={{
+            play: <i class='bx bx-play'></i>
+          }}
           customAdditionalControls={[
             <div className="like-btn-container">
             <LikeButton song={song} />
