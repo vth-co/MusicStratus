@@ -7,6 +7,7 @@
 
 .song-image {
   position: absolute;
+  top: 75px;
   z-index: -5;
   width: 450px;
   height: 450px;
@@ -176,11 +177,12 @@
   transition: color 0.2s ease;
   padding: 5px 15px;
   font-size: 15px;
+  transition: 0.2s ease;
+  cursor: pointer;
 }
 
 .sng-btn:hover {
-  color: #28498a;
-  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .player-container {
@@ -194,27 +196,29 @@
   font-weight: 50;
   font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
     Garuda, Verdana, Tahoma, sans-serif;
-  text-decoration: none;
   color: #ffffffd8;
-  font-size: 30px;
-  background-color: rgba(0, 0, 0, 0.807);
-  padding: 5px 10px;
+  font-size: 25px;
+  text-align: center;
+  margin: initial;
+  margin-top: 20px;
 }
 
 .song-footer {
   font-size: large;
   color: rgba(255, 255, 255, 0.785);
-  background-color: rgba(0, 0, 0, 0.807);
-  max-width: fit-content;
   position: relative;
-  /* position: absolute; */
-  padding: 5px 10px;
-  /* top: 10%; */
+  text-align: center;
+  margin: initial;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.player-buttons {
+.player-info {
+    margin-top: 500px;
+}
+
+.user-buttons-container {
     display: flex;
-    margin-top: 250px;
 }
 
 .player-container .card-play-button {
@@ -229,3 +233,11 @@
 .player-container .card-play-button:hover {
     color: #435982;
 }
+
+.player-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+  }

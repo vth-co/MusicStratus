@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import "react-h5-audio-player/lib/styles.css";
 import Comments from "../../Comments";
 import "./SongPage.css";
@@ -9,7 +9,7 @@ import TopAudioPlayer from "../../CustomAudioPlayer/TopAudioPlayer";
 import LikeButton from "../../Likes/LikeButton";
 import EditSongModal from "../EditSongModal";
 import DeleteSongModal from "../DeleteSongModal";
-import "./SongPage.css"
+import "./SongPage.css";
 
 const Song = ({ setCurrentTrack }) => {
   const { id } = useParams();
@@ -32,23 +32,30 @@ const Song = ({ setCurrentTrack }) => {
   return (
     <>
       <div className="song-container">
-        <div className="player-container">
-          <div>
-            <p className="song-header">{song.title}</p>
-            <p className="song-footer">{song.artist}</p>
-          </div>
-            <button
-              className="card-play-button"
-              onClick={() => setCurrentTrack(song)}
-              >
-              <i className="fa-solid fa-circle-play"></i>
-            </button>
-          <img className="song-image" src={song?.imageUrl} alt="" />
+        <img className="song-image" src={song?.imageUrl} alt="" />
+        <div className="player-info">
+          <p className="song-header">{song.title}</p>
+          <p className="song-footer">{song.artist}</p>
         </div>
-        <div className="player-buttons">
+        <div className="player-buttons-container">
+          <NavLink to={`/songs/${parseInt(song.id) - 1}`}>
+            <button className="player-btn prev">
+              <i class="bx bx-skip-previous"></i>
+            </button>
+          </NavLink>
+          <button className="player-btn play" onClick={() => setCurrentTrack(song)}>
+            <i className="fa-solid fa-circle-play"></i>
+          </button>
+          <NavLink to={`/songs/${parseInt(song.id) + 1}`}>
+            <button className="player-btn next">
+              <i class="bx bx-skip-next"></i>
+            </button>
+          </NavLink>
+        </div>
+        {/* <div className="user-buttons-container">
           <LikeButton song={song} />
           <div className="song-edit-container">{songEditButtons}</div>
-        </div>
+        </div> */}
         <div className="comments-container">
           <div className="">
             <AddComment />
