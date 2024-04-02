@@ -123,10 +123,6 @@
   width: 5%;
 }
 
-.song-edit-container {
-  position: relative;
-}
-
 .dropdown {
   position: relative;
   /* display: inline-block; */
@@ -175,7 +171,7 @@
   border: none;
   margin-right: 10px;
   transition: color 0.2s ease;
-  padding: 5px 15px;
+  padding: 5px 5px;
   font-size: 15px;
   transition: 0.2s ease;
   cursor: pointer;
@@ -198,27 +194,30 @@
     Garuda, Verdana, Tahoma, sans-serif;
   color: #ffffffd8;
   font-size: 25px;
-  text-align: center;
+  text-align: left;
   margin: initial;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .song-footer {
   font-size: large;
   color: rgba(255, 255, 255, 0.785);
   position: relative;
-  text-align: center;
   margin: initial;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
 .player-info {
-    margin-top: 500px;
+    margin-top: 520px;
+    width: 450px;
 }
 
 .user-buttons-container {
-    display: flex;
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+  width: 510px;
 }
 
 .player-container .card-play-button {
@@ -240,4 +239,9 @@
     font-size: 45px;
     color: white;
     cursor: pointer;
+  }
+
+  .inside {
+    display: flex;
+    justify-content: space-between;
   }

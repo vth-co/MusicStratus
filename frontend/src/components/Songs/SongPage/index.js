@@ -32,9 +32,13 @@ const Song = ({ setCurrentTrack }) => {
   return (
     <>
       <div className="song-container">
+        
         <img className="song-image" src={song?.imageUrl} alt="" />
         <div className="player-info">
+          <div className="inside">
           <p className="song-header">{song.title}</p>
+          <LikeButton song={song} />
+          </div>
           <p className="song-footer">{song.artist}</p>
         </div>
         <div className="player-buttons-container">
@@ -43,7 +47,10 @@ const Song = ({ setCurrentTrack }) => {
               <i class="bx bx-skip-previous"></i>
             </button>
           </NavLink>
-          <button className="player-btn play" onClick={() => setCurrentTrack(song)}>
+          <button
+            className="player-btn play"
+            onClick={() => setCurrentTrack(song)}
+          >
             <i className="fa-solid fa-circle-play"></i>
           </button>
           <NavLink to={`/songs/${parseInt(song.id) + 1}`}>
@@ -52,10 +59,6 @@ const Song = ({ setCurrentTrack }) => {
             </button>
           </NavLink>
         </div>
-        {/* <div className="user-buttons-container">
-          <LikeButton song={song} />
-          <div className="song-edit-container">{songEditButtons}</div>
-        </div> */}
         <div className="comments-container">
           <div className="">
             <AddComment />

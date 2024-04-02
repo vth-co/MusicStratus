@@ -104,8 +104,8 @@
 
 .dlt-confirmation {
     background-color: transparent;
-    max-width: 475px;
-    max-height: 250px;
+    max-width: 500px;
+    min-height: 250px;
 }
 
 .dlt-confirmation p {
