@@ -10,9 +10,14 @@ function EditSongModal({ song }) {
     setShowModal(false);
   };
 
+  const handleClick = (e) => {
+    e.stopPropagation(); // Stop event propagation to prevent closing the menu
+    setShowModal(true);
+  };
+
   return (
     <>
-      <button className="sng-btn" onClick={() => setShowModal(true)}>
+      <button className="sng-btn" onClick={handleClick}>
       <i className="fa-solid fa-pen"></i>
       </button>
       {showModal && (

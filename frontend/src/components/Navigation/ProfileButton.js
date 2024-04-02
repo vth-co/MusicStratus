@@ -38,10 +38,6 @@ function ProfileButton() {
     <>
       <div className="profile-button">
         <button className="feed-button" onClick={openMenu}>
-          {/* <img
-            className="user-icon"
-            src="../../../images/default-icon.png"
-          ></img> */}
           <div className="icon-container">
             <img className="profile-icon-nav" src={user.image ? user.image : defaultImage} alt="profile" />
             <i className="fa-solid fa-chevron-down"></i>

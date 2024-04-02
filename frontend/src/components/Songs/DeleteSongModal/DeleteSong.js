@@ -8,7 +8,9 @@ const DeleteSong = ({ onClose, song }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  // const song = useSelector((state) => state.songs.songs[id]);
+  const handleClick = (e) => {
+    e.stopPropagation(); // Stop event propagation to prevent closing the menu
+  };
 
   const handleDelete = async (e) => {
     e.preventDefault();
@@ -42,7 +44,7 @@ const DeleteSong = ({ onClose, song }) => {
 
   return (
     <>
-     <div className="dlt-confirmation">
+     <div className="dlt-confirmation" onClick={handleClick}>
       <h1>Are you sure?</h1>
         <p>Are you sure you want to delete {song.title}? This action cannot be undone.</p>
         <div className="dlt-btn-container">

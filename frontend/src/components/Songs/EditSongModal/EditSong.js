@@ -15,6 +15,10 @@ function EditSong({ onClose, song }) {
   const [imageFile, setImageFile] = useState(null);
   const [errors, setErrors] = useState([]);
 
+  const handleClick = (e) => {
+    e.stopPropagation(); // Stop event propagation to prevent closing the modal
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -43,7 +47,7 @@ function EditSong({ onClose, song }) {
   };
 
   return (
-    <div className="edit-song-container">
+    <div className="edit-song-container" onClick={handleClick}>
       <form onSubmit={handleSubmit}>
         <h3 className="form-title">Edit Song</h3>
         <div className="errors-container">
