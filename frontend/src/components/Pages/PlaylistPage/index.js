@@ -43,6 +43,8 @@ const PlaylistPage = () => {
               <div>
               <TopAudioPlayer song={song} />
               {/* <li key={song.id}>{song.title}</li> */}
+        {/* <img className="song-image" src={song?.imageUrl} alt="" /> */}
+
               </div>
             ))}
           </ul>
