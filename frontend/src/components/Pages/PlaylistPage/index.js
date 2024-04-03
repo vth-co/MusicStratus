@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import "./Playlist.css";
 import TopAudioPlayer from "../../CustomAudioPlayer/TopAudioPlayer";
 
-const PlaylistPage = () => {
+const PlaylistPage = ({ setCurrentTrack }) => {
   const { id } = useParams();
   const playlist = useSelector((state) => state.playlists[id]);
 
@@ -41,10 +41,15 @@ const PlaylistPage = () => {
           <ul>
             {songs.map((song) => (
               <div>
-              <TopAudioPlayer song={song} />
+              {/* <TopAudioPlayer song={song} /> */}
               {/* <li key={song.id}>{song.title}</li> */}
-        {/* <img className="song-image" src={song?.imageUrl} alt="" /> */}
-
+        <img className="song-image" src={song?.imageUrl} alt="" />
+        <button
+                      className="card-play-button"
+                      onClick={() => setCurrentTrack(song)}
+                    >
+                      <i className="fa-solid fa-circle-play"></i>
+                    </button>
               </div>
             ))}
           </ul>
